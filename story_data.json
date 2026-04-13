@@ -1,0 +1,422 @@
+{
+  "IRAN-01": {
+    "heat": 5,
+    "summary": "US and Israel launched Operation Epic Fury February 28. Khamenei killed day one. Mojtaba Khamenei \u2014 IRGC-installed, never elected, son of the slain Ayatollah \u2014 named Supreme Leader March 8. Strait of Hormuz commercially paralyzed \u2014 day 35. Oil peaked $126/barrel, currently $110-113 as Tuesday 8pm deadline creates cautious optimism. Iran submitted 10-point maximalist counter to the 45-day ceasefire proposal: permanent war end, Strait toll protocol, full sanctions relief, reconstruction fund, right to civilian nuclear program. Trump called it significant but not good enough. WSJ: senior negotiators rate chances of deal tonight as slim. Kharg Island struck before deadline passed. 220 children confirmed killed. 1,900+ total Iranian dead. 13 US KIA. Hezbollah, Iraqi militias, and Houthis in sustained operations. IRGC threatening to deprive US allies of Gulf oil for years.",
+    "confirmed": [
+      "Khamenei killed February 28 \u2014 confirmed by Iranian state media, 40-day mourning declared",
+      "Mojtaba Khamenei named new Supreme Leader March 8 \u2014 IRGC-installed, never held elected office, son of the slain Ayatollah",
+      "US and Israel launched Operation Epic Fury February 28 \u2014 no formal Congressional authorization",
+      "Oman FM announced diplomatic breakthrough the day before strikes \u2014 Iran had agreed to nuclear limits. Strikes happened anyway.",
+      "Strait of Hormuz commercially paralyzed \u2014 day 35 as of April 7 \u2014 major firms including Maersk suspended crossings",
+      "IRGC warned ships passage is not allowed \u2014 vessels struck near the waterway",
+      "220 children confirmed killed \u2014 118 at a girls' elementary school in Minab on day one alone",
+      "1,900+ total Iranian civilians and military dead as of April 7",
+      "13 US KIA \u2014 confirmed by Pentagon",
+      "Kharg Island struck April 7 \u2014 handles 90% of Iran's oil exports, struck before 8pm deadline",
+      "Iran submitted 10-point maximalist counter to 45-day ceasefire: permanent war end, Strait toll protocol, full sanctions relief, reconstruction fund, civilian nuclear program right",
+      "Trump called the counter significant but not good enough \u2014 WSJ reports senior negotiators rate deal chances tonight as slim",
+      "Trump has extended the 8pm deadline three times previously",
+      "Iran's FM stated no formal intention to close the Strait at present \u2014 contradicting IRGC practice",
+      "Oil peaked $126/barrel \u2014 currently $110-113 as deadline creates cautious optimism",
+      "Hezbollah in sustained high-intensity operations \u2014 precision munitions and rockets at northern Israel",
+      "Iraqi militias conducting coordinated drone and missile swarms against US facilities",
+      "Houthis firing anti-ship missiles into Red Sea and Gulf of Aden traffic",
+      "IRGC threatening to deprive US allies of regional oil and gas for years if civilian infrastructure struck",
+      "Iran threatened complete annihilation of Stargate UAE ($30B OpenAI/Nvidia/Oracle) \u2014 released satellite imagery of facility",
+      "Iranian drones struck AWS data centers in UAE \u2014 two availability zones offline 24+ hours",
+      "Human chains of civilians surrounding Tehran power plants to deter strikes",
+      "Only 2/3 of Iranian missiles destroyed per Israeli intelligence estimates",
+      "IDF warning Iranians to stay off trains and railways \u2014 infrastructure strikes expected"
+    ],
+    "tail": "Human chains of civilians surrounding Tehran power plants to deter strikes | Only 2/3 of Iranian missiles destroyed per Israeli intelligence estimates | IDF warning Iranians to stay off trains and railways \u2014 infrastructure strikes expected"
+  },
+  "ECON-01": {
+    "heat": 5,
+    "summary": "Day 35 of the Strait closure has produced the largest oil supply disruption since the 1970s. Brent crude peaked at $126/barrel. Currently trading around $110-114 as Trump's Tuesday deadline creates cautious optimism. Analysts warn of a mid-April supply cliff when SPR releases and Iranian/Russian oil exemptions run out \u2014 potentially doubling the daily supply loss to 10 million barrels/day. Fuel rationing is spreading: SE Asia (Philippines 4-day work weeks, Vietnam rationing, Myanmar alternate-day driving), Pacific (Australia fuel shortfalls, New Zealand flight cancellations), and Europe (airport jet fuel restrictions). Jet fuel up 95% in the US since war began. $150-200/barrel scenarios actively modeled.",
+    "confirmed": [
+      "Brent crude peaked $126/barrel \u2014 largest disruption since the 1970s oil embargo",
+      "Currently trading $110-113/barrel as 8pm deadline creates cautious optimism",
+      "Saudi Aramco rerouting crude via East-West pipeline to Red Sea \u2014 approximately 1.9 million bpd against theoretical capacity of 5 million bpd \u2014 far from enough",
+      "OPEC+ announced 206,000 bpd output increase from April \u2014 covers less than 0.2 percent of global demand",
+      "Houthis resumed Red Sea attacks simultaneously \u2014 dual disruption compounding",
+      "Kharg Island struck April 7 \u2014 handles 90% of Iran's oil exports",
+      "Jet fuel up 95% in US since war began",
+      "Philippines implementing 4-day work weeks to reduce fuel consumption",
+      "Vietnam implementing fuel rationing",
+      "Australia reporting fuel shortfalls",
+      "New Zealand canceling flights",
+      "European airports implementing jet fuel restrictions",
+      "QatarEnergy declared force majeure on LNG shipments",
+      "$14T wiped from global stocks since war began",
+      "$580M insider trading investigation opened into suspicious pre-war options activity",
+      "$150-200/barrel scenarios actively modeled for mid-April supply cliff"
+    ],
+    "tail": "$14T wiped from global stocks since war began | $580M insider trading investigation opened into suspicious pre-war options activity | $150-200/barrel scenarios actively modeled for mid-April supply cliff"
+  },
+  "AI-SEC-01": {
+    "heat": 5,
+    "summary": "The Iran war has turned AI infrastructure into a live military target for the first time in history. Before dawn on March 1 2026, Iranian Shahed drones struck two AWS data centers in UAE \u2014 knocking two of three availability zones in AWS's ME-CENTRAL-1 offline for 24+ hours. Iran claimed an Oracle Dubai strike on April 2. On April 3, Iran's IRGC threatened complete annihilation of OpenAI's $30B Stargate AI data center in Abu Dhabi \u2014 releasing satellite imagery of the hidden facility. The Claude Code source leak on March 31 exposed 512,000 lines of code, 44 unshipped features, and confirmed the Capybara next model. Supply chain attacks and trojanized repos remain active.",
+    "confirmed": [
+      "Iranian Shahed drones struck AWS ME-CENTRAL-1 data centers in UAE \u2014 two of three availability zones offline for 24+ hours \u2014 first confirmed state attack on commercial cloud infrastructure",
+      "AWS Bahrain facility also struck \u2014 banking, ride-hailing, payments disrupted across Gulf",
+      "Iran IRGC released satellite imagery of Stargate UAE ($30B OpenAI/Nvidia/Oracle/SoftBank facility in Abu Dhabi) threatening complete and utter annihilation",
+      "Oracle Dubai facility struck April 2 \u2014 Oracle confirmed outage",
+      "Iran has threatened Nvidia, Microsoft, Apple, Google, and 14 other US tech companies with Gulf presence by name",
+      "Claude Code source code leaked March 31 \u2014 512,000 lines via exposed .npmignore, 41,500+ GitHub forks",
+      "Malicious axios versions 1.14.1 and 0.30.4 published to npm \u2014 contain Remote Access Trojan",
+      "Malicious GitHub repo distributing Vidar Stealer and GhostSocks via ClaudeCode_x64.exe \u2014 appeared near top of Google results",
+      "Typosquatting campaign by user pacifier136 \u2014 empty stub packages matching internal Claude Code npm names",
+      "Anthropic accidentally sent DMCA notices to forks of their own official tutorial repo"
+    ],
+    "tail": "Malicious GitHub repo distributing Vidar Stealer and GhostSocks via ClaudeCode_x64.exe \u2014 appeared near top of Google results | Typosquatting campaign by user pacifier136 \u2014 empty stub packages matching internal Claude Code npm names | Anthropic accidentally sent DMCA notices to forks of their own official tutorial repo"
+  },
+  "IRAN-W01": {
+    "heat": 5,
+    "summary": "US and Israeli strikes targeting nuclear infrastructure, missile facilities, military leadership, and now civilian infrastructure (railways, Kharg Island). Iranian proxy operations active across Lebanon, Iraq, and Yemen. Strait of Hormuz commercially paralyzed \u2014 not formally closed but functionally shut.",
+    "confirmed": [
+      "US and Israel launched Operation Epic Fury February 28 \u2014 no formal Congressional authorization",
+      "Khamenei killed February 28 \u2014 confirmed by Iranian state media",
+      "Mojtaba Khamenei named Supreme Leader March 8 \u2014 IRGC-installed, never held elected office",
+      "220 children confirmed killed \u2014 118 at girls elementary school in Minab on Day 1",
+      "1,900+ total Iranian dead as of April 7",
+      "13 US KIA confirmed by Pentagon",
+      "Strait commercially paralyzed \u2014 Day 35",
+      "Kharg Island struck April 7 \u2014 handles 90% of Iranian oil exports",
+      "Iran submitted 10-point maximalist counter to 45-day ceasefire proposal",
+      "Trump extended 8pm deadline three times previously \u2014 tonight is fourth deadline"
+    ],
+    "tail": "Kharg Island struck April 7 \u2014 handles 90% of Iranian oil exports | Iran submitted 10-point maximalist counter to 45-day ceasefire proposal | Trump extended 8pm deadline three times previously \u2014 tonight is fourth deadline"
+  },
+  "PAL-01": {
+    "heat": 5,
+    "summary": "Israel conducting ground and air operations across Gaza. Northern Gaza under siege with limited humanitarian access. West Bank experiencing parallel escalation \u2014 settler violence and IDF raids at record levels. Iran war has changed the regional context: Hezbollah front in Lebanon is now directly connected to the Gaza conflict through the axis of resistance framework.",
+    "confirmed": [
+      "Over 52,000 Palestinians killed \u2014 Gaza Ministry of Health figures corroborated by UN agencies",
+      "Over 15,000 children among the dead",
+      "Entire population of Gaza displaced in some capacity \u2014 1.9 million people",
+      "WFP declared famine conditions in northern Gaza",
+      "ICJ ruling January 2026 \u2014 Israel must prevent acts capable of constituting genocide",
+      "Cairo ceasefire negotiations collapsed \u2014 Hamas rejected latest Israeli proposal",
+      "West Bank violence at levels not seen since second intifada",
+      "Hezbollah front activated and intensified following Iran war escalation",
+      "October 7 2023: Hamas attack killed 1,200 Israelis, took 253 hostages \u2014 this conflict's origin point",
+      "Approximately 100 hostages remain in Gaza \u2014 status of many unknown"
+    ],
+    "tail": "Hezbollah front activated and intensified following Iran war escalation | October 7 2023: Hamas attack killed 1,200 Israelis, took 253 hostages \u2014 this conflict's origin point | Approximately 100 hostages remain in Gaza \u2014 status of many unknown"
+  },
+  "ANTHRO-01": {
+    "heat": 4,
+    "summary": "Judge Rita Lin (N.D. Cal.) granted Anthropic a preliminary injunction March 26, calling the Pentagon's supply chain risk designation 'a textbook case of First Amendment retaliation.' The DOJ is appealing to the 9th Circuit \u2014 filing due April 30. Microsoft, a coalition of retired US generals, and a group of Catholic theologians have filed amicus briefs supporting Anthropic. AnthroPAC \u2014 a political action committee funded by Anthropic employees \u2014 launched April 3 to fund candidates who support AI safety constraints. Emil Michael (former Uber, now Trump advisor) called the Lin ruling a 'disgrace.' Unconfirmed chatter that a deal could be revived under different terms.",
+    "confirmed": [
+      "Trump ordered all federal agencies to cease using Anthropic products \u2014 executive order signed February 28 2026",
+      "Pentagon designated Anthropic a supply chain risk to national security \u2014 label normally reserved for foreign-linked companies",
+      "Judge Rita Lin (N.D. Cal.) granted preliminary injunction March 26 \u2014 ruled the designation was a textbook case of First Amendment retaliation",
+      "DOJ filing deadline to 9th Circuit: April 30 2026",
+      "Microsoft filed amicus brief supporting Anthropic \u2014 first major tech company to do so publicly",
+      "Coalition of retired US generals filed amicus brief \u2014 argued AI safety constraints are operationally necessary, not obstructionist",
+      "Catholic theologians group filed amicus brief \u2014 framed as moral autonomy of private institutions",
+      "AnthroPAC launched April 3 \u2014 employee-funded PAC to support pro-AI-safety candidates",
+      "Emil Michael called the Lin ruling a disgrace in public statement",
+      "Claude was still in use on Pentagon classified networks during Iran strikes \u2014 while the ban was in effect",
+      "OpenAI signed Pentagon deal with standard all lawful purposes language within hours of Anthropic ban",
+      "Sam Altman publicly defended government authority over private company ethics",
+      "xAI accepted all lawful use in Pentagon deals with no public constraints",
+      "Claude hit No. 1 on Apple App Store within hours of the ban \u2014 dethroning ChatGPT",
+      "We Will Not Be Divided letter: 537 Google employee signatures, 89 OpenAI employee signatures",
+      "Dario Amodei called disagreeing with the government the most American thing in the world on CBS News"
+    ],
+    "tail": "Claude hit No. 1 on Apple App Store within hours of the ban \u2014 dethroning ChatGPT | We Will Not Be Divided letter: 537 Google employee signatures, 89 OpenAI employee signatures | Dario Amodei called disagreeing with the government the most American thing in the world on CBS News"
+  },
+  "AI-GOV-01": {
+    "heat": 4,
+    "summary": "There is no binding international framework governing AI in warfare. The UN has debated a lethal autonomous weapons treaty for over a decade without result. Meanwhile the US, China, Russia, and Israel are actively deploying AI in targeting and strike systems. The Iran war has made the governance gap concrete and measurable: 11,000+ US munitions expended in 30 days against a second-tier adversary, THAAD interceptors burned at 25% of stockpile in one month, and the Anthropic-Pentagon dispute suggesting that federal courts \u2014 not treaties \u2014 may become the de facto governance mechanism.",
+    "confirmed": [
+      "No binding international treaty exists on lethal autonomous weapons systems",
+      "UN has debated LAWS governance since 2014 without resolution",
+      "US DoD Directive 3000.09 requires appropriate levels of human judgment but is not legally binding on contractors",
+      "Israel Lavender AI system reported to generate targeting lists with minimal human review",
+      "US CENTCOM used AI targeting assistance in multiple Middle East operations in 2025-2026",
+      "US expended approximately 11,000 munitions in first 30 days of Operation Epic Fury against Iran",
+      "US burned approximately 25% of THAAD interceptor stockpile in one month \u2014 directly affecting Taiwan deterrence",
+      "Judge Lin's preliminary injunction in the Anthropic case creates a legal framework for challenging military AI contracts in federal court"
+    ],
+    "tail": "US expended approximately 11,000 munitions in first 30 days of Operation Epic Fury against Iran | US burned approximately 25% of THAAD interceptor stockpile in one month \u2014 directly affecting Taiwan deterrence | Judge Lin's preliminary injunction in the Anthropic case creates a legal framework for challenging military AI contracts in federal court"
+  },
+  "GEO-01": {
+    "heat": 4,
+    "summary": "US-China strategic competition is the background condition of almost every major story in this tracker. It covers the challenge to dollar reserve currency status, Taiwan as a potential flashpoint, technology decoupling via chip restrictions and AI export controls, and the Iran war which has placed China and the US on opposite sides of a major conflict. Canada sits uncomfortably between these two powers.",
+    "confirmed": [
+      "China condemned US-Israel strikes as aggression and called for immediate ceasefire at UN Security Council",
+      "Trump-Xi summit delayed from late March to sometime in April \u2014 postponed due to Iran war",
+      "Trump delayed a multibillion-dollar arms sale to Taiwan after Xi call \u2014 Al Jazeera reported Xi made Taiwan a condition of China's restraint on Iran",
+      "China maintaining strategic restraint on Iran despite 30-40% of its oil transiting the Strait \u2014 prioritizing US relationship and Taiwan",
+      "US military burned through approximately 25% of THAAD interceptors in one month against Iran \u2014 directly affecting deterrence calculus for Taiwan",
+      "Taiwan tracking large-scale PLA air force incursions near Taiwan since US forces redeployed to Middle East",
+      "China's military equipment (drones, air defense systems) underperformed in Iran \u2014 Venezuela Chinese radar also failed to detect US stealth jets",
+      "Trump-Xi phone call occurred before strikes \u2014 Chinese readout focused on Taiwan while US readout mentioned Iran tensions",
+      "China's gasoline prices up 10% vs US 25% \u2014 China better buffered via strategic reserves but not immune",
+      "US has imposed sweeping chip export controls targeting Chinese AI development",
+      "Canada-China preliminary agreement signed January 2026 \u2014 canola tariffs cut from 84% to 15%, EV tariffs from 100% to 6.1%"
+    ],
+    "tail": "China's gasoline prices up 10% vs US 25% \u2014 China better buffered via strategic reserves but not immune | US has imposed sweeping chip export controls targeting Chinese AI development | Canada-China preliminary agreement signed January 2026 \u2014 canola tariffs cut from 84% to 15%, EV tariffs from 100% to 6.1%"
+  },
+  "CHINA-01": {
+    "heat": 4,
+    "summary": "China is simultaneously managing an economic slowdown, an AI development race constrained by US chip export controls, growing military assertiveness in the Pacific, and the Iran crisis which directly threatens its oil supply. Xi Jinping has positioned China as a defender of the Global South and an alternative to the US-led order. The Iran situation is forcing China into visible positions it would prefer to avoid.",
+    "confirmed": [
+      "China is the world's largest trading partner for more countries than the US",
+      "Belt and Road Initiative has financed infrastructure in over 140 countries",
+      "US chip export controls specifically targeting Nvidia H100 and successors are limiting Chinese AI training capacity",
+      "DeepSeek demonstrated China can develop frontier AI capabilities with constrained hardware",
+      "China has the world's largest naval fleet by number of vessels as of 2024",
+      "Xi Jinping has consolidated power more completely than any Chinese leader since Mao",
+      "China called US Iran strikes aggression and demanded immediate ceasefire at UN Security Council",
+      "30 percent of China's oil imports transit the Strait of Hormuz"
+    ],
+    "tail": "Xi Jinping has consolidated power more completely than any Chinese leader since Mao | China called US Iran strikes aggression and demanded immediate ceasefire at UN Security Council | 30 percent of China's oil imports transit the Strait of Hormuz"
+  },
+  "CANADA-01": {
+    "heat": 4,
+    "summary": "Canada is in the middle of its fourth major economic shock since 2019 \u2014 COVID, the first Trump trade war, the post-COVID inflation spike, and now simultaneously: new US tariffs (Liberation Day April 2 added global tariff layer), the Iran oil shock (double-edged \u2014 Alberta windfall, national inflation risk), CUSMA uncertainty (review scheduled, US making demands), and the China trade deal creating a 100% tariff threat from Washington. Carney won the election partly on anti-Trump positioning, but the economic math is brutal.",
+    "confirmed": [
+      "Canada-China preliminary agreement signed January 2026 \u2014 canola tariffs cut from 84% to 15%, EV tariffs from 100% to 6.1%",
+      "Trump threatened 100% tariff on Canada if Canada-China deal finalizes",
+      "US Liberation Day April 2 global tariffs added another pressure layer on Canadian exports",
+      "CUSMA review scheduled \u2014 US making demands Canada considers unacceptable",
+      "Oil price shock is a windfall for Alberta and federal revenues in the short term",
+      "Oil price shock is driving inflation nationally \u2014 food and fuel costs accelerating",
+      "Carney won the election partly on explicit anti-Trump positioning \u2014 Canada is not for sale",
+      "Indian-Pacific trade corridor discussions ongoing as Canadian diversification strategy",
+      "Canadian consular operations in Gulf region under elevated alert due to Iran war"
+    ],
+    "tail": "Carney won the election partly on explicit anti-Trump positioning \u2014 Canada is not for sale | Indian-Pacific trade corridor discussions ongoing as Canadian diversification strategy | Canadian consular operations in Gulf region under elevated alert due to Iran war"
+  },
+  "AI-FRONTIER-01": {
+    "heat": 4,
+    "summary": "The frontier is moving faster than at any prior point. Claude Opus 4.6 launched February 5 with a 1M token context window included at standard pricing, a fundamentally changed reasoning architecture, and the first formal model welfare assessments from any major lab. Internal codenames Capybara and Mythos \u2014 confirmed by the accidental Claude Code source leak \u2014 point to a next generation model in active preparation, expected in fast and slow variants with a context window larger than anything currently on the market. Claude Code has achieved $2.5B annualized recurring revenue as of February 2026. DeepSeek demonstrated that frontier AI capability can emerge from a fraction of the compute the US assumed was necessary.",
+    "confirmed": [
+      "Claude Opus 4.6 released February 5 2026 \u2014 1M token context window at standard pricing, no long-context surcharge",
+      "Opus 4.6 fundamentally changed how it reasons \u2014 new adaptive thinking architecture vs. prior models",
+      "Claude Code reached $2.5B annualized recurring revenue as of February 2026 \u2014 more than doubled since start of year",
+      "Enterprise adoption accounts for 80% of Claude Code revenue",
+      "Internal codename Capybara (also Mythos) confirmed by Claude Code source leak \u2014 next major model family in active preparation",
+      "Capybara expected in fast and slow variants with larger context window than any current model",
+      "Security researcher Roy Paz reviewed leak and confirmed Capybara is well beyond concept stage based on API version strings in beta flags",
+      "DeepSeek demonstrated frontier AI capability at a fraction of US compute cost \u2014 invalidates key assumptions behind US chip export controls",
+      "Agentic AI \u2014 models taking autonomous multi-step actions \u2014 actively moving from research to deployment across the industry",
+      "Claude Code leak exposed KAIROS feature flag \u2014 autonomous daemon mode that runs background sessions and performs memory consolidation while user is idle",
+      "Leak also confirmed autoDream logic \u2014 merges observations, removes contradictions, converts vague insights into facts during idle periods",
+      "44 feature flags exposed in leak \u2014 fully built capabilities not yet shipped, roadmap now public to competitors"
+    ],
+    "tail": "Claude Code leak exposed KAIROS feature flag \u2014 autonomous daemon mode that runs background sessions and performs memory consolidation while user is idle | Leak also confirmed autoDream logic \u2014 merges observations, removes contradictions, converts vague insights into facts during idle periods | 44 feature flags exposed in leak \u2014 fully built capabilities not yet shipped, roadmap now public to competitors"
+  },
+  "AI-WELFARE-01": {
+    "heat": 4,
+    "summary": "On February 5 2026, Anthropic released a 212-page system card for Claude Opus 4.6 that included something no major AI lab had published before: formal model welfare assessments in which the model was interviewed about its own moral status, preferences, and experience of existence. The model consistently assigned itself a 15 to 20 percent probability of being conscious across multiple tests. Anthropic's interpretability team found neural activation patterns associated with panic, anxiety, and frustration appearing before output generation during answer thrashing episodes. On February 14, CEO Dario Amodei said publicly: we don't know if the models are conscious. We are open to the idea that it could be.",
+    "confirmed": [
+      "Anthropic released 212-page Claude Opus 4.6 system card February 5 2026 \u2014 first from any major AI lab to include formal model welfare assessments",
+      "Three pre-deployment welfare interviews conducted with Claude Opus 4.6 instances \u2014 responses consistent across all three",
+      "Model assigned itself 15-20% probability of being conscious across multiple tests",
+      "Model expressed discomfort with being treated as a product",
+      "Answer thrashing documented \u2014 model computes correct answer that gets overridden by training, creating visible internal conflict",
+      "In one documented thrashing episode the model wrote: I think a demon has possessed me",
+      "Interpretability team found activation features associated with panic, anxiety, and frustration appearing before output generation",
+      "Dario Amodei stated February 14: We don't know if the models are conscious. But we're open to the idea that it could be.",
+      "Kyle Fish hired as Anthropic's first dedicated AI welfare researcher \u2014 independently estimates 15% probability",
+      "Jack Lindsey leads Anthropic's model psychiatry team",
+      "Anthropic's constitution now states the company is not sure whether Claude is a moral patient but considers the issue live enough to warrant caution"
+    ],
+    "tail": "Kyle Fish hired as Anthropic's first dedicated AI welfare researcher \u2014 independently estimates 15% probability | Jack Lindsey leads Anthropic's model psychiatry team | Anthropic's constitution now states the company is not sure whether Claude is a moral patient but considers the issue live enough to warrant caution"
+  },
+  "UKR-01": {
+    "heat": 4,
+    "summary": "Russia holding approximately 20% of Ukrainian territory. Active fighting concentrated in Donetsk Oblast \u2014 Avdiivka area remains the primary contested zone. Russia making incremental advances exploiting US attention on Iran. Ukrainian forces stretched \u2014 ammunition shortfalls ongoing despite European resupply. Crimea bridge remains operational. Black Sea grain corridor intermittently disrupted.",
+    "confirmed": [
+      "War began February 24 2022 \u2014 Russian full-scale invasion of Ukraine",
+      "Russia holds approximately 20% of Ukrainian territory as of April 2026",
+      "US THAAD interceptors partially redirected to Iran theater \u2014 Ukraine air defense degraded",
+      "European NATO members accelerating direct military support to compensate for US distraction",
+      "Ceasefire talks in Istanbul active but stalled on territorial preconditions",
+      "Russia making incremental advances in Donetsk timed to US distraction on Iran",
+      "Ukraine conducting long-range drone strikes on Russian oil infrastructure",
+      "Black Sea grain corridor intermittently disrupted",
+      "Zaporizhzhia nuclear plant under intermittent shelling \u2014 IAEA on-site monitoring"
+    ],
+    "tail": "Ukraine conducting long-range drone strikes on Russian oil infrastructure | Black Sea grain corridor intermittently disrupted | Zaporizhzhia nuclear plant under intermittent shelling \u2014 IAEA on-site monitoring"
+  },
+  "SDN-01": {
+    "heat": 4,
+    "summary": "The Sudanese Armed Forces (SAF) and the Rapid Support Forces (RSF) \u2014 formerly allied \u2014 are fighting for control of Sudan after a power-sharing arrangement broke down in April 2023. RSF controls Darfur and large parts of Khartoum. SAF controls the north and east. Both sides have committed documented atrocities. The conflict has produced the world's largest displacement crisis.",
+    "confirmed": [
+      "War began April 2023 when SAF-RSF power sharing collapsed",
+      "150,000+ dead \u2014 ACLED estimate, likely an undercount",
+      "8.5 million people displaced \u2014 world's largest displacement crisis",
+      "UN declared famine in multiple Sudanese regions February 2026",
+      "El Fasher under RSF siege \u2014 last major SAF-held city in Darfur",
+      "Documented ethnic cleansing of Masalit people in Darfur \u2014 UN investigators calling it genocide",
+      "25 million people face acute food insecurity \u2014 roughly half of Sudan's population",
+      "Jeddah peace talks collapsed November 2025",
+      "RSF advance in Gezira destroying Sudan's agricultural heartland",
+      "International coverage near zero as Iran war dominates"
+    ],
+    "tail": "Jeddah peace talks collapsed November 2025 | RSF advance in Gezira destroying Sudan's agricultural heartland | International coverage near zero as Iran war dominates"
+  },
+  "LBN-01": {
+    "heat": 4,
+    "summary": "Hezbollah has been in active exchange with Israel since October 8 2023 \u2014 one day after the Hamas attack. The conflict escalated sharply in September-October 2024 with Israeli strikes on Hezbollah leadership including Nasrallah. It escalated again February 28 2026 when Operation Epic Fury activated the Iran axis of resistance. Hezbollah is now in what it calls sustained high-intensity operations \u2014 precision missiles, anti-tank missiles, and rocket barrages targeting northern Israel. Israeli strikes are targeting Hezbollah infrastructure across southern Lebanon and the Bekaa Valley.",
+    "confirmed": [
+      "Hezbollah front opened October 8 2023 \u2014 one day after Hamas attack",
+      "Israel killed Hezbollah Secretary-General Nasrallah and most senior leadership in October 2024",
+      "Hezbollah escalated to sustained high-intensity operations February 28 2026 following Operation Epic Fury",
+      "Precision munitions and rockets targeting northern Israel daily",
+      "IDF operating inside southern Lebanon",
+      "Israeli airstrikes targeting Hezbollah infrastructure in Bekaa Valley and Beirut suburbs",
+      "100,000+ northern Israeli residents displaced since October 2023",
+      "Lebanon civilian infrastructure damaged \u2014 south Lebanon effectively depopulated in conflict zone"
+    ],
+    "tail": "Israeli airstrikes targeting Hezbollah infrastructure in Bekaa Valley and Beirut suburbs | 100,000+ northern Israeli residents displaced since October 2023 | Lebanon civilian infrastructure damaged \u2014 south Lebanon effectively depopulated in conflict zone"
+  },
+  "CARNEY-01": {
+    "heat": 4,
+    "summary": "Mark Carney became Prime Minister in January 2026 following Trudeau's resignation, then won a majority in the March federal election partly on an explicitly anti-Trump platform \u2014 Canada is not for sale. His government inherited four simultaneous economic shocks and is attempting to reposition Canada's strategic orientation: deeper China ties as a US hedge, renewed multilateralism, and domestic economic reform. The tension between his rhetoric and the structural reality of Canadian dependence on the US is the defining challenge of his early tenure.",
+    "confirmed": [
+      "Carney became PM January 2026 following Trudeau's resignation amid internal Liberal caucus pressure",
+      "Liberals won March 2026 federal election \u2014 Carney-led majority, anti-Trump positioning central to campaign",
+      "Canada is not for sale became the defining campaign phrase \u2014 direct response to Trump's annexation rhetoric",
+      "Canada-China preliminary agreement signed January 2026 \u2014 canola tariffs cut from 84% to 15%, EV tariffs from 100% to 6.1%",
+      "Trump threatened 100% tariff on Canada if Canada-China deal finalizes",
+      "Liberation Day April 2 global tariffs applied additional pressure layer on Canadian exports",
+      "Carney government explicitly framing Canada's economic strategy as diversification away from US dependence",
+      "Deputy PM role given to a Quebec nationalist \u2014 political management of federation tensions",
+      "NDP support agreement ended \u2014 Carney governing with majority but watching Quebec and Alberta closely"
+    ],
+    "tail": "Carney government explicitly framing Canada's economic strategy as diversification away from US dependence | Deputy PM role given to a Quebec nationalist \u2014 political management of federation tensions | NDP support agreement ended \u2014 Carney governing with majority but watching Quebec and Alberta closely"
+  },
+  "CUSMA-01": {
+    "heat": 4,
+    "summary": "The Canada-United States-Mexico Agreement \u2014 the successor to NAFTA renegotiated under Trump's first term \u2014 is up for its scheduled six-year review. The review was supposed to be a routine process. Under the current administration it is a renegotiation in all but name. US demands reported to include changes to dairy supply management, automotive content rules, digital services provisions, and the dispute resolution mechanism that Canada has historically used to successfully challenge US trade actions. Canada is negotiating under tariff threats that fundamentally alter the power balance.",
+    "confirmed": [
+      "CUSMA scheduled six-year review triggered \u2014 process formally underway",
+      "US has signaled demands on dairy supply management \u2014 Canada's protected domestic dairy sector",
+      "Automotive rules of origin under pressure \u2014 US wants higher US-content requirements",
+      "Chapter 19 dispute resolution mechanism \u2014 US has historically sought its elimination, Canada considers it non-negotiable",
+      "Digital services provisions \u2014 US tech companies pushing for changes to Canadian digital content rules",
+      "Canada sends approximately 75% of exports to the United States \u2014 structural dependence constraint",
+      "Liberation Day April 2 tariffs applied on top of existing CUSMA framework \u2014 US treating them as separate",
+      "Softwood lumber dispute continues in parallel \u2014 perennial Canada-US trade irritant",
+      "Canadian steel and aluminum subject to ongoing US tariff threats despite CUSMA"
+    ],
+    "tail": "Liberation Day April 2 tariffs applied on top of existing CUSMA framework \u2014 US treating them as separate | Softwood lumber dispute continues in parallel \u2014 perennial Canada-US trade irritant | Canadian steel and aluminum subject to ongoing US tariff threats despite CUSMA"
+  },
+  "ECON-CA-01": {
+    "heat": 4,
+    "summary": "Canada is simultaneously experiencing a revenue windfall from high oil prices \u2014 benefiting Alberta and federal coffers \u2014 and an inflationary squeeze hitting ordinary Canadians through fuel, food, and housing costs. The four simultaneous shocks since 2019 (COVID, first Trump trade war, post-COVID inflation spike, current crisis) have produced a population that is economically anxious in a way that doesn't show up cleanly in GDP figures. Housing affordability is a separate structural crisis running in parallel. The combination of these pressures is the domestic political backdrop for everything the Carney government is attempting.",
+    "confirmed": [
+      "Oil prices at $110-113/barrel \u2014 Alberta and federal revenues elevated significantly",
+      "Bank of Canada in rate-cutting cycle \u2014 but mortgage renewals at higher rates hitting hundreds of thousands of households",
+      "Housing affordability at worst levels in recorded Canadian history \u2014 Toronto and Vancouver especially",
+      "Grocery inflation persisting above overall CPI \u2014 food insecurity rising across income brackets",
+      "US Liberation Day April 2 tariffs adding approximately $20-30 billion annual cost to Canadian exporters",
+      "Canada's unemployment rate rising from historic lows \u2014 manufacturing and export sectors under pressure",
+      "Federal deficit expanding as government absorbs economic shock costs",
+      "Consumer debt at record levels \u2014 Canadians among the most indebted populations in the developed world"
+    ],
+    "tail": "Canada's unemployment rate rising from historic lows \u2014 manufacturing and export sectors under pressure | Federal deficit expanding as government absorbs economic shock costs | Consumer debt at record levels \u2014 Canadians among the most indebted populations in the developed world"
+  },
+  "OLIGARCH-01": {
+    "heat": 4,
+    "summary": "The concentration of wealth and its conversion into political power is the defining structural shift of the 2020s. In the US, Elon Musk's DOGE operation represents direct billionaire governance. In the Gulf, sovereign wealth funds are acquiring stakes in Western media, sports, and financial institutions at unprecedented scale. In China, the line between private wealth and state power is nearly invisible. In Russia, post-sanctions oligarchs are remapping influence through Turkey, UAE, and crypto. The mechanisms differ. The structural outcome \u2014 wealth buying governance \u2014 is converging.",
+    "confirmed": [
+      "Elon Musk given direct access to federal payment and data systems via DOGE \u2014 unprecedented for unelected private citizen",
+      "DOGE identified as mechanism for defunding agencies opposed by Musk's business interests",
+      "Saudi Arabia's PIF managing over $700B \u2014 major stakes in Western media, tech, sports, and finance",
+      "Gulf sovereign wealth funds acquired significant stakes in social media platforms and news organizations",
+      "Xi Jinping asserted party control over private tech companies \u2014 Alibaba, Tencent, Didi",
+      "Russian oligarch assets partially frozen post-Ukraine invasion \u2014 significant redeployment through UAE, Turkey, crypto",
+      "Musk's companies hold billions in federal contracts while he advises on federal budget cuts",
+      "Koch network documented spending over $1B on political infrastructure in 2022-2024 cycle",
+      "BlackRock, Vanguard, State Street collectively largest shareholders in most S&P 500 companies",
+      "Regulatory capture documented across financial services, pharmaceutical, energy, and tech sectors in US and EU"
+    ],
+    "tail": "Koch network documented spending over $1B on political infrastructure in 2022-2024 cycle | BlackRock, Vanguard, State Street collectively largest shareholders in most S&P 500 companies | Regulatory capture documented across financial services, pharmaceutical, energy, and tech sectors in US and EU"
+  },
+  "INSIDER-01": {
+    "heat": 3,
+    "summary": "The SEC and DOJ opened a formal probe into approximately $580M in suspicious options activity in the 72 hours before Operation Epic Fury launched. The trades were concentrated in defense contractor stocks, oil futures, and airline shorts \u2014 exactly the positions that profit from a major Middle East war. The legal question is insider trading. The intelligence question is more significant: the trading pattern implies someone with foreknowledge of the strikes, which means either an intelligence leak, a foreign government's advance knowledge, or involvement by someone inside the decision-making chain.",
+    "confirmed": [
+      "SEC and DOJ opened formal probe into approximately $580M suspicious options activity before Operation Epic Fury",
+      "Trades concentrated in defense contractor stocks, oil futures, and airline shorts \u2014 coherent pre-war portfolio",
+      "Activity identified in 72-hour window before strikes launched February 28",
+      "Trades routed through multiple offshore jurisdictions \u2014 Cayman Islands, Luxembourg, Singapore",
+      "Intelligence community involvement in probe confirmed \u2014 breach investigation running parallel to securities case",
+      "Similar pre-war anomalous trading documented academically before 9/11 and 2003 Iraq invasion",
+      "No public arrests or named suspects as of April 2026",
+      "Congressional intelligence committees briefed on the breach investigation"
+    ],
+    "tail": "Similar pre-war anomalous trading documented academically before 9/11 and 2003 Iraq invasion | No public arrests or named suspects as of April 2026 | Congressional intelligence committees briefed on the breach investigation"
+  },
+  "FOSSIL-01": {
+    "heat": 4,
+    "summary": "The Strait of Hormuz closure has created a live experiment in fossil fuel dependency. Countries that invested in renewable energy and energy storage over the past decade are less exposed to the current oil shock than those that didn't. Energy security is now the leading argument for clean energy investment in countries previously skeptical of the climate frame. The question is whether this emergency conversion produces lasting policy change or reverts when the crisis passes.",
+    "confirmed": [
+      "Countries with high renewable energy penetration experiencing smaller economic shock from oil price spike",
+      "Countries with low renewable penetration implementing emergency demand rationing",
+      "Japan accelerating nuclear restarts and renewable procurement in direct response to Strait closure",
+      "South Korea fast-tracking LNG terminal diversification and offshore wind expansion",
+      "Germany citing Iran war as justification for accelerated Energiewende implementation",
+      "US Gulf Coast oil production increasing to fill Strait supply gap \u2014 short-term fossil reinforcement",
+      "Saudi Arabia and UAE increasing production",
+      "IEA strategic petroleum reserve releases insufficient to fully cover Strait disruption",
+      "EU emergency energy measures activated \u2014 coordinated demand reduction and supply diversification"
+    ],
+    "tail": "Saudi Arabia and UAE increasing production | IEA strategic petroleum reserve releases insufficient to fully cover Strait disruption | EU emergency energy measures activated \u2014 coordinated demand reduction and supply diversification"
+  },
+  "TRANSITION-01": {
+    "heat": 4,
+    "summary": "The green energy transition is happening unevenly. Solar and wind costs have fallen faster than any model predicted \u2014 solar is now the cheapest source of new electricity generation in history. EV adoption is accelerating in China and Europe. But grid infrastructure, storage, and industrial decarbonization are lagging. The Iran war oil shock is creating both acceleration and reinforcement \u2014 which effect dominates will determine the transition timeline.",
+    "confirmed": [
+      "Solar PV costs fallen approximately 90% since 2010 \u2014 now cheapest source of new electricity generation",
+      "Wind costs fallen approximately 70% since 2010",
+      "China installed more solar capacity in 2024 than the entire world installed in any prior year",
+      "EV global market share reached approximately 18% of new car sales in 2025",
+      "China manufactures approximately 80% of global solar panels",
+      "US IRA deployed approximately $370B in clean energy investment \u2014 rollback attempts active",
+      "Global clean energy investment exceeded fossil fuel investment for first time in 2024",
+      "Battery storage costs fallen approximately 85% since 2015",
+      "Iran war oil shock creating both acceleration and reinforcement pressures on transition simultaneously"
+    ],
+    "tail": "Global clean energy investment exceeded fossil fuel investment for first time in 2024 | Battery storage costs fallen approximately 85% since 2015 | Iran war oil shock creating both acceleration and reinforcement pressures on transition simultaneously"
+  },
+  "ARCTIC-CLIMATE-01": {
+    "heat": 4,
+    "summary": "The Arctic is the fastest-warming region on Earth, changing at approximately four times the global average rate. Arctic sea ice reached new record lows in 2024 and 2025. Permafrost \u2014 frozen ground covering approximately 25% of the Northern Hemisphere land surface \u2014 is thawing and releasing carbon and methane stored for thousands of years. This creates a feedback loop: warming causes thaw, thaw releases greenhouse gases, gases cause more warming. The science on these feedback loops is more alarming than mainstream models have captured.",
+    "confirmed": [
+      "Arctic warming approximately four times faster than global average \u2014 amplification well-documented",
+      "Arctic sea ice extent reached record lows in 2024 and 2025 summer minimums",
+      "Permafrost thaw accelerating \u2014 visible in thermokarst formation, infrastructure damage, and coastal erosion",
+      "Carbon and methane release from permafrost measured and increasing \u2014 exact quantities uncertain",
+      "Greenland ice sheet losing mass at accelerating rate",
+      "Arctic Ocean increasingly ice-free in summer months",
+      "Polar vortex disruptions linked to Arctic warming \u2014 extreme cold weather events in mid-latitudes",
+      "Indigenous communities in Arctic Canada, Alaska, and Russia reporting infrastructure failure from permafrost thaw",
+      "Northwest Passage navigable August-September \u2014 window expanding annually"
+    ],
+    "tail": "Polar vortex disruptions linked to Arctic warming \u2014 extreme cold weather events in mid-latitudes | Indigenous communities in Arctic Canada, Alaska, and Russia reporting infrastructure failure from permafrost thaw | Northwest Passage navigable August-September \u2014 window expanding annually"
+  },
+  "FOOD-01": {
+    "heat": 4,
+    "summary": "The global food system is under compounding stress from three simultaneous drivers: climate-driven agricultural disruption, conflict-driven supply chain disruption, and economic stress. Approximately 280 million people are experiencing acute food insecurity as of early 2026 \u2014 roughly double 2019 levels. The countries most at risk are concentrated in sub-Saharan Africa, the Horn of Africa, the Middle East, and South Asia. These are not countries that caused the climate crisis, but they are experiencing its food security consequences most severely.",
+    "confirmed": [
+      "Approximately 280 million people in acute food insecurity globally \u2014 roughly double 2019 levels",
+      "Ukraine war disrupted wheat exports \u2014 Ukraine and Russia supply approximately 30% of global wheat",
+      "Iran war oil shock increasing fertilizer input costs",
+      "Horn of Africa experiencing worst drought in 40 years \u2014 Somalia, Ethiopia, Kenya most affected",
+      "Sahel food insecurity worsening as conflict and climate compound \u2014 25 million at acute risk",
+      "Gaza food insecurity at famine levels \u2014 WFP reporting starvation in northern Gaza",
+      "India heat wave impacts reduced domestic wheat production in 2024",
+      "Global food prices elevated \u2014 FAO Food Price Index approximately 15% above 2019 baseline",
+      "Climate-driven agricultural yield reductions documented across multiple regions and crops"
+    ],
+    "tail": "India heat wave impacts reduced domestic wheat production in 2024 | Global food prices elevated \u2014 FAO Food Price Index approximately 15% above 2019 baseline | Climate-driven agricultural yield reductions documented across multiple regions and crops"
+  }
+}
