@@ -2,11 +2,11 @@
 """
 ARC Intelligence Pipeline v2
 ─────────────────────────────────────────────────────────────
-Tier 1  Gemini 2.5 Flash   search & retrieve      free
-Tier 2  Gemma 4 27B dense  format + write file    free
-Tier 3  Claude Code        synthesis + email      Pro plan
+Tier 1  Gemini 1.5 Flash          search & retrieve      free
+Tier 2  Gemma 3 27B IT (MoE)      format + write file    free
+Tier 3  Claude Code               synthesis + email      Pro plan
 
-Gemma 4 writes directly to tracker.jsx.
+Gemma 3 27B IT writes directly to tracker.jsx.
 A validation gate checks the file before any commit.
 If validation fails, pipeline aborts and flags for Claude fallback.
 Gmail notifications sent via Claude Code Gmail connector.
@@ -35,8 +35,8 @@ TODAY     = date.today().isoformat()
 TODAY_STR = date.today().strftime("%b %-d %Y")
 ARC_EMAIL = "arc.informationcore@gmail.com"
 
-FLASH_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={KEY}"
-GEMMA_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemma-4-27b-it:generateContent?key={KEY}"
+FLASH_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={KEY}"
+GEMMA_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemma-3-27b-it:generateContent?key={KEY}"
 
 # Required markers that must survive every edit
 REQUIRED_MARKERS = [
@@ -185,7 +185,7 @@ def validate(content=None):
 
     return True, "OK"
 
-# ── Tier 1: Gemini 2.5 Flash — search ─────────────────────────
+# ── Tier 1: Gemini 1.5 Flash — search ─────────────────────────
 def tier1_search(code, title, days, is_war):
     today = date.today()
     since = today - timedelta(days=days)
@@ -206,14 +206,14 @@ def tier1_search(code, title, days, is_war):
     )
     return post(FLASH_URL, {
         "contents": [{"parts": [{"text": prompt}]}],
-        "tools":    [{"google_search": {}}],
+        "tools":    [{"google_search_retrieval": {"dynamic_retrieval_config": {"mode": "MODE_DYNAMIC", "dynamic_threshold": 0.3}}}],
         "generationConfig": {"temperature": 0.0, "maxOutputTokens": 700}
-    }, "Gemini 2.5 Flash")
+    }, "Gemini 1.5 Flash")
 
-# ── Tier 2: Gemma 4 26B — format AND write to tracker.jsx ─────
+# ── Tier 2: Gemma 3 27B IT (MoE) — format AND write to tracker.jsx ─────
 def tier2_write(code, search_result, current_summary, current_tail, is_war):
     """
-    Gemma 4 receives search results + current story state.
+    Gemma 3 27B IT (MoE) receives search results + current story state.
     It returns the COMPLETE updated story block as valid JSX.
     We find the story by code and replace its block.
     """
@@ -261,7 +261,7 @@ def tier2_write(code, search_result, current_summary, current_tail, is_war):
     result = post(GEMMA_URL, {
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {"temperature": 0.0, "maxOutputTokens": 1000}
-    }, "Gemma 4 26B")
+    }, "Gemma 3 27B IT")
 
     if result.strip() == "UNCHANGED":
         return "UNCHANGED"
@@ -272,7 +272,7 @@ def tier2_write(code, search_result, current_summary, current_tail, is_war):
         clean = re.sub(r"```(?:json)?|```", "", result).strip()
         updates = json.loads(clean)
     except json.JSONDecodeError as e:
-        abort(f"Gemma 4 returned invalid JSON for {code}: {e}\nOutput: {result[:300]}")
+        abort(f"Gemma 3 27B IT returned invalid JSON for {code}: {e}\nOutput: {result[:300]}")
 
     # Back up tracker before writing
     shutil.copy(TRACKER, BACKUP)
