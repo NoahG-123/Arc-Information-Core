@@ -1,0 +1,36 @@
+name: ARC Daily Pipeline
+
+on:
+  schedule:
+    - cron: '0 10 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Make Wrapper Executable
+        run: chmod +x run_pipeline.sh
+
+      - name: Run ARC Pipeline
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_KEY: ${{ secrets.OPENROUTER_KEY }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: ./run_pipeline.sh
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "ARC-Bot"
+          git config user.email "arc.informationcore@gmail.com"
+          git add tracker.jsx arc-run-changes.json
+          git commit -m "Automated ARC Update $(date +%F)" || echo "No changes to commit"
+          git push
