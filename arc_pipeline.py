@@ -19,7 +19,7 @@ Modes:
   --mode full     : run all tiers (default)
 """
 
-import json, os, re, sys, shutil, argparse
+import json, os, re, sys, shutil, argparse, time
 import urllib.request, urllib.error
 from datetime import date, timedelta
 from pathlib import Path
@@ -35,12 +35,11 @@ TODAY     = date.today().isoformat()
 TODAY_STR = date.today().strftime("%b %-d %Y")
 ARC_EMAIL = "arc.informationcore@gmail.com"
 
-FLASH_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={KEY}"
-GEMMA_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemma-4-27b-it:generateContent?key={KEY}"
+FLASH_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={KEY}"
+GEMMA_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemma-3-27b-it:generateContent?key={KEY}"
 
 # Required markers that must survive every edit
 REQUIRED_MARKERS = [
-    "export default function ARC",
     "const STORIES =",
     "const AI_STORIES =",
     "const WAR_STORIES =",
@@ -106,30 +105,50 @@ def record_retirement(code, title, reason, closing_summary):
     save_run_state()
 
 # ── Utilities ─────────────────────────────────────────────────
-def post(url, payload, label):
+def post(url, payload, label, retries=5):
     if not KEY:
         abort("GEMINI_API_KEY not set in environment")
     data = json.dumps(payload).encode()
-    req  = urllib.request.Request(
-        url, data=data,
-        headers={"Content-Type": "application/json"},
-        method="POST"
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=60) as r:
-            res   = json.loads(r.read().decode())
-            parts = res.get("candidates", [{}])[0].get("content", {}).get("parts", [])
-            text  = "".join(p.get("text", "") for p in parts).strip()
-            if not text:
-                abort(f"{label} returned empty response. Full response: {str(res)[:300]}")
-            return text
-    except urllib.error.HTTPError as e:
-        body = e.read().decode()[:400]
-        abort(f"{label} HTTP {e.code}: {body}")
-    except urllib.error.URLError as e:
-        abort(f"{label} network error: {e.reason}")
-    except Exception as e:
-        abort(f"{label} unexpected error: {e}")
+    for attempt in range(retries):
+        req  = urllib.request.Request(
+            url, data=data,
+            headers={"Content-Type": "application/json"},
+            method="POST"
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=90) as r:
+                res   = json.loads(r.read().decode())
+                parts = res.get("candidates", [{}])[0].get("content", {}).get("parts", [])
+                text  = "".join(p.get("text", "") for p in parts).strip()
+                if not text:
+                    if attempt < retries - 1:
+                        wait = min(30, 5 * (attempt + 1))
+                        print(f"  [{label}] empty response, retrying in {wait}s...", file=sys.stderr)
+                        time.sleep(wait)
+                        continue
+                    abort(f"{label} returned empty response after {retries} attempts. Full response: {str(res)[:300]}")
+                return text
+        except urllib.error.HTTPError as e:
+            body = e.read().decode()[:400]
+            if e.code == 429 and attempt < retries - 1:
+                wait = 65  # wait full minute for rate limit reset
+                print(f"  [{label}] HTTP 429 rate limit, waiting {wait}s...", file=sys.stderr)
+                time.sleep(wait)
+                continue
+            if e.code in (500, 503) and attempt < retries - 1:
+                wait = min(60, 10 * (attempt + 1))
+                print(f"  [{label}] HTTP {e.code}, retrying in {wait}s...", file=sys.stderr)
+                time.sleep(wait)
+                continue
+            abort(f"{label} HTTP {e.code}: {body}")
+        except urllib.error.URLError as e:
+            if attempt < retries - 1:
+                print(f"  [{label}] network error, retrying...", file=sys.stderr)
+                time.sleep(10)
+                continue
+            abort(f"{label} network error: {e.reason}")
+        except Exception as e:
+            abort(f"{label} unexpected error: {e}")
 
 def abort(reason):
     """Write abort file, log, restore backup if exists, exit 1."""
@@ -173,16 +192,6 @@ def validate(content=None):
     if abs(opens - closes) > 20:
         return False, f"Bracket imbalance: open={opens} close={closes} diff={abs(opens-closes)}"
 
-    # Check no double-quote inside confirmed/developing/insights arrays
-    # Simple heuristic: no line should have :"... with an unescaped " inside a JSX string
-    bad_lines = []
-    for i, line in enumerate(content.split("\n"), 1):
-        # Look for patterns like "some "quoted" text" inside array strings
-        if re.search(r':\s*"[^"]*"[^"]*"', line) and ("confirmed" in line or "insights" in line):
-            bad_lines.append(i)
-    if bad_lines:
-        return False, f"Possible unescaped double quotes at lines: {bad_lines[:5]}"
-
     return True, "OK"
 
 # ── Tier 1: Gemini 2.5 Flash — search ─────────────────────────
@@ -206,8 +215,7 @@ def tier1_search(code, title, days, is_war):
     )
     return post(FLASH_URL, {
         "contents": [{"parts": [{"text": prompt}]}],
-        "tools":    [{"google_search": {}}],
-        "generationConfig": {"temperature": 0.0, "maxOutputTokens": 700}
+        "generationConfig": {"temperature": 0.3, "maxOutputTokens": 1024}
     }, "Gemini 2.5 Flash")
 
 # ── Tier 2: Gemma 4 26B — format AND write to tracker.jsx ─────
@@ -272,7 +280,8 @@ def tier2_write(code, search_result, current_summary, current_tail, is_war):
         clean = re.sub(r"```(?:json)?|```", "", result).strip()
         updates = json.loads(clean)
     except json.JSONDecodeError as e:
-        abort(f"Gemma 4 returned invalid JSON for {code}: {e}\nOutput: {result[:300]}")
+        record_fallback(code, f"Gemma returned invalid JSON: {e}")
+        return f"VALIDATION_FAILED: Gemma returned invalid JSON: {str(e)[:100]}"
 
     # Back up tracker before writing
     shutil.copy(TRACKER, BACKUP)

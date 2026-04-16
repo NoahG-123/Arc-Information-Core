@@ -1,0 +1,21 @@
+{
+  "date": "2026-04-16",
+  "written": ["IRAN-01", "ECON-01", "AI-SEC-01", "AI-GOV-01"],
+  "unchanged": ["IRAN-W01", "PAL-01", "ANTHRO-01"],
+  "fallbacks": [],
+  "alerts": [
+    {
+      "codes": ["IRAN-01", "ECON-01"],
+      "date": "Apr 13 2026",
+      "title": "Ceasefire and Blockade Simultaneously Active",
+      "severity": "critical"
+    }
+  ],
+  "proposals": [],
+  "retirements": [],
+  "aborted": false,
+  "abort_reason": null,
+  "quota_exhausted": true,
+  "quota_note": "Gemini API free-tier daily quota exhausted after 7 stories (4 written, 3 unchanged). 17 stories not processed: GEO-01, CHINA-01, CANADA-01, AI-FRONTIER-01, AI-WELFARE-01, UKR-01, SDN-01, LBN-01, CARNEY-01, CUSMA-01, ECON-CA-01, OLIGARCH-01, FOSSIL-01, TRANSITION-01, ARCTIC-CLIMATE-01, FOOD-01, INSIDER-01",
+  "synthesis_completed": true
+}
