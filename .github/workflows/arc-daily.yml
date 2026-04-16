@@ -24,7 +24,6 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           OPENROUTER_KEY: ${{ secrets.OPENROUTER_KEY }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
         run: ./run_pipeline.sh
 
       - name: Commit and Push Changes

@@ -1,24 +1,19 @@
 #!/usr/bin/env python3
 """
-ARC Intelligence Pipeline 2.0 (The "Zero-Cost" Hybrid with Fallback)
+ARC Intelligence Pipeline 2.0 (No-Email Edition)
 ─────────────────────────────────────────────────────────────
-Tier 1: Gemini 3 Flash API   (Search & Retrieve)    - Free Grounding
-Tier 2: Gemma 4 31B          (Format & Write)       - OpenRouter Free
-        ↳ Fallback: DeepSeek Chat (Paid, ~$0.0003) if Gemma fails
-Tier 3: DeepSeek V4 Reasoner (Synthesis & Email)    - OpenRouter Paid
+Tier 1: Gemini 3 Flash API   (Search & Retrieve)
+Tier 2: Gemma 4 31B          (Format & Write) -> Fallback: DeepSeek
+Tier 3: DeepSeek V4 Reasoner (Synthesis)
 """
 
 import json, os, re, sys, argparse, urllib.request, urllib.error
-import smtplib
-from email.message import EmailMessage
 from datetime import date
 from pathlib import Path
 
 # ── Config & Keys ─────────────────────────────────────────────
 GEMINI_KEY      = os.environ.get("GEMINI_API_KEY")
 OPENROUTER_KEY  = os.environ.get("OPENROUTER_KEY")
-GMAIL_USER      = os.environ.get("GMAIL_USER", "arc.informationcore@gmail.com")
-GMAIL_PASS      = os.environ.get("GMAIL_APP_PASSWORD")
 
 TRACKER         = Path("tracker.jsx")
 CONTEXT_F       = Path("arc-update-context.md")
@@ -65,7 +60,9 @@ def tier1_search(code, title, days, war):
         abort("GEMINI_API_KEY environment variable is missing.")
     
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_KEY}"
-   prompt = f"Search Google News for '{title}' (Story Code: {code}) over the last {days} days. Actively seek out local and foreign-language sources and translate them to English. Extract concrete facts, casualties, policy shifts, and exact quotes. Do not format as a story, just bullet points."
+    prompt = f"Search Google News for '{title}' (Story Code: {code}) over the last {days} days. Actively seek out local and foreign-language sources and translate them to English. Extract concrete facts, casualties, policy shifts, and exact quotes. Do not format as a story, just bullet points."
+    
+    payload = {
         "contents": [{"parts": [{"text": prompt}]}],
         "tools": [{"googleSearch": {}}]
     }
@@ -86,7 +83,6 @@ def tier2_write(code, search_results):
     user_prompt = f"Update the object for {code} based on these facts:\n{search_results}\n\nCurrent file context:\n{tracker_text[:3000]}"
     messages = [{"role": "system", "content": sys_prompt}, {"role": "user", "content": user_prompt}]
     
-    # The Waterfall Fallback Logic
     try:
         json_str = call_openrouter(FORMAT_PRIMARY, messages, temp=0.0)
     except Exception as e:
@@ -111,7 +107,7 @@ def tier2_write(code, search_results):
     print(f"  [{code}] Write successful.", file=sys.stderr)
     return json_str
 
-# ── Tier 3: DeepSeek Synthesis & Email ────────────────────────
+# ── Tier 3: DeepSeek Synthesis ────────────────────────────────
 def tier3_synthesis():
     if not CHANGES_F.exists():
         print("No changes found to synthesize. Exiting.", file=sys.stderr)
@@ -121,9 +117,9 @@ def tier3_synthesis():
     changes_text = CHANGES_F.read_text()
     task_text = TASK_F.read_text(encoding="utf-8") if TASK_F.exists() else ""
 
-    print("  [Tier 3] Asking DeepSeek to synthesize OVERVIEW and draft email...", file=sys.stderr)
+    print("  [Tier 3] Asking DeepSeek to synthesize OVERVIEW...", file=sys.stderr)
     
-    sys_prompt = "You are the ARC Senior Analyst. Output a JSON object with two keys: 'new_overview_jsx' (the string representation of the new const OVERVIEW) and 'email_digest' (the exact text for the daily digest email). Return ONLY valid JSON."
+    sys_prompt = "You are the ARC Senior Analyst. Output a JSON object with ONE key: 'new_overview_jsx' (the string representation of the new const OVERVIEW). Return ONLY valid JSON. No email digest is needed."
     user_prompt = f"Changes today: {changes_text}\nTask Instructions: {task_text}\n\nTracker Data:\n{tracker_text[:10000]}"
     messages = [{"role": "system", "content": sys_prompt}, {"role": "user", "content": user_prompt}]
     
@@ -132,37 +128,13 @@ def tier3_synthesis():
         clean_json = re.sub(r'^```(json)?\n|\n```$', '', result, flags=re.MULTILINE).strip()
         parsed = json.loads(clean_json)
         
-        email_body = parsed.get("email_digest", "Digest missing.")
         new_overview = parsed.get("new_overview_jsx", "")
         
         updated_tracker = re.sub(r'const OVERVIEW = \{.*?\};', new_overview, tracker_text, flags=re.DOTALL)
         TRACKER.write_text(updated_tracker, encoding="utf-8")
         print("  [Tier 3] Tracker OVERVIEW updated successfully.", file=sys.stderr)
-        
-        send_digest_email(email_body)
     except Exception as e:
         abort(f"Tier 3 Synthesis Failed. Error: {e}")
-
-def send_digest_email(body):
-    if not GMAIL_PASS:
-        print("  [Email] Skipped. GMAIL_APP_PASSWORD not set.", file=sys.stderr)
-        return
-        
-    msg = EmailMessage()
-    msg.set_content(body)
-    msg["Subject"] = f"ARC Daily Digest — {date.today().isoformat()}"
-    msg["From"] = GMAIL_USER
-    msg["To"] = GMAIL_USER
-    
-    print("  [Email] Attempting SMTP login...", file=sys.stderr)
-    try:
-        server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
-        server.login(GMAIL_USER, GMAIL_PASS)
-        server.send_message(msg)
-        server.quit()
-        print("  [Email] Success! Digest sent to inbox.", file=sys.stderr)
-    except Exception as e:
-        print(f"  [Email] SMTP Error: {e}", file=sys.stderr)
 
 # ── Main CLI ──────────────────────────────────────────────────
 def main():
