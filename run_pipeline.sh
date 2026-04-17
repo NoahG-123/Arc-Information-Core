@@ -18,6 +18,6 @@ for story in "${DAILY_STORIES[@]}"; do
 done
 
 echo "----------------------------------------"
-echo "All stories formatted. Running Tier 3 Synthesis and Emailing..."
+echo "All stories formatted. Running Tier 3 Synthesis..."
 python3 arc_pipeline.py --mode synthesize
 echo "ARC Pipeline Complete!"
