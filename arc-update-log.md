@@ -26,6 +26,10 @@ Retirement proposals: NONE
 
 Aborted: NO — proceeded as VALIDATION_FALLBACK
 
+Digest: DRAFTED to arc.informationcore@gmail.com (Gmail connector supports create_draft only — no send tool available). Draft ID: r2410919292451944785.
+
+Inbox check: Empty — no unread messages, no YES/NO confirmation replies found.
+
 ---
 
 **Key synthesis additions this run:**
