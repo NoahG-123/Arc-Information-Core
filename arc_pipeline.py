@@ -8,6 +8,7 @@ Tier 3: DeepSeek Reasoner    (Synthesis via OpenRouter)
 """
 
 import json, os, re, sys, argparse, urllib.request, urllib.error
+from datetime import date
 from pathlib import Path
 
 # ── Config & Keys ─────────────────────────────────────────────
@@ -116,6 +117,21 @@ def tier2_write(code, search_results):
 
     json_str = re.sub(r'^```(json)?\n|\n```$', '', json_str, flags=re.MULTILINE).strip()
 
+    # ── Stamp today's date on the updated story ────────────────
+    today = date.today()
+    today_str = f"{today.strftime('%b')} {today.day} {today.year}"  # e.g. "Apr 17 2026"
+
+    # Match the line containing code:"CODE" and replace its updated:"..." value.
+    # The code and updated fields always appear on the same line in STORIES objects.
+    date_pattern = r'(code:"' + re.escape(code) + r'"[^\n]*updated:")[^"]*(")'
+    updated_tracker = re.sub(date_pattern, rf'\g<1>{today_str}\g<2>', tracker_text)
+
+    if updated_tracker == tracker_text:
+        print(f"  [{code}] WARNING: Story code not found in tracker — date not updated.", file=sys.stderr)
+    else:
+        TRACKER.write_text(updated_tracker, encoding="utf-8")
+        print(f"  [{code}] Date stamped: {today_str}", file=sys.stderr)
+
     changes = {"written": []}
     if CHANGES_F.exists():
         try:
@@ -125,8 +141,6 @@ def tier2_write(code, search_results):
     if code not in changes["written"]:
         changes["written"].append(code)
     CHANGES_F.write_text(json.dumps(changes))
-
-    # [!] Paste your tracker.jsx regex replacement logic here
 
     print(f"  [{code}] Write successful.", file=sys.stderr)
     return json_str
