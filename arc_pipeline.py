@@ -59,12 +59,12 @@ def tier1_search(code, title, days, war):
     if not GEMINI_KEY:
         abort("GEMINI_API_KEY environment variable is missing.")
     
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_KEY}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GEMINI_KEY}"
     prompt = f"Search Google News for '{title}' (Story Code: {code}) over the last {days} days. Actively seek out local and foreign-language sources and translate them to English. Extract concrete facts, casualties, policy shifts, and exact quotes. Do not format as a story, just bullet points."
-    
+
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
-        "tools": [{"googleSearch": {}}]
+        "tools": [{"google_search": {}}]
     }
     req = urllib.request.Request(url, data=json.dumps(payload).encode(), headers={"Content-Type": "application/json"}, method="POST")
     try:
