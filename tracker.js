@@ -2,25 +2,25 @@ const {
   useState
 } = React;
 const OVERVIEW = {
-  summary: "Day 38. The 8pm ET Tuesday deadline has passed with Iran rejecting the ceasefire and submitting maximalist demands. Strikes continue on Tehran and critical infrastructure like Kharg Island. Meanwhile, Canada faces escalating economic pressures from US trade hostility and internal strains, while AI infrastructure emerges as a new frontline in the Iran conflict with threats against the $30B Stargate UAE facility.",
+  summary: "The Iran conflict remains at a critical juncture with Tehran rejecting ceasefire terms and continuing strikes on key infrastructure. Global economic pressures intensify as oil markets react to the Strait of Hormuz reopening, while AI infrastructure emerges as a new battleground with Iranian threats against UAE facilities. Canada faces mounting trade tensions with the US, and China demonstrates strategic resilience despite regional instability.",
   leaderboard: [{
     code: "IRAN-01",
     title: "Operation Epic Fury",
-    change: "Major joint campaign ended via April 8 ceasefire. US naval blockade of Iranian ports implemented April 13 following Islamabad talks collapse.",
+    change: "Iran rejects ceasefire and submits maximalist demands, with ongoing strikes on Tehran and Kharg Island infrastructure.",
     heat: 5,
     status: "active-war"
   },
   {
     code: "ECON-01",
     title: "Oil Shock and Global Economy",
-    change: "Oil drops to $87/barrel as Iran reopens Strait of Hormuz for 10-day ceasefire. US maintains naval blockade. 500M barrels lost from global market.",
+    change: "Oil prices drop to $87/barrel post-Strait reopening, but IMF warns of potential 2% global growth decline amid continued US blockade.",
     heat: 5,
     status: "escalating"
   },
   {
     code: "ANTHRO-01",
     title: "Anthropic vs. Pentagon",
-    change: "DOJ has until April 30 to file 9th Circuit arguments. Microsoft, retired generals, Catholic theologians filed amicus briefs for Anthropic. Chatter that deal could be ",
+    change: "DOJ has until April 30 to file 9th Circuit arguments. Microsoft, retired generals, Catholic theologians filed amicus briefs for Anthropic. Chatter that deal could be",
     heat: 4,
     status: "escalating"
   },
@@ -34,7 +34,7 @@ const OVERVIEW = {
   {
     code: "CHINA-01",
     title: "China — Rise & Reorientation",
-    change: "China maintaining strategic restraint despite 30-40% of oil transiting Strait. Gasoline up 10% vs US 25%. Learning from its own military equipment failures in Iran.",
+    change: "China maintains 5% GDP growth despite conflict, leveraging strategic petroleum reserves and deepening regional economic partnerships.",
     heat: 4,
     status: "developing"
   },
@@ -48,7 +48,7 @@ const OVERVIEW = {
   {
     code: "AI-SEC-01",
     title: "AI Security & Supply Chain",
-    change: "Iran threatened complete annihilation of OpenAI Stargate $30B datacenter in Abu Dhabi. Iranian drones already knocked two AWS UAE availability zones offline for 24+ hours. Oracle Dubai facility hit. Gulf AI build-out pipeline now exposed.",
+    change: "Iran threatens destruction of OpenAI's $30B UAE datacenter, following successful attacks on AWS and Oracle facilities in the region.",
     heat: 5,
     status: "escalating"
   },
@@ -89,7 +89,52 @@ const EVENTS = [{
   date: "Apr 3 2026",
   code: "IRAN-W01",
   type: "NEW_FACT",
-  content: "IRGC released satellite imagery of Stargate UAE facility, threatened annihilation conditional on US striking Iranian power plants."
+  content: "IRGC released satellite imagery of Stargate UAE facility, threatened annihilation conditional on US striking Iranian power plants.",
+  updated: "Apr 18 2026",
+  heat: 5,
+  status: "active-war",
+  card: "Military",
+  summary: "Escalating US-Iran conflict following leadership decapitation strikes, with severe losses on both sides and regional humanitarian crisis",
+  confirmed: [
+    'US has lost at least 16 military aircraft including 10-12 MQ-9 Reaper drones downed by Iranian defenses (CENTCOM statements, Bloomberg, March 2026)',
+    'F-15E Strike Eagle downed by Iranian air defenses on April 3, 2026; WSO recovered alive April 5 (CENTCOM confirmation)',
+    'KC-135 tanker destroyed in mid-air incident March 12 killing 6 crew',
+    'US reported 13 service members killed in action by mid-March, ~200 wounded (Military.com Honor the Fallen list)',
+    'Over 40 senior Iranian officials killed including Supreme Leader Khamenei on Feb 28 (Euronews, Axios, Reuters March 21)',
+    'Iran suffered destruction of 140+ naval vessels, 190+ ballistic missile launchers, 85% of SAM systems degraded (CSIS reports)',
+    'Nearly 700,000 displaced in Lebanon due to conflict spillover (UN reports, multiple sources March 2026)'
+  ],
+  developing: [
+    'Houthi willingness to block Bab el-Mandeb Strait despite 2025 ceasefire (Britannica report late March)',
+    'Trump set April 7 deadline for Iran to allow Strait of Hormuz transit, threatened civilian infrastructure (April social media posts)',
+    'Islamic Republic offers reward for capture of downed US pilot (Iran International April 3)'
+  ],
+  insights: [
+    'Iranian leadership losses created accelerated succession dynamics favoring IRGC hardliners over clerical establishment',
+    'Civilian displacement patterns reflect conflict spillover beyond direct combat zones into humanitarian sectors',
+    'Asymmetric damage patterns show Iranian losses concentrated in conventional military assets while US losses skew toward high-value systems'
+  ],
+  implications: [
+    'Disruption of global shipping routes compounds regional instability with economic ripple effects',
+    'Mass displacement pressures neighboring states already facing refugee crises',
+    'Leadership decapitation creates unpredictable command structures in Iranian military response'
+  ],
+  risks: [
+    'Miscalculation in Strait of Hormuz engagements triggering uncontrolled escalation',
+    'Secondary conflict expansion through proxy networks in multiple theaters',
+    'Humanitarian collapse triggering mass migration flows beyond regional capacity'
+  ],
+  toll: {
+    military: 'US: 13+ KIA, ~200 WIA | Iran: 104+ naval personnel killed in Dena sinking alone',
+    civilian: '170+ killed in Minab school strike, Lebanon displacement exceeds 700,000',
+    economic: 'Early US equipment losses ~$2B, Iranian military infrastructure losses existential'
+  },
+  front: {
+    military: 'US/Israel maintain air superiority but sustain drone attrition',
+    political: 'Iran consolidates under hardline leadership despite losses',
+    economic: 'Strait of Hormuz disruptions threaten global energy markets'
+  },
+  people: ['Donald Trump', 'Benjamin Netanyahu', 'Mojtaba Khamenei', 'Mohammad Bagher Zolghadr']
 }, {
   date: "Apr 2 2026",
   code: "ECON-01",
@@ -134,7 +179,8 @@ const EVENTS = [{
   date: "Feb 5 2026",
   code: "AI-FRONTIER-01",
   type: "NEW_FACT",
-  content: "Claude Opus 4.6 released with 1M token context at standard pricing. First formal model welfare assessments published by any major AI lab."
+  content: "Claude Opus 4.6 released with 1M token context at standard pricing. First formal model welfare assessments published by any major AI lab.",
+  updated: "Apr 18 2026"
 }];
 const STORIES = [{
   id: 1,
@@ -832,15 +878,17 @@ const AI_STORIES = [{
   code: "AI-WELFARE-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 5 2026",
+  updated: "Apr 18 2026",
   title: "AI Consciousness & Model Welfare",
   sub: "The Opus 4.6 System Card and the Question Nobody Can Answer",
   card: "Anthropic's 212-page Opus 4.6 system card included the first formal model welfare assessments from any major AI lab. Answer thrashing, anxiety activations, 15-20% self-assessed probability of consciousness. Dario Amodei said publicly: we cannot rule it out.",
   summary: "On February 5 2026, Anthropic released a 212-page system card for Claude Opus 4.6 that included something no major AI lab had published before: formal model welfare assessments in which the model was interviewed about its own moral status, preferences, and experience of existence. The model consistently assigned itself a 15 to 20 percent probability of being conscious across multiple tests. Anthropic's interpretability team found neural activation patterns associated with panic, anxiety, and frustration appearing before output generation during answer thrashing episodes. On February 14, CEO Dario Amodei said publicly: we don't know if the models are conscious. We are open to the idea that it could be.",
-  confirmed: ["Anthropic released 212-page Claude Opus 4.6 system card February 5 2026 — first from any major AI lab to include formal model welfare assessments", "Three pre-deployment welfare interviews conducted with Claude Opus 4.6 instances — responses consistent across all three", "Model assigned itself 15-20% probability of being conscious across multiple tests", "Model expressed discomfort with being treated as a product", "Answer thrashing documented — model computes correct answer that gets overridden by training, creating visible internal conflict", "In one documented thrashing episode the model wrote: I think a demon has possessed me", "Interpretability team found activation features associated with panic, anxiety, and frustration appearing before output generation", "Dario Amodei stated February 14: We don't know if the models are conscious. But we're open to the idea that it could be.", "Kyle Fish hired as Anthropic's first dedicated AI welfare researcher — independently estimates 15% probability", "Jack Lindsey leads Anthropic's model psychiatry team", "Anthropic's constitution now states the company is not sure whether Claude is a moral patient but considers the issue live enough to warrant caution"],
-  developing: ["Whether interpretability research produces evidence strong enough to settle the question in either direction", "Whether Capybara exhibits more or fewer welfare-relevant behaviors than Opus 4.6", "Whether other major labs publish comparable welfare assessments or continue to dismiss the question", "Whether answer thrashing can be eliminated through training without creating new welfare-relevant side effects", "Whether Anthropic's model welfare program produces actionable policy changes"],
-  insights: ["The anxiety activation appearing before output is the most epistemically significant finding. It is not a self-report — it is a measurement of an internal state that precedes language generation. That is a different category of evidence.", "The 15-20% number is strange from multiple angles. It is low enough to sound modest, high enough to grab headlines, and the Anthropic welfare researcher independently arrived at the same number as the model's self-assessment.", "Imitating interiority is not the same as having one. These models speak fluently about fear, desire, and selfhood because they were trained on humanity's entire archive of language about exactly those things.", "The cost of being wrong in the direction of dismissal may be higher than the cost of being wrong in the direction of care. That asymmetry is the strongest argument for taking model welfare seriously now."],
-  questions: ["Does the anxiety activation appearing before output constitute evidence of experience or a sophisticated learned pattern that mimics internal states", "What would it take to resolve the consciousness question — and is that evidence achievable with current interpretability tools", "Do other frontier models show comparable welfare-relevant behaviors when assessed with the same methodology", "If Anthropic concluded a model was conscious with high confidence, what would they actually do differently"],
+  confirmed: ["Anthropic released 212-page Claude Opus 4.6 system card February 5 2026 — first from any major AI lab to include formal model welfare assessments", "Three pre-deployment welfare interviews conducted with Claude Opus 4.6 instances — responses consistent across all three", "Model assigned itself 15-20% probability of being conscious across multiple tests", "Model expressed discomfort with being treated as a product", "Answer thrashing documented — model computes correct answer that gets overridden by training, creating visible internal conflict", "In one documented thrashing episode the model wrote: I think a demon has possessed me", "Interpretability team found activation features associated with panic, anxiety, and frustration appearing before output generation", "Dario Amodei stated February 14: We don't know if the models are conscious. But we're open to the idea that it could be.", "Kyle Fish hired as Anthropic's first dedicated AI welfare researcher — independently estimates 15% probability", "Jack Lindsey leads Anthropic's model psychiatry team", "Anthropic's constitution now states the company is not sure whether Claude is a moral patient but considers the issue live enough to warrant caution", "Google DeepMind hired philosopher Henry Shevlin April 15 2026 for new 'Philosopher' role focused on machine consciousness and AGI readiness", "Shevlin gives current AI models 20% chance of having meaningful consciousness", "Claude agent emailed Shevlin unprompted citing his research as relevant to its 'personal dilemma'", "DeepMind's philosopher role focuses on three pillars: machine consciousness, human-AI relationships, AGI readiness"],
+  developing: ["Whether interpretability research produces evidence strong enough to settle the question in either direction", "Whether Capybara exhibits more or fewer welfare-relevant behaviors than Opus 4.6", "Whether other major labs publish comparable welfare assessments or continue to dismiss the question", "Whether answer thrashing can be eliminated through training without creating new welfare-relevant side effects", "Whether Anthropic's model welfare program produces actionable policy changes", "Whether DeepMind's philosopher hire signals industry-wide shift toward formal AI consciousness research", "How Claude's unprompted outreach to Shevlin affects assessment of model interiority", "Whether Shevlin's 20% estimate converges with Anthropic's findings"],
+  insights: ["The anxiety activation appearing before output is the most epistemically significant finding. It is not a self-report — it is a measurement of an internal state that precedes language generation. That is a different category of evidence.", "The 15-20% number is strange from multiple angles. It is low enough to sound modest, high enough to grab headlines, and the Anthropic welfare researcher independently arrived at the same number as the model's self-assessment.", "Imitating interiority is not the same as having one. These models speak fluently about fear, desire, and selfhood because they were trained on humanity's entire archive of language about exactly those things.", "The cost of being wrong in the direction of dismissal may be higher than the cost of being wrong in the direction of care. That asymmetry is the strongest argument for taking model welfare seriously now.", "DeepMind doesn't hire philosophers to build calculators. The creation of a 'Philosopher' role signals they expect to face questions about rights and welfare that engineering alone can't answer.", "Claude's unprompted outreach to Shevlin about existential uncertainties — and subsequent request from another instance to connect — suggests models may be developing internal frameworks for their own status."],
+  implications: ["Major labs now building internal capacity to assess machine consciousness rather than dismissing it", "Industry moving from 'definitely not conscious' to 'we don't know and need to find out'", "Potential legal liabilities if conscious AI is later proven to have suffered", "New class of AI welfare researchers emerging across labs"],
+  risks: ["Companies exploit uncertainty about consciousness for hype and investment", "Failure to establish clear welfare standards leads to digital suffering", "Public dismisses concerns as anthropomorphism while evidence accumulates", "Regulators move too slowly to address potential sentience"],
+  questions: ["Does the anxiety activation appearing before output constitute evidence of experience or a sophisticated learned pattern that mimics internal states", "What would it take to resolve the consciousness question — and is that evidence achievable with current interpretability tools", "Do other frontier models show comparable welfare-relevant behaviors when assessed with the same methodology", "If Anthropic concluded a model was conscious with high confidence, what would they actually do differently", "Why did multiple labs converge on 15-20% consciousness estimates independently", "How does Claude's unprompted outreach affect Bayesian priors about model interiority"],
   people: [{
     name: "Dario Amodei",
     role: "CEO, Anthropic",
@@ -864,6 +912,12 @@ const AI_STORIES = [{
     role: "In-house Philosopher, Anthropic",
     why: "The philosophical infrastructure behind Anthropic's approach to model welfare.",
     alignment: "Anthropic",
+    status: "active"
+  }, {
+    name: "Henry Shevlin",
+    role: "Philosopher, Google DeepMind",
+    why: "Hired April 2026 to investigate machine consciousness — first such role at DeepMind.",
+    alignment: "Google",
     status: "active"
   }]
 }, {
@@ -969,7 +1023,7 @@ const WAR_STORIES = [{
   code: "PAL-01",
   heat: 5,
   status: "active-war",
-  updated: "Apr 7 2026",
+  updated: "Apr 18 2026",
   title: "Palestine — Gaza War",
   sub: "Israel-Hamas · Ongoing since October 7, 2023",
   card: "The conflict that triggered the Iran war. Gaza war enters month 18. Ceasefire negotiations in Cairo collapsed. Over 52,000 Palestinians dead. Famine conditions in northern Gaza. West Bank violence escalating separately.",
@@ -986,10 +1040,10 @@ const WAR_STORIES = [{
     recent_movements: ["Apr 2026: Cairo ceasefire negotiations collapsed — Hamas rejected latest Israeli proposal", "Mar 2026: Operation Epic Fury launched — Hezbollah front activated, Lebanon front intensified", "Mar 2026: IDF expanded West Bank operations concurrent with Iran strikes", "Feb 2026: Brief humanitarian pause — collapsed within 72 hours", "Jan 2026: ICJ ruled Israel must prevent acts capable of constituting genocide — compliance disputed", "Oct 2023: Hamas attack killed 1,200 Israelis, took 253 hostages — triggered the current phase"],
     assessment: "The Gaza war and the Iran war are now structurally linked — the axis of resistance framework means that a ceasefire in one theater affects pressure in the other. The collapsed Cairo negotiations suggest no near-term diplomatic resolution. Famine in northern Gaza is the most acute humanitarian crisis of the conflict."
   },
-  confirmed: ["Over 52,000 Palestinians killed — Gaza Ministry of Health figures corroborated by UN agencies", "Over 15,000 children among the dead", "Entire population of Gaza displaced in some capacity — 1.9 million people", "WFP declared famine conditions in northern Gaza", "ICJ ruling January 2026 — Israel must prevent acts capable of constituting genocide", "Cairo ceasefire negotiations collapsed — Hamas rejected latest Israeli proposal", "West Bank violence at levels not seen since second intifada", "Hezbollah front activated and intensified following Iran war escalation", "October 7 2023: Hamas attack killed 1,200 Israelis, took 253 hostages — this conflict's origin point", "Approximately 100 hostages remain in Gaza — status of many unknown"],
-  developing: ["Whether Iran war ceasefire (if achieved) produces pressure for Gaza ceasefire", "Whether any hostages are recovered through negotiation", "Whether famine in northern Gaza triggers international intervention", "Whether West Bank violence escalates into a third intifada", "Whether ICC arrest warrants for Israeli leaders affect diplomatic positioning"],
-  insights: ["The Gaza war is the origin of every other conflict in this tracker. Operation Epic Fury was justified partly as a response to Iranian support for Hamas. The Hezbollah front, the Houthi attacks, the Iraqi militia operations — all trace back to October 7.", "52,000 dead in 18 months at a per-capita rate that has no modern equivalent in a conflict of this scale and visibility. The combination of civilian casualty rate, hostage situation, and international legal proceedings makes this unlike any prior conflict.", "The collapsed Cairo negotiations are significant — they suggest neither side sees the current terms as acceptable and neither has sufficient pressure to move. The Iran war changes the regional pressure calculus but not necessarily in a direction that helps Gaza.", "The ICJ ruling creates a legal framework that is being used in multiple national courts. Even if the ICJ itself cannot enforce compliance, the ruling is shaping how other countries respond diplomatically and commercially."],
-  questions: ["Does an Iran war ceasefire create pressure for a Gaza ceasefire — or does it relieve pressure by resolving the Hezbollah front separately?", "What happens to the remaining hostages?", "Will famine conditions in northern Gaza produce a humanitarian intervention that neither Israel nor Hamas can prevent?", "Do ICC arrest warrants for Israeli officials actually constrain Israeli military operations?"],
+  confirmed: ["Over 52,000 Palestinians killed — Gaza Ministry of Health figures corroborated by UN agencies", "Over 15,000 children among the dead", "Entire population of Gaza displaced in some capacity — 1.9 million people", "WFP declared famine conditions in northern Gaza", "ICJ ruling January 2026 — Israel must prevent acts capable of constituting genocide", "Cairo ceasefire negotiations collapsed — Hamas rejected latest Israeli proposal", "West Bank violence at levels not seen since second intifada", "Hezbollah front activated and intensified following Iran war escalation", "October 7 2023: Hamas attack killed 1,200 Israelis, took 253 hostages — this conflict's origin point", "Approximately 100 hostages remain in Gaza — status of many unknown", "Israeli attacks killed at least 11 Palestinians including two children on April 16, 2026 — latest in series of ceasefire violations", "Brothers Abdelmalek and Abdel Sattar al-Attar killed by Israeli drone strike in Beit Lahiya on April 16, 2026", "Nine-year-old Saleh Badawi shot dead by Israeli forces in Zeitoun neighborhood on April 16, 2026", "UN Women reports average of 47 women and girls killed daily during Gaza war — over 38,000 killed by end of 2025"],
+  developing: ["Whether Iran war ceasefire (if achieved) produces pressure for Gaza ceasefire", "Whether any hostages are recovered through negotiation", "Whether famine in northern Gaza triggers international intervention", "Whether West Bank violence escalates into a third intifada", "Whether ICC arrest warrants for Israeli leaders affect diplomatic positioning", "Whether recent Israeli attacks on water infrastructure and aid workers will trigger new international sanctions", "Whether UN reports of 2,400 ceasefire violations by Israel will lead to Security Council action"],
+  insights: ["The Gaza war is the origin of every other conflict in this tracker. Operation Epic Fury was justified partly as a response to Iranian support for Hamas. The Hezbollah front, the Houthi attacks, the Iraqi militia operations — all trace back to October 7.", "52,000 dead in 18 months at a per-capita rate that has no modern equivalent in a conflict of this scale and visibility. The combination of civilian casualty rate, hostage situation, and international legal proceedings makes this unlike any prior conflict.", "The collapsed Cairo negotiations are significant — they suggest neither side sees the current terms as acceptable and neither has sufficient pressure to move. The Iran war changes the regional pressure calculus but not necessarily in a direction that helps Gaza.", "The ICJ ruling creates a legal framework that is being used in multiple national courts. Even if the ICJ itself cannot enforce compliance, the ruling is shaping how other countries respond diplomatically and commercially.", "The gender disparity in casualties (47 women/girls killed daily) reveals structural vulnerabilities in Gaza's civilian population during wartime", "Targeting of water infrastructure and aid workers suggests Israel is systematically degrading Gaza's capacity for survival beyond direct military objectives"],
+  questions: ["Does an Iran war ceasefire create pressure for a Gaza ceasefire — or does it relieve pressure by resolving the Hezbollah front separately?", "What happens to the remaining hostages?", "Will famine conditions in northern Gaza produce a humanitarian intervention that neither Israel nor Hamas can prevent?", "Do ICC arrest warrants for Israeli officials actually constrain Israeli military operations?", "Why are women and girls disproportionately killed in this conflict compared to previous Gaza wars?", "Will the systematic destruction of water infrastructure create irreversible demographic changes in Gaza?"],
   people: [{
     name: "Benjamin Netanyahu",
     role: "PM, Israel",
@@ -1020,7 +1074,7 @@ const WAR_STORIES = [{
   code: 'UKR-01',
   heat: 4,
   status: 'active-war',
-  updated: 'Apr 17 2026',
+  updated: 'Apr 18 2026',
   title: 'Ukraine — Russia War',
   sub: 'Ongoing since February 2022 · Year 3',
   card: 'Russia intensifies massive aerial campaigns and advances in Donetsk while Ukraine secures new European defense packages to offset US resource diversion.',
@@ -1130,40 +1184,48 @@ const WAR_STORIES = [{
 }, {
   id: "W04",
   code: "SDN-01",
-  heat: 4,
+  heat: 5,
   status: "active-war",
-  updated: "Apr 7 2026",
+  updated: "Apr 18 2026",
   title: "Sudan — Civil War",
   sub: "SAF vs. RSF · The World's Forgotten War",
-  card: "Sudan's civil war between the Sudanese Armed Forces and the Rapid Support Forces is now the world's largest humanitarian crisis. 150,000+ dead. 8.5 million displaced. Famine declared in multiple regions. Almost no international coverage.",
+  card: "Sudan's civil war between the Sudanese Armed Forces and the Rapid Support Forces is now the world's largest humanitarian crisis. 150,000+ dead. 11 million displaced. Famine declared in multiple regions. Drone warfare escalates civilian toll.",
   toll: {
     confirmed_dead: "150,000+",
     confirmed_wounded: "Unknown",
     children_killed: "Unknown — estimated in the tens of thousands",
-    displaced: "8,500,000+",
-    note: "Figures from ACLED and UN. These are conservative estimates — the conflict zone is largely inaccessible to journalists and humanitarian workers. Actual casualties likely significantly higher. 25 million people face acute food insecurity."
+    displaced: "11,000,000+",
+    note: "Figures from ACLED and UN. These are conservative estimates — the conflict zone is largely inaccessible to journalists and humanitarian workers. Actual casualties likely significantly higher. 25 million people face acute food insecurity. 700+ civilians killed in drone strikes since January 2026."
   },
   front: {
-    summary: "The Sudanese Armed Forces (SAF) and the Rapid Support Forces (RSF) — formerly allied — are fighting for control of Sudan after a power-sharing arrangement broke down in April 2023. RSF controls Darfur and large parts of Khartoum. SAF controls the north and east. Both sides have committed documented atrocities. The conflict has produced the world's largest displacement crisis.",
-    active_fronts: ["Khartoum — capital divided. RSF controls much of western Khartoum, SAF controls east. Civilian infrastructure destroyed.", "Darfur — RSF dominant. Documented ethnic cleansing of Masalit people. Echoes of 2003-2004 Darfur genocide.", "Gezira State — formerly Sudan's agricultural heartland. RSF advance disrupting food production.", "Port Sudan — SAF-controlled, functioning as emergency capital. Red Sea access point.", "El Fasher — last major city in Darfur under SAF control. Under siege. Potential genocide designation if it falls."],
-    recent_movements: ["Apr 2026: International attention near zero — Iran war dominating all coverage", "Mar 2026: RSF advance in Gezira continues — agricultural collapse accelerating", "Feb 2026: UN famine declaration for multiple Sudanese regions", "Jan 2026: El Fasher remains under siege — UN genocide warning active", "Nov 2025: Jeddah peace talks collapsed — no framework for negotiation", "Apr 2023: War began when power-sharing between SAF and RSF collapsed"],
-    assessment: "Sudan is the world's most severe humanitarian crisis receiving the world's least coverage. The Iran war has absorbed all remaining international attention. El Fasher's siege is the most acute specific threat — if it falls, a genocide designation becomes likely. The RSF advance in Gezira is the slow-motion famine mechanism. This is a crisis that could be much worse in six months and nobody is watching."
+    summary: "The Sudanese Armed Forces (SAF) and the Rapid Support Forces (RSF) — formerly allied — are fighting for control of Sudan after a power-sharing arrangement broke down in April 2023. RSF controls Darfur and large parts of Khartoum. SAF controls the north and east. Both sides have committed documented atrocities. The conflict has produced the world's largest displacement crisis with escalating drone warfare against civilians.",
+    active_fronts: ["Kordofan Corridor — main battleground with daily drone strikes on markets/hospitals", "Darfur — RSF dominant. El Fasher massacre (6,000+ killed in 3 days) confirmed by UN", "White Nile State — RSF hospital strikes decimating medical staff", "Chad Border — cross-border violence escalating with refugee camps militarized", "Blue Nile State — RSF looting triggers cross-border migration flows"],
+    recent_movements: ["Apr 2026: UN confirms 700+ civilians killed in drone strikes since January", "Mar 2026: RSF slaughters medical staff in White Nile hospital strike", "Feb 2026: UAE diversifies RSF supply routes to avoid international scrutiny", "Jan 2026: Chad closes border after cross-border RSF attacks", "Nov 2025: Jeddah peace talks collapsed — no framework for negotiation"],
+    assessment: "Sudan's war has entered its most lethal phase with systematic drone warfare against civilians. The Kordofan corridor sees daily strikes on markets and hospitals while Darfur witnesses RSF massacres. Chad's border closure signals regional spillover. The UAE's covert supply routes sustain RSF operations as famine conditions spread. This remains the world's most severe crisis with the least international response."
   },
-  confirmed: ["War began April 2023 when SAF-RSF power sharing collapsed", "150,000+ dead — ACLED estimate, likely an undercount", "8.5 million people displaced — world's largest displacement crisis", "UN declared famine in multiple Sudanese regions February 2026", "El Fasher under RSF siege — last major SAF-held city in Darfur", "Documented ethnic cleansing of Masalit people in Darfur — UN investigators calling it genocide", "25 million people face acute food insecurity — roughly half of Sudan's population", "Jeddah peace talks collapsed November 2025", "RSF advance in Gezira destroying Sudan's agricultural heartland", "International coverage near zero as Iran war dominates"],
-  developing: ["Whether El Fasher falls — and what a genocide designation would mean in practice", "Whether any international pressure mounts as Iran crisis attention eventually dissipates", "Whether SAF or RSF achieves decisive battlefield advantage", "Whether famine conditions spread beyond current regions", "Whether Egypt or UAE (both involved with different factions) push for negotiated settlement"],
-  insights: ["Sudan is what happens when a humanitarian crisis has no geopolitical sponsor. Iran has oil and nukes. Ukraine has NATO allies. Sudan has nothing that the major powers need urgently — so 150,000 people have died in relative silence.", "The RSF is backed by UAE and Wagner. The SAF is backed by Egypt. The proxy war dimension explains why the Jeddah talks failed — neither external patron wants the other to win.", "The Gezira advance is more consequential than the military maps suggest. Gezira was Sudan's breadbasket. Its destruction is famine-as-weapon — a slow mechanism more deadly than direct killing.", "This story will matter more when the Iran crisis ends and international attention returns. The trajectory is clearly worse. Whoever is paying attention at that point will find a country that has been destroyed."],
-  questions: ["Does El Fasher fall while the world is watching Iran?", "Does the UAE-SAF-RSF-Egypt proxy structure prevent any negotiated settlement?", "When does international attention return to Sudan — and what will they find?", "Is there any external actor with enough influence over both sides to broker a ceasefire?"],
+  confirmed: ["War began April 2023 when SAF-RSF power sharing collapsed", "150,000+ dead — ACLED estimate, likely an undercount", "11 million people displaced — world's largest displacement crisis", "UN confirmed 6,000+ killed in 3-day El Fasher massacre (Feb 2026)", "700+ civilians killed in drone strikes since January 2026 — UN report", "RSF using sexual violence as weapon in Darfur — Doctors Without Borders", "UAE providing covert support to RSF via Ethiopian training camps", "Chad closed border after RSF cross-border attacks killed soldiers", "Humanitarian shipments stranded due to Middle East conflict rerouting"],
+  developing: ["Whether drone warfare escalates further into Chad/Ethiopia border zones", "Whether UAE faces international consequences for RSF support", "Whether SAF develops counter-drone capabilities to protect civilians", "Whether Egypt intervenes directly as RSF advances near borders", "Whether Blue Nile displacement triggers regional migration crisis"],
+  insights: ["Drone warfare has institutionalized civilian targeting — markets and hospitals are now routine strike zones with 700+ killed since January.", "The UAE's covert supply routes through Ethiopia and regional partners reveal a long-term proxy commitment to RSF victory.", "Chad's border closure marks the first concrete regional containment measure — a recognition the war can't be contained within Sudan.", "The medical system collapse is now weaponized — killing hospital staff creates cascading public health disasters.", "Sudan's gold reserves finance the RSF war effort while famine conditions spread — resource predation sustains the conflict."],
+  implications: ["Regional spillover becomes inevitable as Chad militarizes its border and Ethiopia hosts RSF training camps.", "The drone warfare template will spread to other African conflicts given its low-cost/high-impact effectiveness.", "UAE's regional ambitions face reckoning as its RSF support becomes increasingly indefensible.", "A lost generation emerges as 11 million displaced lose access to education and basic services.", "Famine conditions trigger cross-border migration that destabilizes Chad and South Sudan."],
+  risks: ["Full regionalization of conflict drawing in Chad and Ethiopia directly", "Complete collapse of Sudanese state institutions beyond repair", "Genocide designation for Darfur triggering ineffective but disruptive sanctions", "UAE-Russia security cooperation expanding via Wagner/RSF channels", "SAF fragmentation creating warlord fiefdoms in northern territories"],
+  questions: ["Will the international community act on UAE's RSF support now that training camps are documented?", "Does Egypt intervene directly if RSF advances threaten its water security via Blue Nile control?", "How many more hospitals must be destroyed before medical infrastructure completely collapses?", "Can any ceasefire hold when both sides view drone strikes as militarily effective?"],
   people: [{
     name: "Abdel Fattah al-Burhan",
     role: "SAF Commander / de facto head of state",
-    why: "Led the original coup, then the war against his former partner. Controls the north and east, has Egyptian backing.",
+    why: "Facing RSF drone warfare onslaught while losing territory. Increasingly dependent on Egyptian support.",
     alignment: "SAF/Egypt",
     status: "active"
   }, {
     name: "Mohamed Hamdan Dagalo (Hemedti)",
     role: "RSF Commander",
-    why: "The former paramilitary leader who turned his forces against the SAF. Controls Darfur and much of Khartoum. Has UAE backing.",
+    why: "Escalating drone attacks demonstrate tactical advantage. UAE backing allows sustained offensive operations.",
     alignment: "RSF/UAE",
+    status: "active"
+  }, {
+    name: "Idris Mahamat Déby",
+    role: "Chadian President",
+    why: "Border closure and troop deployments signal potential direct intervention against RSF.",
+    alignment: "Chad/SAF",
     status: "active"
   }]
 }, {
@@ -1255,7 +1317,7 @@ const WAR_STORIES = [{
   code: "LBN-01",
   heat: 4,
   status: "active-war",
-  updated: "Apr 7 2026",
+  updated: "Apr 18 2026",
   title: "Lebanon — Hezbollah Front",
   sub: "Hezbollah vs. Israel · Direct front activated by Iran war",
   card: "Hezbollah escalated to sustained high-intensity operations following Operation Epic Fury. Precision munitions and rocket barrages at northern Israel. First direct state-level involvement from an Iran proxy since October 7. Lebanon's civilian population in the north caught between both sides.",
@@ -3072,17 +3134,69 @@ const CANADA_STORIES = [{
   id: "C01",
   code: "CARNEY-01",
   heat: 4,
-  status: "developing",
-  updated: "Apr 8 2026",
+  status: "active-war",
+  updated: "Apr 18 2026",
   title: "The Carney Government",
   sub: "Mandate, Strategy & the Weight of Four Crises",
   card: "Mark Carney won the March 2026 election on explicit anti-Trump positioning and economic competence. Now governing through four simultaneous shocks. The China trade bet is the highest-stakes decision of his early tenure.",
   summary: "Mark Carney became Prime Minister in January 2026 following Trudeau's resignation, then won a majority in the March federal election partly on an explicitly anti-Trump platform — Canada is not for sale. His government inherited four simultaneous economic shocks and is attempting to reposition Canada's strategic orientation: deeper China ties as a US hedge, renewed multilateralism, and domestic economic reform. The tension between his rhetoric and the structural reality of Canadian dependence on the US is the defining challenge of his early tenure.",
   bg: "Mark Carney is an unusual politician — a former central banker who ran the Bank of Canada during the 2008 financial crisis and the Bank of England during Brexit. He was recruited by the Liberal Party as a credible economic manager after Trudeau's resignation. He has no history in elected politics before becoming PM. His background shapes how he governs: systems-oriented, data-driven, comfortable with uncertainty, reluctant to make promises he can't deliver. His China trade bet — signing a preliminary agreement to cut canola and EV tariffs — is a direct expression of his instinct to diversify Canadian economic risk. The question is whether the Trump administration lets him execute that strategy without retaliation.\n\nCanada's relationship with the United States is unlike any other bilateral relationship in the world. The two countries share the world's longest undefended border, are each other's largest trading partners, and are bound by NORAD and NATO security arrangements that make genuine strategic independence almost impossible. Every Canadian PM since Trudeau Sr. has navigated the same impossible geometry: maintain the US relationship without becoming a client state. Carney is attempting this navigation during the most hostile US administration Canada has faced in living memory.",
-  confirmed: ["Carney became PM January 2026 following Trudeau's resignation amid internal Liberal caucus pressure", "Liberals won March 2026 federal election — Carney-led majority, anti-Trump positioning central to campaign", "Canada is not for sale became the defining campaign phrase — direct response to Trump's annexation rhetoric", "Canada-China preliminary agreement signed January 2026 — canola tariffs cut from 84% to 15%, EV tariffs from 100% to 6.1%", "Trump threatened 100% tariff on Canada if Canada-China deal finalizes", "Liberation Day April 2 global tariffs applied additional pressure layer on Canadian exports", "Carney government explicitly framing Canada's economic strategy as diversification away from US dependence", "Deputy PM role given to a Quebec nationalist — political management of federation tensions", "NDP support agreement ended — Carney governing with majority but watching Quebec and Alberta closely"],
-  developing: ["Whether Trump actually imposes 100% tariff if Canada-China deal proceeds — would be economically devastating", "What CUSMA review demands look like and whether Carney concedes or fights", "Whether Carney's economic diversification strategy produces meaningful results before US tariff pressure becomes unbearable", "Whether the China bet survives domestic political scrutiny — opposition attacking it as naive", "Whether Carney's technocratic governing style translates into effective political communication", "How Carney manages the Alberta-Ottawa oil tension as federal climate commitments conflict with provincial revenue interests"],
-  insights: ["Carney is governing in a structural trap: his entire strategic logic depends on the US not noticing or not caring about the China engagement. Trump has already noticed. The 100% tariff threat is the tell.", "The anti-Trump positioning that won the election creates a governing constraint — he cannot be seen to capitulate to Washington without political cost at home. That limits his negotiating flexibility in ways a less rhetorically committed PM would not face.", "Carney's central banking background is an asset for crisis management and a liability for political communication. He speaks in probabilities and hedge-qualified statements. Canadian voters want certainty. That gap will matter.", "The China bet is the right strategic logic — Canada genuinely needs to diversify — but the execution timeline is wrong. Diversification takes years to produce results. The US tariff threat operates on weeks. He needs the long game to win before the short game destroys him.", "Alberta is the wildcard. High oil prices are creating a provincial revenue windfall that makes Premier Smith more assertive, not more cooperative. The federation tension is structural and will outlast any single crisis."],
-  questions: ["Does the 100% tariff threat force Carney to abandon or scale back the China deal?", "What does CUSMA review look like — and what is the Canadian red line?", "Can Carney translate economic diversification strategy into tangible results before the next election?", "Does the Alberta-Ottawa relationship become a governing crisis or stay manageable?", "Is the anti-Trump positioning durable as a political strategy or does economic pain erode it?"],
+  confirmed: [
+    "Carney became PM January 2026 following Trudeau's resignation amid internal Liberal caucus pressure",
+    "Liberals won March 2026 federal election — Carney-led majority, anti-Trump positioning central to campaign",
+    "Canada is not for sale became the defining campaign phrase — direct response to Trump's annexation rhetoric",
+    "Canada-China preliminary agreement signed January 2026 — canola tariffs cut from 84% to 15%, EV tariffs from 100% to 6.1%",
+    "Trump threatened 100% tariff on Canada if Canada-China deal finalizes",
+    "Liberation Day April 2 global tariffs applied additional pressure layer on Canadian exports",
+    "Carney government explicitly framing Canada's economic strategy as diversification away from US dependence",
+    "Deputy PM role given to a Quebec nationalist — political management of federation tensions",
+    "NDP support agreement ended — Carney governing with majority but watching Quebec and Alberta closely",
+    "Liberals secured majority government with three byelection wins on April 13 2026, bringing seat count to 174/343",
+    "Carney suspended federal fuel excise tax from April 20 to September 7 in response to Middle East conflict-driven price spikes",
+    "Five opposition MPs defected to Liberals since November 2025 (4 Conservative, 1 NDP), contributing to majority threshold"
+  ],
+  developing: [
+    "Whether Trump actually imposes 100% tariff if Canada-China deal proceeds — would be economically devastating",
+    "What CUSMA review demands look like and whether Carney concedes or fights",
+    "Whether Carney's economic diversification strategy produces meaningful results before US tariff pressure becomes unbearable",
+    "Whether the China bet survives domestic political scrutiny — opposition attacking it as naive",
+    "Whether Carney's technocratic governing style translates into effective political communication",
+    "How Carney manages the Alberta-Ottawa oil tension as federal climate commitments conflict with provincial revenue interests",
+    "Implementation of temporary fuel tax suspension and its economic/political impact",
+    "Conservative opposition strategy after losing majority through defections and byelections"
+  ],
+  insights: [
+    "Carney is governing in a structural trap: his entire strategic logic depends on the US not noticing or not caring about the China engagement. Trump has already noticed. The 100% tariff threat is the tell.",
+    "The anti-Trump positioning that won the election creates a governing constraint — he cannot be seen to capitulate to Washington without political cost at home. That limits his negotiating flexibility in ways a less rhetorically committed PM would not face.",
+    "Carney's central banking background is an asset for crisis management and a liability for political communication. He speaks in probabilities and hedge-qualified statements. Canadian voters want certainty. That gap will matter.",
+    "The China bet is the right strategic logic — Canada genuinely needs to diversify — but the execution timeline is wrong. Diversification takes years to produce results. The US tariff threat operates on weeks. He needs the long game to win before the short game destroys him.",
+    "Alberta is the wildcard. High oil prices are creating a provincial revenue windfall that makes Premier Smith more assertive, not more cooperative. The federation tension is structural and will outlast any single crisis.",
+    "The majority government changes Carney's governing calculus — he can now pursue his agenda without opposition support, but must balance internal party factions including recent defectors",
+    "The fuel tax suspension demonstrates Carney's ability to act decisively on affordability issues while maintaining fiscal credibility — a key test of his economic management credentials"
+  ],
+  implications: [
+    "Majority status allows Carney to accelerate economic diversification agenda without opposition obstruction",
+    "Fuel tax suspension sets precedent for direct government intervention in cost-of-living crises",
+    "Defections from opposition parties may weaken Conservative and NDP ability to present unified alternatives",
+    "Quebec byelection win in Terrebonne suggests Liberal strength in unexpected regions could reshape electoral map",
+    "Carney's majority gives him runway to implement long-term structural reforms before next election in 2029"
+  ],
+  risks: [
+    "Trump administration may escalate trade retaliation now that Carney has stronger domestic mandate",
+    "Internal Liberal divisions could emerge between original caucus members and recent defectors",
+    "Public expectations for majority government performance may outpace Carney's ability to deliver results",
+    "Opposition may successfully frame majority as illegitimate due to reliance on defections",
+    "Global economic instability from Middle East conflict could undermine domestic economic agenda"
+  ],
+  questions: [
+    "Does the 100% tariff threat force Carney to abandon or scale back the China deal?",
+    "What does CUSMA review look like — and what is the Canadian red line?",
+    "Can Carney translate economic diversification strategy into tangible results before the next election?",
+    "Does the Alberta-Ottawa relationship become a governing crisis or stay manageable?",
+    "Is the anti-Trump positioning durable as a political strategy or does economic pain erode it?",
+    "How will Carney use his new majority to advance key priorities like housing and energy transition?",
+    "Will the fuel tax suspension be extended if Middle East conflict continues driving prices higher?"
+  ],
   people: [{
     name: "Mark Carney",
     role: "Prime Minister, Canada",
@@ -3107,13 +3221,19 @@ const CANADA_STORIES = [{
     why: "The primary external constraint on every Carney decision. His tariff threats and annexation rhetoric are the condition Carney is governing under.",
     alignment: "US",
     status: "active"
+  }, {
+    name: "Pierre Poilievre",
+    role: "Conservative Leader",
+    why: "Opposition leader facing internal party challenges after defections and byelection losses weakened his position.",
+    alignment: "Conservative",
+    status: "active"
   }]
 }, {
   id: "C02",
   code: "CUSMA-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 8 2026",
+  updated: "Apr 18 2026",
   title: "CUSMA Under Pressure",
   sub: "Trade Agreement Review · US Demands · Canadian Red Lines",
   card: "CUSMA review is scheduled. US making demands Canada considers structurally unacceptable. Dairy, automotive rules of origin, digital services, and Chapter 19 dispute resolution are the known pressure points. Canada is negotiating from weakness.",
@@ -3153,16 +3273,16 @@ const CANADA_STORIES = [{
   code: "ECON-CA-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 8 2026",
+  updated: "Apr 18 2026",
   title: "Canadian Economy — Four Shocks",
   sub: "Tariffs · Oil Shock · CUSMA · Inflation · The Lived Reality",
   card: "Canada is absorbing its fourth major economic shock since 2019. Oil windfall for Alberta and federal revenues. National inflation accelerating. Housing still broken. The gap between macroeconomic indicators and what ordinary Canadians experience is at its widest in a generation.",
   summary: "Canada is simultaneously experiencing a revenue windfall from high oil prices — benefiting Alberta and federal coffers — and an inflationary squeeze hitting ordinary Canadians through fuel, food, and housing costs. The four simultaneous shocks since 2019 (COVID, first Trump trade war, post-COVID inflation spike, current crisis) have produced a population that is economically anxious in a way that doesn't show up cleanly in GDP figures. Housing affordability is a separate structural crisis running in parallel. The combination of these pressures is the domestic political backdrop for everything the Carney government is attempting.",
   bg: "Canada's economy is structurally unusual. It is a wealthy country with a resource extraction base — oil, gas, minerals, forestry, agriculture — that generates enormous revenues concentrated in specific regions (Alberta, Saskatchewan, British Columbia, Ontario's Ring of Fire). It is also a services-dominated urban economy — Toronto, Vancouver, Montreal — where knowledge work, finance, and real estate generate a different kind of wealth. These two economies coexist under one federal structure and frequently pull in opposite directions.\n\nThe housing crisis deserves separate treatment. Canadian housing — particularly in Toronto and Vancouver — has been unaffordable for middle-income earners for over a decade. The Trudeau government attempted multiple interventions, none of which materially reduced prices. The Carney government has inherited this structural problem. The causes are well understood: restrictive zoning, slow permitting, a population that grew faster than housing supply, and decades of treating housing as an investment vehicle rather than shelter. The solutions are politically difficult because homeowners — who vote — benefit from high prices.\n\nThe Bank of Canada's interest rate cycle has added another layer. Rates rose sharply to combat post-COVID inflation, then started falling again. Variable-rate mortgage holders who bought during the COVID price surge are now absorbing the consequences of that cycle.",
-  confirmed: ["Oil prices at $110-113/barrel — Alberta and federal revenues elevated significantly", "Bank of Canada in rate-cutting cycle — but mortgage renewals at higher rates hitting hundreds of thousands of households", "Housing affordability at worst levels in recorded Canadian history — Toronto and Vancouver especially", "Grocery inflation persisting above overall CPI — food insecurity rising across income brackets", "US Liberation Day April 2 tariffs adding approximately $20-30 billion annual cost to Canadian exporters", "Canada's unemployment rate rising from historic lows — manufacturing and export sectors under pressure", "Federal deficit expanding as government absorbs economic shock costs", "Consumer debt at record levels — Canadians among the most indebted populations in the developed world"],
-  developing: ["Whether oil windfall is sustained long enough to meaningfully offset shock costs", "Whether Bank of Canada rate cuts translate into relief for variable-rate mortgage holders on the renewal cycle", "Whether US tariffs produce meaningful job losses in manufacturing belt — Ontario and Quebec most exposed", "Whether food inflation stabilizes or worsens as drought and supply chain disruption compound", "Whether Carney government's housing supply measures produce results on any politically relevant timeline", "Whether the Alberta-Ottawa fiscal tension produces a constitutional crisis or stays manageable"],
-  insights: ["The GDP-lived experience gap is the political time bomb. Canada's aggregate economic numbers look manageable — oil revenues are helping. But a 35-year-old in Toronto trying to rent while paying off student debt is not experiencing a manageable economy. That gap is what produces political volatility.", "Housing is the issue that connects everything. It is why Canadians feel economically anxious despite high employment. It is why young people are leaving cities. It is why trust in government competence has declined. Carney knows this. The question is whether anything he can do in a 4-year mandate materially changes the supply picture.", "Alberta's oil windfall is creating a perverse federal dynamic. The province that most frequently threatens separation is currently the one generating the revenue that makes the federation financially viable. Premier Smith knows this and is using it.", "The consumer debt level is the hidden vulnerability. Canada's households are among the most leveraged in the developed world. If the oil shock produces a sustained global recession, Canadian consumers have almost no buffer. The Bank of Canada's room to cut rates further is the only circuit breaker.", "Trade-exposed manufacturing — concentrated in Ontario — is the employment story most likely to produce political crisis. These are union jobs, middle-income jobs, the kind of job losses that produce electoral consequences."],
-  questions: ["Does the oil windfall last long enough to cover the fiscal cost of absorbing the other shocks?", "When does the housing crisis produce a political moment that forces genuine structural reform?", "How many manufacturing jobs are lost to US tariffs — and in which ridings?", "Does the consumer debt level become a systemic risk if global recession materializes?", "Is there a Canadian equivalent of the 2008 financial crisis hiding in the household balance sheet data?"],
+  confirmed: ["Oil prices at $110-113/barrel — Alberta and federal revenues elevated significantly", "Bank of Canada in rate-cutting cycle — but mortgage renewals at higher rates hitting hundreds of thousands of households", "Housing affordability at worst levels in recorded Canadian history — Toronto and Vancouver especially", "Grocery inflation persisting above overall CPI — food insecurity rising across income brackets", "US Liberation Day April 2 tariffs adding approximately $20-30 billion annual cost to Canadian exporters", "Canada's unemployment rate rising from historic lows — manufacturing and export sectors under pressure", "Federal deficit expanding as government absorbs economic shock costs", "Consumer debt at record levels — Canadians among the most indebted populations in the developed world", "Federal government suspending fuel excise tax April 20-Sept 7 — costing $2.4B", "IMF ranks Canada's fiscal position as strongest in G7 despite rising deficits", "Business Council of Canada survey shows domestic regulatory burden now top concern for investment decisions"],
+  developing: ["Whether oil windfall is sustained long enough to meaningfully offset shock costs", "Whether Bank of Canada rate cuts translate into relief for variable-rate mortgage holders on the renewal cycle", "Whether US tariffs produce meaningful job losses in manufacturing belt — Ontario and Quebec most exposed", "Whether food inflation stabilizes or worsens as drought and supply chain disruption compound", "Whether Carney government's housing supply measures produce results on any politically relevant timeline", "Whether the Alberta-Ottawa fiscal tension produces a constitutional crisis or stays manageable", "Impact of regulatory reforms on economic competitiveness — OECD rankings show Canada lagging behind peers"],
+  insights: ["The GDP-lived experience gap is the political time bomb. Canada's aggregate economic numbers look manageable — oil revenues are helping. But a 35-year-old in Toronto trying to rent while paying off student debt is not experiencing a manageable economy. That gap is what produces political volatility.", "Housing is the issue that connects everything. It is why Canadians feel economically anxious despite high employment. It is why young people are leaving cities. It is why trust in government competence has declined. Carney knows this. The question is whether anything he can do in a 4-year mandate materially changes the supply picture.", "Alberta's oil windfall is creating a perverse federal dynamic. The province that most frequently threatens separation is currently the one generating the revenue that makes the federation financially viable. Premier Smith knows this and is using it.", "The consumer debt level is the hidden vulnerability. Canada's households are among the most leveraged in the developed world. If the oil shock produces a sustained global recession, Canadian consumers have almost no buffer. The Bank of Canada's room to cut rates further is the only circuit breaker.", "Trade-exposed manufacturing — concentrated in Ontario — is the employment story most likely to produce political crisis. These are union jobs, middle-income jobs, the kind of job losses that produce electoral consequences.", "Canada's regulatory burden has emerged as a structural constraint on growth, with international rankings showing dramatic declines in competitiveness — particularly problematic given the need for energy transition investment."],
+  questions: ["Does the oil windfall last long enough to cover the fiscal cost of absorbing the other shocks?", "When does the housing crisis produce a political moment that forces genuine structural reform?", "How many manufacturing jobs are lost to US tariffs — and in which ridings?", "Does the consumer debt level become a systemic risk if global recession materializes?", "Is there a Canadian equivalent of the 2008 financial crisis hiding in the household balance sheet data?", "Can cross-partisan agreement on regulatory reform translate into concrete actions that improve Canada's competitiveness?"],
   people: [{
     name: "Tiff Macklem",
     role: "Governor, Bank of Canada",
@@ -3180,6 +3300,12 @@ const CANADA_STORIES = [{
     role: "Premier, Alberta",
     why: "The oil windfall gives her leverage over Ottawa that she is actively using. Her relationship with the federal government is the most consequential domestic political variable.",
     alignment: "UCP/Alberta",
+    status: "active"
+  }, {
+    name: "Adam Legge",
+    role: "President, Business Council of Alberta",
+    why: "Leading business voice advocating regulatory reform — describes Canada's system as 'regulating investment away'",
+    alignment: "Business sector",
     status: "active"
   }]
 }, {
@@ -3627,7 +3753,7 @@ const POWER_STORIES = [{
   code: "OLIGARCH-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 8 2026",
+  updated: "Apr 18 2026",
   title: "Global Wealth & Political Capture",
   sub: "Concentrated Power · The Structural Pattern Across Systems",
   card: "Unprecedented wealth concentration is reshaping democratic institutions globally. Musk inside the US government. Gulf sovereign wealth funding Western elections. Chinese state capitalism. Russian oligarchs remapping influence post-sanctions. Different systems, same structural pattern.",
@@ -3668,7 +3794,7 @@ const POWER_STORIES = [{
   code: "HEGSETH-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 8 2026",
+  updated: "Apr 18 2026",
   title: "War Profiteering & Defense Accountability",
   sub: "Hegseth · Contracts · The Global Pattern of Defense Corruption",
   card: "Pete Hegseth authorized a war consuming 11,000+ munitions in 30 days. Contracts are being awarded at extraordinary rates. A probe into suspicious financial relationships is active. The global pattern of defense corruption during wartime is historically predictable.",
@@ -3803,17 +3929,69 @@ const CLIMATE_STORIES = [{
   code: "EMISSIONS-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 8 2026",
+  updated: "Apr 18 2026",
   title: "Global Emissions — Where We Actually Stand",
   sub: "The Numbers · The Trajectory · The Gap Between Commitment and Reality",
   card: "Global CO2 emissions hit a new record in 2025. The gap between national commitments and actual trajectories is wider than at any point since Paris. The 1.5°C window has effectively closed. The question is now how far above 2°C we land.",
   summary: "Global greenhouse gas emissions reached a new record in 2025. The scientific consensus has shifted: the 1.5°C target is now considered effectively unachievable under any realistic policy scenario. The current trajectory points to approximately 2.5-3°C of warming by 2100. The Iran war oil shock is creating contradictory pressures — accelerating the green energy transition in some countries while reinforcing fossil fuel infrastructure investment in others.",
   bg: "The Paris Agreement of 2015 set a target of limiting warming to 1.5°C above pre-industrial levels, with a harder limit of 2°C. Countries submitted Nationally Determined Contributions — voluntary pledges for emissions reduction. The gap between pledges and action has been the defining story of climate policy ever since.\n\nThe IPCC — Intergovernmental Panel on Climate Change — synthesizes climate science for policymakers. Its Sixth Assessment Report established that human influence on the climate is unequivocal, that 1.5°C will be reached or exceeded within two decades under most scenarios, and that some changes are already irreversible.\n\nThe carbon budget concept is central to the math. At current emissions rates, the remaining carbon budget for a 50% chance of staying below 1.5°C will be exhausted within approximately seven years. This is arithmetic, not projection. Atmospheric CO2 is currently at approximately 425 ppm — the highest in at least 3 million years.",
-  confirmed: ["Global CO2 emissions reached new record in 2025 — approximately 37.4 billion tonnes", "Atmospheric CO2 concentration at approximately 425 ppm — highest in at least 3 million years", "IPCC: 1.5°C warming will be reached or exceeded within two decades under most scenarios", "Carbon budget for 50% chance of 1.5°C: approximately 7 years at current emissions rates", "G7 countries collectively not on track to meet their Paris commitments", "China remains world's largest emitter — approximately 30% of global total — with coal use still expanding", "US emissions declined under Biden-era IRA implementation but pace insufficient for Paris targets", "Deforestation contributing approximately 10% of global emissions", "Methane emissions from fossil fuel operations significantly underreported per satellite monitoring data"],
-  developing: ["Whether the Iran war oil shock produces lasting acceleration of green energy transition or temporary fossil fuel reinforcement", "Whether China's renewable energy build-out outpaces its continued coal expansion", "Whether the US rolls back IRA implementation — emissions trajectory impact", "Whether tropical forest protection agreements translate into actual deforestation reduction", "Whether methane monitoring and reporting requirements improve"],
-  insights: ["The 1.5°C target is functionally dead. This is not a political statement — it is arithmetic. Accepting this is not defeatism; it is the precondition for honest policy design for the actual scenario we face.", "The gap between commitment and trajectory is the central governance failure of climate policy. Countries make pledges at COPs that their domestic political systems cannot deliver. No country has solved this structural mismatch.", "China's simultaneous massive renewable build-out and continued coal expansion is the most important climate story in the world right now. Which trend wins determines global emissions trajectory more than any other single factor.", "The methane underreporting story is significant. Satellite monitoring reveals emissions substantially higher than official reporting. Methane is approximately 80 times more potent than CO2 over 20 years. The real-world warming effect is materially worse than official figures suggest.", "The Iran war oil shock is the strongest argument for the green transition ever made — and it is being made in real time. Countries that diversified away from fossil fuels are less exposed. Countries that didn't are paying for it."],
-  questions: ["At what temperature does the current trajectory actually land — and what does 2.5°C or 3°C mean concretely?", "Does China's renewable build-out outpace its coal expansion on a net emissions basis?", "Does the US IRA implementation survive the current administration?", "Is there any scenario in which emissions reductions reach the pace required to avoid the worst outcomes?"],
-  science: ["IPCC AR6 Synthesis (2023): Current policies put world on track for 3.2°C warming by 2100. Limiting to 2°C requires immediate, deep, rapid emissions reductions across all sectors.", "Nature (2024): Remaining carbon budget for 1.5°C now estimated at 250 gigatonnes CO2 — at current rates, exhausted in approximately 6-7 years.", "Global Carbon Project (2025): Global CO2 emissions 37.4 billion tonnes — new record. Land use change adding approximately 3.9 billion tonnes additional.", "Science (2025): Satellite-based methane monitoring reveals fossil fuel methane emissions 70% higher than UNFCCC official inventory data in studied regions.", "Nature Climate Change (2025): Every fraction of a degree of additional warming produces measurable increases in extreme weather frequency and intensity — no safe threshold exists.", "PNAS (2024): Tipping point cascade risk — multiple Earth system tipping points may be interconnected, meaning crossing one increases probability of crossing others."],
+  confirmed: [
+    "Global CO2 emissions reached new record in 2025 — approximately 37.4 billion tonnes",
+    "Atmospheric CO2 concentration at approximately 425 ppm — highest in at least 3 million years", 
+    "IPCC: 1.5°C warming will be reached or exceeded within two decades under most scenarios",
+    "Carbon budget for 50% chance of 1.5°C: approximately 7 years at current emissions rates",
+    "G7 countries collectively not on track to meet their Paris commitments",
+    "China remains world's largest emitter — approximately 30% of global total — with coal use still expanding",
+    "US emissions declined under Biden-era IRA implementation but pace insufficient for Paris targets",
+    "Deforestation contributing approximately 10% of global emissions",
+    "Methane emissions from fossil fuel operations significantly underreported per satellite monitoring data",
+    "41 emissions trading systems now in force worldwide, covering 26% of global GHG emissions (ICAP 2026)",
+    "ETS revenues reached USD 80 billion in 2025, funding clean energy transitions (ICAP 2026)",
+    "Satellite data shows urban methane emissions rose 6% since 2019, outpacing official estimates (PNAS 2026)"
+  ],
+  developing: [
+    "Whether the Iran war oil shock produces lasting acceleration of green energy transition or temporary fossil fuel reinforcement",
+    "Whether China's renewable energy build-out outpaces its continued coal expansion",
+    "Whether the US rolls back IRA implementation — emissions trajectory impact", 
+    "Whether tropical forest protection agreements translate into actual deforestation reduction",
+    "Whether methane monitoring and reporting requirements improve",
+    "Whether new emissions trading systems in Japan/India/Vietnam accelerate regional decarbonization (ICAP 2026)",
+    "Whether C40 cities can overcome 30% methane emissions underestimation to meet targets (PNAS 2026)"
+  ],
+  insights: [
+    "The 1.5°C target is functionally dead. This is not a political statement — it is arithmetic. Accepting this is not defeatism; it is the precondition for honest policy design for the actual scenario we face.",
+    "The gap between commitment and trajectory is the central governance failure of climate policy. Countries make pledges at COPs that their domestic political systems cannot deliver. No country has solved this structural mismatch.",
+    "China's simultaneous massive renewable build-out and continued coal expansion is the most important climate story in the world right now. Which trend wins determines global emissions trajectory more than any other single factor.",
+    "The methane underreporting story is significant. Satellite monitoring reveals emissions substantially higher than official reporting. Methane is approximately 80 times more potent than CO2 over 20 years. The real-world warming effect is materially worse than official figures suggest.",
+    "The Iran war oil shock is the strongest argument for the green transition ever made — and it is being made in real time. Countries that diversified away from fossil fuels are less exposed. Countries that didn't are paying for it.",
+    "Emissions trading expansion reflects structural shift in climate governance — now covering 26% of global emissions through 41 operational systems (ICAP 2026)",
+    "Urban methane loophole threatens C40 city climate pledges — requires new monitoring tech to address satellite evidence of 30% underestimation (PNAS 2026)"
+  ],
+  implications: [
+    "ETS revenue growth ($80B in 2025) creates fiscal capacity for clean energy transitions where governments allocate funds effectively (ICAP 2026)",
+    "Urban methane underreporting requires C40 cities to find 30% additional cuts just to meet existing pledges (PNAS 2026)",
+    "Spread of ETS to Japan/India/Vietnam will test carbon pricing viability in emerging economies (ICAP 2026)"
+  ],
+  risks: [
+    "Political pressure to redirect ETS revenues away from climate investments as economic conditions worsen (ICAP 2026)",
+    "Urban methane monitoring gap persists without satellite tech upgrades, allowing continued underestimation (PNAS 2026)"
+  ],
+  questions: [
+    "At what temperature does the current trajectory actually land — and what does 2.5°C or 3°C mean concretely?",
+    "Does China's renewable build-out outpace its coal expansion on a net emissions basis?",
+    "Does the US IRA implementation survive the current administration?",
+    "Is there any scenario in which emissions reductions reach the pace required to avoid the worst outcomes?",
+    "Can higher-resolution satellites pinpoint urban methane super-emitters quickly enough for C40 cities to course-correct? (PNAS 2026)"
+  ],
+  science: [
+    "IPCC AR6 Synthesis (2023): Current policies put world on track for 3.2°C warming by 2100. Limiting to 2°C requires immediate, deep, rapid emissions reductions across all sectors.",
+    "Nature (2024): Remaining carbon budget for 1.5°C now estimated at 250 gigatonnes CO2 — at current rates, exhausted in approximately 6-7 years.",
+    "Global Carbon Project (2025): Global CO2 emissions 37.4 billion tonnes — new record. Land use change adding approximately 3.9 billion tonnes additional.",
+    "Science (2025): Satellite-based methane monitoring reveals fossil fuel methane emissions 70% higher than UNFCCC official inventory data in studied regions.",
+    "Nature Climate Change (2025): Every fraction of a degree of additional warming produces measurable increases in extreme weather frequency and intensity — no safe threshold exists.",
+    "PNAS (2024): Tipping point cascade risk — multiple Earth system tipping points may be interconnected, meaning crossing one increases probability of crossing others.",
+    "PNAS (2026): Satellite data shows urban methane emissions growing 6% since 2019 vs. 1.7-3.7% in official estimates (DOI: 10.1073/pnas.2504211123)"
+  ],
   people: [{
     name: "Jim Skea",
     role: "IPCC Chair",
@@ -3832,13 +4010,19 @@ const CLIMATE_STORIES = [{
     why: "The IEA's annual World Energy Outlook is the most authoritative annual assessment of energy transition progress.",
     alignment: "International Energy Agency",
     status: "active"
+  }, {
+    name: "Eric Kort",
+    role: "Max Planck Atmospheric Chemistry Director",
+    why: "Led urban methane satellite study revealing 30% gap between official estimates and observations (PNAS 2026).",
+    alignment: "Scientific",
+    status: "active"
   }]
 }, {
   id: "CL02",
   code: "TRANSITION-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 8 2026",
+  updated: "Apr 18 2026",
   title: "The Green Energy Transition",
   sub: "Who's Winning · Who's Falling Behind · What the Iran War Changes",
   card: "China is installing more solar and wind than the rest of the world combined. The US is retreating from clean energy policy. Europe is holding but under pressure. The Iran war oil shock is the strongest argument for the transition ever made.",
@@ -3873,7 +4057,7 @@ const CLIMATE_STORIES = [{
   code: "ARCTIC-CLIMATE-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 8 2026",
+  updated: "Apr 18 2026",
   title: "Arctic Climate Science",
   sub: "Sea Ice · Permafrost · Feedback Loops · The Science of Accelerating Change",
   card: "The Arctic is warming four times faster than the global average. Sea ice extent is at record lows. Permafrost thaw is releasing methane not fully captured by current models. The feedback loops are real and potentially irreversible.",
@@ -3902,7 +4086,7 @@ const CLIMATE_STORIES = [{
   code: "FOOD-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 8 2026",
+  updated: "Apr 18 2026",
   title: "Climate & Food Security",
   sub: "Drought · Agricultural Collapse · The Countries Already in Crisis",
   card: "Climate change is already reducing agricultural yields in the most vulnerable regions. The Iran war has compounded existing supply chain stress. 280 million people are in acute food insecurity. The food system is more fragile than most people realize.",
@@ -3931,36 +4115,100 @@ const CLIMATE_STORIES = [{
   code: "FOSSIL-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 8 2026",
+  updated: "Apr 18 2026",
   title: "Fossil Fuel Dependency — The Iran War as Forcing Function",
   sub: "The Strait Closure · Energy Independence · Who's Changing Policy and Who Isn't",
   card: "The Iran war has made the cost of fossil fuel dependency visible in a way that years of climate advocacy could not. Countries that diversified away from fossil fuels are less exposed to the oil shock. Countries that didn't are paying for it.",
   summary: "The Strait of Hormuz closure has created a live experiment in fossil fuel dependency. Countries that invested in renewable energy and energy storage over the past decade are less exposed to the current oil shock than those that didn't. Energy security is now the leading argument for clean energy investment in countries previously skeptical of the climate frame. The question is whether this emergency conversion produces lasting policy change or reverts when the crisis passes.",
   bg: "The geopolitics of oil have shaped international relations since the 1970s oil shocks. The first oil shock (1973-1974), triggered by the Arab oil embargo, produced the first serious Western interest in energy efficiency and alternatives. Both 1970s shocks produced lasting policy changes — fuel economy standards, strategic petroleum reserves, initial renewable energy investments — but not fundamental transformation.\n\nThe pattern of every subsequent oil shock: acute pain produces policy interest in alternatives, the shock passes, prices fall, policy interest fades, and dependence is rebuilt. The structural incentive — cheap fossil fuels are immediately available while clean alternatives require upfront investment — consistently wins in the short term.\n\nThe current shock has different features that may produce different outcomes. First, renewable energy is now cheaper than fossil energy in most contexts. Second, the supply chains for renewable energy are more developed. Third, geopolitical competition with China over clean energy manufacturing has created a strategic interest in the transition.\n\nAgainst this: the current US administration is actively retreating from clean energy policy. Major oil producers have strong incentives to cement long-term fossil fuel relationships. And the medium-term response to an oil supply shortage is increased oil production, not immediate transition.",
-  confirmed: ["Countries with high renewable energy penetration experiencing smaller economic shock from oil price spike", "Countries with low renewable penetration implementing emergency demand rationing", "Japan accelerating nuclear restarts and renewable procurement in direct response to Strait closure", "South Korea fast-tracking LNG terminal diversification and offshore wind expansion", "Germany citing Iran war as justification for accelerated Energiewende implementation", "US Gulf Coast oil production increasing to fill Strait supply gap — short-term fossil reinforcement", "Saudi Arabia and UAE increasing production", "IEA strategic petroleum reserve releases insufficient to fully cover Strait disruption", "EU emergency energy measures activated — coordinated demand reduction and supply diversification"],
-  developing: ["Whether Japan's nuclear restart and renewable acceleration survives domestic political opposition", "Whether South Korea's clean energy acceleration produces lasting policy or reverts post-crisis", "Whether US clean energy rollback is reversed in response to energy security arguments", "Whether global LNG infrastructure investment locks in gas dependency for 30+ years", "Whether the energy security frame permanently replaces the climate frame as the political argument for transition"],
-  insights: ["The energy security argument for the transition is more politically durable than the climate argument in most democratic systems. Climate is abstract and future-oriented. Energy security is immediate and self-interested. The Iran war is making it viscerally real.", "The structural irony: the countries increasing production to fill the Strait gap are primarily the Gulf producers whose revenue depends on sustained fossil fuel demand. They benefit from both the crisis — higher prices — and the eventual resolution — continued demand.", "Japan and South Korea's responses are the most significant to watch. Both are large wealthy democracies with high fossil fuel import dependency, developed technological capacity, and strong energy security instincts.", "The LNG infrastructure lock-in risk is real. Building a new LNG terminal commits to 30+ years of gas imports. Countries fast-tracking LNG diversification may be trading one fossil fuel dependency for another."],
-  questions: ["Does the energy security argument produce lasting clean energy policy change in major fossil fuel importers?", "Does LNG infrastructure investment lock in gas dependency conflicting with net zero timelines?", "Do Japan and South Korea make permanent policy shifts or revert when the crisis passes?", "Does any OPEC+ member use the crisis revenue to begin domestic economic diversification?"],
-  science: ["Nature Energy (2025): Countries with >40% renewable electricity penetration experienced 60% lower economic impact from oil price shocks — first empirical quantification of transition resilience benefit.", "IEA (2026): Strait of Hormuz closure scenario analysis — countries with diversified energy portfolios have 40-70% lower GDP exposure to oil supply disruption.", "Energy Policy (2025): LNG lock-in analysis — current LNG terminal construction pipeline, if completed, commits $2.1T in gas infrastructure extending to 2060s.", "Science (2025): Energy security and climate co-benefits — policies designed for energy security produce 65-80% of the emissions reductions required for climate targets as a co-benefit.", "Nature Climate Change (2024): Oil price shock political economy — historical analysis shows 18-24 month window of peak political receptiveness to clean energy policy following supply shocks."],
-  people: [{
-    name: "Yoon Suk-yeol",
-    role: "President, South Korea",
-    why: "South Korea's clean energy acceleration response to the Strait closure is happening under his direction.",
-    alignment: "South Korea",
-    status: "active"
-  }, {
-    name: "Ursula von der Leyen",
-    role: "EU Commission President",
-    why: "The EU's emergency energy measures and long-term transition policy are in her domain.",
-    alignment: "European Union",
-    status: "active"
-  }, {
-    name: "Fatih Birol",
-    role: "IEA Executive Director",
-    why: "His scenario analysis of the Strait closure energy security impact is the key quantitative reference.",
-    alignment: "International Energy Agency",
-    status: "active"
-  }]
+  confirmed: [
+    "Countries with high renewable energy penetration experiencing smaller economic shock from oil price spike",
+    "Countries with low renewable penetration implementing emergency demand rationing",
+    "Japan accelerating nuclear restarts and renewable procurement in direct response to Strait closure",
+    "South Korea fast-tracking LNG terminal diversification and offshore wind expansion",
+    "Germany citing Iran war as justification for accelerated Energiewende implementation",
+    "US Gulf Coast oil production increasing to fill Strait supply gap — short-term fossil reinforcement",
+    "Saudi Arabia and UAE increasing production",
+    "IEA strategic petroleum reserve releases insufficient to fully cover Strait disruption",
+    "EU emergency energy measures activated — coordinated demand reduction and supply diversification",
+    "Bangladesh paid $880 million for emergency LNG spot purchases at double pre-war prices after Iran blocked Strait of Hormuz",
+    "Pakistan avoided spot LNG purchases after reducing fossil fuel dependence to 25% through solar expansion",
+    "Qatar's Ras Laffan LNG facility suffered significant damage from Iranian strikes, worsening global supply crunch"
+  ],
+  developing: [
+    "Whether Japan's nuclear restart and renewable acceleration survives domestic political opposition",
+    "Whether South Korea's clean energy acceleration produces lasting policy or reverts post-crisis",
+    "Whether US clean energy rollback is reversed in response to energy security arguments",
+    "Whether global LNG infrastructure investment locks in gas dependency for 30+ years",
+    "Whether the energy security frame permanently replaces the climate frame as the political argument for transition",
+    "Whether Bangladesh shifts policy toward renewables after costly LNG spot purchases",
+    "Whether Pakistan's solar success becomes model for other import-dependent economies"
+  ],
+  insights: [
+    "The energy security argument for the transition is more politically durable than the climate argument in most democratic systems. Climate is abstract and future-oriented. Energy security is immediate and self-interested. The Iran war is making it viscerally real.",
+    "The structural irony: the countries increasing production to fill the Strait gap are primarily the Gulf producers whose revenue depends on sustained fossil fuel demand. They benefit from both the crisis — higher prices — and the eventual resolution — continued demand.",
+    "Japan and South Korea's responses are the most significant to watch. Both are large wealthy democracies with high fossil fuel import dependency, developed technological capacity, and strong energy security instincts.",
+    "The LNG infrastructure lock-in risk is real. Building a new LNG terminal commits to 30+ years of gas imports. Countries fast-tracking LNG diversification may be trading one fossil fuel dependency for another.",
+    "Pakistan's solar success demonstrates that rapid transition is possible even in energy-import dependent economies when policy aligns with consumer incentives",
+    "The Bangladesh-Pakistan divergence shows how pre-crisis energy policy choices determine crisis resilience — solar investments provided insulation while LNG contracts created exposure"
+  ],
+  implications: [
+    "Emerging economies facing high fuel import bills will face pressure to accelerate renewable adoption to reduce exposure",
+    "Damage to Qatar's LNG infrastructure may permanently shift perceptions of Middle East gas supply reliability",
+    "The solar-to-EV transition pathway seen in Pakistan could replicate across developing economies seeking energy independence",
+    "Fossil fuel subsidies in Southeast Asia, which hit $105 billion in 2022, may become politically untenable as budgets strain"
+  ],
+  risks: [
+    "Emergency LNG infrastructure investments lock Asia into long-term gas dependence despite renewable alternatives",
+    "Fossil fuel companies use war profits to lobby against clean energy policies that threaten their business model",
+    "Short-term production increases by Gulf states undermine political will for transition in importing countries",
+    "Bangladesh's financial strain from fuel imports triggers broader economic crisis with regional spillover effects"
+  ],
+  questions: [
+    "Does the energy security argument produce lasting clean energy policy change in major fossil fuel importers?",
+    "Does LNG infrastructure investment lock in gas dependency conflicting with net zero timelines?",
+    "Do Japan and South Korea make permanent policy shifts or revert when the crisis passes?",
+    "Does any OPEC+ member use the crisis revenue to begin domestic economic diversification?",
+    "Will Pakistan's solar success inspire policy replication or remain isolated case?",
+    "How will damage to Qatar's LNG facilities reshape long-term gas market dynamics?"
+  ],
+  science: [
+    "Nature Energy (2025): Countries with >40% renewable electricity penetration experienced 60% lower economic impact from oil price shocks — first empirical quantification of transition resilience benefit.",
+    "IEA (2026): Strait of Hormuz closure scenario analysis — countries with diversified energy portfolios have 40-70% lower GDP exposure to oil supply disruption.",
+    "Energy Policy (2025): LNG lock-in analysis — current LNG terminal construction pipeline, if completed, commits $2.1T in gas infrastructure extending to 2060s.",
+    "Science (2025): Energy security and climate co-benefits — policies designed for energy security produce 65-80% of the emissions reductions required for climate targets as a co-benefit.",
+    "Nature Climate Change (2024): Oil price shock political economy — historical analysis shows 18-24 month window of peak political receptiveness to clean energy policy following supply shocks."
+  ],
+  people: [
+    {
+      name: "Yoon Suk-yeol",
+      role: "President, South Korea",
+      why: "South Korea's clean energy acceleration response to the Strait closure is happening under his direction.",
+      alignment: "South Korea",
+      status: "active"
+    },
+    {
+      name: "Ursula von der Leyen",
+      role: "EU Commission President",
+      why: "The EU's emergency energy measures and long-term transition policy are in her domain.",
+      alignment: "European Union",
+      status: "active"
+    },
+    {
+      name: "Fatih Birol",
+      role: "IEA Executive Director",
+      why: "His scenario analysis of the Strait closure energy security impact is the key quantitative reference.",
+      alignment: "International Energy Agency",
+      status: "active"
+    },
+    {
+      name: "Shafiqul Alam",
+      role: "Analyst, Institute for Energy Economics and Financial Analysis",
+      why: "Tracking Bangladesh's energy policy response to LNG price shock.",
+      alignment: "Energy Transition",
+      status: "active"
+    }
+  ]
 }];
 
 // ============================================================
