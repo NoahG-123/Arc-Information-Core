@@ -26,7 +26,7 @@ CHANGES_F = Path("arc-run-changes.json")
 
 GEMINI_BASE  = "https://generativelanguage.googleapis.com/v1beta/models"
 SEARCH_MODEL = "gemini-2.5-flash"
-FORMAT_MODEL = "meta-llama/llama-3.3-70b-instruct:free"
+FORMAT_MODEL = "deepseek/deepseek-chat"
 SYNTH_MODEL  = "deepseek/deepseek-chat"
 
 # ── Utilities ─────────────────────────────────────────────────
