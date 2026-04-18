@@ -15,7 +15,7 @@ from pathlib import Path
 GEMINI_KEY     = os.environ.get("GEMINI_API_KEY")
 OPENROUTER_KEY = os.environ.get("OPENROUTER_KEY")
 
-TRACKER   = Path("tracker.jsx")
+TRACKER   = Path("tracker.js")
 CONTEXT_F = Path("arc-update-context.md")
 TASK_F    = Path("arc-update-task.md")
 CHANGES_F = Path("arc-run-changes.json")
@@ -100,7 +100,9 @@ def tier1_search(code, title, days, war):
 # ── Tier 2: Gemma 4 Format & Write ────────────────────────────
 def find_story_bounds(text, code):
     """Return (start, end) indices of the story object with the given code, inclusive."""
-    target = f'code:"{code}"'
+    target = f'code: "{code}"'
+    if target not in text:
+        target = f'code:"{code}"'
     idx = text.find(target)
     if idx == -1:
         return None, None

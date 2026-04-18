@@ -1058,50 +1058,117 @@ const WAR_STORIES = [{
     status: "sidelined"
   }]
 }, {
-  id: "W03",
-  code: "UKR-01",
+  id: 'W03',
+  code: 'UKR-01',
   heat: 4,
-  status: "active-war",
-  updated: "Apr 7 2026",
-  title: "Ukraine — Russia War",
-  sub: "Ongoing since February 2022 · Year 3",
-  card: "War enters year 3. US attention and military resources redirected to Iran. European support becoming primary. Russia exploiting US distraction with incremental advances in Donetsk. Ceasefire negotiations intermittently active but stalled.",
+  status: 'active-war',
+  updated: 'Apr 17 2026',
+  title: 'Ukraine — Russia War',
+  sub: 'Ongoing since February 2022 · Year 3',
+  card: 'Russia intensifies massive aerial campaigns and advances in Donetsk while Ukraine secures new European defense packages to offset US resource diversion.',
   toll: {
-    confirmed_dead: "500,000+",
-    confirmed_wounded: "1,200,000+",
-    children_killed: "1,500+",
-    displaced: "6,500,000+",
-    note: "Figures are estimates with significant uncertainty. UN confirmed 1,500+ children killed; actual figure likely higher. 6.5M externally displaced (UNHCR). Internal displacement additional. Russian military casualties estimated at 300,000+. Ukrainian military casualties are classified."
+    confirmed_dead: '500,000+',
+    confirmed_wounded: '1,200,000+',
+    children_killed: '1,500+',
+    displaced: '6,500,000+',
+    note: 'Figures are estimates with significant uncertainty. UN confirmed 1,500+ children killed; actual figure likely higher. 6.5M externally displaced (UNHCR). Internal displacement additional. Russian military casualties estimated at 1,316,070 per UA General Staff.'
   },
   front: {
-    summary: "Russia holding approximately 20% of Ukrainian territory. Active fighting concentrated in Donetsk Oblast — Avdiivka area remains the primary contested zone. Russia making incremental advances exploiting US attention on Iran. Ukrainian forces stretched — ammunition shortfalls ongoing despite European resupply. Crimea bridge remains operational. Black Sea grain corridor intermittently disrupted.",
-    active_fronts: ["Donetsk — primary active front. Russian incremental advances continuing. Avdiivka area most contested.", "Zaporizhzhia — intermittent shelling of nuclear plant raises radiation concerns. IAEA monitoring.", "Kherson — Ukrainian-held west bank. Cross-river operations ongoing.", "Kharkiv — Russian shelling of civilian infrastructure. City under persistent threat.", "Crimea — Ukrainian drone strikes on Russian naval assets continuing.", "Black Sea — Russian naval operations. Ukrainian maritime drones attacking Russian fleet."],
-    recent_movements: ["Apr 2026: US redirected significant THAAD assets to Iran theater — Ukraine air defense degraded", "Mar 2026: European NATO members accelerating direct military support to compensate for US attention on Iran", "Mar 2026: Russia accelerating Donetsk offensive timed to US distraction", "Feb 2026: Ceasefire talks in Istanbul — stalled on territorial withdrawal preconditions", "Jan 2026: Ukraine struck multiple Russian oil facilities with long-range drones", "Dec 2025: Russia conducted largest drone attack on Ukrainian cities since start of war"],
-    assessment: "The Iran war is Russia's strategic opportunity. US resources and attention are redirected. European support is increasing but cannot fully compensate. Russia is moving in Donetsk with deliberate patience — not a dramatic offensive, but incremental advances that accumulate. Ceasefire negotiations are active but both sides lack sufficient pressure to move from stated positions."
+    summary: 'Russia is pushing for full control of Donetsk, specifically near Myrnograd and Pokrovsk, while conducting massive daily aerial strikes. Ukraine is pivoting toward domestic missile production and securing critical air defense missiles from Germany and the Netherlands. The conflict remains high-intensity with significant Russian personnel losses and increasing pressure on the Pokrovsk direction.',
+    active_fronts: [
+      'Donetsk — primary active front. Russian incremental advances continuing near Myrnograd and Pokrovsk.',
+      'Zaporizhzhia — intermittent shelling of nuclear plant; Russia developing manganese deposits in occupied areas.',
+      'Kherson — Ukrainian-held west bank. Cross-river operations ongoing.',
+      'Kharkiv — Russian shelling of civilian infrastructure; Ukrainian private-sector groups active in air defense.',
+      'Crimea — Ukrainian drone strikes on Russian naval assets continuing via new deep strike center.',
+      'Black Sea — Russian naval operations. Ukrainian maritime drones attacking Russian fleet.'
+    ],
+    recent_movements: [
+      'Apr 17 2026: Russia launched massive 700-target aerial attack; Ukraine secured Patriot and drone deals with Germany and Netherlands',
+      'Apr 2026: US redirected significant THAAD assets to Iran theater — Ukraine air defense degraded',
+      'Mar 2026: European NATO members accelerating direct military support to compensate for US attention on Iran',
+      'Mar 2026: Russia accelerating Donetsk offensive timed to US distraction',
+      'Feb 2026: Ceasefire talks in Istanbul — stalled on territorial withdrawal preconditions',
+      'Jan 2026: Ukraine struck multiple Russian oil facilities with long-range drones'
+    ],
+    assessment: 'Russia is attempting to maximize gains in Donetsk before any potential diplomatic shift, using massive drone saturation to overwhelm air defenses. Ukraine\'s shift toward domestic production and private-sector integration is a survival necessity as European stockpiles are strained by the Iran crisis. The conflict has entered a phase of industrial attrition where the ability to manufacture interceptors is the primary strategic bottleneck.'
   },
-  confirmed: ["War began February 24 2022 — Russian full-scale invasion of Ukraine", "Russia holds approximately 20% of Ukrainian territory as of April 2026", "US THAAD interceptors partially redirected to Iran theater — Ukraine air defense degraded", "European NATO members accelerating direct military support to compensate for US distraction", "Ceasefire talks in Istanbul active but stalled on territorial preconditions", "Russia making incremental advances in Donetsk timed to US distraction on Iran", "Ukraine conducting long-range drone strikes on Russian oil infrastructure", "Black Sea grain corridor intermittently disrupted", "Zaporizhzhia nuclear plant under intermittent shelling — IAEA on-site monitoring"],
-  developing: ["Whether US attention returns to Ukraine after Iran ceasefire — or whether the distraction creates permanent repositioning", "Whether European NATO support can fully compensate for US resource shift", "Whether Istanbul ceasefire talks produce anything substantive", "Whether Russia attempts a larger offensive while US is focused on Iran", "Whether Ukraine's long-range drone campaign on Russian oil infrastructure changes the economic calculus"],
-  insights: ["Russia waited for its moment and found it. The Iran war is the US distraction Russia needed. The question is whether Moscow uses incremental advances to improve its negotiating position or attempts something larger.", "The THAAD redirection to Iran is the most concrete military consequence of the two-front problem. Ukraine's air defense is measurably degraded. Russia knows this.", "European NATO members stepping up is a structural shift — the Iran war is accelerating European strategic autonomy in a way that the Trump administration's NATO skepticism did not fully achieve on its own.", "Three years in, both sides have fought to a position where neither can achieve a decisive victory but neither can accept the terms the other is offering. That is a frozen conflict structure — dangerous because it can unfreeze suddenly."],
-  questions: ["Does the Iran ceasefire (if achieved) allow US to redirect resources back to Ukraine — and how quickly?", "Is Russia attempting a larger offensive or using distraction for incremental consolidation?", "Do Istanbul ceasefire talks have any realistic path to agreement?", "Does European strategic autonomy on Ukraine survive as a durable shift or revert after the Iran crisis?"],
-  people: [{
-    name: "Vladimir Putin",
-    role: "President, Russia",
-    why: "Authorized the invasion. Managing the Iran-as-opportunity calculation in real time.",
-    alignment: "Russia",
-    status: "active"
-  }, {
-    name: "Volodymyr Zelensky",
-    role: "President, Ukraine",
-    why: "Navigating the most difficult moment of the war — US distraction, European uncertainty, front-line pressure.",
-    alignment: "Ukraine",
-    status: "active"
-  }, {
-    name: "Ursula von der Leyen",
-    role: "President, European Commission",
-    why: "Leading European coordination of Ukraine support during the US distraction. Her ability to hold European unity is the central variable in this story.",
-    alignment: "EU",
-    status: "active"
-  }]
+  confirmed: [
+    'War began February 24 2022 — Russian full-scale invasion of Ukraine',
+    'Russia holds approximately 20% of Ukrainian territory as of April 2026',
+    'US THAAD interceptors partially redirected to Iran theater — Ukraine air defense degraded',
+    'European NATO members accelerating direct military support to compensate for US distraction',
+    'Ceasefire talks in Istanbul active but stalled on territorial preconditions',
+    'Russia making incremental advances in Donetsk timed to US distraction on Iran',
+    'Ukraine conducting long-range drone strikes on Russian oil infrastructure',
+    'Black Sea grain corridor intermittently disrupted',
+    'Zaporizhzhia nuclear plant under intermittent shelling — IAEA on-site monitoring',
+    'Russia launched massive aerial attack on April 16 2026 targeting civilian areas with ~700 drones and missiles',
+    'Germany and Netherlands committed hundreds of millions in funding for Patriot missiles and drone production',
+    'Russia began developing manganese deposits in occupied Zaporizhzhia Oblast',
+    'Austria joined the tribunal to prosecute Russian aggression',
+    'Ukrainian SOF destroyed the \'Rubikon\' elite drone logistics base near Mariupol'
+  ],
+  developing: [
+    'Whether US attention returns to Ukraine after Iran ceasefire — or whether the distraction creates permanent repositioning',
+    'Whether European NATO support can fully compensate for US resource shift',
+    'Whether Istanbul ceasefire talks produce anything substantive',
+    'Whether Russia attempts a larger offensive while US is focused on Iran',
+    'Whether Ukraine\'s long-range drone campaign on Russian oil infrastructure changes the economic calculus',
+    'Whether Ukraine\'s pivot to domestic missile production can scale fast enough to replace Western shipments',
+    'Whether Russian personnel shortages in Q1 2026 will slow the Donetsk offensive',
+    'Whether Belarus\'s new border infrastructure signals a renewed northern threat'
+  ],
+  insights: [
+    'Russia waited for its moment and found it. The Iran war is the US distraction Russia needed. The question is whether Moscow uses incremental advances to improve its negotiating position or attempts something larger.',
+    'The THAAD redirection to Iran is the most concrete military consequence of the two-front problem. Ukraine\'s air defense is measurably degraded. Russia knows this.',
+    'European NATO members stepping up is a structural shift — the Iran war is accelerating European strategic autonomy in a way that the Trump administration\'s NATO skepticism did not fully achieve on its own.',
+    'Three years in, both sides have fought to a position where neither can achieve a decisive victory but neither can accept the terms the other is offering. That is a frozen conflict structure — dangerous because it can unfreeze suddenly.',
+    'The \'Rubikon\' base destruction and the use of private-sector jet-Shahed intercepts indicate a decentralization of Ukrainian defense, moving toward a hybrid military-civilian tech ecosystem.',
+    'Russia\'s exploitation of manganese in Zaporizhzhia suggests a shift from temporary occupation to long-term economic integration of seized territories.',
+    'The tension between Germany\'s refusal of Taurus missiles and its provision of Patriot missiles reveals a European strategy of \'defensive enablement\'—providing the means to survive but not the means to decisively shift the front.'
+  ],
+  implications: [
+    'If European stockpiles continue to drain due to the Iran war, Ukraine\'s reliance on domestic production becomes a structural vulnerability in the short term.',
+    'If Russia completes control of Donetsk, it creates a new strategic baseline for any future ceasefire negotiations.',
+    'If Ukraine successfully deploys an air-launched missile equivalent to the Kinzhal, the Russian rear becomes structurally insecure regardless of air superiority.'
+  ],
+  risks: [
+    'The depletion of Patriot interceptors could lead to a systemic collapse of urban air defense, making major cities untenable.',
+    'Russian personnel shortages may lead to more desperate, high-casualty \'meat wave\' tactics to maintain momentum in Donetsk.',
+    'The 9th Circuit reversal would confirm the race-to-the-bottom incentive industry-wide'
+  ],
+  questions: [
+    'Does the Iran ceasefire (if achieved) allow US to redirect resources back to Ukraine — and how quickly?',
+    'Is Russia attempting a larger offensive or using distraction for incremental consolidation?',
+    'Do Istanbul ceasefire talks have any realistic path to agreement?',
+    'Does European strategic autonomy on Ukraine survive as a durable shift or revert after the Iran crisis?',
+    'Does the development of a Ukrainian air-launched missile change the strategic depth of Russian rear operations?',
+    'Will the EU\'s €90bn loan be sufficient to sustain the war economy through 2026?'
+  ],
+  people: [
+    {
+      name: 'Vladimir Putin',
+      role: 'President, Russia',
+      why: 'Authorized the invasion. Managing the Iran-as-opportunity calculation in real time.',
+      alignment: 'Russia',
+      status: 'active'
+    },
+    {
+      name: 'Volodymyr Zelensky',
+      role: 'President, Ukraine',
+      why: 'Navigating the most difficult moment of the war — US distraction, European uncertainty, front-line pressure.',
+      alignment: 'Ukraine',
+      status: 'active'
+    },
+    {
+      name: 'Ursula von der Leyen',
+      role: 'President, European Commission',
+      why: 'Leading European coordination of Ukraine support during the US distraction. Her ability to hold European unity is the central variable in this story.',
+      alignment: 'EU',
+      status: 'active'
+    }
+  ]
 }, {
   id: "W04",
   code: "SDN-01",
