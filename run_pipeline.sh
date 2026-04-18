@@ -14,7 +14,7 @@ while IFS='|' read -r CODE TITLE DAYS WAR; do
     WAR_FLAG=""
     [ "$WAR" = "1" ] && WAR_FLAG="--war"
     python arc_pipeline.py --code "$CODE" --title "$TITLE" --days "$DAYS" --mode full $WAR_FLAG
-    sleep 10
+    sleep 25
 done <<< "$QUEUE"
 
 echo "----------------------------------------"

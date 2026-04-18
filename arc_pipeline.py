@@ -50,7 +50,10 @@ def js_safe(s):
 def load_changes():
     if CHANGES_F.exists():
         try:
-            return json.loads(CHANGES_F.read_text())
+            data = json.loads(CHANGES_F.read_text())
+            data.setdefault("written", [])
+            data.setdefault("skipped", [])
+            return data
         except Exception:
             pass
     return {"written": [], "skipped": []}
@@ -79,7 +82,7 @@ def call_google_ai(model, payload, retries=3):
         except Exception as e:
             last_err = e
             if attempt < retries - 1:
-                wait = 15 * (attempt + 1)
+                wait = 65 if "429" in str(e) else 15 * (attempt + 1)
                 log(f"    [Gemini] attempt {attempt+1} failed ({e}) — retrying in {wait}s")
                 time.sleep(wait)
     raise Exception(f"Gemini failed after {retries} attempts: {last_err}")
