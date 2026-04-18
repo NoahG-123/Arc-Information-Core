@@ -25,7 +25,7 @@ jobs:
 
       - name: Run ARC Pipeline
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
           OPENROUTER_KEY: ${{ secrets.OPENROUTER_KEY }}
           CI: true
         run: ./run_pipeline.sh

@@ -1,33 +1,32 @@
 #!/usr/bin/env python3
 """
-ARC Pipeline 3.0
+ARC Pipeline 3.1
 ─────────────────────────────────────────────────────
-Tier 1: Gemini 2.5 Flash + Google Search  (free)
-Tier 2: Llama 3.3 70B via OpenRouter      (free)
-Tier 3: DeepSeek V3 via OpenRouter        (paid, synthesis only)
+Tier 1: Brave Search LLM Context API  (~free, $5/mo credit)
+Tier 2: DeepSeek V3 via OpenRouter    (paid, format + write)
+Tier 3: DeepSeek V3 via OpenRouter    (paid, synthesis)
 ─────────────────────────────────────────────────────
 Per-story failures are skipped, not aborted.
 Push happens once at the end (handled by CI or run_pipeline.sh).
 """
 
-import json, os, re, sys, argparse, time, urllib.request, urllib.error
+import json, os, re, sys, argparse, time, urllib.request, urllib.error, urllib.parse
 from datetime import date
 from pathlib import Path
 
 WAR_CODES = {"IRAN-W01", "PAL-01", "UKR-01", "SDN-01", "LBN-01", "MMR-01", "SAH-01", "PAK-01"}
 
 # ── Config ────────────────────────────────────────────────────
-GEMINI_KEY     = os.environ.get("GEMINI_API_KEY")
+BRAVE_KEY      = os.environ.get("BRAVE_API_KEY")
 OPENROUTER_KEY = os.environ.get("OPENROUTER_KEY")
 
 TRACKER   = Path("tracker.js")
 CONTEXT_F = Path("arc-update-context.md")
 CHANGES_F = Path("arc-run-changes.json")
 
-GEMINI_BASE  = "https://generativelanguage.googleapis.com/v1beta/models"
-SEARCH_MODEL = "gemini-2.5-flash"
-FORMAT_MODEL = "deepseek/deepseek-chat"
-SYNTH_MODEL  = "deepseek/deepseek-chat"
+BRAVE_LLM_URL = "https://api.search.brave.com/res/v1/llm/context"
+FORMAT_MODEL  = "deepseek/deepseek-chat"
+SYNTH_MODEL   = "deepseek/deepseek-chat"
 
 # ── Utilities ─────────────────────────────────────────────────
 def log(msg):
@@ -62,30 +61,51 @@ def save_changes(changes):
     CHANGES_F.write_text(json.dumps(changes))
 
 # ── API calls with retry ───────────────────────────────────────
-def call_google_ai(model, payload, retries=3):
-    if not GEMINI_KEY:
-        abort("GEMINI_API_KEY is not set.")
-    url = f"{GEMINI_BASE}/{model}:generateContent?key={GEMINI_KEY}"
+def call_brave_llm_context(query, days, retries=3):
+    """Fetch pre-extracted, relevance-scored web content via Brave LLM Context API."""
+    if not BRAVE_KEY:
+        abort("BRAVE_API_KEY is not set.")
+    freshness = "pd" if days <= 1 else "pw" if days <= 7 else "pm"
+    params = urllib.parse.urlencode({
+        "q":           query,
+        "count":       20,
+        "token_limit": 6000,
+        "freshness":   freshness,
+    })
+    url = f"{BRAVE_LLM_URL}?{params}"
+    req = urllib.request.Request(url, headers={
+        "Accept":              "application/json",
+        "X-Subscription-Token": BRAVE_KEY
+    })
     last_err = None
     for attempt in range(retries):
         try:
-            req = urllib.request.Request(
-                url, data=json.dumps(payload).encode(),
-                headers={"Content-Type": "application/json"}, method="POST"
-            )
-            with urllib.request.urlopen(req, timeout=180) as r:
+            with urllib.request.urlopen(req, timeout=30) as r:
                 res = json.loads(r.read().decode())
-            if "error" in res:
-                raise Exception(str(res["error"]))
-            parts = res["candidates"][0]["content"]["parts"]
-            return next((p["text"] for p in parts if not p.get("thought")), parts[-1]["text"])
+            # Response: grounding.generic[] with url, title, snippets[]
+            items = (res.get("grounding") or {}).get("generic") or res.get("context") or []
+            parts = []
+            for item in items:
+                if isinstance(item, dict):
+                    title   = item.get("title", "")
+                    url_src = item.get("url", "")
+                    snippets = item.get("snippets") or ([item["content"]] if item.get("content") else [])
+                    text = " ".join(str(s) for s in snippets if s)
+                    if text:
+                        parts.append(f"[{title}] {url_src}\n{text}")
+                elif isinstance(item, str) and item:
+                    parts.append(item)
+            if parts:
+                return "\n\n".join(parts)
+            # Fallback: return raw JSON summary if no structured content
+            return json.dumps(res)[:4000]
         except Exception as e:
             last_err = e
             if attempt < retries - 1:
-                wait = 65 if "429" in str(e) else 15 * (attempt + 1)
-                log(f"    [Gemini] attempt {attempt+1} failed ({e}) — retrying in {wait}s")
+                wait = 15 * (attempt + 1)
+                log(f"    [Brave] attempt {attempt+1} failed ({e}) — retrying in {wait}s")
                 time.sleep(wait)
-    raise Exception(f"Gemini failed after {retries} attempts: {last_err}")
+    raise Exception(f"Brave LLM Context failed after {retries} attempts: {last_err}")
 
 def call_openrouter(model, messages, temp=0.0, retries=3):
     if not OPENROUTER_KEY:
@@ -142,19 +162,11 @@ def find_story_bounds(text, code):
 
 # ── Tier 1: Search ────────────────────────────────────────────
 def tier1_search(code, title, days, war):
-    war_note = " Include verified casualty figures, territorial changes, and weapon system details." if war else ""
-    prompt = (
-        f"Search Google News for '{title}' (ARC story code: {code}) over the last {days} day(s). "
-        "Prioritize local and foreign-language sources — translate to English. "
-        "Extract: concrete facts, verified figures, policy shifts, named individuals, exact quotes with attribution. "
-        f"Output bullet points only. No narrative, no speculation.{war_note}"
-    )
-    payload = {
-        "contents": [{"parts": [{"text": prompt}]}],
-        "tools": [{"googleSearch": {}}]
-    }
+    query = f"{title} latest news"
+    if war:
+        query = f"{title} casualties military strikes latest"
     try:
-        return call_google_ai(SEARCH_MODEL, payload)
+        return call_brave_llm_context(query, days)
     except Exception as e:
         log(f"  [{code}] SKIP — search failed: {e}")
         return None
