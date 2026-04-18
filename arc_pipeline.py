@@ -22,8 +22,8 @@ CHANGES_F = Path("arc-run-changes.json")
 
 GEMINI_BASE  = "https://generativelanguage.googleapis.com/v1beta/models"
 SEARCH_MODEL = "gemini-2.5-flash"
-FORMAT_MODEL = "gemma-4-27b-it"
-SYNTH_MODEL  = "deepseek/deepseek-reasoner"
+FORMAT_MODEL = "gemma-4-31b-it"
+SYNTH_MODEL  = "deepseek/deepseek-r1"
 
 # ── Utilities ─────────────────────────────────────────────────
 def abort(msg):
@@ -47,7 +47,10 @@ def call_google_ai(model, payload):
             res = json.loads(r.read().decode())
             if "error" in res:
                 raise Exception(str(res["error"]))
-            return res["candidates"][0]["content"]["parts"][0]["text"]
+            # Gemma 4 returns thought parts before the real response — skip them
+            parts = res["candidates"][0]["content"]["parts"]
+            text = next((p["text"] for p in parts if not p.get("thought")), parts[-1]["text"])
+            return text
     except urllib.error.HTTPError as e:
         raise Exception(f"HTTP {e.code}: {e.read().decode()}")
     except Exception as e:
