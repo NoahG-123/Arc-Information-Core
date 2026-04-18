@@ -13,13 +13,13 @@ for story in "${DAILY_STORIES[@]}"; do
     TITLE="${story##*|}"
     echo "----------------------------------------"
     echo "Processing $CODE: $TITLE"
-    python3 arc_pipeline.py --code "$CODE" --title "$TITLE" --mode full
+    python arc_pipeline.py --code "$CODE" --title "$TITLE" --mode full
     sleep 10
 done
 
 echo "----------------------------------------"
 echo "All stories formatted. Running Tier 3 Synthesis..."
-python3 arc_pipeline.py --mode synthesize
+python arc_pipeline.py --mode synthesize
 echo "ARC Pipeline Complete!"
 
 echo "----------------------------------------"
