@@ -58,7 +58,8 @@ const OVERVIEW = {
     change: "4th major shock since 2019: tariffs + oil shock + CUSMA uncertainty + inflation. Oil windfall for Alberta mixed with inflation risk nationally.",
     heat: 4,
     status: "developing"
-  }];
+  }]
+};
 const EVENTS = [{
   date: "Apr 7 2026",
   code: "IRAN-01",

@@ -292,7 +292,10 @@ def tier3_synthesis():
         clean_json = re.sub(r'^```(json)?\n|\n```$', '', result, flags=re.MULTILINE).strip()
         parsed = json.loads(clean_json)
 
-        new_overview = parsed.get("new_overview_jsx", "")
+        new_overview = parsed.get("new_overview_jsx", "").strip()
+        # Ensure the OVERVIEW block is properly terminated as a JS const statement
+        if not new_overview.rstrip().endswith("};"):
+            new_overview = re.sub(r'\s*[;\}]*\s*$', '', new_overview) + "\n};"
         updated_tracker = re.sub(r'const OVERVIEW = \{.*?\};', new_overview, tracker_text, flags=re.DOTALL)
         synced_tracker = sync_leaderboard(updated_tracker)
         TRACKER.write_text(synced_tracker, encoding="utf-8")
