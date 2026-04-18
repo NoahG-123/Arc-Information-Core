@@ -154,9 +154,11 @@ def tier2_write(code, search_results):
     if start is None:
         print(f"  [{code}] WARNING: Story code not found in tracker — content not updated.", file=sys.stderr)
     else:
-        updated_tracker = tracker_text[:start] + new_object + tracker_text[end+1:]
+        # Stamp date directly in new_object before inserting
+        stamped_object = re.sub(r'(updated:\s*["\'])[^"\']*(["\'])', rf'\g<1>{today_str}\g<2>', new_object, count=1)
+        updated_tracker = tracker_text[:start] + stamped_object + tracker_text[end+1:]
         TRACKER.write_text(updated_tracker, encoding="utf-8")
-        print(f"  [{code}] Story content and date updated.", file=sys.stderr)
+        print(f"  [{code}] Story content and date updated: {today_str}", file=sys.stderr)
 
     changes = {"written": []}
     if CHANGES_F.exists():
@@ -169,6 +171,96 @@ def tier2_write(code, search_results):
     CHANGES_F.write_text(json.dumps(changes))
 
     print(f"  [{code}] Write successful.", file=sys.stderr)
+
+# ── Leaderboard Sync ──────────────────────────────────────────
+def _extract_story_map(tracker_text):
+    """Return {code: {heat, status, title}} from STORIES array."""
+    m = re.search(r'const STORIES\s*=\s*\[', tracker_text)
+    if not m:
+        return {}
+    stories_text = tracker_text[m.end():]
+    story_map = {}
+    depth, start = 0, None
+    for i, ch in enumerate(stories_text):
+        if ch == '{':
+            if depth == 0: start = i
+            depth += 1
+        elif ch == '}':
+            depth -= 1
+            if depth == 0 and start is not None:
+                snippet = stories_text[start:i+1]
+                code_m   = re.search(r'code:\s*["\']([^"\']+)["\']', snippet)
+                heat_m   = re.search(r'\bheat:\s*(\d)', snippet)
+                status_m = re.search(r'status:\s*["\']([^"\']+)["\']', snippet)
+                title_m  = re.search(r'title:\s*["\']([^"\']+)["\']', snippet)
+                if code_m and heat_m and status_m:
+                    story_map[code_m.group(1)] = {
+                        'heat':   heat_m.group(1),
+                        'status': status_m.group(1),
+                        'title':  title_m.group(1) if title_m else ''
+                    }
+                start = None
+    return story_map
+
+def sync_leaderboard(tracker_text):
+    """Rebuild leaderboard entries with correct heat/status from STORIES.
+    Strips any hallucinated extra fields — keeps only code, title, change, heat, status."""
+    story_map = _extract_story_map(tracker_text)
+    if not story_map:
+        return tracker_text
+
+    overview_m = re.search(r'const OVERVIEW\s*=\s*\{', tracker_text)
+    if not overview_m:
+        return tracker_text
+    lb_m = re.search(r'leaderboard:\s*\[', tracker_text[overview_m.start():])
+    if not lb_m:
+        return tracker_text
+    lb_start = overview_m.start() + lb_m.end()
+
+    # Find end of leaderboard array with brace/bracket counting
+    depth, lb_end = 1, lb_start
+    for i in range(lb_start, len(tracker_text)):
+        c = tracker_text[i]
+        if c == '[': depth += 1
+        elif c == ']':
+            depth -= 1
+            if depth == 0:
+                lb_end = i
+                break
+
+    # Split leaderboard into individual entries using brace counting
+    lb_section = tracker_text[lb_start:lb_end]
+    entries = []
+    depth, start = 0, None
+    for i, ch in enumerate(lb_section):
+        if ch == '{':
+            if depth == 0: start = i
+            depth += 1
+        elif ch == '}':
+            depth -= 1
+            if depth == 0 and start is not None:
+                entries.append(lb_section[start:i+1])
+                start = None
+
+    new_entries = []
+    for entry in entries:
+        code_m   = re.search(r'code:\s*["\']([^"\']+)["\']', entry)
+        change_m = re.search(r'change:\s*["\']([^"\']*)["\']', entry)
+        if not code_m:
+            continue
+        code   = code_m.group(1)
+        change = change_m.group(1) if change_m else ''
+        if code not in story_map:
+            continue
+        s = story_map[code]
+        new_entries.append(
+            f'{{\n    code: "{code}",\n    title: "{s["title"]}",\n'
+            f'    change: "{change}",\n    heat: {s["heat"]},\n'
+            f'    status: "{s["status"]}"\n  }}'
+        )
+
+    new_lb = ',\n  '.join(new_entries)
+    return tracker_text[:lb_start] + new_lb + tracker_text[lb_end:]
 
 # ── Tier 3: DeepSeek Synthesis ────────────────────────────────
 def tier3_synthesis():
@@ -201,8 +293,9 @@ def tier3_synthesis():
 
         new_overview = parsed.get("new_overview_jsx", "")
         updated_tracker = re.sub(r'const OVERVIEW = \{.*?\};', new_overview, tracker_text, flags=re.DOTALL)
-        TRACKER.write_text(updated_tracker, encoding="utf-8")
-        print("  [Tier 3] Tracker OVERVIEW updated successfully.", file=sys.stderr)
+        synced_tracker = sync_leaderboard(updated_tracker)
+        TRACKER.write_text(synced_tracker, encoding="utf-8")
+        print("  [Tier 3] Tracker OVERVIEW updated and leaderboard synced.", file=sys.stderr)
     except Exception as e:
         abort(f"Tier 3 Synthesis Failed. Error: {e}")
 

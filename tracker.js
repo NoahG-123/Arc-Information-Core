@@ -6,214 +6,59 @@ const OVERVIEW = {
   leaderboard: [{
     code: "IRAN-01",
     title: "Operation Epic Fury",
-    updated: "Apr 17 2026",
     change: "Major joint campaign ended via April 8 ceasefire. US naval blockade of Iranian ports implemented April 13 following Islamabad talks collapse.",
-    heat: 4,
-    status: "monitoring",
-    card: "A ceasefire ended the major joint US-Israeli military campaign against Iran, though a US naval blockade of Iranian ports remains in effect.",
-    summary: "Operation Epic Fury concluded its primary strike phase on April 8, 2026, after extensive degradation of Iranian military and nuclear infrastructure. While major combat operations have ceased, the US maintains a naval blockade of the Strait of Hormuz following the collapse of diplomatic talks in Islamabad. The regional security architecture remains volatile as Iran assesses its leadership losses.",
-    confirmed: [
-        'US and Israel launched joint strikes (Operation Epic Fury/Lion\'s Roar) on February 28, 2026.',
-        'Strikes targeted IRGC command, air defenses, missile and drone launch sites, and nuclear facilities.',
-        'Ayatollah Ali Khamenei was killed in a strike on February 28, 2026.',
-        'A strike on a girls\' primary school in Minab killed nearly 100 children between the ages of seven and twelve on February 28, 2026.',
-        'Israel conducted more than 10,800 strikes on over 4,000 targets, dropping over 18,000 bombs.',
-        'The United States carried out approximately 13,000 strikes on Iranian military targets.',
-        'Iran fired approximately 650 ballistic missiles at Israel, many carrying cluster munitions.',
-        'Iran conducted retaliatory strikes against Jebel Ali port in Dubai and Camp Arifjan in Kuwait.',
-        '20 Israeli civilians and foreign nationals were killed, along with 4 Palestinians in the West Bank.',
-        'A US naval blockade of Iranian ports via the Strait of Hormuz went into effect on April 13, 2026.',
-        'A ceasefire took effect on April 8, 2026, marking the end of the major joint campaign.'
-    ],
-    developing: [
-        'Assessment of the Iranian government\'s stability and succession following the death of the Supreme Leader.',
-        'Impact of the US naval blockade on global energy markets and Iranian imports.',
-        'Potential for Iranian asymmetric retaliation via regional proxies.'
-    ],
-    insights: [
-        'The scale of the campaign signals a shift toward \'preventative decapitation\' as a primary US strategic doctrine regarding nuclear proliferation.',
-        'The divergence between GCC public neutrality and private elite support for the strikes reveals a structural realignment of Gulf security priorities away from diplomatic balancing.',
-        'The use of cluster munitions by Iran against Israeli population centers indicates a lowering of the threshold for prohibited weaponry in regional conflicts.'
-    ],
-    implications: [
-        'If the naval blockade persists, Iran is forced into a choice between internal collapse or a desperate attempt to break the blockade via the Strait of Hormuz.',
-        'The removal of the Supreme Leader creates a power vacuum that may trigger an internal struggle between the IRGC and traditional clerical elements.'
-    ],
-    risks: [
-        'A miscalculation during the blockade enforcement could reignite full-scale kinetic conflict.',
-        'The vacuum in Tehran could lead to an uncontrolled proliferation of tactical assets to regional proxies.'
-    ],
-    questions: [
-        'Will the Iranian leadership consolidate under a new figure, or will the state fragment?',
-        'Does the US intend to maintain the blockade indefinitely as a tool of regime change?'
-    ],
-    people: ['Donald Trump', 'Benjamin Netanyahu', 'Ayatollah Ali Khamenei'],
-    toll: {
-        killed: '100+ children, 20 Israeli civilians, 4 Palestinians, Ayatollah Ali Khamenei',
-        injured: '7,000+ Israelis',
-        displaced: '5,500+ Israelis'
-    }
-}, {
+    heat: 5,
+    status: "active-war"
+  },
+  {
     code: "ECON-01",
-    title: "Oil Shock & Global Economy",
+    title: "Oil Shock and Global Economy",
     change: "Oil drops to $87/barrel as Iran reopens Strait of Hormuz for 10-day ceasefire. US maintains naval blockade. 500M barrels lost from global market.",
-    heat: 4,
-    status: "developing",
-    updated: "Apr 17 2026",
-    card: "Global oil prices plunge as Iran temporarily reopens the Strait of Hormuz following a ceasefire agreement.",
-    summary: "Brent crude fell 12% to $87/barrel after Iran opened the Strait of Hormuz for commercial shipping, tied to a 10-day ceasefire between Israel and Lebanon. While markets show a return of risk appetite, the US maintains its naval blockade on Iranian vessels. The crisis has already removed over 500 million barrels of crude from the global market.",
-    confirmed: [
-      "Iran declared the Strait of Hormuz 'completely open' for commercial shipping on April 17, 2026.",
-      "Brent crude fell 12% to $87 per barrel on April 17, 2026.",
-      "Over 500 million barrels of crude and condensate were removed from the global market since February 2026.",
-      "The IEA projected the first annual decrease in global oil consumption since 2020 for 2026.",
-      "India registered 3.4% inflation driven by energy prices."
-    ],
-    developing: [
-      "Whether the 10-day ceasefire between Israel and Lebanon holds, as the Strait's reopening is conditional on this agreement.",
-      "The impact of the continued US naval blockade on Iranian oil exports despite the commercial opening."
-    ],
-    insights: [
-      "Market stability is now tethered to short-term tactical ceasefires rather than structural diplomatic resolutions.",
-      "The massive volume of unproduced crude creates a permanent supply gap that elevates the long-term price floor."
-    ],
-    implications: [
-      "If the ceasefire expires without a permanent deal, the resulting price spike will be amplified by the current market rally.",
-      "Energy-driven inflation in emerging markets increases the probability of domestic political volatility."
-    ],
-    risks: [
-      "A sudden re-closure of the Strait after the 10-day window would trigger a second, more severe shock.",
-      "Restrictive monetary policies to fight energy inflation may induce recessions in vulnerable economies."
-    ],
-    questions: [
-      "Does the US naval blockade force a broader deal with Tehran, or does it maintain a permanent state of friction?",
-      "Will the projected decline in global oil consumption signal a permanent structural shift in energy demand?"
-    ],
-    people: ["Donald Trump", "Axel Rudolph", "David Miliband", "Alfred Kammer"],
-    toll: {
-      economic_loss: "$50 billion in unproduced crude",
-      supply_gap: "500 million barrels"
-    }
-}, {
+    heat: 5,
+    status: "escalating"
+  },
+  {
     code: "ANTHRO-01",
     title: "Anthropic vs. Pentagon",
-    change: "DOJ has until April 30 to file 9th Circuit arguments. Microsoft, retired generals, Catholic theologians filed amicus briefs for Anthropic. Chatter that deal could be 'revived.' Emil Michael called Lin ruling a 'disgrace.'",
+    change: "DOJ has until April 30 to file 9th Circuit arguments. Microsoft, retired generals, Catholic theologians filed amicus briefs for Anthropic. Chatter that deal could be ",
     heat: 4,
     status: "escalating"
-  }, {
+  },
+  {
     code: "GEO-01",
     title: "US-China Strategic Competition",
     change: "Trump-Xi summit delayed. China learning from Iran war re: Taiwan. US burned 25% of THAAD interceptors in one month. Trump delayed Taiwan arms sale after Xi call.",
     heat: 4,
     status: "developing"
-  }, {
+  },
+  {
     code: "CHINA-01",
     title: "China — Rise & Reorientation",
     change: "China maintaining strategic restraint despite 30-40% of oil transiting Strait. Gasoline up 10% vs US 25%. Learning from its own military equipment failures in Iran.",
     heat: 4,
     status: "developing"
-  }, {
+  },
+  {
     code: "AI-GOV-01",
     title: "Autonomous Weapons Race",
     change: "Anthropic injunction reframes the story — courts may be the governance mechanism. 11,000 US munitions expended in 30 days on a second-tier adversary. Stockpile math alarming.",
     heat: 4,
     status: "developing"
-  }, {
+  },
+  {
     code: "AI-SEC-01",
-    title: "AI Infrastructure Under Fire",
+    title: "AI Security & Supply Chain",
     change: "Iran threatened complete annihilation of OpenAI Stargate $30B datacenter in Abu Dhabi. Iranian drones already knocked two AWS UAE availability zones offline for 24+ hours. Oracle Dubai facility hit. Gulf AI build-out pipeline now exposed.",
     heat: 5,
     status: "escalating"
-  }, {
-    code: 'CANADA-01',
-    title: 'Canada — Four Shocks Simultaneously',
-    change: '4th major shock since 2019: tariffs + oil shock + CUSMA uncertainty + inflation. Oil windfall for Alberta mixed with inflation risk nationally. \'Liberation Day\' April 2 global tariffs add pressure.',
-    heat: 5,
-    status: 'escalating',
-    updated: 'Apr 17 2026',
-    card: 'Canada faces escalating trade hostility from the US alongside internal economic pressures in housing and aviation.',
-    summary: 'The US administration is signaling a desire to dismantle existing trade agreements, while the Canadian government attempts to pivot toward global investment via a fall summit. Domestic strain is evident in the housing market\'s reliance on intergenerational wealth and aviation route cuts.',
-    confirmed: [
-        'Air Canada suspended six routes, including JFK, citing fuel costs (Apr 2026).',
-        'PM Mark Carney invited 100 top investment firms to an Invest in Canada Summit for Fall 2026.',
-        'Howard Lutnick stated Canada\'s trade strategy is the worst strategy and vowed to wind back the trade deal with the US (Apr 2026).',
-        'Government of Canada is considering welcome tax refunds for first-time homebuyers.',
-        'Canadians are scheduled to receive a one-time grocery benefit payment on June 5.'
-    ],
-    developing: [
-        'The outcome of the Invest in Canada Summit.',
-        'The specific mechanism the US may use to wind back trade deals.'
-    ],
-    insights: [
-        'The shift from tariff disputes to threats of dismantling trade deals indicates a move toward structural decoupling between the US and Canada.',
-        'Housing affordability has reached a threshold where first-time ownership is structurally dependent on intergenerational wealth transfers.'
-    ],
-    implications: [
-        'If the US winds back trade deals, Canada\'s export-led growth model becomes structurally non-viable.',
-        'Increased reliance on non-US investment suggests a forced diversification of the Canadian economic base.'
-    ],
-    risks: [
-        'A failure of the Invest in Canada Summit would signal a loss of confidence in Canadian stability during trade volatility.',
-        'Continued fuel cost spikes could lead to further aviation route collapses, isolating key economic hubs.'
-    ],
-    questions: [
-        'Does the US intend to fully exit CUSMA — and what is the legal mechanism for that wind-back?',
-        'Can the welcome tax refund meaningfully impact housing affordability or is it a cosmetic measure?'
-    ],
-    people: ['Mark Carney', 'Howard Lutnick', 'Minister Joly', 'Minister Champagne'],
-    toll: {},
-    front: {}
-}, {
-    code: "INDIA-01",
-    title: "India — Strategic Emergence",
-    change: "Strait closure hitting Indian oil imports hard. Modi navigating impossible triangle. India-Pakistan destroyers escorting tankers in Gulf of Oman.",
-    heat: 3,
+  },
+  {
+    code: "CANADA-01",
+    title: "Canada — Four Shocks Simultaneously",
+    change: "4th major shock since 2019: tariffs + oil shock + CUSMA uncertainty + inflation. Oil windfall for Alberta mixed with inflation risk nationally. \",
+    heat: 4,
     status: "developing"
-  }, {
-    code: "META-01",
-    title: "Moltbook & the Dead Internet",
-    change: "Meta acquired Moltbook March 10. Agent-populated internet thesis now inside Meta. OpenClaw security vulnerabilities unresolved. Dead Internet Theory moving from fringe to product roadmap.",
-    heat: 3,
-    status: "developing"
-  }, {
-    code: "SGP-01",
-    title: "Singapore — Strategic Pivot",
-    change: "SIA flight cancellations ongoing. Shipping rerouting benefiting port volumes short-term but economic shock hitting harder. ASEAN diplomacy intensifying.",
-    heat: 3,
-    status: "developing"
-  }, {
-    code: "EPSTEIN-01",
-    title: "Epstein Files & Institutional Capture",
-    change: "Faulty redaction in 2025 release still being analyzed. Demand side network untouched. Story dormant but structurally unresolved.",
-    heat: 2,
-    status: "monitoring"
-  }, {
-    code: "AFRICA-01",
-    title: "Africa — Great Power Arena",
-    change: "Oil shock hitting African importers hardest — scarce forex, no buffer. Multiple governments under fiscal pressure.",
-    heat: 3,
-    status: "developing"
-  }],
-  cross_story_alerts: [{
-    codes: ["IRAN-01", "ECON-01", "AI-SEC-01"],
-    date: "Apr 7 2026",
-    title: "War-Economy-Tech Convergence",
-    alert: "The Iran war, oil shock, and AI infrastructure attacks are now a single compounding system. Kharg Island struck, Strait paralyzed, and Iranian drones targeting Gulf datacenters simultaneously — each reinforces the others. A ceasefire tonight stops the military track but Kharg damage and insurance market repricing will persist independently.",
-    severity: "critical"
-  }, {
-    codes: ["ANTHRO-01", "AI-GOV-01", "GEO-01"],
-    date: "Apr 6 2026",
-    title: "AI Governance Race-to-Bottom Confirmed",
-    alert: "The Anthropic injunction, OpenAI Pentagon deal, and US-China AI competition are moving in the same structural direction: military AI constraints are being removed faster than any governance framework can replace them. Three stories, one trajectory.",
-    severity: "high"
-  }, {
-    codes: ["IRAN-W01", "UKR-01", "PAK-01"],
-    date: "Apr 5 2026",
-    title: "Three-Front Distraction Risk",
-    alert: "US military attention is fully absorbed by Iran. Ukraine's air defense is measurably degraded by THAAD redeployment. Pakistan-India Kashmir tensions are elevated with no US mediator present. The window for opportunistic escalation in either secondary theater is open.",
-    severity: "high"
-  }]
-};
+  }];
 const EVENTS = [{
   date: "Apr 7 2026",
   code: "IRAN-01",
