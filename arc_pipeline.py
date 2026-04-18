@@ -98,15 +98,42 @@ def tier1_search(code, title, days, war):
         abort(f"Gemini Search Error: {e}")
 
 # ── Tier 2: Gemma 4 Format & Write ────────────────────────────
+def find_story_bounds(text, code):
+    """Return (start, end) indices of the story object with the given code, inclusive."""
+    target = f'code:"{code}"'
+    idx = text.find(target)
+    if idx == -1:
+        return None, None
+    start = text.rfind('{', 0, idx)
+    if start == -1:
+        return None, None
+    depth = 0
+    for i in range(start, len(text)):
+        if text[i] == '{':
+            depth += 1
+        elif text[i] == '}':
+            depth -= 1
+            if depth == 0:
+                return start, i
+    return None, None
+
 def tier2_write(code, search_results):
     tracker_text = TRACKER.read_text(encoding="utf-8")
     context_text = CONTEXT_F.read_text(encoding="utf-8") if CONTEXT_F.exists() else "No context file."
 
+    # Extract the existing story object to show Gemma 4 the exact format to match
+    start, end = find_story_bounds(tracker_text, code)
+    existing_object = tracker_text[start:end+1] if start is not None else ""
+
+    today = date.today()
+    today_str = f"{today.strftime('%b')} {today.day} {today.year}"
+
     prompt = (
         f"You are the ARC Formatter. Follow these rules exactly:\n{context_text}\n\n"
-        f"Update the object for {code} based on these facts:\n{search_results}\n\n"
-        f"Current file context:\n{tracker_text[:3000]}\n\n"
-        f"Output ONLY the raw JSON object for {code}. No markdown formatting."
+        f"Update the story object for {code} based on these new facts:\n{search_results}\n\n"
+        f"Here is the EXISTING object to update (preserve all fields, update content only):\n{existing_object}\n\n"
+        f"Set the updated field to \"{today_str}\".\n"
+        f"Output ONLY the raw JS object (same unquoted-key format as the input). No markdown, no explanation."
     )
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
@@ -114,26 +141,18 @@ def tier2_write(code, search_results):
     }
 
     try:
-        json_str = call_google_ai(FORMAT_MODEL, payload)
+        new_object = call_google_ai(FORMAT_MODEL, payload)
     except Exception as e:
         abort(f"Gemma 4 formatting failed: {e}")
 
-    json_str = re.sub(r'^```(json)?\n|\n```$', '', json_str, flags=re.MULTILINE).strip()
+    new_object = re.sub(r'^```(\w+)?\n|\n```$', '', new_object, flags=re.MULTILINE).strip()
 
-    # ── Stamp today's date on the updated story ────────────────
-    today = date.today()
-    today_str = f"{today.strftime('%b')} {today.day} {today.year}"  # e.g. "Apr 17 2026"
-
-    # Match the line containing code:"CODE" and replace its updated:"..." value.
-    # The code and updated fields always appear on the same line in STORIES objects.
-    date_pattern = r'(code:"' + re.escape(code) + r'"[^\n]*updated:")[^"]*(")'
-    updated_tracker = re.sub(date_pattern, rf'\g<1>{today_str}\g<2>', tracker_text)
-
-    if updated_tracker == tracker_text:
-        print(f"  [{code}] WARNING: Story code not found in tracker — date not updated.", file=sys.stderr)
+    if start is None:
+        print(f"  [{code}] WARNING: Story code not found in tracker — content not updated.", file=sys.stderr)
     else:
+        updated_tracker = tracker_text[:start] + new_object + tracker_text[end+1:]
         TRACKER.write_text(updated_tracker, encoding="utf-8")
-        print(f"  [{code}] Date stamped: {today_str}", file=sys.stderr)
+        print(f"  [{code}] Story content and date updated.", file=sys.stderr)
 
     changes = {"written": []}
     if CHANGES_F.exists():
@@ -146,7 +165,6 @@ def tier2_write(code, search_results):
     CHANGES_F.write_text(json.dumps(changes))
 
     print(f"  [{code}] Write successful.", file=sys.stderr)
-    return json_str
 
 # ── Tier 3: DeepSeek Synthesis ────────────────────────────────
 def tier3_synthesis():
