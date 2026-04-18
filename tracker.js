@@ -89,52 +89,7 @@ const EVENTS = [{
   date: "Apr 3 2026",
   code: "IRAN-W01",
   type: "NEW_FACT",
-  content: "IRGC released satellite imagery of Stargate UAE facility, threatened annihilation conditional on US striking Iranian power plants.",
-  updated: "Apr 18 2026",
-  heat: 5,
-  status: "active-war",
-  card: "Military",
-  summary: "Escalating US-Iran conflict following leadership decapitation strikes, with severe losses on both sides and regional humanitarian crisis",
-  confirmed: [
-    'US has lost at least 16 military aircraft including 10-12 MQ-9 Reaper drones downed by Iranian defenses (CENTCOM statements, Bloomberg, March 2026)',
-    'F-15E Strike Eagle downed by Iranian air defenses on April 3, 2026; WSO recovered alive April 5 (CENTCOM confirmation)',
-    'KC-135 tanker destroyed in mid-air incident March 12 killing 6 crew',
-    'US reported 13 service members killed in action by mid-March, ~200 wounded (Military.com Honor the Fallen list)',
-    'Over 40 senior Iranian officials killed including Supreme Leader Khamenei on Feb 28 (Euronews, Axios, Reuters March 21)',
-    'Iran suffered destruction of 140+ naval vessels, 190+ ballistic missile launchers, 85% of SAM systems degraded (CSIS reports)',
-    'Nearly 700,000 displaced in Lebanon due to conflict spillover (UN reports, multiple sources March 2026)'
-  ],
-  developing: [
-    'Houthi willingness to block Bab el-Mandeb Strait despite 2025 ceasefire (Britannica report late March)',
-    'Trump set April 7 deadline for Iran to allow Strait of Hormuz transit, threatened civilian infrastructure (April social media posts)',
-    'Islamic Republic offers reward for capture of downed US pilot (Iran International April 3)'
-  ],
-  insights: [
-    'Iranian leadership losses created accelerated succession dynamics favoring IRGC hardliners over clerical establishment',
-    'Civilian displacement patterns reflect conflict spillover beyond direct combat zones into humanitarian sectors',
-    'Asymmetric damage patterns show Iranian losses concentrated in conventional military assets while US losses skew toward high-value systems'
-  ],
-  implications: [
-    'Disruption of global shipping routes compounds regional instability with economic ripple effects',
-    'Mass displacement pressures neighboring states already facing refugee crises',
-    'Leadership decapitation creates unpredictable command structures in Iranian military response'
-  ],
-  risks: [
-    'Miscalculation in Strait of Hormuz engagements triggering uncontrolled escalation',
-    'Secondary conflict expansion through proxy networks in multiple theaters',
-    'Humanitarian collapse triggering mass migration flows beyond regional capacity'
-  ],
-  toll: {
-    military: 'US: 13+ KIA, ~200 WIA | Iran: 104+ naval personnel killed in Dena sinking alone',
-    civilian: '170+ killed in Minab school strike, Lebanon displacement exceeds 700,000',
-    economic: 'Early US equipment losses ~$2B, Iranian military infrastructure losses existential'
-  },
-  front: {
-    military: 'US/Israel maintain air superiority but sustain drone attrition',
-    political: 'Iran consolidates under hardline leadership despite losses',
-    economic: 'Strait of Hormuz disruptions threaten global energy markets'
-  },
-  people: ['Donald Trump', 'Benjamin Netanyahu', 'Mojtaba Khamenei', 'Mohammad Bagher Zolghadr']
+  content: "IRGC released satellite imagery of Stargate UAE facility, threatened annihilation conditional on US striking Iranian power plants."
 }, {
   date: "Apr 2 2026",
   code: "ECON-01",
@@ -179,8 +134,7 @@ const EVENTS = [{
   date: "Feb 5 2026",
   code: "AI-FRONTIER-01",
   type: "NEW_FACT",
-  content: "Claude Opus 4.6 released with 1M token context at standard pricing. First formal model welfare assessments published by any major AI lab.",
-  updated: "Apr 18 2026"
+  content: "Claude Opus 4.6 released with 1M token context at standard pricing. First formal model welfare assessments published by any major AI lab."
 }];
 const STORIES = [{
   id: 1,

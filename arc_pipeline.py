@@ -139,15 +139,22 @@ def call_openrouter(model, messages, temp=0.0, retries=3):
 
 # ── Story bounds ───────────────────────────────────────────────
 def find_story_bounds(text, code):
-    """Return (start, end) indices of the story object with the given code."""
+    """Return (start, end) of the story object with the given code.
+    Only searches within STORIES and WAR_STORIES — never EVENTS or OVERVIEW."""
+    search_from = text.find('const STORIES')
+    if search_from == -1:
+        search_from = 0
+
     idx = -1
     for fmt in (f'code: "{code}"', f'code:"{code}"', f"code: '{code}'", f"code:'{code}'"):
-        idx = text.find(fmt)
-        if idx != -1:
+        i = text.find(fmt, search_from)
+        if i != -1:
+            idx = i
             break
     if idx == -1:
         return None, None
-    start = text.rfind('{', 0, idx)
+
+    start = text.rfind('{', search_from, idx)
     if start == -1:
         return None, None
     depth = 0
