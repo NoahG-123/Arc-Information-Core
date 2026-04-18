@@ -1,28 +1,27 @@
 #!/bin/bash
-# Add your daily stories here. Format is "STORY-CODE|Search Title"
-declare -a DAILY_STORIES=(
-    "IRAN-01|Operation Epic Fury Iran Conflict"
-    "ECON-01|Global Economy Oil Shock"
-    "CANADA-01|Canada Trade Housing Economy"
-)
-
 echo "Starting ARC Daily Pipeline Update..."
 
-for story in "${DAILY_STORIES[@]}"; do
-    CODE="${story%%|*}"
-    TITLE="${story##*|}"
+QUEUE=$(python arc_pipeline.py --mode queue)
+
+if [ -z "$QUEUE" ]; then
+  echo "No stories queued for today. Exiting."
+  exit 0
+fi
+
+while IFS='|' read -r CODE TITLE DAYS WAR; do
     echo "----------------------------------------"
     echo "Processing $CODE: $TITLE"
-    python arc_pipeline.py --code "$CODE" --title "$TITLE" --mode full
+    WAR_FLAG=""
+    [ "$WAR" = "1" ] && WAR_FLAG="--war"
+    python arc_pipeline.py --code "$CODE" --title "$TITLE" --days "$DAYS" --mode full $WAR_FLAG
     sleep 10
-done
+done <<< "$QUEUE"
 
 echo "----------------------------------------"
-echo "All stories formatted. Running Tier 3 Synthesis..."
+echo "All stories processed. Running Tier 3 Synthesis..."
 python arc_pipeline.py --mode synthesize
 echo "ARC Pipeline Complete!"
 
-echo "----------------------------------------"
 if [ -z "$CI" ]; then
   echo "Pushing updates to GitHub (triggers Vercel deploy)..."
   git add tracker.js arc-run-changes.json

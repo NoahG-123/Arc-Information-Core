@@ -11,6 +11,8 @@ import json, os, re, sys, argparse, urllib.request, urllib.error
 from datetime import date
 from pathlib import Path
 
+WAR_CODES = {"IRAN-W01", "PAL-01", "UKR-01", "SDN-01", "LBN-01", "MMR-01", "SAH-01", "PAK-01"}
+
 # ── Config & Keys ─────────────────────────────────────────────
 GEMINI_KEY     = os.environ.get("GEMINI_API_KEY")
 OPENROUTER_KEY = os.environ.get("OPENROUTER_KEY")
@@ -204,6 +206,58 @@ def tier3_synthesis():
     except Exception as e:
         abort(f"Tier 3 Synthesis Failed. Error: {e}")
 
+# ── Queue Builder ─────────────────────────────────────────────
+def build_queue():
+    today = date.today()
+    dow = today.isoweekday()   # 1=Mon
+    dom = today.day
+
+    tracker_text = TRACKER.read_text(encoding="utf-8")
+
+    # Extract stories from STORIES[] array only
+    stories_match = re.search(r'const STORIES\s*=\s*\[', tracker_text)
+    if not stories_match:
+        return
+    stories_text = tracker_text[stories_match.end():]
+
+    # Walk the STORIES array splitting top-level objects by brace depth
+    stories = []
+    depth, start = 0, None
+    for i, ch in enumerate(stories_text):
+        if ch == '{':
+            if depth == 0:
+                start = i
+            depth += 1
+        elif ch == '}':
+            depth -= 1
+            if depth == 0 and start is not None:
+                snippet = stories_text[start:i+1]
+                code_m  = re.search(r'code:\s*["\']([^"\']+)["\']', snippet)
+                title_m = re.search(r'title:\s*["\']([^"\']+)["\']', snippet)
+                heat_m  = re.search(r'\bheat:\s*(\d)', snippet)
+                if code_m and title_m and heat_m:
+                    stories.append({
+                        'code':  code_m.group(1),
+                        'title': title_m.group(1),
+                        'heat':  int(heat_m.group(1))
+                    })
+                start = None
+
+    queue = []
+    for s in stories:
+        heat = s['heat']
+        if heat >= 4:
+            days = 1 if heat == 5 else 2
+            queue.append((s['code'], s['title'], days))
+        elif heat == 3 and dow == 1:      # Mondays
+            queue.append((s['code'], s['title'], 7))
+        elif heat <= 2 and dom in (1, 15): # 1st and 15th
+            queue.append((s['code'], s['title'], 14))
+
+    for code, title, days in queue:
+        war = "1" if code in WAR_CODES else "0"
+        print(f"{code}|{title}|{days}|{war}")
+
 # ── Main CLI ──────────────────────────────────────────────────
 def main():
     p = argparse.ArgumentParser(description="ARC Pipeline 2.0")
@@ -211,9 +265,11 @@ def main():
     p.add_argument("--title", help="Search topic")
     p.add_argument("--days",  type=int, default=1)
     p.add_argument("--war",   action="store_true")
-    p.add_argument("--mode",  default="full", choices=["search", "format", "validate", "synthesize", "full"])
+    p.add_argument("--mode",  default="full", choices=["search", "format", "validate", "synthesize", "full", "queue"])
     args = p.parse_args()
 
+    if args.mode == "queue":
+        return build_queue()
     if args.mode == "validate":
         return sys.exit(0)
     if args.mode == "synthesize":
