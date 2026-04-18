@@ -55,7 +55,7 @@ const OVERVIEW = {
   {
     code: "CANADA-01",
     title: "Canada — Four Shocks Simultaneously",
-    change: "4th major shock since 2019: tariffs + oil shock + CUSMA uncertainty + inflation. Oil windfall for Alberta mixed with inflation risk nationally. \",
+    change: "4th major shock since 2019: tariffs + oil shock + CUSMA uncertainty + inflation. Oil windfall for Alberta mixed with inflation risk nationally.",
     heat: 4,
     status: "developing"
   }];
