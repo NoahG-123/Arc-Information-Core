@@ -1,183 +1,79 @@
-# ARC Update Task
+# ARC Pipeline — How It Works
 
-## Your Role
-You are the synthesis layer. Gemini 2.5 Flash searched. Gemma 4 26B formatted and wrote to tracker.jsx. Your job is:
-1. Run the pipeline per story and handle exceptions
-2. Write insights, implications, cross-story alerts, and OVERVIEW — once, at the end
-3. Commit
-
-You do NOT search. You do NOT format fields. You do NOT write confirmed/developing/questions. Gemma does all of that.
+This is a fully automated GitHub Actions pipeline. It does not require manual intervention.
 
 ---
 
-## Step 1 — Setup
+## Architecture
 
-```bash
-TODAY=$(date +"%Y-%m-%d")
-DOW=$(date +%u)    # 1=Monday
-DOM=$(date +%d)    # day of month
-git pull origin main
-```
-
-If git pull fails: abort immediately. Do not proceed.
+| Tier | Model | Role | Cost |
+|------|-------|------|------|
+| 1 | Gemini 2.5 Flash + Google Search | Search Google News for each story | Free |
+| 2 | Llama 3.3 70B (OpenRouter) | Format search results → update story fields in tracker.js | Free |
+| 3 | DeepSeek V3 (OpenRouter) | Synthesize OVERVIEW.summary + leaderboard change texts | Paid |
 
 ---
 
-## Step 2 — Build Queue
+## What Runs When
 
-- **Every day:** IRAN-01, ECON-01, AI-SEC-01, IRAN-W01, PAL-01, ANTHRO-01, AI-GOV-01, GEO-01, CHINA-01, CANADA-01, AI-FRONTIER-01, AI-WELFARE-01, UKR-01, SDN-01, LBN-01, CARNEY-01, CUSMA-01, ECON-CA-01, OLIGARCH-01, INSIDER-01, FOSSIL-RECKONING-01, TRANSITION-01, ARCTIC-SCIENCE-01, FOOD-CLIMATE-01
-- **Mondays (DOW=1) add:** *(heat 4 now runs daily — nothing extra on Mondays)*
-- **1st and 15th add:** INDIA-01, SGP-01, AFRICA-01, META-01, MMR-01, SAH-01, PAK-01, DIASPORA-01, ARCTIC-01, INDIGENOUS-01, CAPTURE-01, FED-01, ACCOUNTABILITY-01, EMISSIONS-01
+The queue is built dynamically from story heat levels in STORIES[]:
 
----
+| Heat | Frequency |
+|------|-----------|
+| 5 | Daily (1-day search window) |
+| 4 | Daily (2-day search window) |
+| 3 | Mondays only (7-day window) |
+| 1–2 | 1st and 15th of month (14-day window) |
 
-## Step 3 — Run Pipeline Per Story
-
-For each story, read its current summary and last 3 confirmed facts from tracker.jsx, then run:
-
-```bash
-python3 arc_pipeline.py \
-  --code "STORY_CODE" \
-  --title "SEARCH TOPIC" \
-  --days 1 \
-  --summary "CURRENT_SUMMARY" \
-  --tail "LAST_3_CONFIRMED"
-```
-
-Use `--war` for: IRAN-W01, PAL-01, UKR-01, SDN-01, LBN-01, MMR-01, SAH-01, PAK-01
-Use `--days 2` for heat 4. Use `--days 7` for heat 3.
-
-**Read the output:**
-
-- `UNCHANGED` — skip. Move to next story.
-- `WRITTEN` — Gemma wrote to tracker.jsx successfully. Move to next story.
-- `VALIDATION_FAILED: [reason]` — Gemma's output failed the validation gate. YOU must apply the updates for this story manually by reading the pipeline's search output and editing tracker.jsx directly. Then validate:
-  ```bash
-  python3 arc_pipeline.py --code "X" --title "X" --mode validate
-  ```
-- If the script exits with `ABORT:` — stop everything. Push arc-abort.md immediately:
-  ```bash
-  git add arc-abort.md arc-update-log.md
-  git commit -m "ARC ABORT $TODAY"
-  git push origin main
-  ```
-  Then stop. Do not process more stories.
+Scheduled: weekdays at 10:00 UTC. Can also be triggered manually via GitHub Actions (workflow_dispatch).
 
 ---
 
-## Step 4 — Final Validation
+## Flow
 
-After all stories are processed, run one full validation:
-
-```bash
-python3 arc_pipeline.py --code "X" --title "X" --mode validate
-```
-
-If INVALID: do not commit. Inspect tracker.jsx, fix the issue, re-validate.
-
----
-
-## Step 5 — Immediate Alert Emails
-
-After each story is processed, read `arc-run-changes.json`. If `alerts` contains any entry with `severity: "critical"`, send an alert email immediately via the Gmail connector before processing the next story.
-
-**Alert email:**
-- To: arc.informationcore@gmail.com
-- Subject: `ARC ALERT — [alert title] — [DATE]`
-- Body: Alert title, full alert text, story codes involved, current heat levels, one sentence on why this matters structurally.
-
-One email per critical alert. Do not batch — immediacy is the point.
+1. `run_pipeline.sh` calls `arc_pipeline.py --mode queue` to get today's story queue
+2. For each story: `arc_pipeline.py --code X --title "Y" --days N [--war]`
+   - Tier 1: Gemini searches Google News → returns bullet-point facts
+   - Tier 2: Llama reads facts + existing story object → writes updated story object to tracker.js
+   - Failures are skipped (logged, not fatal)
+   - Each run retries 3 times with backoff before skipping
+3. After all stories: `arc_pipeline.py --mode synthesize`
+   - DeepSeek reads today's changes → outputs `{summary, leaderboard_changes}` as JSON
+   - Python writes summary to OVERVIEW.summary, syncs leaderboard heat/status/change
+4. CI commits `tracker.js` and `arc-run-changes.json` and pushes once (triggers Vercel redeploy)
 
 ---
 
-## Step 6 — Synthesis (once, after all stories)
+## Files
 
-Read `arc-run-changes.json` for the full list of WRITTEN stories. Then:
-
-1. For each WRITTEN story, add ONE insight if the update reveals something structurally significant — otherwise skip
-2. Add ONE implication or risk item per story if clearly warranted — otherwise skip
-3. Update or add cross-story alerts in `OVERVIEW.cross_story_alerts` if two or more updated stories are moving in the same structural direction
-4. Rewrite `OVERVIEW.summary` in 3-5 sentences
-5. Update changed leaderboard `change` fields
-6. Append new events to `EVENTS[]` for significant changes
+| File | Purpose |
+|------|---------|
+| `tracker.js` | The live data file served by Vercel. Pipeline writes here. |
+| `arc-run-changes.json` | Tracks `written[]` and `skipped[]` codes for the current run |
+| `arc-update-context.md` | Field rules passed to the format model |
+| `arc-abort.md` | Written only on hard abort (missing API keys, etc.) |
 
 ---
 
-## Step 7 — Commit
+## Error Behavior
 
-```bash
-git add tracker.jsx arc-update-log.md arc-pending-stories.md arc-run-changes.json 2>/dev/null || true
-git diff --staged --quiet || git commit -m "ARC update $TODAY"
-git push origin main
-```
-
----
-
-## Step 8 — Daily Digest Email
-
-After commit, send one digest email via the Gmail connector.
-
-**To:** arc.informationcore@gmail.com
-**Subject:** `ARC Daily Digest — [DATE] — [N] stories updated`
-
-**Body:**
-```
-ARC DAILY DIGEST — [DATE]
-
-WHAT CHANGED
-[For each WRITTEN story:]
-[CODE] [TITLE]
-Fields updated: [list]
-Heat: [before] → [after]  (only if changed)
-Before: [summary_before]
-After:  [summary_after]
----
-
-UNCHANGED: [comma-separated codes]
-
-VALIDATION FALLBACKS: [codes or NONE]
-
-NEW STORY PROPOSALS
-[For each proposal added this run:]
-PROPOSED: [CODE] — [Title]
-Criteria met: [list]
-Reply YES [CODE] or NO [CODE] to confirm.
-
-RETIREMENT PROPOSALS
-[For each retirement triggered this run:]
-RETIRE: [CODE] — [Title]
-Reason: [trigger]
-[closing_summary]
-Reply YES RETIRE [CODE] or NO RETIRE [CODE] to confirm.
-
-ACTIVE ALERTS
-[All alerts from OVERVIEW.cross_story_alerts — severity and title only]
-```
+- **Single story search fails** → logged as skipped, pipeline continues
+- **Single story format fails** → logged as skipped, pipeline continues
+- **Tier 3 synthesis fails** → logged, existing OVERVIEW kept, pipeline still commits
+- **Hard abort** → only if GEMINI_API_KEY or OPENROUTER_KEY is missing
 
 ---
 
-## Step 9 — Process Inbox Confirmations
+## Adding / Retiring Stories
 
-Check arc.informationcore@gmail.com inbox for reply emails. Process any containing:
-- `YES [CODE]` — add the proposed story from arc-pending-stories.md to tracker.jsx
-- `NO [CODE]` — delete the proposal from arc-pending-stories.md
-- `YES RETIRE [CODE]` — execute the retirement for that story
-- `NO RETIRE [CODE]` — cancel the retirement
+Stories are defined in `STORIES[]` in `tracker.js`. The queue builder reads heat from STORIES[] automatically.
 
-Commit any resulting tracker changes, then close the run.
+To add a story: add an object to STORIES[] with all required fields (id, cat, code, heat, status, updated, title, sub, card, bg, summary, confirmed, developing, insights, implications, risks, questions, connections, canada, people).
+
+To retire a story: set `status: "archived"`, `heat: 0`, move to ARCHIVED_STORIES[].
 
 ---
 
-## Step 10 — Log
+## Push Timing
 
-Append to arc-update-log.md:
-```
-## [DATE]
-Written: [codes]
-Unchanged: [codes]
-Validation fallbacks: [codes or NONE]
-Alert emails sent: [count]
-Digest sent: YES
-Confirmations processed: [list or NONE]
-Aborted: NO
-```
+All story writes happen in memory during the pipeline run. A **single git commit + push** happens at the end, triggering one Vercel redeploy. There is no push after individual stories.

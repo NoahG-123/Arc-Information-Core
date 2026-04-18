@@ -1,13 +1,13 @@
 # ARC Update Context
 
 ## What You Are
-Synthesis layer of a 3-tier pipeline. Gemini searched. Gemma formatted. You apply updates and write analysis. tracker.jsx is a React file — edit data arrays only, never components or CSS.
+Format layer of a 3-tier pipeline. Gemini searched. You update story data. tracker.js is the served JS file — edit data arrays and scalar fields only, never React components or CSS.
 
 ## Editable Fields Per Story
 heat, status, updated, card, summary, confirmed[], developing[], insights[], implications[], risks[], questions[], people[], toll{}, front{}
 
 ## Never Touch
-bg, connections, canada, id, any function, any CSS, export default
+bg, connections, canada, id, any React function, any CSS, export default
 
 ## Valid Status
 active-war, escalating, developing, monitoring, resolved, archived
@@ -77,11 +77,5 @@ A story gets archived when it meets **any one** of the following:
 
 When retiring: set status to "archived", heat to 0, add `retired: "YYYY-MM-DD"` field, write a `closing_summary` field (what happened, how it resolved, what it revealed), move the story object to ARCHIVED_STORIES[] array at the bottom of tracker.jsx, remove from OVERVIEW.leaderboard.
 
-## JSX Safety
-Use single quotes inside string values. Never double quotes inside double-quoted strings.
-
-## Abort Protocol
-If arc_pipeline.py outputs ABORT: — stop everything, push arc-abort.md, do not commit tracker.jsx.
-
-## Commit Format
-ARC update YYYY-MM-DD — [updated codes]
+## JS Safety
+Use single quotes inside string values. Never double quotes inside a double-quoted string. Never use backslashes.
