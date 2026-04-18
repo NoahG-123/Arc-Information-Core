@@ -23,7 +23,7 @@ CHANGES_F = Path("arc-run-changes.json")
 GEMINI_BASE  = "https://generativelanguage.googleapis.com/v1beta/models"
 SEARCH_MODEL = "gemini-2.5-flash"
 FORMAT_MODEL = "gemma-4-31b-it"
-SYNTH_MODEL  = "deepseek/deepseek-r1"
+SYNTH_MODEL  = "deepseek/deepseek-chat"
 
 # ── Utilities ─────────────────────────────────────────────────
 def abort(msg):

@@ -21,3 +21,10 @@ echo "----------------------------------------"
 echo "All stories formatted. Running Tier 3 Synthesis..."
 python3 arc_pipeline.py --mode synthesize
 echo "ARC Pipeline Complete!"
+
+echo "----------------------------------------"
+echo "Pushing updates to GitHub (triggers Vercel deploy)..."
+git add tracker.jsx arc-run-changes.json
+git commit -m "Auto-update: pipeline run $(date +'%b %d %Y')"
+git push origin main
+echo "Push complete."
