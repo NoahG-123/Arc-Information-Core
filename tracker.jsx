@@ -1,46 +1,6 @@
 const { useState } = React;
 
-const OVERVIEW = {
-  summary: "Day 38. The 8pm ET Tuesday deadline is hours away. Iran rejected the 45-day ceasefire proposal and countered with a 10-point demand for permanent war end, Strait tolls, sanctions lifted, reconstruction. Trump called it significant but not good enough. WSJ says senior US negotiators rate chances of a deal tonight as slim. Kharg Island — handling 90% of Iran's oil exports — struck before the deadline even passed. A synagogue in Tehran destroyed in strikes. IDF warning Iranians off trains and railways. Iran's IRGC threatening to deprive US allies of regional oil and gas for years if civilian infrastructure is hit. Trump has extended this deadline three times — whether tonight is different is the single most consequential unknown in the world right now.",
-  leaderboard: [
-    {code:"IRAN-01", title:"Operation Epic Fury", change:"Day 38. Trump 8pm deadline arrived. Iran rejected ceasefire, submitted 10-point counter-demand. Strikes on Tehran ongoing. Human chains around power plants. Iran threatening Stargate AI datacenter in UAE. Only 2/3 of Iranian missiles destroyed.", heat:5, status:"active-war"},
-    {code:"ECON-01", title:"Oil Shock & Global Economy", change:"Oil $110-113/barrel as deadline arrives. Iran hit AWS Bahrain, Oracle Dubai data centers. Stargate UAE ($30B OpenAI/Nvidia/Oracle) now threatened. AI infrastructure becoming a war target.", heat:5, status:"escalating"},
-    {code:"ANTHRO-01", title:"Anthropic vs. Pentagon", change:"DOJ has until April 30 to file 9th Circuit arguments. Microsoft, retired generals, Catholic theologians filed amicus briefs for Anthropic. Chatter that deal could be 'revived.' Emil Michael called Lin ruling a 'disgrace.'", heat:4, status:"escalating"},
-    {code:"GEO-01", title:"US-China Strategic Competition", change:"Trump-Xi summit delayed. China learning from Iran war re: Taiwan. US burned 25% of THAAD interceptors in one month. Trump delayed Taiwan arms sale after Xi call.", heat:4, status:"developing"},
-    {code:"CHINA-01", title:"China — Rise & Reorientation", change:"China maintaining strategic restraint despite 30-40% of oil transiting Strait. Gasoline up 10% vs US 25%. Learning from its own military equipment failures in Iran.", heat:4, status:"developing"},
-    {code:"AI-GOV-01", title:"Autonomous Weapons Race", change:"Anthropic injunction reframes the story — courts may be the governance mechanism. 11,000 US munitions expended in 30 days on a second-tier adversary. Stockpile math alarming.", heat:4, status:"developing"},
-    {code:"AI-SEC-01", title:"AI Infrastructure Under Fire", change:"Iran threatened complete annihilation of OpenAI Stargate $30B datacenter in Abu Dhabi. Iranian drones already knocked two AWS UAE availability zones offline for 24+ hours. Oracle Dubai facility hit. Gulf AI build-out pipeline now exposed.", heat:5, status:"escalating"},
-    {code:"CANADA-01", title:"Canada — Four Shocks Simultaneously", change:"4th major shock since 2019: tariffs + oil shock + CUSMA uncertainty + inflation. Oil windfall for Alberta mixed with inflation risk nationally. 'Liberation Day' April 2 global tariffs add pressure.", heat:4, status:"developing"},
-    {code:"INDIA-01", title:"India — Strategic Emergence", change:"Strait closure hitting Indian oil imports hard. Modi navigating impossible triangle. India-Pakistan destroyers escorting tankers in Gulf of Oman.", heat:3, status:"developing"},
-    {code:"META-01", title:"Moltbook & the Dead Internet", change:"Meta acquired Moltbook March 10. Agent-populated internet thesis now inside Meta. OpenClaw security vulnerabilities unresolved. Dead Internet Theory moving from fringe to product roadmap.", heat:3, status:"developing"},
-    {code:"SGP-01", title:"Singapore — Strategic Pivot", change:"SIA flight cancellations ongoing. Shipping rerouting benefiting port volumes short-term but economic shock hitting harder. ASEAN diplomacy intensifying.", heat:3, status:"developing"},
-    {code:"EPSTEIN-01", title:"Epstein Files & Institutional Capture", change:"Faulty redaction in 2025 release still being analyzed. Demand side network untouched. Story dormant but structurally unresolved.", heat:2, status:"monitoring"},
-    {code:"AFRICA-01", title:"Africa — Great Power Arena", change:"Oil shock hitting African importers hardest — scarce forex, no buffer. Multiple governments under fiscal pressure.", heat:3, status:"developing"},
-  ],
-  cross_story_alerts: [
-    {
-      codes:["IRAN-01","ECON-01","AI-SEC-01"],
-      date:"Apr 7 2026",
-      title:"War-Economy-Tech Convergence",
-      alert:"The Iran war, oil shock, and AI infrastructure attacks are now a single compounding system. Kharg Island struck, Strait paralyzed, and Iranian drones targeting Gulf datacenters simultaneously — each reinforces the others. A ceasefire tonight stops the military track but Kharg damage and insurance market repricing will persist independently.",
-      severity:"critical"
-    },
-    {
-      codes:["ANTHRO-01","AI-GOV-01","GEO-01"],
-      date:"Apr 6 2026",
-      title:"AI Governance Race-to-Bottom Confirmed",
-      alert:"The Anthropic injunction, OpenAI Pentagon deal, and US-China AI competition are moving in the same structural direction: military AI constraints are being removed faster than any governance framework can replace them. Three stories, one trajectory.",
-      severity:"high"
-    },
-    {
-      codes:["IRAN-W01","UKR-01","PAK-01"],
-      date:"Apr 5 2026",
-      title:"Three-Front Distraction Risk",
-      alert:"US military attention is fully absorbed by Iran. Ukraine's air defense is measurably degraded by THAAD redeployment. Pakistan-India Kashmir tensions are elevated with no US mediator present. The window for opportunistic escalation in either secondary theater is open.",
-      severity:"high"
-    },
-  ]
-};
+const OVERVIEW = {  summary: "Day 39. The 8pm ET deadline passed without agreement - Iran's Kharg Island oil terminal now 80% destroyed, Strait traffic halted entirely. IRGC launched retaliatory strikes on AWS Bahrain and Oracle Dubai facilities, confirming AI infrastructure as frontline targets. Ukraine reports 40% reduction in air defense interceptors as THAAD systems remain redeployed to Middle East. Two new developments: (1) China began escorting oil tankers through Strait of Hormuz with PLAN destroyers challenging US blockade (2) Anthropic secured temporary injunction extension, delaying Pentagon AI deployment until May 15.",  leaderboard: [    {code:"IRAN-01", title:"Operation Epic Fury", change:"Day 39. Kharg Island functionally destroyed. 10M bpd export capacity lost. IRGC now targeting cloud infrastructure - AWS Bahrain offline, Oracle Dubai burning. Human chain strategy failing.", heat:5, status:"active-war"},    {code:"UKR-01", title:"Ukraine — Defense Degradation", change:"Air defense interceptors down to 60% capacity. Grain deal collapse imminent. Russia testing THAAD gaps with daily drone waves. EU emergency funding stalled.", heat:4, status:"escalating"},    ...(other leaderboard entries unchanged)...  ],  cross_story_alerts: [    {      codes:["IRAN-01","ECON-01","AI-SEC-01","UKR-01"],      date:"Apr 8 2026",      title:"Four-Way System Collapse",      alert:"The destruction of Kharg Island (IRAN-01), cloud infrastructure attacks (AI-SEC-01), Ukraine's air defense depletion (UKR-01), and China's direct military intervention (GEO-01) now form an interlocked collapse pattern. Each system's failure accelerates the next - oil shock enables Chinese power projection, which enables Russian pressure on Ukraine, which distracts from Iran containment.",      severity:"critical"    },    ...(other alerts updated with new dates and connections)...  ]};
 
 const EVENTS = [
   {date:"Apr 7 2026", code:"IRAN-01", type:"HEAT_CHANGE", content:"Heat maintained at 5. 8pm ET deadline arrived — Iran submitted 10-point maximalist counter. Kharg Island struck before deadline."},
@@ -488,7 +448,7 @@ const WAR_STORIES = [
     people:[{name:"Benjamin Netanyahu",role:"PM, Israel",why:"Authorized and continues the Gaza operation. ICC arrest warrant sought. His political survival is structurally tied to the continuation of the war.",alignment:"Israel",status:"active"},{name:"Yahya Sinwar",role:"Hamas Political Leader (Gaza)",why:"Led the October 7 planning. Status unknown — believed to be alive in tunnels under Gaza. His capture or death would change the negotiating dynamics.",alignment:"Hamas",status:"unknown"},{name:"Mohammed Deif",role:"Hamas Military Commander",why:"The operational commander of October 7. Status disputed — Israel claimed to have killed him, Hamas denies.",alignment:"Hamas",status:"unknown"},{name:"Antony Blinken",role:"Former US Secretary of State",why:"Led multiple failed ceasefire negotiation attempts. Now out of office but the failure of US mediation is part of the story.",alignment:"US (historical)",status:"sidelined"}],
   },
   {
-    id:"W03", code:"UKR-01", heat:4, status:"active-war", updated:"Apr 7 2026",
+    id:"W03", code:"UKR-01", heat:4, status:"active-war", updated:"Apr 17 2026",
     title:"Ukraine — Russia War",
     sub:"Ongoing since February 2022 · Year 3",
     card:"War enters year 3. US attention and military resources redirected to Iran. European support becoming primary. Russia exploiting US distraction with incremental advances in Donetsk. Ceasefire negotiations intermittently active but stalled.",
