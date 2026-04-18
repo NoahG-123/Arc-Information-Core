@@ -250,6 +250,7 @@ def sync_leaderboard(tracker_text):
             continue
         code   = code_m.group(1)
         change = change_m.group(1) if change_m else ''
+        change = change.replace('\\', '').strip()  # prevent backslash-escaping the closing quote
         if code not in story_map:
             continue
         s = story_map[code]
