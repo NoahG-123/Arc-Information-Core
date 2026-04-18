@@ -2,7 +2,7 @@ const {
   useState
 } = React;
 const OVERVIEW = {
-  summary: "Day 38. The 8pm ET Tuesday deadline is hours away. Iran rejected the 45-day ceasefire proposal and countered with a 10-point demand for permanent war end, Strait tolls, sanctions lifted, reconstruction. Trump called it significant but not good enough. WSJ says senior US negotiators rate chances of a deal tonight as slim. Kharg Island — handling 90% of Iran's oil exports — struck before the deadline even passed. A synagogue in Tehran destroyed in strikes. IDF warning Iranians off trains and railways. Iran's IRGC threatening to deprive US allies of regional oil and gas for years if civilian infrastructure is hit. Trump has extended this deadline three times — whether tonight is different is the single most consequential unknown in the world right now.",
+  summary: "Day 38. The 8pm ET Tuesday deadline has passed with Iran rejecting the ceasefire and submitting maximalist demands. Strikes continue on Tehran and critical infrastructure like Kharg Island. Meanwhile, Canada faces escalating economic pressures from US trade hostility and internal strains, while AI infrastructure emerges as a new frontline in the Iran conflict with threats against the $30B Stargate UAE facility.",
   leaderboard: [{
     code: "IRAN-01",
     title: "Operation Epic Fury",
@@ -46,12 +46,45 @@ const OVERVIEW = {
     heat: 5,
     status: "escalating"
   }, {
-    code: "CANADA-01",
-    title: "Canada — Four Shocks Simultaneously",
-    change: "4th major shock since 2019: tariffs + oil shock + CUSMA uncertainty + inflation. Oil windfall for Alberta mixed with inflation risk nationally. 'Liberation Day' April 2 global tariffs add pressure.",
-    heat: 4,
-    status: "developing"
-  }, {
+    code: 'CANADA-01',
+    title: 'Canada — Four Shocks Simultaneously',
+    change: '4th major shock since 2019: tariffs + oil shock + CUSMA uncertainty + inflation. Oil windfall for Alberta mixed with inflation risk nationally. \'Liberation Day\' April 2 global tariffs add pressure.',
+    heat: 5,
+    status: 'escalating',
+    updated: 'Apr 17 2026',
+    card: 'Canada faces escalating trade hostility from the US alongside internal economic pressures in housing and aviation.',
+    summary: 'The US administration is signaling a desire to dismantle existing trade agreements, while the Canadian government attempts to pivot toward global investment via a fall summit. Domestic strain is evident in the housing market\'s reliance on intergenerational wealth and aviation route cuts.',
+    confirmed: [
+        'Air Canada suspended six routes, including JFK, citing fuel costs (Apr 2026).',
+        'PM Mark Carney invited 100 top investment firms to an Invest in Canada Summit for Fall 2026.',
+        'Howard Lutnick stated Canada\'s trade strategy is the worst strategy and vowed to wind back the trade deal with the US (Apr 2026).',
+        'Government of Canada is considering welcome tax refunds for first-time homebuyers.',
+        'Canadians are scheduled to receive a one-time grocery benefit payment on June 5.'
+    ],
+    developing: [
+        'The outcome of the Invest in Canada Summit.',
+        'The specific mechanism the US may use to wind back trade deals.'
+    ],
+    insights: [
+        'The shift from tariff disputes to threats of dismantling trade deals indicates a move toward structural decoupling between the US and Canada.',
+        'Housing affordability has reached a threshold where first-time ownership is structurally dependent on intergenerational wealth transfers.'
+    ],
+    implications: [
+        'If the US winds back trade deals, Canada\'s export-led growth model becomes structurally non-viable.',
+        'Increased reliance on non-US investment suggests a forced diversification of the Canadian economic base.'
+    ],
+    risks: [
+        'A failure of the Invest in Canada Summit would signal a loss of confidence in Canadian stability during trade volatility.',
+        'Continued fuel cost spikes could lead to further aviation route collapses, isolating key economic hubs.'
+    ],
+    questions: [
+        'Does the US intend to fully exit CUSMA — and what is the legal mechanism for that wind-back?',
+        'Can the welcome tax refund meaningfully impact housing affordability or is it a cosmetic measure?'
+    ],
+    people: ['Mark Carney', 'Howard Lutnick', 'Minister Joly', 'Minister Champagne'],
+    toll: {},
+    front: {}
+}, {
     code: "INDIA-01",
     title: "India — Strategic Emergence",
     change: "Strait closure hitting Indian oil imports hard. Modi navigating impossible triangle. India-Pakistan destroyers escorting tankers in Gulf of Oman.",
