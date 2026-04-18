@@ -23,8 +23,10 @@ python3 arc_pipeline.py --mode synthesize
 echo "ARC Pipeline Complete!"
 
 echo "----------------------------------------"
-echo "Pushing updates to GitHub (triggers Vercel deploy)..."
-git add tracker.js arc-run-changes.json
-git commit -m "Auto-update: pipeline run $(date +'%b %d %Y')"
-git push origin main
-echo "Push complete."
+if [ -z "$CI" ]; then
+  echo "Pushing updates to GitHub (triggers Vercel deploy)..."
+  git add tracker.js arc-run-changes.json
+  git commit -m "Auto-update: pipeline run $(date +'%b %d %Y')"
+  git push origin main
+  echo "Push complete."
+fi
