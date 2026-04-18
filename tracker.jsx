@@ -2029,6 +2029,7 @@ function ARC() {
           .arc-header-count{display:none!important;}
           .arc-sidebar-overview{display:none!important;}
           .ai-watch-outer{overflow-x:hidden!important;overflow-y:visible!important;height:auto!important;}
+          .arc-tab-content{height:auto!important;overflow-x:hidden!important;overflow-y:visible!important;}
           .ai-watch-body{flex-direction:column!important;overflow-x:hidden!important;overflow-y:visible!important;height:auto!important;}
           .ai-watch-sidebar{width:100%!important;height:auto!important;overflow-x:hidden!important;overflow-y:visible!important;border-right:none!important;border-bottom:1px solid rgba(255,255,255,0.055)!important;}
           .ai-watch-main{overflow-x:hidden!important;overflow-y:visible!important;height:auto!important;max-width:100vw!important;}
@@ -2100,19 +2101,19 @@ function ARC() {
       )}
 
       {mainTab==="war"&&(
-        <div style={{display:"flex",flex:1,overflow:"hidden"}}>
+        <div className="arc-tab-content" style={{display:"flex",flex:1,overflow:"hidden"}}>
           <WarWatchPanel/>
         </div>
       )}
 
       {mainTab==="canada"&&(
-        <div style={{display:"flex",flex:1,overflow:"hidden"}}>
+        <div className="arc-tab-content" style={{display:"flex",flex:1,overflow:"hidden"}}>
           <CanadaWatchPanel/>
         </div>
       )}
 
       {mainTab==="power"&&(
-        <div style={{display:"flex",flex:1,overflow:"hidden"}}>
+        <div className="arc-tab-content" style={{display:"flex",flex:1,overflow:"hidden"}}>
           <GenericWatchPanel
             stories={POWER_STORIES}
             color={POWER_COLOR}
@@ -2125,7 +2126,7 @@ function ARC() {
       )}
 
       {mainTab==="climate"&&(
-        <div style={{display:"flex",flex:1,overflow:"hidden"}}>
+        <div className="arc-tab-content" style={{display:"flex",flex:1,overflow:"hidden"}}>
           <GenericWatchPanel
             stories={CLIMATE_STORIES}
             color={CLIMATE_COLOR}
