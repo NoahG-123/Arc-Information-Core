@@ -11,6 +11,7 @@ Push happens once at the end (handled by CI or run_pipeline.sh).
 """
 
 import json, os, re, sys, argparse, time, urllib.request, urllib.error, urllib.parse
+import xml.etree.ElementTree as ET
 from datetime import date
 from pathlib import Path
 
@@ -20,9 +21,10 @@ WAR_CODES = {"IRAN-W01", "PAL-01", "UKR-01", "SDN-01", "LBN-01", "MMR-01", "SAH-
 BRAVE_KEY      = os.environ.get("BRAVE_API_KEY")
 OPENROUTER_KEY = os.environ.get("OPENROUTER_KEY")
 
-TRACKER   = Path("tracker.js")
-CONTEXT_F = Path("arc-update-context.md")
-CHANGES_F = Path("arc-run-changes.json")
+TRACKER    = Path("tracker.js")
+CONTEXT_F  = Path("arc-update-context.md")
+CHANGES_F  = Path("arc-run-changes.json")
+METADATA_F = Path("arc-metadata.json")
 
 BRAVE_LLM_URL = "https://api.search.brave.com/res/v1/llm/context"
 FORMAT_MODEL  = "deepseek/deepseek-chat"
@@ -60,18 +62,34 @@ def load_changes():
 def save_changes(changes):
     CHANGES_F.write_text(json.dumps(changes))
 
+def load_metadata():
+    if METADATA_F.exists():
+        try:
+            return json.loads(METADATA_F.read_text())
+        except Exception:
+            pass
+    return {}
+
+def save_metadata(meta):
+    METADATA_F.write_text(json.dumps(meta, indent=2))
+
 # ── API calls with retry ───────────────────────────────────────
-def call_brave_llm_context(query, days, retries=3):
+def call_brave_llm_context(query, days, country=None, search_lang=None, retries=3):
     """Fetch pre-extracted, relevance-scored web content via Brave LLM Context API."""
     if not BRAVE_KEY:
         abort("BRAVE_API_KEY is not set.")
     freshness = "pd" if days <= 1 else "pw" if days <= 7 else "pm"
-    params = urllib.parse.urlencode({
+    params_dict = {
         "q":           query,
         "count":       20,
-        "token_limit": 6000,
+        "token_limit": 10000,
         "freshness":   freshness,
-    })
+    }
+    if country:
+        params_dict["country"] = country
+    if search_lang:
+        params_dict["search_lang"] = search_lang
+    params = urllib.parse.urlencode(params_dict)
     url = f"{BRAVE_LLM_URL}?{params}"
     req = urllib.request.Request(url, headers={
         "Accept":              "application/json",
@@ -172,16 +190,94 @@ def find_story_bounds(text, code):
             break
     return None, None
 
+# ── Region discovery ──────────────────────────────────────────
+def discover_region(code, title, meta):
+    """Call DeepSeek to infer country/lang/arxiv for an unknown code. Saves result to JSON."""
+    log(f"  [Metadata] Unknown code '{code}' — asking DeepSeek...")
+    prompt = (
+        f"Story code: {code}\nStory title: {title}\n\n"
+        "Return a JSON object with exactly these keys:\n"
+        "  country: ISO 3166-1 alpha-2 code most relevant to this story (or null if truly global)\n"
+        "  search_lang: BCP-47 language code for local-language sources (or null)\n"
+        "  arxiv_query: short arXiv search string if academic papers are relevant, else null\n"
+        "Return ONLY the JSON object, no explanation, no markdown."
+    )
+    try:
+        raw = call_openrouter(FORMAT_MODEL, [{"role": "user", "content": prompt}], temp=0.0)
+        clean = re.sub(r'^```\w*\n?|\n?```$', '', raw.strip(), flags=re.MULTILINE).strip()
+        region = json.loads(clean)
+        meta[code] = {k: v for k, v in region.items() if v is not None}
+        save_metadata(meta)
+        log(f"  [Metadata] Saved {code}: {meta[code]}")
+        return meta[code]
+    except Exception as e:
+        log(f"  [Metadata] Discovery failed for '{code}': {e} — using global-only")
+        return {}
+
+# ── arXiv helper ──────────────────────────────────────────────
+def get_arxiv_abstracts(query, max_results=3):
+    """Fetch titles + abstracts of the most recent arXiv papers matching query."""
+    safe_q = urllib.parse.quote(query)
+    url = (
+        f"http://export.arxiv.org/api/query"
+        f"?search_query=all:{safe_q}"
+        f"&sortBy=submittedDate&sortOrder=descending"
+        f"&max_results={max_results}"
+    )
+    try:
+        with urllib.request.urlopen(url, timeout=20) as r:
+            xml_data = r.read()
+        root = ET.fromstring(xml_data)
+        ns = {"atom": "http://www.w3.org/2005/Atom"}
+        parts = []
+        for entry in root.findall("atom:entry", ns):
+            title   = (entry.findtext("atom:title",   namespaces=ns) or "").strip()
+            summary = (entry.findtext("atom:summary", namespaces=ns) or "").strip()
+            if title and summary:
+                parts.append(f"Title: {title}\nAbstract: {summary[:600]}")
+        return "\n\n".join(parts)
+    except Exception as e:
+        log(f"  [arXiv] Failed: {e}")
+        return ""
+
 # ── Tier 1: Search ────────────────────────────────────────────
 def tier1_search(code, title, days, war):
     query = f"{title} latest news"
     if war:
         query = f"{title} casualties military strikes latest"
+
+    meta = load_metadata()
+    region = meta.get(code)
+    if region is None:
+        region = discover_region(code, title, meta)
+
     try:
-        return call_brave_llm_context(query, days)
+        global_results = call_brave_llm_context(query, days)
     except Exception as e:
-        log(f"  [{code}] SKIP — search failed: {e}")
+        log(f"  [{code}] SKIP — global search failed: {e}")
         return None
+
+    results = global_results
+
+    if region:
+        try:
+            local_results = call_brave_llm_context(
+                query, days,
+                country=region.get("country"),
+                search_lang=region.get("search_lang"),
+            )
+            results = global_results + "\n\n--- LOCAL SOURCES ---\n\n" + local_results
+            log(f"  [{code}] Local ping OK ({region['country']})")
+        except Exception as e:
+            log(f"  [{code}] Local search failed (skipping): {e}")
+
+    if region and region.get("arxiv_query"):
+        arxiv_text = get_arxiv_abstracts(region["arxiv_query"])
+        if arxiv_text:
+            results += "\n\n--- RECENT ACADEMIC PAPERS ---\n\n" + arxiv_text
+            log(f"  [{code}] arXiv ping OK")
+
+    return results
 
 # ── Tier 2: Format & Write ────────────────────────────────────
 def tier2_write(code, search_results):
