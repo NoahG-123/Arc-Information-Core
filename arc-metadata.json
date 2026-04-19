@@ -1,0 +1,13 @@
+{
+  "IRAN": {"country": "IR", "search_lang": "fa"},
+  "PAL": {"country": "IL", "search_lang": "ar"},
+  "UKR": {"country": "UA", "search_lang": "uk"},
+  "SDN": {"country": "SD", "search_lang": "ar"},
+  "LBN": {"country": "LB", "search_lang": "ar"},
+  "MMR": {"country": "MM", "search_lang": "my"},
+  "SAH": {"country": "ML", "search_lang": "fr"},
+  "PAK": {"country": "PK", "search_lang": "ur"},
+  "ECON": {"country": "US", "search_lang": "en", "arxiv_query": "inflation OR macroeconomics"},
+  "AI": {"country": "US", "search_lang": "en", "arxiv_query": "artificial intelligence OR large language model"},
+  "CHIP": {"country": "US", "search_lang": "en", "arxiv_query": "semiconductor OR chip fabrication"}
+}

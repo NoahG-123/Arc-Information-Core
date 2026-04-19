@@ -17,28 +17,14 @@ from pathlib import Path
 
 WAR_CODES = {"IRAN-W01", "PAL-01", "UKR-01", "SDN-01", "LBN-01", "MMR-01", "SAH-01", "PAK-01"}
 
-# Maps story prefix → Brave region params + optional arXiv query
-REGION_MAP = {
-    "IRAN": {"country": "IR", "search_lang": "fa"},
-    "PAL":  {"country": "IL", "search_lang": "ar"},
-    "UKR":  {"country": "UA", "search_lang": "uk"},
-    "SDN":  {"country": "SD", "search_lang": "ar"},
-    "LBN":  {"country": "LB", "search_lang": "ar"},
-    "MMR":  {"country": "MM", "search_lang": "my"},
-    "SAH":  {"country": "ML", "search_lang": "fr"},
-    "PAK":  {"country": "PK", "search_lang": "ur"},
-    "ECON": {"country": "US", "search_lang": "en", "arxiv_query": "inflation OR macroeconomics"},
-    "AI":   {"country": "US", "search_lang": "en", "arxiv_query": "artificial intelligence OR large language model"},
-    "CHIP": {"country": "US", "search_lang": "en", "arxiv_query": "semiconductor OR chip fabrication"},
-}
-
 # ── Config ────────────────────────────────────────────────────
 BRAVE_KEY      = os.environ.get("BRAVE_API_KEY")
 OPENROUTER_KEY = os.environ.get("OPENROUTER_KEY")
 
-TRACKER   = Path("tracker.js")
-CONTEXT_F = Path("arc-update-context.md")
-CHANGES_F = Path("arc-run-changes.json")
+TRACKER    = Path("tracker.js")
+CONTEXT_F  = Path("arc-update-context.md")
+CHANGES_F  = Path("arc-run-changes.json")
+METADATA_F = Path("arc-metadata.json")
 
 BRAVE_LLM_URL = "https://api.search.brave.com/res/v1/llm/context"
 FORMAT_MODEL  = "deepseek/deepseek-chat"
@@ -75,6 +61,17 @@ def load_changes():
 
 def save_changes(changes):
     CHANGES_F.write_text(json.dumps(changes))
+
+def load_metadata():
+    if METADATA_F.exists():
+        try:
+            return json.loads(METADATA_F.read_text())
+        except Exception:
+            pass
+    return {}
+
+def save_metadata(meta):
+    METADATA_F.write_text(json.dumps(meta, indent=2))
 
 # ── API calls with retry ───────────────────────────────────────
 def call_brave_llm_context(query, days, country=None, search_lang=None, retries=3):
@@ -188,6 +185,30 @@ def find_story_bounds(text, code):
                 return start, i
     return None, None
 
+# ── Region discovery ──────────────────────────────────────────
+def discover_region(prefix, title, meta):
+    """Call DeepSeek to infer country/lang/arxiv for an unknown prefix. Saves result to JSON."""
+    log(f"  [Metadata] Unknown prefix '{prefix}' — asking DeepSeek...")
+    prompt = (
+        f"Story code prefix: {prefix}\nStory title: {title}\n\n"
+        "Return a JSON object with exactly these keys:\n"
+        "  country: ISO 3166-1 alpha-2 code most relevant to this story (or null if truly global)\n"
+        "  search_lang: BCP-47 language code for local-language sources (or null)\n"
+        "  arxiv_query: short arXiv search string if academic papers are relevant, else null\n"
+        "Return ONLY the JSON object, no explanation, no markdown."
+    )
+    try:
+        raw = call_openrouter(FORMAT_MODEL, [{"role": "user", "content": prompt}], temp=0.0)
+        clean = re.sub(r'^```\w*\n?|\n?```$', '', raw.strip(), flags=re.MULTILINE).strip()
+        region = json.loads(clean)
+        meta[prefix] = {k: v for k, v in region.items() if v is not None}
+        save_metadata(meta)
+        log(f"  [Metadata] Saved {prefix}: {meta[prefix]}")
+        return meta[prefix]
+    except Exception as e:
+        log(f"  [Metadata] Discovery failed for '{prefix}': {e} — using global-only")
+        return {}
+
 # ── arXiv helper ──────────────────────────────────────────────
 def get_arxiv_abstracts(query, max_results=3):
     """Fetch titles + abstracts of the most recent arXiv papers matching query."""
@@ -221,7 +242,10 @@ def tier1_search(code, title, days, war):
         query = f"{title} casualties military strikes latest"
 
     prefix = code.split("-")[0]
-    region = REGION_MAP.get(prefix)
+    meta = load_metadata()
+    region = meta.get(prefix)
+    if region is None:
+        region = discover_region(prefix, title, meta)
 
     try:
         global_results = call_brave_llm_context(query, days)

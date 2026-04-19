@@ -24,7 +24,7 @@ echo "ARC Pipeline Complete!"
 
 if [ -z "$CI" ]; then
   echo "Pushing updates to GitHub (triggers Vercel deploy)..."
-  git add tracker.js arc-run-changes.json arc-pending-stories.md
+  git add tracker.js arc-run-changes.json arc-pending-stories.md arc-metadata.json
   git commit -m "Auto-update: pipeline run $(date +'%b %d %Y')"
   git push origin main
   echo "Push complete."
