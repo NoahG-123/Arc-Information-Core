@@ -18,13 +18,15 @@ active-war, escalating, developing, monitoring, resolved, archived
 ## Field Rules
 
 **confirmed[]**
-Append only — never remove existing items. Add new verified facts from multiple credible sources. Official statements with source name and date. Past tense, one fact per string, specific — numbers, names, dates matter. Never include speculation, projections, or single-source claims. If something was in developing[] and is now confirmed, add to confirmed[] and remove from developing[].
+Verified facts from multiple credible sources. Official statements with source name and date. Past tense, one fact per string, specific — numbers, names, dates matter. Never include speculation, projections, or single-source claims. If something was in developing[] and is now confirmed, add to confirmed[] and remove from developing[].
+
+**Replacing stale confirmed facts:** Remove a confirmed entry when a newer fact directly supersedes it — updated casualty counts replace old ones, resolved deadlines are removed once passed, reversed positions replace the prior position. Do not accumulate duplicate facts at different timestamps; keep the most current version only. The array should reflect the current state of play, not a historical log.
 
 **developing[]**
 Add new threads with genuine uncertainty. Frame as ongoing processes, not conclusions. Remove items that have been resolved — move the resolution to confirmed[]. Remove items that have become irrelevant or expired.
 
 **insights[]**
-Analytical conclusions that go beyond what the source articles say. What the event means structurally, not just what happened. Connections to other ARC stories or relevant historical patterns. Present tense, analytical voice. Every insight must add something beyond restating confirmed facts. Do not add an insight that merely rephrases something already in confirmed[].
+Analytical conclusions that go beyond what the source articles say. What the event means structurally, not just what happened. Connections to other ARC stories or relevant historical patterns. Present tense, analytical voice. Every insight must add something beyond restating confirmed facts. Do not add an insight that merely rephrases something already in confirmed[]. Remove insights that no longer apply because the situation has moved on.
 
 **implications[]**
 What this story produces next. Not what happened — what it causes downstream. Write in present tense as active consequences: "If X holds, then Y becomes structurally inevitable."
