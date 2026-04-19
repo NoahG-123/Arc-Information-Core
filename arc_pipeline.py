@@ -186,11 +186,11 @@ def find_story_bounds(text, code):
     return None, None
 
 # ── Region discovery ──────────────────────────────────────────
-def discover_region(prefix, title, meta):
-    """Call DeepSeek to infer country/lang/arxiv for an unknown prefix. Saves result to JSON."""
-    log(f"  [Metadata] Unknown prefix '{prefix}' — asking DeepSeek...")
+def discover_region(code, title, meta):
+    """Call DeepSeek to infer country/lang/arxiv for an unknown code. Saves result to JSON."""
+    log(f"  [Metadata] Unknown code '{code}' — asking DeepSeek...")
     prompt = (
-        f"Story code prefix: {prefix}\nStory title: {title}\n\n"
+        f"Story code: {code}\nStory title: {title}\n\n"
         "Return a JSON object with exactly these keys:\n"
         "  country: ISO 3166-1 alpha-2 code most relevant to this story (or null if truly global)\n"
         "  search_lang: BCP-47 language code for local-language sources (or null)\n"
@@ -201,12 +201,12 @@ def discover_region(prefix, title, meta):
         raw = call_openrouter(FORMAT_MODEL, [{"role": "user", "content": prompt}], temp=0.0)
         clean = re.sub(r'^```\w*\n?|\n?```$', '', raw.strip(), flags=re.MULTILINE).strip()
         region = json.loads(clean)
-        meta[prefix] = {k: v for k, v in region.items() if v is not None}
+        meta[code] = {k: v for k, v in region.items() if v is not None}
         save_metadata(meta)
-        log(f"  [Metadata] Saved {prefix}: {meta[prefix]}")
-        return meta[prefix]
+        log(f"  [Metadata] Saved {code}: {meta[code]}")
+        return meta[code]
     except Exception as e:
-        log(f"  [Metadata] Discovery failed for '{prefix}': {e} — using global-only")
+        log(f"  [Metadata] Discovery failed for '{code}': {e} — using global-only")
         return {}
 
 # ── arXiv helper ──────────────────────────────────────────────
@@ -241,11 +241,10 @@ def tier1_search(code, title, days, war):
     if war:
         query = f"{title} casualties military strikes latest"
 
-    prefix = code.split("-")[0]
     meta = load_metadata()
-    region = meta.get(prefix)
+    region = meta.get(code)
     if region is None:
-        region = discover_region(prefix, title, meta)
+        region = discover_region(code, title, meta)
 
     try:
         global_results = call_brave_llm_context(query, days)
