@@ -304,7 +304,8 @@ def tier2_write(code, search_results):
                 "- No markdown code fences, no explanation, no extra text before or after\n"
                 "- Use single quotes inside all string values (never double quotes inside a double-quoted string)\n"
                 "- Never invent facts. Never adjust heat more than 1 point.\n"
-                "- Preserve ALL existing fields. Update content only where search results justify it."
+                "- Preserve ALL existing fields. Update content only where search results justify it.\n"
+                "- Do NOT change the `updated` field — leave it exactly as it appears in the existing object."
             )
         },
         {
@@ -312,8 +313,7 @@ def tier2_write(code, search_results):
             "content": (
                 f"Update the story object for {code}.\n\n"
                 f"NEW SEARCH RESULTS:\n{search_results}\n\n"
-                f"EXISTING OBJECT (preserve structure and all fields — update content only):\n{existing_object}\n\n"
-                f"Set the `updated` field to \"{date_str}\"."
+                f"EXISTING OBJECT (preserve structure and all fields — update content only):\n{existing_object}"
             )
         }
     ]
@@ -327,12 +327,19 @@ def tier2_write(code, search_results):
     # Strip any markdown fences the model added
     new_object = re.sub(r'^```\w*\n?|\n?```$', '', new_object.strip(), flags=re.MULTILINE).strip()
 
-    # Belt-and-suspenders: stamp the date even if the model forgot
-    new_object = re.sub(
-        r'(updated:\s*["\'])[^"\']*(["\'])',
-        rf'\g<1>{date_str}\g<2>',
-        new_object, count=1
-    )
+    # Only advance the updated date when content actually changed
+    _updated_re = re.compile(r'\bupdated:\s*["\'][^"\']*["\'],?\s*\n?')
+    old_content = _updated_re.sub('', existing_object).strip()
+    new_content = _updated_re.sub('', new_object).strip()
+    if old_content != new_content:
+        new_object = re.sub(
+            r'(updated:\s*["\'])[^"\']*(["\'])',
+            rf'\g<1>{date_str}\g<2>',
+            new_object, count=1
+        )
+        date_label = date_str
+    else:
+        date_label = "unchanged"
 
     updated_tracker = tracker_text[:start] + new_object + tracker_text[end + 1:]
     TRACKER.write_text(updated_tracker, encoding="utf-8")
@@ -342,7 +349,7 @@ def tier2_write(code, search_results):
         changes["written"].append(code)
     save_changes(changes)
 
-    log(f"  [{code}] Written ({date_str})")
+    log(f"  [{code}] Written ({date_label})")
     return True
 
 # ── Story map (from STORIES array) ────────────────────────────
