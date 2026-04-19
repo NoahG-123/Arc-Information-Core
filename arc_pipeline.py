@@ -469,6 +469,13 @@ def tier3_synthesis():
         "status changes, or heat changes from today's updates. "
         "type is one of: NEW_FACT, STATUS_CHANGE, HEAT_CHANGE, STATUS_UPDATE, ALERT. "
         "content is 1-2 sentences. Use single quotes inside strings.\n"
+        "  cross_story_alerts: array of {codes, date, title, alert, severity} — 0-3 alerts where "
+        "two or more stories are actively interacting in a way that changes the risk or trajectory "
+        "of both. codes is an array of story code strings. date is today's date string. "
+        "title is a short label (4-6 words). alert is 2-3 sentences explaining the interaction and "
+        "why it matters structurally — not just what happened, but what the combination produces. "
+        "severity is one of: critical, high, medium. Only include alerts where the cross-story "
+        "interaction is genuinely new or has materially changed today. Use single quotes inside strings.\n"
         "  proposed_stories: array of {title, code, reason} — 1-3 new story ideas worth tracking. "
         "Derive from today's search results. code is a short all-caps hyphenated ID like 'CHIP-02'.\n"
         "  retirement_candidates: array of {code, reason} — stories that appear stale or resolved.\n\n"
@@ -506,6 +513,7 @@ def tier3_synthesis():
     }
     ai_pulse_raw          = parsed.get("ai_pulse", [])
     events_raw            = parsed.get("events", [])
+    cross_alerts_raw      = parsed.get("cross_story_alerts", [])
     proposed_stories      = parsed.get("proposed_stories", [])
     retirement_candidates = parsed.get("retirement_candidates", [])
 
@@ -532,6 +540,10 @@ def tier3_synthesis():
     # Prepend new events to EVENTS log
     if events_raw:
         tracker_text = _prepend_events(tracker_text, events_raw, today_str())
+
+    # Update cross-story alerts in OVERVIEW
+    if cross_alerts_raw:
+        tracker_text = _update_cross_story_alerts(tracker_text, cross_alerts_raw)
 
     TRACKER.write_text(tracker_text, encoding="utf-8")
     log(f"[Tier 3] Synthesis complete. Updated {len(lb_changes)} leaderboard entries.")
@@ -564,6 +576,63 @@ def _update_ai_pulse(tracker_text, pulse_items):
     else:
         log(f"  [AI Pulse] Updated with {len(entries)} entries.")
     return updated
+
+def _update_cross_story_alerts(tracker_text, alerts):
+    """Replace cross_story_alerts array inside OVERVIEW with fresh alerts from synthesis."""
+    entries = []
+    for a in alerts:
+        if not isinstance(a, dict):
+            continue
+        codes   = a.get("codes", [])
+        date    = js_safe(a.get("date", today_str()))
+        title   = js_safe(a.get("title", ""))
+        alert   = js_safe(a.get("alert", ""))
+        sev     = a.get("severity", "medium")
+        if not (codes and title and alert):
+            continue
+        codes_js = "[" + ", ".join(f'"{c}"' for c in codes) + "]"
+        entries.append(
+            f'{{\n    codes: {codes_js},\n    date: "{date}",\n    title: "{title}",\n'
+            f'    alert: "{alert}",\n    severity: "{sev}"\n  }}'
+        )
+    if not entries:
+        return tracker_text
+
+    new_array = "cross_story_alerts: [\n  " + ",\n  ".join(entries) + "\n]"
+
+    # Replace existing cross_story_alerts array if present
+    updated = re.sub(
+        r'cross_story_alerts:\s*\[[\s\S]*?\]',
+        new_array,
+        tracker_text, count=1
+    )
+    if updated != tracker_text:
+        log(f"  [Cross-story alerts] Replaced with {len(entries)} alerts.")
+        return updated
+
+    # Not present yet — insert before closing }; of OVERVIEW
+    overview_m = re.search(r'const OVERVIEW\s*=\s*\{', tracker_text)
+    if not overview_m:
+        log("  [Cross-story alerts] OVERVIEW not found — skipping.")
+        return tracker_text
+    # Find the closing }; of OVERVIEW (the leaderboard array ends, then the object closes)
+    lb_m = re.search(r'leaderboard:\s*\[', tracker_text[overview_m.start():])
+    if not lb_m:
+        return tracker_text
+    lb_start = overview_m.start() + lb_m.end()
+    depth, pos = 1, lb_start
+    for i in range(lb_start, len(tracker_text)):
+        if tracker_text[i] == '[':   depth += 1
+        elif tracker_text[i] == ']':
+            depth -= 1
+            if depth == 0:
+                pos = i + 1
+                break
+    # pos is now just after the leaderboard closing ]
+    insert = f",\n  {new_array}"
+    tracker_text = tracker_text[:pos] + insert + tracker_text[pos:]
+    log(f"  [Cross-story alerts] Inserted {len(entries)} alerts into OVERVIEW.")
+    return tracker_text
 
 def _write_pending_stories(proposed, retired):
     """Write arc-pending-stories.md with new story proposals and retirement candidates."""
