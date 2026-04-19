@@ -140,31 +140,36 @@ def call_openrouter(model, messages, temp=0.0, retries=3):
 # ── Story bounds ───────────────────────────────────────────────
 def find_story_bounds(text, code):
     """Return (start, end) of the story object with the given code.
-    Only searches within STORIES and WAR_STORIES — never EVENTS or OVERVIEW."""
+    Only searches within STORIES and WAR_STORIES — never EVENTS or OVERVIEW.
+    Skips connection/sub-entries (which lack heat:) to find the real story object."""
     search_from = text.find('const STORIES')
     if search_from == -1:
         search_from = 0
 
-    idx = -1
     for fmt in (f'code: "{code}"', f'code:"{code}"', f"code: '{code}'", f"code:'{code}'"):
-        i = text.find(fmt, search_from)
-        if i != -1:
-            idx = i
+        pos = search_from
+        while True:
+            i = text.find(fmt, pos)
+            if i == -1:
+                break
+            # Main story objects always have heat: within the next 200 chars;
+            # connection sub-entries ({code, label, how}) do not.
+            if not re.search(r'\bheat:\s*\d', text[i:i + 200]):
+                pos = i + len(fmt)
+                continue
+            start = text.rfind('{', search_from, i)
+            if start == -1:
+                pos = i + len(fmt)
+                continue
+            depth = 0
+            for j in range(start, len(text)):
+                if text[j] == '{':
+                    depth += 1
+                elif text[j] == '}':
+                    depth -= 1
+                    if depth == 0:
+                        return start, j
             break
-    if idx == -1:
-        return None, None
-
-    start = text.rfind('{', search_from, idx)
-    if start == -1:
-        return None, None
-    depth = 0
-    for i in range(start, len(text)):
-        if text[i] == '{':
-            depth += 1
-        elif text[i] == '}':
-            depth -= 1
-            if depth == 0:
-                return start, i
     return None, None
 
 # ── Tier 1: Search ────────────────────────────────────────────
@@ -357,6 +362,10 @@ def tier3_synthesis():
         "Use real current figures: model releases, funding rounds, policy shifts, capability benchmarks. "
         "Keep label under 25 chars, value concise (e.g. '$3B', '1M tokens'), delta 1-3 words with direction. "
         "Use single quotes inside strings. Do NOT include an 'Active security alerts' entry.\n"
+        "  events: array of {code, type, content} — up to 8 most significant new facts, "
+        "status changes, or heat changes from today's updates. "
+        "type is one of: NEW_FACT, STATUS_CHANGE, HEAT_CHANGE, STATUS_UPDATE, ALERT. "
+        "content is 1-2 sentences. Use single quotes inside strings.\n"
         "  proposed_stories: array of {title, code, reason} — 1-3 new story ideas worth tracking. "
         "Derive from today's search results. code is a short all-caps hyphenated ID like 'CHIP-02'.\n"
         "  retirement_candidates: array of {code, reason} — stories that appear stale or resolved.\n\n"
@@ -392,8 +401,9 @@ def tier3_synthesis():
         for item in lb_changes_raw
         if isinstance(item, dict) and "code" in item and "change" in item
     }
-    ai_pulse_raw        = parsed.get("ai_pulse", [])
-    proposed_stories    = parsed.get("proposed_stories", [])
+    ai_pulse_raw          = parsed.get("ai_pulse", [])
+    events_raw            = parsed.get("events", [])
+    proposed_stories      = parsed.get("proposed_stories", [])
     retirement_candidates = parsed.get("retirement_candidates", [])
 
     tracker_text = TRACKER.read_text(encoding="utf-8")
@@ -415,6 +425,10 @@ def tier3_synthesis():
     # Update AI_PULSE constant
     if ai_pulse_raw:
         tracker_text = _update_ai_pulse(tracker_text, ai_pulse_raw)
+
+    # Prepend new events to EVENTS log
+    if events_raw:
+        tracker_text = _prepend_events(tracker_text, events_raw, today_str())
 
     TRACKER.write_text(tracker_text, encoding="utf-8")
     log(f"[Tier 3] Synthesis complete. Updated {len(lb_changes)} leaderboard entries.")
@@ -474,6 +488,33 @@ def _write_pending_stories(proposed, retired):
 
     Path("arc-pending-stories.md").write_text("\n".join(lines), encoding="utf-8")
     log(f"  [Pending] Wrote arc-pending-stories.md ({len(proposed)} proposed, {len(retired)} retirement).")
+
+def _prepend_events(tracker_text, new_events, date_str):
+    """Prepend new event entries to the front of the EVENTS array."""
+    if not new_events:
+        return tracker_text
+    events_m = re.search(r'const EVENTS\s*=\s*\[', tracker_text)
+    if not events_m:
+        return tracker_text
+    entries = []
+    for ev in new_events:
+        if not isinstance(ev, dict):
+            continue
+        code    = ev.get("code", "")
+        etype   = ev.get("type", "NEW_FACT")
+        content = js_safe(ev.get("content", ""))
+        if code and content:
+            entries.append(
+                f'{{\n  date: "{date_str}",\n  code: "{code}",\n  type: "{etype}",\n'
+                f'  content: "{content}"\n}}'
+            )
+    if not entries:
+        return tracker_text
+    insert_pos = events_m.end()
+    new_block = "\n" + ",\n".join(entries) + ","
+    tracker_text = tracker_text[:insert_pos] + new_block + tracker_text[insert_pos:]
+    log(f"  [Events] Prepended {len(entries)} new events.")
+    return tracker_text
 
 def _ensure_overview_closed(tracker_text):
     """Guard: make sure const OVERVIEW = {...} is properly terminated with };"""
