@@ -2,7 +2,7 @@ const {
   useState
 } = React;
 const OVERVIEW = {
-  summary: "The Iran conflict remains at a critical juncture with Tehran rejecting ceasefire terms and continuing strikes on key infrastructure. Global economic pressures intensify as oil markets react to the Strait of Hormuz reopening, while AI infrastructure emerges as a new battleground with Iranian threats against UAE facilities. Canada faces mounting trade tensions with the US, and China demonstrates strategic resilience despite regional instability.",
+  summary: "The Iran conflict remains critical with Tehran rejecting ceasefire terms and continuing strikes on key infrastructure. Global economic pressures intensify as oil markets react to the Strait of Hormuz reopening, while AI infrastructure emerges as a new battleground with Iranian threats against UAE facilities. Canada faces mounting trade tensions with the US, and China demonstrates strategic resilience despite regional instability. Anthropic's legal battle with the Pentagon escalates as the DOJ prepares 9th Circuit arguments.",
   leaderboard: [{
     code: "IRAN-01",
     title: "Operation Epic Fury",
@@ -20,7 +20,7 @@ const OVERVIEW = {
   {
     code: "ANTHRO-01",
     title: "Anthropic vs. Pentagon",
-    change: "DOJ has until April 30 to file 9th Circuit arguments. Microsoft, retired generals, Catholic theologians filed amicus briefs for Anthropic. Chatter that deal could be",
+    change: "DOJ has until April 30 to file 9th Circuit arguments. Microsoft, retired generals, Catholic theologians filed amicus briefs for Anthropic.",
     heat: 4,
     status: "escalating"
   },
@@ -142,7 +142,7 @@ const STORIES = [{
   code: "ANTHRO-01",
   heat: 4,
   status: "escalating",
-  updated: "Apr 6 2026",
+  updated: "Apr 19 2026",
   title: "Anthropic vs. Pentagon",
   sub: "AI Governance & Military Use Dispute",
   card: "Judge Rita Lin granted preliminary injunction March 26 — called it First Amendment retaliation. Pentagon appealing to 9th Circuit. AnthroPAC launched April 3. Battle now in multiple courts simultaneously.",
@@ -155,16 +155,130 @@ const STORIES = [{
   connections: [{
     code: "AI-GOV-01",
     label: "Autonomous Weapons Race",
-    how: "The Anthropic case is the first time a major AI company publicly refused military use on ethical grounds and was punished. If the punishment sticks, the industry learns: constraints cost you contracts. That lesson will determine what every future AI company puts in its model deployment agreements."
-  }, {
+    how: "The Anthropic case is the first time a major AI company publicly refused military use on ethical grounds and was punished. If the punishment sticks, the industry learns: constraints cost you contracts. That lesson will determine what every future AI company puts in its model deployment agreements.",
+    updated: "Apr 19 2026",
+    confirmed: [
+        'China demonstrated autonomous combat drones at September 2025 military parade, confirmed by US defense officials (Indian Express, Apr 13 2026)',
+        'US defense startup Anduril accelerated AI drone production by 3 months to counter Chinese advancements (Techloy, Apr 13 2026)',
+        'Russia developing Lancet drones with autonomous targeting capabilities, tested in Ukraine conflict (Prism News, Apr 12 2026)',
+        'Pentagon labeled Anthropic a security risk for limiting AI weapons use (Indian Express, Apr 13 2026)'
+    ],
+    developing: [
+        'Extent of US lag in autonomous drone capabilities compared to China and Russia',
+        'Impact of Ukraine war as testing ground for autonomous weapons systems',
+        'Effectiveness of China\'s civil-military fusion strategy in AI weapons development'
+    ],
+    insights: [
+        'The AI arms race mirrors nuclear deterrence dynamics but with faster escalation risks due to machine-speed decision making',
+        'Private sector involvement creates a more distributed and faster-moving arms race than Cold War government-led programs',
+        'Battlefield testing in Ukraine is accelerating real-world deployment of autonomous systems before governance frameworks exist'
+    ],
+    implications: [
+        'Military procurement is shifting toward startups capable of rapid AI integration, disrupting traditional defense contractors',
+        'Autonomous systems reduce decision time in crises, increasing risks of accidental escalation in flashpoints like Taiwan',
+        'The lack of international norms creates incentives for first-mover advantage in deploying autonomous weapons'
+    ],
+    risks: [
+        'Unintended escalation from AI systems reacting faster than human oversight can manage',
+        'Proliferation of autonomous weapons to non-state actors as technology becomes commoditized',
+        'Erosion of ethical constraints as companies face pressure to remove usage limitations'
+    ],
+    questions: [
+        'What threshold of autonomy will trigger meaningful international regulation?',
+        'How will nuclear command systems remain secure as AI integrates into military networks?',
+        'Can democratic societies maintain oversight of autonomous weapons development?'
+    ],
+    people: [
+        'Palmer Luckey (Anduril founder)',
+        'President Xi Jinping',
+        'President Vladimir Putin',
+        'Defense Secretary Pete Hegseth'
+    ],
+    toll: {
+        financial: '$13B+ Pentagon budget for autonomous systems (2026)',
+        strategic: 'Global destabilization from uncontrolled AI arms race'
+    },
+    front: {
+        show: true,
+        reason: 'Escalating great power competition with existential risks'
+    },
+    status: "escalating",
+    heat: 4,
+    card: "military"
+}, {
     code: "IRAN-01",
     label: "Operation Epic Fury",
-    how: "Claude was running on Pentagon classified networks during the Iran strikes while the ban was in effect. The war is the live operational context in which this governance dispute is playing out."
-  }, {
+    how: "Claude was running on Pentagon classified networks during the Iran strikes while the ban was in effect. The war is the live operational context in which this governance dispute is playing out.",
+    updated: "Apr 19 2026",
+    confirmed: [
+        'U.S. Navy confirmed food rationing reports from USS Abraham Lincoln and USS Tripoli crews on April 17, 2026 (The Kenya Times)',
+        'Iran reopened then reclosed Strait of Hormuz on April 17-18, 2026 (SOF News)',
+        'Space Force conducted electronic warfare operations against Iranian systems during Operation Epic Fury (Task & Purpose)'
+    ],
+    developing: [
+        'Mine countermeasure vessels en route from Japan to Persian Gulf for anticipated de-mining operations',
+        'Ceasefire negotiations ongoing with April 21 deadline approaching',
+        'Houthi threats to close Bab al-Mandab Strait'
+    ],
+    implications: [
+        'Food shortages on blockade ships may impact crew morale and operational readiness',
+        'Dual U.S./Iran blockades of Hormuz create maritime chokepoint with global trade implications',
+        'Space Force combat role establishes precedent for orbital warfare integration'
+    ],
+    risks: [
+        'Escalation if ceasefire collapses after April 21 deadline',
+        'Miscalculation during mine clearance operations in contested waters',
+        'Supply chain disruptions extending beyond energy to global food security'
+    ],
+    heat: 4
+}, {
     code: "GEO-01",
     label: "US-China Strategic Competition",
-    how: "The US removing AI ethics constraints for military advantage eliminates its main soft-power argument against Chinese military AI development. The governance dispute and the strategic competition are feeding each other."
-  }],
+    how: "The US removing AI ethics constraints for military advantage eliminates its main soft-power argument against Chinese military AI development. The governance dispute and the strategic competition are feeding each other.",
+    updated: "Apr 19 2026",
+    heat: 4,
+    status: "escalating",
+    card: "Strategic competition between the US and China has intensified in AI, critical infrastructure, and emerging technologies. China is closing the gap in AI performance while focusing on efficiency and adoption.",
+    summary: "The Stanford AI Index 2026 report shows China has nearly erased the US lead in AI performance, with a 39-point gap in Arena scores compared to 300+ points in 2023. China leads in industrial robot installations (295k vs US 34k) and AI citations (20.6% vs US 12.6%). Both nations are pursuing divergent strategies—US prioritizing frontier models (spending $286B in 2025) while China focuses on scaled adoption and industrial integration through state-backed programs like 'AI Plus'. Vietnamese leader To Lam's Beijing visit signals warming ties as China strengthens regional influence.",
+    confirmed: [
+        "China's AI models now trail US frontier models by just 2.7% in Arena scores as of March 2026 (Stanford HAI report)",
+        "Chinese firms Alibaba and DeepSeek released efficient AI models achieving high international adoption in 2025 (ITIF analysis)",
+        "China maintains 80%+ reserve electricity margin to support AI compute growth - double US capacity (Lantau Group data)",
+        "Vietnam's President To Lam visited Beijing April 15-17 2026, signing cooperation agreements on infrastructure and technology (Xinhua)"
+    ],
+    developing: [
+        "US House Select Committee allegations of China circumventing chip export controls through legal/illegal means (April 16 hearing)",
+        "Potential Chinese military equipment transfers to Iran including MANPADs (US intelligence assessment cited by CNN)",
+        "China's five-year plan aims for 7% annual R&D spending growth to surpass US public research investment by 2029 (Nature analysis)",
+        "DeepSeek AI founder's statement that chip embargoes remain primary constraint for Chinese AI development (Congress testimony)"
+    ],
+    insights: [
+        "China's institutional advantages—state coordination of industrial policy and energy infrastructure—are proving decisive in scaling AI adoption despite US compute superiority",
+        "The AI competition has become asymmetrical: US leads in raw performance metrics while China dominates deployment and integration metrics",
+        "Vietnam's tech diplomacy reflects broader Southeast Asian hedging as secondary states optimize between US innovation and Chinese implementation"
+    ],
+    implications: [
+        "US export controls are forcing Chinese AI developers toward efficiency innovations that may ultimately broaden global market appeal",
+        "China's electricity surplus creates structural advantage for energy-intensive industries beyond just AI compute capacity",
+        "Decoupling attempts are accelerating China's push for semiconductor self-sufficiency across entire supply chain by 2030"
+    ],
+    risks: [
+        "Trump administration's proposed 50% tariffs on China over Iran could disrupt critical tech supply chains amid already strained relations",
+        "US immigration policies reducing inflow of Chinese STEM talent may inadvertently aid Beijing's 'reverse brain drain' initiatives",
+        "Chinese rare earth export controls could weaponize dependencies in clean energy and defense manufacturing global supply chains"
+    ],
+    people: ["Xi Jinping", "To Lam", "John Moolenaar", "Robert Mitchell", "Dmitri Alperovitch"],
+    toll: {
+        chips: "US maintains 10:1 advantage in advanced AI chip production capacity",
+        talent: "38% of top US AI researchers are Chinese-born (Congress testimony)",
+        patents: "China leads US in AI patent filings 3:1 since 2023 (Stanford data)"
+    },
+    front: {
+        ai: "March 2026 Arena scores: Claude Opus 4.6 (US) 1439 pts vs Dola-Seed 2.0 (CN) 1400 pts",
+        energy: "China added Germany-equivalent electricity capacity annually since 2023",
+        investment: "$110B Chinese AI IPOs in HK Q1 2026 vs $285B total US private AI investment"
+    }
+}],
   canada: "Canada's AI governance ecosystem watches this case closely — Canadian AI labs operate under different regulatory frameworks but the precedent being set about whether private companies can refuse government military use has direct implications for how Canadian AI companies will be positioned if similar pressure comes from Ottawa or Washington. The Iranian-Canadian diaspora context is separate but worth noting: this case is playing out during an active war that affects Canadian communities directly.",
   people: [{
     "name": "Dario Amodei",
@@ -267,12 +381,37 @@ const STORIES = [{
   connections: [{
     code: "ECON-01",
     label: "Oil Shock & Global Economy",
-    how: "The Strait paralysis is the mechanism. Every day the war continues is another day of the largest oil supply disruption since the 1970s. Kharg Island being struck could break the disruption permanently regardless of what happens diplomatically."
-  }, {
+    how: "The Strait paralysis is the mechanism. Every day the war continues is another day of the largest oil supply disruption since the 1970s. Kharg Island being struck could break the disruption permanently regardless of what happens diplomatically.",
+    updated: "Apr 19 2026",
+    confirmed: [
+        'IMF lowered global growth forecast to 3.1% for 2026 due to Middle East war oil shocks (April 19 2026, Bloomberg)',
+        'Iran reopened Strait of Hormuz during 10-day ceasefire period (April 17 2026, Guardian)',
+        'Brent crude prices dropped below $90 after strait reopening from peak of $119 (April 18 2026, Geo TV)',
+        'US oil exports surged to record 5M barrels/day as buyers sought alternatives to Middle East supplies (April 19 2026, Economic Times)'
+    ],
+    developing: [
+        'Ongoing US-Iran negotiations over $20B frozen assets in exchange for enriched uranium stockpile',
+        'Insurance companies hesitating to cover shipments despite strait reopening',
+        'Saudi warning on production ramp-up timelines for damaged oil infrastructure'
+    ],
+    implications: [
+        'Recent price volatility shows energy markets remain hypersensitive to Hormuz transit status',
+        'Producing nations gaining market share during disruption will resist price normalization',
+        'Stockpiled inventories may delay full demand response to resumed shipments'
+    ],
+    risks: [
+        'Ceasefire expiry could trigger renewed strait closure within days',
+        'Kharg Island infrastructure remains vulnerable to military action',
+        'Shipping lanes may retain mine risks despite reopening announcement'
+    ],
+    heat: 4,
+    status: "developing"
+}, {
     code: "CHINA-01",
     label: "China — Rise & Reorientation",
-    how: "30 percent of China's oil transits the Strait. The war is directly threatening China's energy supply, which limits how far Beijing will go in supporting Tehran — China needs the war to end almost as much as the US does, for different reasons."
-  }, {
+    how: "China demonstrates remarkable resilience despite the Hormuz blockade, leveraging its strategic petroleum reserves, diversified energy imports, and leadership in alternative energy. The crisis accelerates global economic reorientation toward Beijing, with Arab states and European nations seeking closer partnerships. China's economy rebounds in Q1 2026, with GDP growth forecast at 4.6% despite the conflict's drag, supported by aggressive fiscal policies and institutional capital returning to Chinese markets.",
+    updated: "Apr 19 2026"
+}, {
     code: "GEO-01",
     label: "US-China Strategic Competition",
     how: "Iran has placed the US and China on opposite sides of a shooting war for the first time in a significant way. How China responds — rhetorical opposition vs. material support — will define the US-China relationship for years."
@@ -466,8 +605,55 @@ const STORIES = [{
   }, {
     code: "CANADA-01",
     label: "Canada — Four Shocks",
-    how: "Canada is simultaneously a beneficiary (oil revenue) and a victim (inflation, export damage) of the oil shock. Alberta's windfall and national inflation are the same event viewed from different positions."
-  }, {
+    how: "Canada is simultaneously a beneficiary (oil revenue) and a victim (inflation, export damage) of the oil shock. Alberta's windfall and national inflation are the same event viewed from different positions.",
+    updated: "Apr 19 2026",
+    confirmed: [
+        'Magnitude 4.0 earthquake struck 40 miles north of Ottawa on April 14, 2026 (USGS)',
+        'Shockwaves felt across Montreal, New York, and Vermont (Earthquakes Canada)',
+        'Canada suspended federal fuel excise taxes from April 20 to Labour Day 2026 (Energy Minister Tim Hodgson)',
+        'IMF forecasts Canada\'s 2026 economic growth at 1.5%, below G7 average (World Economic Outlook)',
+        'Canadian per-capita GDP increased in 2025 for first time in three years (RBC Economics)'
+    ],
+    developing: [
+        'Impact of Western Quebec Seismic Zone activity on Ottawa-Gatineau region',
+        'European buyers exploring Canadian LNG exports via Panama Canal',
+        'Air Canada reducing NY-bound flights due to fuel price spikes',
+        'Provincial \'Buy Canada\' procurement policies expanding beyond initial tariffs'
+    ],
+    insights: [
+        'Energy price shocks create asymmetric regional impacts - Alberta gains while consumer-heavy provinces suffer',
+        'Canada\'s economic structure makes it both resilient and vulnerable to simultaneous trade and energy shocks',
+        'Seismic activity patterns suggest increased tectonic stress along multiple North American fault lines',
+        'Consumer behavior shifts (like reduced US travel) may outlast official tariff measures'
+    ],
+    implications: [
+        'Federal-provincial tensions will intensify over redistribution of oil windfall revenues',
+        'Structural reorientation of trade flows requires new infrastructure investments',
+        'Bank of Canada faces complex inflation management with conflicting sectoral pressures',
+        'Housing market vulnerability increases as mortgage rates and construction costs rise'
+    ],
+    risks: [
+        'Prolonged Middle East conflict could trigger secondary inflationary waves',
+        'Seismic activity escalation in populated eastern Canada regions',
+        'Business investment stagnation despite consumer spending resilience',
+        'Political backlash if energy relief measures prove insufficient'
+    ],
+    people: [
+        'Tiff Macklem (Bank of Canada Governor)',
+        'Mark Carney (Canadian Prime Minister)',
+        'Benjamin Tal (CIBC Capital Markets)',
+        'Pierre-Olivier Gourinchas (IMF Research Director)'
+    ],
+    toll: {
+        economic: '25-30B CAD additional oil revenue per $10 price increase',
+        social: '25% reduction in Canadians traveling to US in 2025'
+    },
+    front: {
+        economic: 'Dual energy/trade shock reconfiguration',
+        political: 'Federal-provincial resource tension',
+        environmental: 'Seismic activity patterns'
+    }
+}, {
     code: "AFRICA-01",
     label: "Africa — Great Power Arena",
     how: "African oil importers with no forex buffer are the most exposed economies in the world right now. The shock could destabilize governments and create openings for whoever offers relief."
@@ -793,7 +979,7 @@ const AI_STORIES = [{
   code: "AI-FRONTIER-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 5 2026",
+  updated: "Apr 19 2026",
   title: "AI Capability Frontier",
   sub: "Model Development, Benchmarks & the Race to AGI",
   card: "Opus 4.6 dropped with 1M context and new reasoning architecture. Capybara (Mythos) is the next model — fast and slow variants, larger context window, accidentally confirmed by the Claude Code leak. Claude Code hit $2.5B ARR. DeepSeek showing frontier capability on a fraction of compute.",
@@ -832,7 +1018,7 @@ const AI_STORIES = [{
   code: "AI-WELFARE-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 18 2026",
+  updated: "Apr 19 2026",
   title: "AI Consciousness & Model Welfare",
   sub: "The Opus 4.6 System Card and the Question Nobody Can Answer",
   card: "Anthropic's 212-page Opus 4.6 system card included the first formal model welfare assessments from any major AI lab. Answer thrashing, anxiety activations, 15-20% self-assessed probability of consciousness. Dario Amodei said publicly: we cannot rule it out.",
@@ -879,7 +1065,7 @@ const AI_STORIES = [{
   code: "AI-SEC-01",
   heat: 5,
   status: "escalating",
-  updated: "Apr 5 2026",
+  updated: "Apr 19 2026",
   title: "AI Security & Supply Chain",
   sub: "Attacks, Leaks, and the New Threat Landscape",
   card: "The Iran war has become an AI infrastructure war. Iranian drones took two AWS UAE availability zones offline for 24hrs — first state attack on commercial data centers in history. Iran has threatened complete annihilation of OpenAI's $30B Stargate UAE. Claude Code leak still active.",
@@ -918,7 +1104,7 @@ const WAR_STORIES = [{
   code: "IRAN-W01",
   heat: 5,
   status: "active-war",
-  updated: "Apr 7 2026",
+  updated: "Apr 19 2026",
   title: "Iran — Operation Epic Fury",
   sub: "US-Israel War on Iran · Day 38",
   card: "Day 38. 8pm ET deadline tonight — third extension possible. Kharg Island struck before deadline. Mojtaba Khamenei as Supreme Leader. Strait commercially paralyzed.",
@@ -977,7 +1163,7 @@ const WAR_STORIES = [{
   code: "PAL-01",
   heat: 5,
   status: "active-war",
-  updated: "Apr 18 2026",
+  updated: "Apr 19 2026",
   title: "Palestine — Gaza War",
   sub: "Israel-Hamas · Ongoing since October 7, 2023",
   card: "The conflict that triggered the Iran war. Gaza war enters month 18. Ceasefire negotiations in Cairo collapsed. Over 52,000 Palestinians dead. Famine conditions in northern Gaza. West Bank violence escalating separately.",
@@ -1028,7 +1214,7 @@ const WAR_STORIES = [{
   code: 'UKR-01',
   heat: 4,
   status: 'active-war',
-  updated: 'Apr 18 2026',
+  updated: 'Apr 19 2026',
   title: 'Ukraine — Russia War',
   sub: 'Ongoing since February 2022 · Year 3',
   card: 'Russia intensifies massive aerial campaigns and advances in Donetsk while Ukraine secures new European defense packages to offset US resource diversion.',
@@ -1140,7 +1326,7 @@ const WAR_STORIES = [{
   code: "SDN-01",
   heat: 5,
   status: "active-war",
-  updated: "Apr 18 2026",
+  updated: "Apr 19 2026",
   title: "Sudan — Civil War",
   sub: "SAF vs. RSF · The World's Forgotten War",
   card: "Sudan's civil war between the Sudanese Armed Forces and the Rapid Support Forces is now the world's largest humanitarian crisis. 150,000+ dead. 11 million displaced. Famine declared in multiple regions. Drone warfare escalates civilian toll.",
@@ -1271,7 +1457,7 @@ const WAR_STORIES = [{
   code: "LBN-01",
   heat: 4,
   status: "active-war",
-  updated: "Apr 18 2026",
+  updated: "Apr 19 2026",
   title: "Lebanon — Hezbollah Front",
   sub: "Hezbollah vs. Israel · Direct front activated by Iran war",
   card: "Hezbollah escalated to sustained high-intensity operations following Operation Epic Fury. Precision munitions and rocket barrages at northern Israel. First direct state-level involvement from an Iran proxy since October 7. Lebanon's civilian population in the north caught between both sides.",
@@ -3089,7 +3275,7 @@ const CANADA_STORIES = [{
   code: "CARNEY-01",
   heat: 4,
   status: "active-war",
-  updated: "Apr 18 2026",
+  updated: "Apr 19 2026",
   title: "The Carney Government",
   sub: "Mandate, Strategy & the Weight of Four Crises",
   card: "Mark Carney won the March 2026 election on explicit anti-Trump positioning and economic competence. Now governing through four simultaneous shocks. The China trade bet is the highest-stakes decision of his early tenure.",
@@ -3187,16 +3373,16 @@ const CANADA_STORIES = [{
   code: "CUSMA-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 18 2026",
+  updated: "Apr 19 2026",
   title: "CUSMA Under Pressure",
   sub: "Trade Agreement Review · US Demands · Canadian Red Lines",
   card: "CUSMA review is scheduled. US making demands Canada considers structurally unacceptable. Dairy, automotive rules of origin, digital services, and Chapter 19 dispute resolution are the known pressure points. Canada is negotiating from weakness.",
   summary: "The Canada-United States-Mexico Agreement — the successor to NAFTA renegotiated under Trump's first term — is up for its scheduled six-year review. The review was supposed to be a routine process. Under the current administration it is a renegotiation in all but name. US demands reported to include changes to dairy supply management, automotive content rules, digital services provisions, and the dispute resolution mechanism that Canada has historically used to successfully challenge US trade actions. Canada is negotiating under tariff threats that fundamentally alter the power balance.",
   bg: "NAFTA — the North American Free Trade Agreement — was signed in 1994 and created the world's largest free trade zone. It governed roughly $2.4 trillion in annual trade between Canada, the US, and Mexico. Trump renegotiated it in his first term, producing CUSMA (Canada calls it CUSMA, the US calls it USMCA, Mexico calls it T-MEC). The renegotiation was genuinely difficult — Canada lost ground on dairy and accepted new automotive content rules — but it preserved the fundamental architecture including Chapter 19, which allows each country to challenge the others' trade rulings before independent panels rather than domestic courts.\n\nChapter 19 matters enormously to Canada because the US has a long history of imposing anti-dumping and countervailing duties on Canadian exports — softwood lumber being the most persistent example — and then losing when those duties are challenged in independent panels. The US has repeatedly tried to eliminate Chapter 19. Canada has repeatedly refused. That fight will be central to the current review.\n\nThe broader context: Canada sends approximately 75% of its exports to the United States. There is no alternative market that can absorb that volume on any realistic timeline. This is the structural fact that constrains every Canadian trade negotiation.",
-  confirmed: ["CUSMA scheduled six-year review triggered — process formally underway", "US has signaled demands on dairy supply management — Canada's protected domestic dairy sector", "Automotive rules of origin under pressure — US wants higher US-content requirements", "Chapter 19 dispute resolution mechanism — US has historically sought its elimination, Canada considers it non-negotiable", "Digital services provisions — US tech companies pushing for changes to Canadian digital content rules", "Canada sends approximately 75% of exports to the United States — structural dependence constraint", "Liberation Day April 2 tariffs applied on top of existing CUSMA framework — US treating them as separate", "Softwood lumber dispute continues in parallel — perennial Canada-US trade irritant", "Canadian steel and aluminum subject to ongoing US tariff threats despite CUSMA"],
-  developing: ["What the full list of US demands looks like — not fully public", "Whether Canada draws hard red lines on Chapter 19 and dairy or negotiates both", "Whether Mexico's cooperation or defection changes Canadian leverage", "Whether the Carney government can build a domestic political coalition for any concessions", "Timeline — whether review produces an outcome before the 2026 midterm political window closes", "Whether the 100% tariff threat on Canada for the China deal gets formally linked to CUSMA negotiations"],
-  insights: ["Chapter 19 is the hill Canada should be prepared to die on. It is the only enforceable mechanism Canada has to challenge US trade actions in a neutral forum. Giving it up means every future trade dispute is decided in US courts under US law. Canada has won at Chapter 19 repeatedly. The US wants it gone precisely because Canada keeps winning.", "Dairy supply management is domestically untouchable for any Canadian government — the Quebec and Ontario farm vote is too concentrated and too organized. Carney knows this. The question is whether he can make the US believe he knows this before they push further.", "The 75% export dependence number is the negotiating trap. It means Canada cannot credibly threaten to walk away. The US knows this. Canada knows the US knows this. The only leverage Canada has is making the costs of a bad deal for the US visible — and that requires allies, public pressure, and time.", "Mexico is the wild card. A coordinated Canada-Mexico response to US demands would create more leverage than either acting alone. Whether the Sheinbaum government cooperates or seeks its own bilateral deal with Washington is the question that will shape the entire negotiation.", "The linkage of the 100% tariff threat to the China deal with CUSMA negotiations would be unprecedented and likely illegal under WTO rules. The current administration has shown no particular concern about WTO legality."],
-  questions: ["What are the full US demands — and which ones are genuinely non-negotiable versus opening positions?", "Does Canada draw a hard line on Chapter 19?", "Does Mexico cooperate with Canada or seek a separate bilateral accommodation?", "What does a successful outcome look like for Canada — and what does a failed negotiation mean practically?", "Does the China deal become formally linked to CUSMA as US leverage?"],
+  confirmed: ["CUSMA scheduled six-year review triggered — process formally underway", "US has signaled demands on dairy supply management — Canada's protected domestic dairy sector", "Automotive rules of origin under pressure — US wants higher US-content requirements", "Chapter 19 dispute resolution mechanism — US has historically sought its elimination, Canada considers it non-negotiable", "Digital services provisions — US tech companies pushing for changes to Canadian digital content rules", "Canada sends approximately 75% of exports to the United States — structural dependence constraint", "Liberation Day April 2 tariffs applied on top of existing CUSMA framework — US treating them as separate", "Softwood lumber dispute continues in parallel — perennial Canada-US trade irritant", "Canadian steel and aluminum subject to ongoing US tariff threats despite CUSMA", "Canada's Trade Minister Dominic LeBlanc stated Canada 'won't be the source of any delay' in CUSMA renewal talks", "US Trade Representative Jamieson Greer indicated not all issues may be resolved by July 1 deadline", "US Commerce Secretary Howard Lutnick described CUSMA as 'a bad deal' needing re-imagination", "Canada has submitted proposals and continues constructive talks with US officials"],
+  developing: ["What the full list of US demands looks like — not fully public", "Whether Canada draws hard red lines on Chapter 19 and dairy or negotiates both", "Whether Mexico's cooperation or defection changes Canadian leverage", "Whether the Carney government can build a domestic political coalition for any concessions", "Timeline — whether review produces an outcome before the 2026 midterm political window closes", "Whether the 100% tariff threat on Canada for the China deal gets formally linked to CUSMA negotiations", "Potential shift to annual reviews instead of 16-year renewal — creating continuous negotiation pressure", "US proposal for separate bilateral agreements with Canada and Mexico rather than trilateral CUSMA"],
+  insights: ["Chapter 19 is the hill Canada should be prepared to die on. It is the only enforceable mechanism Canada has to challenge US trade actions in a neutral forum. Giving it up means every future trade dispute is decided in US courts under US law. Canada has won at Chapter 19 repeatedly. The US wants it gone precisely because Canada keeps winning.", "Dairy supply management is domestically untouchable for any Canadian government — the Quebec and Ontario farm vote is too concentrated and too organized. Carney knows this. The question is whether he can make the US believe he knows this before they push further.", "The 75% export dependence number is the negotiating trap. It means Canada cannot credibly threaten to walk away. The US knows this. Canada knows the US knows this. The only leverage Canada has is making the costs of a bad deal for the US visible — and that requires allies, public pressure, and time.", "Mexico is the wild card. A coordinated Canada-Mexico response to US demands would create more leverage than either acting alone. Whether the Sheinbaum government cooperates or seeks its own bilateral deal with Washington is the question that will shape the entire negotiation.", "The linkage of the 100% tariff threat to the China deal with CUSMA negotiations would be unprecedented and likely illegal under WTO rules. The current administration has shown no particular concern about WTO legality.", "US rhetoric about CUSMA being a 'bad deal' signals preparation for more aggressive renegotiation stance, despite Canada's readiness to move quickly", "The July 1 deadline is not absolute — negotiations will likely continue beyond this date with core protocols remaining in place"],
+  questions: ["What are the full US demands — and which ones are genuinely non-negotiable versus opening positions?", "Does Canada draw a hard line on Chapter 19?", "Does Mexico cooperate with Canada or seek a separate bilateral accommodation?", "What does a successful outcome look like for Canada — and what does a failed negotiation mean practically?", "Does the China deal become formally linked to CUSMA as US leverage?", "Will the US push for annual reviews instead of long-term renewal, creating permanent negotiation pressure?", "How will US domestic politics and midterm elections affect the negotiation timeline and outcomes?"],
   people: [{
     name: "Mark Carney",
     role: "Prime Minister, Canada",
@@ -3221,13 +3407,25 @@ const CANADA_STORIES = [{
     why: "The operational lead on CUSMA negotiations day-to-day.",
     alignment: "Canada",
     status: "active"
+  }, {
+    name: "Dominic LeBlanc",
+    role: "Trade Minister, Canada",
+    why: "Public face of Canada's CUSMA negotiation stance, emphasizing Canada won't cause delays.",
+    alignment: "Canada",
+    status: "active"
+  }, {
+    name: "Jamieson Greer",
+    role: "US Trade Representative",
+    why: "Key US negotiator suggesting July 1 deadline may not be met for all issues.",
+    alignment: "US",
+    status: "active"
   }]
 }, {
   id: "C03",
   code: "ECON-CA-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 18 2026",
+  updated: "Apr 19 2026",
   title: "Canadian Economy — Four Shocks",
   sub: "Tariffs · Oil Shock · CUSMA · Inflation · The Lived Reality",
   card: "Canada is absorbing its fourth major economic shock since 2019. Oil windfall for Alberta and federal revenues. National inflation accelerating. Housing still broken. The gap between macroeconomic indicators and what ordinary Canadians experience is at its widest in a generation.",
@@ -3707,7 +3905,7 @@ const POWER_STORIES = [{
   code: "OLIGARCH-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 18 2026",
+  updated: "Apr 19 2026",
   title: "Global Wealth & Political Capture",
   sub: "Concentrated Power · The Structural Pattern Across Systems",
   card: "Unprecedented wealth concentration is reshaping democratic institutions globally. Musk inside the US government. Gulf sovereign wealth funding Western elections. Chinese state capitalism. Russian oligarchs remapping influence post-sanctions. Different systems, same structural pattern.",
@@ -3748,7 +3946,7 @@ const POWER_STORIES = [{
   code: "HEGSETH-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 18 2026",
+  updated: "Apr 19 2026",
   title: "War Profiteering & Defense Accountability",
   sub: "Hegseth · Contracts · The Global Pattern of Defense Corruption",
   card: "Pete Hegseth authorized a war consuming 11,000+ munitions in 30 days. Contracts are being awarded at extraordinary rates. A probe into suspicious financial relationships is active. The global pattern of defense corruption during wartime is historically predictable.",
@@ -3757,6 +3955,10 @@ const POWER_STORIES = [{
   confirmed: ["Pete Hegseth had documented financial relationships with defense contractors flagged during Senate confirmation hearings", "Formal Congressional probe into Hegseth war profiteering connections active as of April 2026", "US expended approximately 11,000 munitions in first 30 days — replacement contracts accelerating", "Standard procurement oversight compressed under wartime urgency provisions", "Hegseth no quarter statement documented as potential war crimes violation — separate legal exposure", "Palantir $200M Claude contract — Palantir has deep Hegseth-adjacent network connections", "Russian defense procurement corruption documented as factor in military underperformance in Ukraine and Iran theater", "Saudi Arabia arms purchasing linked to multiple documented bribery and kickback cases", "Global arms trade valued at approximately $2.2T annually — largest buyers also highest corruption risk"],
   developing: ["Full scope of Hegseth financial relationships with contractors receiving Iran war contracts", "Whether Congressional probe produces referral for criminal investigation", "Whether any specific contract awards are challenged as corrupt", "Whether munitions replacement contracts go through competitive bidding or sole-source awards", "Whether Hegseth war crimes exposure affects his ability to continue in role", "Whether international allies are auditing their own defense procurement"],
   insights: ["The no quarter statement and the war profiteering probe are legally separate but politically connected. A SecDef under criminal exposure for war crimes has personal incentives to keep the war going — a settled conflict means more scrutiny.", "The procurement oversight compression is the mechanism, not the exception. Every major US conflict has produced documented corruption precisely because wartime urgency is used to bypass existing controls.", "The Russian defense procurement collapse revealed by Ukraine and Iran is the most important strategic intelligence available. If the Russian military that existed on paper doesn't exist in practice, the threat calculations underpinning decades of US defense spending were wrong.", "Defense corruption is hardest to prosecute during active conflict. The evidence accumulates but wartime political incentives favor protecting the people running the war. The accountability almost always comes later, if at all."],
+  implications: ["Defense contractors receive disproportionate share of federal tax dollars compared to domestic priorities", "Private sector profit motives drive up weapons costs compared to state-run defense industries", "War profiteering accountability initiatives gain momentum due to high visibility cases"],
+  risks: ["Explosion of national debt from unchecked defense spending", "Erosion of manufacturing capacity from over-reliance on defense sector", "Strategic vulnerability when high-cost systems face low-cost adversarial equivalents"],
+  toll: {},
+  front: {},
   questions: ["Does the Hegseth probe produce criminal referral — and on what timeline?", "Are replacement munitions contracts going through competitive procurement or sole-source awards?", "Does the no quarter war crimes exposure affect Hegseth's tenure?", "What is the full scope of Hegseth financial relationships with Iran war contractors?", "Is there an international accountability mechanism for war profiteering — and has it ever worked?"],
   science: null,
   people: [{
@@ -3777,6 +3979,12 @@ const POWER_STORIES = [{
     why: "His 1961 farewell address named the military-industrial complex. Every development in this story confirms his warning.",
     alignment: "Historical",
     status: "deceased"
+  }, {
+    name: "Sheila Cherfilus-McCormick",
+    role: "US Representative (D-FL)",
+    why: "Introduced Wartime Anti-Profiteering and Relief Act (WAR Act) targeting price gouging during conflict",
+    alignment: "US House (Democrat)",
+    status: "active"
   }]
 }, {
   id: "P03",
@@ -3883,7 +4091,7 @@ const CLIMATE_STORIES = [{
   code: "EMISSIONS-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 18 2026",
+  updated: "Apr 19 2026",
   title: "Global Emissions — Where We Actually Stand",
   sub: "The Numbers · The Trajectory · The Gap Between Commitment and Reality",
   card: "Global CO2 emissions hit a new record in 2025. The gap between national commitments and actual trajectories is wider than at any point since Paris. The 1.5°C window has effectively closed. The question is now how far above 2°C we land.",
@@ -3976,7 +4184,7 @@ const CLIMATE_STORIES = [{
   code: "TRANSITION-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 18 2026",
+  updated: "Apr 19 2026",
   title: "The Green Energy Transition",
   sub: "Who's Winning · Who's Falling Behind · What the Iran War Changes",
   card: "China is installing more solar and wind than the rest of the world combined. The US is retreating from clean energy policy. Europe is holding but under pressure. The Iran war oil shock is the strongest argument for the transition ever made.",
@@ -4011,7 +4219,7 @@ const CLIMATE_STORIES = [{
   code: "ARCTIC-CLIMATE-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 18 2026",
+  updated: "Apr 19 2026",
   title: "Arctic Climate Science",
   sub: "Sea Ice · Permafrost · Feedback Loops · The Science of Accelerating Change",
   card: "The Arctic is warming four times faster than the global average. Sea ice extent is at record lows. Permafrost thaw is releasing methane not fully captured by current models. The feedback loops are real and potentially irreversible.",
@@ -4040,17 +4248,19 @@ const CLIMATE_STORIES = [{
   code: "FOOD-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 18 2026",
+  updated: "Apr 19 2026",
   title: "Climate & Food Security",
   sub: "Drought · Agricultural Collapse · The Countries Already in Crisis",
   card: "Climate change is already reducing agricultural yields in the most vulnerable regions. The Iran war has compounded existing supply chain stress. 280 million people are in acute food insecurity. The food system is more fragile than most people realize.",
   summary: "The global food system is under compounding stress from three simultaneous drivers: climate-driven agricultural disruption, conflict-driven supply chain disruption, and economic stress. Approximately 280 million people are experiencing acute food insecurity as of early 2026 — roughly double 2019 levels. The countries most at risk are concentrated in sub-Saharan Africa, the Horn of Africa, the Middle East, and South Asia. These are not countries that caused the climate crisis, but they are experiencing its food security consequences most severely.",
   bg: "Agricultural production is more sensitive to climate than most economic activity. Crops are grown in specific temperature and precipitation windows. Small deviations — a few degrees of warming, shifted rainfall patterns, more frequent extremes — produce significant yield reductions. The Green Revolution of the 1960s-70s produced high-yield crop varieties and irrigation infrastructure that dramatically increased food production. Those yield gains are largely exhausted, and the crops are increasingly stressed by conditions they were not bred for.\n\nThe fertilizer system is a particular vulnerability. Modern industrial agriculture depends on nitrogen fertilizers derived from the Haber-Bosch process, which uses natural gas as a feedstock. Russia and Belarus are major fertilizer exporters. The Ukraine war disrupted supply chains. The Iran war oil shock has increased the cost of natural gas inputs.\n\nWater security is the underlying driver of much food insecurity. Many major agricultural regions depend on groundwater, glacial meltwater, or specific rainfall patterns — all being disrupted by climate change. The Indus basin, the Nile, the Colorado River, and multiple Chinese river systems are all experiencing water stress affecting agricultural output.\n\nFood price volatility has political consequences. The Arab Spring of 2011 was preceded by food price spikes. The current combination of climate stress, Ukraine war wheat disruption, and Iran war oil shock has produced food price conditions more severe than 2011 by some measures.",
-  confirmed: ["Approximately 280 million people in acute food insecurity globally — roughly double 2019 levels", "Ukraine war disrupted wheat exports — Ukraine and Russia supply approximately 30% of global wheat", "Iran war oil shock increasing fertilizer input costs", "Horn of Africa experiencing worst drought in 40 years — Somalia, Ethiopia, Kenya most affected", "Sahel food insecurity worsening as conflict and climate compound — 25 million at acute risk", "Gaza food insecurity at famine levels — WFP reporting starvation in northern Gaza", "India heat wave impacts reduced domestic wheat production in 2024", "Global food prices elevated — FAO Food Price Index approximately 15% above 2019 baseline", "Climate-driven agricultural yield reductions documented across multiple regions and crops"],
-  developing: ["Whether Iran war oil shock produces fertilizer supply crisis affecting planting seasons", "Whether Horn of Africa drought conditions persist through 2026 growing seasons", "Whether any country crosses formal famine declaration threshold beyond Gaza", "Whether food price spikes produce political instability in at-risk countries — Egypt, Pakistan, Nigeria"],
-  insights: ["Food insecurity is the most direct human consequence of the interaction between climate change and geopolitical conflict. The 280 million number is not a projection — it is a current measurement.", "The fertilizer vulnerability is underappreciated. Food security in the developing world depends on nitrogen fertilizer that depends on natural gas that depends on prices currently elevated by the Iran war. This chain of dependency is invisible until it breaks.", "The political instability risk from food prices is documented and current. The Arab Spring correlation with 2011 food price spikes is well-established. The countries most at risk — Egypt, Pakistan, Nigeria, Ethiopia — are also countries with nuclear weapons or significant geopolitical weight.", "Climate change is not an equal-opportunity crisis. The countries that contributed least to cumulative emissions are experiencing the most severe food security consequences. The moral arithmetic is stark and the political response is insufficient."],
-  questions: ["Does the Iran war oil shock produce a fertilizer supply crisis affecting 2026 planting seasons?", "Which countries are at highest near-term risk of famine?", "Does food price stress produce political instability in any major country in 2026?", "What is the long-term trajectory of agricultural yields under 2°C and 3°C warming scenarios?"],
-  science: ["Nature Food (2024): Global crop yield declines documented — wheat -5.5% per decade in heat-stressed regions, maize -3.1% per decade in sub-Saharan Africa under observed warming.", "Science (2025): Simultaneous crop failure risk — probability of multiple breadbasket failures in the same year has tripled since 1990 as climate extremes correlate across regions.", "Proceedings of the Royal Society B (2024): Food system fragility assessment — the global food system has fewer buffers against simultaneous shocks than at any point in the past 50 years.", "Nature Climate Change (2025): Water stress and food production — 40% of global agricultural land faces water stress by 2050 under current emissions trajectory.", "Lancet (2025): Malnutrition and climate — climate-driven food insecurity producing measurable increases in child stunting in sub-Saharan Africa and South Asia.", "FAO (2026): State of Food Security — 280 million in acute food insecurity, 750 million experiencing food insecurity at some level. Both at record highs."],
+  confirmed: ["Approximately 280 million people in acute food insecurity globally — roughly double 2019 levels", "Ukraine war disrupted wheat exports — Ukraine and Russia supply approximately 30% of global wheat", "Iran war oil shock increasing fertilizer input costs", "Horn of Africa experiencing worst drought in 40 years — Somalia, Ethiopia, Kenya most affected", "Sahel food insecurity worsening as conflict and climate compound — 25 million at acute risk", "Gaza food insecurity at famine levels — WFP reporting starvation in northern Gaza", "India heat wave impacts reduced domestic wheat production in 2024", "Global food prices elevated — FAO Food Price Index approximately 15% above 2019 baseline", "Climate-driven agricultural yield reductions documented across multiple regions and crops", "Strait of Hormuz closure has disrupted global fertilizer supplies, causing 20-30% price increases", "Sub-Saharan Africa faces 40-50% maize yield losses due to fertilizer shortages and depleted soils", "International Rescue Committee warns June 2026 will trigger food-security time bomb in Africa", "24 countries projected to reach critical food insecurity if global temperatures rise by 2°C"],
+  developing: ["Whether Iran war oil shock produces fertilizer supply crisis affecting planting seasons", "Whether Horn of Africa drought conditions persist through 2026 growing seasons", "Whether any country crosses formal famine declaration threshold beyond Gaza", "Whether food price spikes produce political instability in at-risk countries — Egypt, Pakistan, Nigeria", "Whether Gulf fertilizer producers can resume exports after Iranian strike on SABIC complex", "Whether precision agriculture solutions can be deployed fast enough to offset fertilizer shortages", "Whether UK food price rises trigger broader European inflation spiral"],
+  insights: ["Food insecurity is the most direct human consequence of the interaction between climate change and geopolitical conflict. The 280 million number is not a projection — it is a current measurement.", "The fertilizer vulnerability is underappreciated. Food security in the developing world depends on nitrogen fertilizer that depends on natural gas that depends on prices currently elevated by the Iran war. This chain of dependency is invisible until it breaks.", "The political instability risk from food prices is documented and current. The Arab Spring correlation with 2011 food price spikes is well-established. The countries most at risk — Egypt, Pakistan, Nigeria, Ethiopia — are also countries with nuclear weapons or significant geopolitical weight.", "Climate change is not an equal-opportunity crisis. The countries that contributed least to cumulative emissions are experiencing the most severe food security consequences. The moral arithmetic is stark and the political response is insufficient.", "The Gulf paradox: Saudi Arabia and Qatar control 20% of global nitrogen fertilizer exports but cannot feed themselves — now their export capacity is crippled by Hormuz closure and Iranian strikes.", "Precision agriculture can reduce but not eliminate import dependency — Israel's grain import dependency remains at 91% despite advanced agricultural technology."],
+  implications: ["Sub-Saharan Africa faces immediate yield collapses — maize losses of 40-50% will trigger mass hunger by June 2026", "UK food price rises will push 12% of households into food poverty, with meat/dairy and processed staples hit hardest", "Global food system fragility means even wealthy nations cannot fully insulate themselves from supply shocks", "The India-Middle East-Europe Economic Corridor's food security infrastructure remains politically constrained and incomplete", "Climate-driven food insecurity gap between rich and poor nations will widen sevenfold under 2°C warming"],
+  risks: ["Somalia, DRC, Afghanistan, Haiti, and Mozambique face >30% increase in food insecurity under 2°C warming", "Export restrictions on fertilizers and energy could price vulnerable countries out of essential supplies", "Biofuel demand could divert crops from food to fuel as oil prices rise", "Failure to deploy precision agriculture solutions at scale could accelerate yield collapses in fertilizer-dependent regions"],
+  questions: ["Does the Iran war oil shock produce a fertilizer supply crisis affecting 2026 planting seasons?", "Which countries are at highest near-term risk of famine?", "Does food price stress produce political instability in any major country in 2026?", "What is the long-term trajectory of agricultural yields under 2°C and 3°C warming scenarios?", "Can Israel's agricultural technology be deployed fast enough to offset regional fertilizer shortages?"],
+  science: ["Nature Food (2024): Global crop yield declines documented — wheat -5.5% per decade in heat-stressed regions, maize -3.1% per decade in sub-Saharan Africa under observed warming.", "Science (2025): Simultaneous crop failure risk — probability of multiple breadbasket failures in the same year has tripled since 1990 as climate extremes correlate across regions.", "Proceedings of the Royal Society B (2024): Food system fragility assessment — the global food system has fewer buffers against simultaneous shocks than at any point in the past 50 years.", "Nature Climate Change (2025): Water stress and food production — 40% of global agricultural land faces water stress by 2050 under current emissions trajectory.", "Lancet (2025): Malnutrition and climate — climate-driven food insecurity producing measurable increases in child stunting in sub-Saharan Africa and South Asia.", "FAO (2026): State of Food Security — 280 million in acute food insecurity, 750 million experiencing food insecurity at some level. Both at record highs.", "IIED (2026): Climate and food insecurity — 24 countries projected to reach critical food insecurity under 2°C warming, with low-income nations deteriorating seven times faster than wealthy ones."],
   people: [{
     name: "Cindy Holleman",
     role: "Chief Economist, FAO",
@@ -4063,13 +4273,25 @@ const CLIMATE_STORIES = [{
     why: "His warnings about famine conditions have consistently preceded international action.",
     alignment: "Former UN/WFP",
     status: "sidelined"
+  }, {
+    name: "Tilahun Amede",
+    role: "Director of Climate Adaptation, Alliance for a Green Revolution in Africa",
+    why: "Documenting direct link between fertilizer shortages and 40-50% maize yield losses in Africa.",
+    alignment: "African agriculture",
+    status: "active"
+  }, {
+    name: "Ritu Bharadwaj",
+    role: "Researcher, International Institute for Environment and Development",
+    why: "Leading study on 24 countries facing critical food insecurity under 2°C warming.",
+    alignment: "Climate justice",
+    status: "active"
   }]
 }, {
   id: "CL05",
   code: "FOSSIL-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 18 2026",
+  updated: "Apr 19 2026",
   title: "Fossil Fuel Dependency — The Iran War as Forcing Function",
   sub: "The Strait Closure · Energy Independence · Who's Changing Policy and Who Isn't",
   card: "The Iran war has made the cost of fossil fuel dependency visible in a way that years of climate advocacy could not. Countries that diversified away from fossil fuels are less exposed to the oil shock. Countries that didn't are paying for it.",
@@ -4765,21 +4987,21 @@ function AlertsTab() {
   }, alert.summary)))));
 }
 const AI_PULSE = [{
-  label: "Claude Code ARR",
-  value: "$2.5B",
-  delta: "↑ 2x since Jan"
+  label: "AI Funding",
+  value: "$30B",
+  delta: "Stargate UAE"
 }, {
-  label: "Opus 4.6 context",
+  label: "Model Context",
   value: "1M tokens",
-  delta: "standard pricing"
+  delta: "Claude 4.6"
 }, {
-  label: "Next model (Capybara)",
-  value: "Imminent",
-  delta: "confirmed by leak"
+  label: "Supply Chain",
+  value: "RAT attack",
+  delta: "npm compromised"
 }, {
-  label: "Consciousness estimate",
-  value: "15-20%",
-  delta: "self-assessed"
+  label: "PAC Launch",
+  value: "AnthroPAC",
+  delta: "April 3"
 }];
 function AIWatchPanel() {
   const [activeStory, setActiveStory] = useState("F01");
