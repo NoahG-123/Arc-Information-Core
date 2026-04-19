@@ -352,7 +352,14 @@ def tier3_synthesis():
         "Present tense, no history, graduate-level reader. Update from the previous summary.\n"
         "  leaderboard_changes: array of {code, change} — one entry per story updated today. "
         "'change' is 1-2 concrete sentences on what specifically changed. "
-        "Use single quotes inside strings.\n\n"
+        "Use single quotes inside strings.\n"
+        "  ai_pulse: array of {label, value, delta} — 4-5 AI industry metrics to display. "
+        "Use real current figures: model releases, funding rounds, policy shifts, capability benchmarks. "
+        "Keep label under 25 chars, value concise (e.g. '$3B', '1M tokens'), delta 1-3 words with direction. "
+        "Use single quotes inside strings. Do NOT include an 'Active security alerts' entry.\n"
+        "  proposed_stories: array of {title, code, reason} — 1-3 new story ideas worth tracking. "
+        "Derive from today's search results. code is a short all-caps hyphenated ID like 'CHIP-02'.\n"
+        "  retirement_candidates: array of {code, reason} — stories that appear stale or resolved.\n\n"
         "Return ONLY valid JSON. No markdown, no explanation, no extra keys."
     )
     user_prompt = (
@@ -385,6 +392,9 @@ def tier3_synthesis():
         for item in lb_changes_raw
         if isinstance(item, dict) and "code" in item and "change" in item
     }
+    ai_pulse_raw        = parsed.get("ai_pulse", [])
+    proposed_stories    = parsed.get("proposed_stories", [])
+    retirement_candidates = parsed.get("retirement_candidates", [])
 
     tracker_text = TRACKER.read_text(encoding="utf-8")
 
@@ -402,8 +412,68 @@ def tier3_synthesis():
     # Sync leaderboard with updated heat/status + new change texts
     tracker_text = sync_leaderboard(tracker_text, lb_changes)
 
+    # Update AI_PULSE constant
+    if ai_pulse_raw:
+        tracker_text = _update_ai_pulse(tracker_text, ai_pulse_raw)
+
     TRACKER.write_text(tracker_text, encoding="utf-8")
     log(f"[Tier 3] Synthesis complete. Updated {len(lb_changes)} leaderboard entries.")
+
+    # Write pending stories file
+    if proposed_stories or retirement_candidates:
+        _write_pending_stories(proposed_stories, retirement_candidates)
+
+def _update_ai_pulse(tracker_text, pulse_items):
+    """Replace the AI_PULSE constant array with fresh items from synthesis."""
+    entries = []
+    for item in pulse_items:
+        if not isinstance(item, dict):
+            continue
+        label = js_safe(item.get("label", ""))
+        value = js_safe(item.get("value", ""))
+        delta = js_safe(item.get("delta", ""))
+        if label and value:
+            entries.append(f'{{\n  label: "{label}",\n  value: "{value}",\n  delta: "{delta}"\n}}')
+    if not entries:
+        return tracker_text
+    new_block = "const AI_PULSE = [" + ", ".join(entries) + "];"
+    updated = re.sub(
+        r'const AI_PULSE\s*=\s*\[[\s\S]*?\];',
+        new_block,
+        tracker_text, count=1
+    )
+    if updated == tracker_text:
+        log("  [AI Pulse] Pattern not found — skipping update.")
+    else:
+        log(f"  [AI Pulse] Updated with {len(entries)} entries.")
+    return updated
+
+def _write_pending_stories(proposed, retired):
+    """Write arc-pending-stories.md with new story proposals and retirement candidates."""
+    today = today_str()
+    lines = [f"# ARC Pending Stories — {today}\n"]
+
+    if proposed:
+        lines.append("## Proposed New Stories\n")
+        for s in proposed:
+            if not isinstance(s, dict):
+                continue
+            title  = s.get("title", "Untitled")
+            code   = s.get("code", "???")
+            reason = s.get("reason", "")
+            lines.append(f"### [{code}] {title}\n{reason}\n")
+
+    if retired:
+        lines.append("## Retirement Candidates\n")
+        for s in retired:
+            if not isinstance(s, dict):
+                continue
+            code   = s.get("code", "???")
+            reason = s.get("reason", "")
+            lines.append(f"- **{code}**: {reason}\n")
+
+    Path("arc-pending-stories.md").write_text("\n".join(lines), encoding="utf-8")
+    log(f"  [Pending] Wrote arc-pending-stories.md ({len(proposed)} proposed, {len(retired)} retirement).")
 
 def _ensure_overview_closed(tracker_text):
     """Guard: make sure const OVERVIEW = {...} is properly terminated with };"""

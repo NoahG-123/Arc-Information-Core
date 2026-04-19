@@ -4764,6 +4764,23 @@ function AlertsTab() {
     }
   }, alert.summary)))));
 }
+const AI_PULSE = [{
+  label: "Claude Code ARR",
+  value: "$2.5B",
+  delta: "↑ 2x since Jan"
+}, {
+  label: "Opus 4.6 context",
+  value: "1M tokens",
+  delta: "standard pricing"
+}, {
+  label: "Next model (Capybara)",
+  value: "Imminent",
+  delta: "confirmed by leak"
+}, {
+  label: "Consciousness estimate",
+  value: "15-20%",
+  delta: "self-assessed"
+}];
 function AIWatchPanel() {
   const [activeStory, setActiveStory] = useState("F01");
   const [tab, setTab] = useState("insights");
@@ -4999,26 +5016,10 @@ function AIWatchPanel() {
       fontWeight: 700,
       marginBottom: 10
     }
-  }, "\u25C8 AI PULSE"), [{
-    label: "Claude Code ARR",
-    value: "$2.5B",
-    delta: "↑ 2x since Jan"
-  }, {
-    label: "Opus 4.6 context",
-    value: "1M tokens",
-    delta: "standard pricing"
-  }, {
+  }, "\u25C8 AI PULSE"), [...AI_PULSE, {
     label: "Active security alerts",
     value: `${activeAlertCount}`,
     delta: activeAlertCount > 0 ? "action required" : "all clear"
-  }, {
-    label: "Next model (Capybara)",
-    value: "Imminent",
-    delta: "confirmed by leak"
-  }, {
-    label: "Consciousness estimate",
-    value: "15-20%",
-    delta: "self-assessed"
   }].map((stat, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
@@ -5441,7 +5442,7 @@ function ARC() {
       letterSpacing: "0.14em",
       fontFamily: "monospace"
     }
-  }, "print(\"Hello, World!\") \xB7 APRIL 8, 2026"))), /*#__PURE__*/React.createElement("div", {
+  }, `print("Hello, World!") · ${new Date().toLocaleDateString('en-US', {month:'long',day:'numeric',year:'numeric'}).toUpperCase()}`))), /*#__PURE__*/React.createElement("div", {
     className: "arc-header-count",
     style: {
       fontSize: 9,
