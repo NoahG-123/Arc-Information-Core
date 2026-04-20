@@ -526,6 +526,8 @@ def tier3_synthesis():
             rf'\g<1>{new_summary}\g<2>',
             tracker_text, flags=re.DOTALL, count=1
         )
+    else:
+        log("  [WARN] Tier 3 returned no summary — OVERVIEW summary unchanged")
 
     # Ensure OVERVIEW block closes properly
     tracker_text = _ensure_overview_closed(tracker_text)
@@ -584,7 +586,7 @@ def _update_cross_story_alerts(tracker_text, alerts):
         if not isinstance(a, dict):
             continue
         codes   = a.get("codes", [])
-        date    = js_safe(a.get("date", today_str()))
+        date    = today_str()
         title   = js_safe(a.get("title", ""))
         alert   = js_safe(a.get("alert", ""))
         sev     = a.get("severity", "medium")
