@@ -37,6 +37,9 @@ Edit data arrays and scalar fields only. Never touch `bg`, `connections`, `canad
 
 ## Tier 3: Story Lifecycle Rules (Proposals, Alerts & Retirements)
 
+**OVERVIEW Summary**
+Rewrite the `summary` field every run: 3-5 sentences on the current overall state of play across all active stories. Present tense, no history, graduate-level reader. This is the executive brief displayed above the leaderboard.
+
 **Cross-Story Alerts**
 Identify 0-3 active alerts where two or more tracker stories are actively interacting in a way that changes the risk or trajectory of both. 
 - Do not just state what happened; explain why the *combination* matters structurally. 
