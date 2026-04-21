@@ -1,13 +1,13 @@
-# ARC Pending Stories — Apr 20 2026
+# ARC Pending Stories — Apr 21 2026
 
 ## Proposed New Stories
 
-### [AI-ELECTION-01] AI Election Influence
-Emerging evidence of AI-driven political campaigns and influence operations.
+### [AI-INFRA-01] AI Infrastructure Vulnerability
+Escalating threats against UAE datacenters highlight a new vulnerability in global AI infrastructure.
 
-### [AI-GOV-02] Global AI Governance
-Increasing international calls for unified AI governance frameworks.
+### [OIL-01] Global Oil Supply Crisis
+Mid-April supply cliff and potential doubling of daily supply loss to 10M bpd warrants closer tracking.
 
 ## Retirement Candidates
 
-- **META-01**: No significant updates since March 10; story appears resolved.
+- **META-01**: No significant updates since March 10 acquisition of Moltbook.
