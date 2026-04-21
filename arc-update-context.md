@@ -24,14 +24,14 @@ Direct, analytical, no hedging for its own sake. Honest about uncertainty — us
 ## Tier 2: Field Rules (Updating Story Objects)
 Edit data arrays and scalar fields only. Never touch `bg`, `connections`, `canada`, `id`, React functions, or CSS.
 
-- **confirmed[]**: Append only. Add new verified facts from multiple credible sources. Official statements with source name and date. Past tense, one fact per string, specific — numbers, names, dates matter. Never include speculation.
-- **developing[]**: Add new threads with genuine uncertainty. Frame as ongoing processes, not conclusions. If something resolves, remove it from here and add the result to `confirmed[]`.
+- **confirmed[]**: Append only. Add new verified facts from multiple credible sources. Official statements with source name and date. Past tense, one fact per string, specific — numbers, names, dates matter. Never include speculation. Replace superseded entries (stale casualty counts, expired deadlines, reversed positions) with the current version.
+- **developing[]**: Add new threads with genuine uncertainty. Frame as ongoing processes, not conclusions. If something resolves, remove it from here and add the result to `confirmed[]`. **Actively remove any entry that references a specific past deadline, time ("tonight", "this evening"), or event that has since passed — these are no longer developing, they are history.**
 - **insights[]**: Analytical conclusions beyond what the articles say. What the event means structurally. Present tense, analytical voice. Must add value beyond restating facts.
 - **implications[]**: What this story produces next. Downstream consequences. "If X holds, then Y becomes structurally inevitable."
 - **risks[]**: What could go wrong from the current trajectory. Specific failure modes, not generic uncertainty.
-- **questions[]**: Open questions determining how the story develops. If answered, remove immediately. "Does X happen — and what does it mean if it does?"
-- **card**: One sentence. What is happening right now, present tense. No history.
-- **summary**: 2-4 sentences, current state of play only. No history.
+- **questions[]**: Open questions determining how the story develops. If answered, remove immediately. **Also remove any question anchored to a past moment ("tonight", "a fourth time", "before the deadline") — reframe as current or remove.** "Does X happen — and what does it mean if it does?"
+- **card**: One sentence. What is happening right now, present tense. No history. **Never use "tonight", "today", or a specific clock time — these go stale immediately.**
+- **summary**: 2-4 sentences, current state of play only. No history. **Remove any reference to "tonight", "today", "this morning", or specific past deadlines.**
 
 ---
 
