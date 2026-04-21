@@ -2139,7 +2139,7 @@ function ARC() {
           <div style={{width:26,height:26,borderRadius:4,background:"linear-gradient(135deg,#1a3a5c,#0a1826)",border:"1px solid rgba(123,167,212,0.25)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,color:"#7ba7d4"}}>◈</div>
           <div>
             <div style={{fontSize:14,fontWeight:700,letterSpacing:"-0.01em",color:"#dde0e8"}}>ARC Information Core</div>
-            <div style={{fontSize:9,color:"#383838",letterSpacing:"0.14em",fontFamily:"monospace"}}>print("Hello, World!") · APRIL 8, 2026</div>
+            <div style={{fontSize:9,color:"#383838",letterSpacing:"0.14em",fontFamily:"monospace"}}>print("Hello, World!") · {new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}).toUpperCase()}</div>
           </div>
         </div>
         <div className="arc-header-count" style={{fontSize:9,color:"#2e2e2e",fontFamily:"monospace"}}>{STORIES.filter(s=>s.featured).length} STORIES · {STORIES.filter(s=>s.tab==="war").length} CONFLICTS</div>

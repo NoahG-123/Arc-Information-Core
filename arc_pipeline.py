@@ -158,7 +158,7 @@ def call_openrouter(model, messages, temp=0.0, retries=3):
 # ── Story bounds ───────────────────────────────────────────────
 def find_story_bounds(text, code):
     """Return (start, end) of the story object with the given code.
-    Only searches within STORIES and WAR_STORIES — never EVENTS or OVERVIEW.
+    Only searches within STORIES — never EVENTS or OVERVIEW.
     Skips connection/sub-entries (which lack heat:) to find the real story object."""
     search_from = text.find('const STORIES')
     if search_from == -1:
