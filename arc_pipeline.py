@@ -158,7 +158,7 @@ def call_openrouter(model, messages, temp=0.0, retries=3):
 # ── Story bounds ───────────────────────────────────────────────
 def find_story_bounds(text, code):
     """Return (start, end) of the story object with the given code.
-    Only searches within STORIES and WAR_STORIES — never EVENTS or OVERVIEW.
+    Only searches within STORIES — never EVENTS or OVERVIEW.
     Skips connection/sub-entries (which lack heat:) to find the real story object."""
     search_from = text.find('const STORIES')
     if search_from == -1:
@@ -695,28 +695,24 @@ def _ensure_overview_closed(tracker_text):
     overview_m = re.search(r'const OVERVIEW\s*=\s*\{', tracker_text)
     if not overview_m:
         return tracker_text
-    lb_m = re.search(r'leaderboard:\s*\[', tracker_text[overview_m.start():])
-    if not lb_m:
-        return tracker_text
-    lb_start = overview_m.start() + lb_m.end()
-
-    # Find end of leaderboard array
-    depth, lb_end = 1, lb_start
-    for i in range(lb_start, len(tracker_text)):
-        c = tracker_text[i]
-        if c == '[': depth += 1
-        elif c == ']':
+    # Brace-count from the opening { to find the matching closing }
+    # This correctly handles cross_story_alerts or any other fields after leaderboard
+    depth, overview_end = 0, None
+    for i in range(overview_m.end() - 1, len(tracker_text)):
+        if tracker_text[i] == '{':
+            depth += 1
+        elif tracker_text[i] == '}':
             depth -= 1
             if depth == 0:
-                lb_end = i
+                overview_end = i
                 break
-
-    # Everything after the ] up to the next const/function should be `\n};`
-    after = tracker_text[lb_end + 1:lb_end + 10].lstrip()
-    if not after.startswith('};') and not after.startswith('}'):
-        # Insert the missing closing brace
-        tracker_text = tracker_text[:lb_end + 1] + '\n};' + tracker_text[lb_end + 1:]
-        log("  [Guard] Inserted missing }; to close OVERVIEW object.")
+    if overview_end is None:
+        log("  [Guard] OVERVIEW has no closing } — cannot repair.")
+        return tracker_text
+    after = tracker_text[overview_end + 1:overview_end + 5].lstrip()
+    if not after.startswith(';'):
+        tracker_text = tracker_text[:overview_end + 1] + ';' + tracker_text[overview_end + 1:]
+        log("  [Guard] Inserted missing ; after OVERVIEW closing }.")
     return tracker_text
 
 # ── Queue Builder ─────────────────────────────────────────────
