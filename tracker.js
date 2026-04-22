@@ -74,19 +74,6 @@ const OVERVIEW = {
     alert: "Trump's delay of Taiwan arms sales after Xi call signals a potential shift in US-China strategic calculus, reducing immediate tensions but potentially emboldening China's regional ambitions.",
     severity: "medium"
   }
-],
-    date: "Apr 21 2026",
-    title: "Iran-UAE AI Infrastructure War",
-    alert: "Iran's threats against OpenAI's UAE datacenter escalate the conflict into the AI domain, creating a new front in the war. This interaction risks global AI infrastructure and could trigger retaliatory cyberattacks on Iranian systems.",
-    severity: "high"
-  },
-  {
-    codes: ["GEO-01", "CHINA-01"],
-    date: "Apr 21 2026",
-    title: "China-Taiwan Arms Delay",
-    alert: "Trump's delay of Taiwan arms sales after Xi call signals a potential shift in US-China strategic calculus. This interaction reduces immediate tensions but may embolden China's regional ambitions.",
-    severity: "medium"
-  }
 ]
 };
 const EVENTS = [

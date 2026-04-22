@@ -605,15 +605,24 @@ def _update_cross_story_alerts(tracker_text, alerts):
 
     new_array = "cross_story_alerts: [\n  " + ",\n  ".join(entries) + "\n]"
 
-    # Replace existing cross_story_alerts array if present
-    updated = re.sub(
-        r'cross_story_alerts:\s*\[[\s\S]*?\]',
-        new_array,
-        tracker_text, count=1
-    )
-    if updated != tracker_text:
-        log(f"  [Cross-story alerts] Replaced with {len(entries)} alerts.")
-        return updated
+    # Replace existing cross_story_alerts array if present.
+    # Use bracket counting — NOT a regex — so nested arrays like codes:[...]
+    # don't fool the matcher into stopping at the wrong closing bracket.
+    key_m = re.search(r'cross_story_alerts:\s*\[', tracker_text)
+    if key_m:
+        arr_start = key_m.end() - 1   # position of the opening [
+        depth, arr_end = 0, None
+        for i in range(arr_start, len(tracker_text)):
+            if tracker_text[i] == '[':   depth += 1
+            elif tracker_text[i] == ']':
+                depth -= 1
+                if depth == 0:
+                    arr_end = i
+                    break
+        if arr_end is not None:
+            updated = tracker_text[:key_m.start()] + new_array + tracker_text[arr_end + 1:]
+            log(f"  [Cross-story alerts] Replaced with {len(entries)} alerts.")
+            return updated
 
     # Not present yet — insert before closing }; of OVERVIEW
     overview_m = re.search(r'const OVERVIEW\s*=\s*\{', tracker_text)
