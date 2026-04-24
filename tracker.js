@@ -2007,81 +2007,81 @@ const STORIES = [{
   title: "The Carney Government",
   sub: "Majority Mandate & Economic Reorientation",
   card: "Carney secured parliamentary majority through byelection wins and defections. Launches trade advisory council while confronting Trump administration over CUSMA terms. Trade tensions escalate as July deadline approaches.",
-  summary: "Mark Carney's Liberals secured a parliamentary majority on April 13, 2026 through three byelection victories and five opposition defections, giving them 174 of 343 Commons seats. The government is now aggressively pursuing its economic independence agenda, announcing a 24-member Advisory Committee on Canada-U.S. Economic Relations including cross-partisan figures (Charest, O'Toole, Raitt). **Carney has taken a hard line against U.S. demands, stating 'We're not sitting here taking notes and taking instruction from the United States' while refusing 'entry fee' concessions. Trade tensions escalated further as Carney called U.S. tariffs on steel/aluminum/autos 'violations of our trade deal'.** Multiple sources confirm U.S. is demanding pre-negotiation concessions including dairy market access and provincial liquor bans removal.",
-  bg: "Mark Carney is an unusual politician — a former central banker who ran the Bank of Canada during the 2008 financial crisis and the Bank of England during Brexit. His majority government, achieved through both electoral wins and unprecedented defections, now faces its first major test in CUSMA negotiations. **The structural reality remains: Canada's economy is deeply integrated with the US (70% exports), making diversification difficult amid Trump's escalating tariffs (50% steel, 50% aluminum, 25% autos). Carney has framed these U.S. actions as 'weaknesses we must correct' while maintaining dairy quotas won't be reopened.** The confrontation reveals Carney's strategic gamble — leveraging parliamentary majority to resist U.S. pressure while positioning for longer-term realignment.",
+  summary: "Mark Carney's Liberals secured a parliamentary majority on April 13, 2026 through three byelection victories and five opposition defections, giving them 174 of 343 Commons seats. The government is now aggressively pursuing its economic independence agenda, announcing a 24-member Advisory Committee on Canada-U.S. Economic Relations including cross-partisan figures (Charest, O'Toole, Raitt). Carney has taken a hard line against U.S. demands, stating 'We're not sitting here taking notes and taking instruction from the United States' while refusing 'entry fee' concessions. Trade tensions escalated further as Carney called U.S. tariffs on steel/aluminum/autos 'violations of our trade deal'. Multiple sources confirm U.S. is demanding pre-negotiation concessions including dairy market access and provincial liquor bans removal.",
+  bg: "Mark Carney is an unusual politician — a former central banker who ran the Bank of Canada during the 2008 financial crisis and the Bank of England during Brexit. His majority government, achieved through both electoral wins and unprecedented defections, now faces its first major test in CUSMA negotiations. The structural reality remains: Canada's economy is deeply integrated with the US (70% exports), making diversification difficult amid Trump's escalating tariffs (50% steel, 50% aluminum, 25% autos). Carney has framed these U.S. actions as 'weaknesses we must correct' while maintaining dairy quotas won't be reopened. The confrontation reveals Carney's strategic gamble — leveraging parliamentary majority to resist U.S. pressure while positioning for longer-term realignment.",
   confirmed: [
     "Carney's Liberals won all three April 2026 byelections (Toronto ridings + Quebec's Terrebonne), securing parliamentary majority with 174 seats",
     "Five opposition MPs defected to Liberals prior to byelections (four Conservatives, one Bloc Québécois)",
     "Announced 24-member Advisory Committee on Canada-U.S. Economic Relations on April 21, chaired by Dominic LeBlanc", 
     "Committee appointments include Erin O'Toole, Jean Charest, Lisa Raitt, Ralph Goodale, and major industry CEOs",
     "First committee meeting scheduled for April 27 ahead of July 1 CUSMA review deadline",
-    **"'We're not sitting here taking notes and taking instruction from the United States' - Carney at Ottawa press conference (Apr 23)",**
-    **"Called U.S. tariffs '50% on steel, 50% on aluminum, 25% on autos...those are violations of our trade deal' (Apr 23)",**
+    "'We're not sitting here taking notes and taking instruction from the United States' - Carney at Ottawa press conference (Apr 23)",
+    "Called U.S. tariffs '50% on steel, 50% on aluminum, 25% on autos...those are violations of our trade deal' (Apr 23)",
     "USTR Jamieson Greer confirmed Canada-US trade models 'don't fit together well' in congressional testimony (Apr 22)",
-    **"Radio-Canada reports U.S. demanding concessions as 'entry fee' before negotiations (Apr 21)",**
-    **"85% of Canada-US trade remains tariff-free under CUSMA, per government statement",**
-    **"Janice Charette (Canada's chief negotiator) confirmed digital tax repeal/liquor tariff withdrawals haven't yielded US concessions",**
+    "Radio-Canada reports U.S. demanding concessions as 'entry fee' before negotiations (Apr 21)",
+    "85% of Canada-US trade remains tariff-free under CUSMA, per government statement",
+    "Janice Charette (Canada's chief negotiator) confirmed digital tax repeal/liquor tariff withdrawals haven't yielded US concessions",
     "Mexico-US formal negotiations begin May 2026; no Canada-US date set"
   ],
   developing: [
-    **"U.S. demands for dairy quota improvements and provincial alcohol bans",**
-    **"Canadian counterproposals addressing steel/aluminum tariffs within CUSMA framework",**
-    **"Possibility of missed July 1 deadline triggering annual review cycle",**
-    **"Advisory committee recommendations on strategic concessions",**
-    **"U.S. threat of border controls if rules of origin aren't revised",**
-    **"Growing provincial opposition to U.S. liquor restocking demands"**
+    "U.S. demands for dairy quota improvements and provincial alcohol bans",
+    "Canadian counterproposals addressing steel/aluminum tariffs within CUSMA framework",
+    "Possibility of missed July 1 deadline triggering annual review cycle",
+    "Advisory committee recommendations on strategic concessions",
+    "U.S. threat of border controls if rules of origin aren't revised",
+    "Growing provincial opposition to U.S. liquor restocking demands"
   ],
   insights: [
-    **"Carney's hardline stance reflects confidence from majority status and domestic political cover",**
-    **"Inclusion of Conservative figures gives bipartisan legitimacy to eventual concessions",**
-    **"U.S. negotiating from position of strength with active Mexico track ongoing",**
-    **"Digital tax reversal shows Carney willing to concede on non-core issues",**
-    **"Dairy remains political third rail despite U.S. pressure",**
-    **"Committee timing suggests Carney seeks strategic consensus before making difficult choices",**
-    **"Trump's unpredictable interventions remain wild card in negotiations"**
+    "Carney's hardline stance reflects confidence from majority status and domestic political cover",
+    "Inclusion of Conservative figures gives bipartisan legitimacy to eventual concessions",
+    "U.S. negotiating from position of strength with active Mexico track ongoing",
+    "Digital tax reversal shows Carney willing to concede on non-core issues",
+    "Dairy remains political third rail despite U.S. pressure",
+    "Committee timing suggests Carney seeks strategic consensus before making difficult choices",
+    "Trump's unpredictable interventions remain wild card in negotiations"
   ],
   questions: [
-    **"Will committee recommendations provide Carney political cover for concessions?",**
-    **"How will U.S. respond to linkage of sectoral tariffs with CUSMA renewal?",**
-    **"Does Mexican negotiation progress pressure Canada to compromise?",**
-    **"Can Carney maintain cross-partisan unity as talks intensify?",**
-    **"Will Trump personally intervene given past threats against Canada?",**
-    **"How will provinces react if alcohol bans become bargaining chip?"**
+    "Will committee recommendations provide Carney political cover for concessions?",
+    "How will U.S. respond to linkage of sectoral tariffs with CUSMA renewal?",
+    "Does Mexican negotiation progress pressure Canada to compromise?",
+    "Can Carney maintain cross-partisan unity as talks intensify?",
+    "Will Trump personally intervene given past threats against Canada?",
+    "How will provinces react if alcohol bans become bargaining chip?"
   ],
   people: [{
     name: "Mark Carney",
     role: "Prime Minister, Canada",
-    **why: "Taking defiant stance against U.S. demands while managing domestic expectations of economic relief.",**
+    why: "Taking defiant stance against U.S. demands while managing domestic expectations of economic relief.",
     alignment: "Liberal/Federal",
     status: "active"
   }, {
     name: "Pierre Poilievre",
     role: "Conservative leader",
-    **why: "Criticizing negotiation tactics but key allies (O'Toole, Charest) serving on advisory committee.",**
+    why: "Criticizing negotiation tactics but key allies (O'Toole, Charest) serving on advisory committee.",
     alignment: "Conservative/Opposition", 
     status: "active"
   }, {
     name: "Dominic LeBlanc",
     role: "Minister for Canada-US Trade",
-    **why: "Leading negotiations and advisory committee. Publicly stated dairy quotas won't be reopened.",**
+    why: "Leading negotiations and advisory committee. Publicly stated dairy quotas won't be reopened.",
     alignment: "Liberal/Federal",
     status: "rising"
   }, {
     name: "Donald Trump",
     role: "US President", 
-    **why: "Ultimate decision-maker on US trade demands. History of personal interventions.",**
+    why: "Ultimate decision-maker on US trade demands. History of personal interventions.",
     alignment: "US",
     status: "active"
   }, {
     name: "Jamieson Greer",
     role: "US Trade Representative",
-    **why: "Leading U.S. negotiations. Warned of possible border controls if rules of origin aren't revised.",**
+    why: "Leading U.S. negotiations. Warned of possible border controls if rules of origin aren't revised.",
     alignment: "US",
     status: "rising"
   }, {
     name: "Jean Charest",
     role: "Former Quebec Premier",
-    **why: "Committee member confirming extravagant U.S. demands in media leaks.",**
+    why: "Committee member confirming extravagant U.S. demands in media leaks.",
     alignment: "Conservative/Advisor",
     status: "monitor"
   }]

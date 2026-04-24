@@ -46,7 +46,7 @@ def today_str():
 
 def js_safe(s):
     """Make a string safe to embed inside a JS double-quoted string."""
-    return s.replace('\\', '').replace('"', "'").strip()
+    return s.replace('\\', '').replace('"', "'").replace('**', '').strip()
 
 def load_changes():
     if CHANGES_F.exists():
@@ -324,8 +324,9 @@ def tier2_write(code, search_results):
         log(f"  [{code}] SKIP — format failed: {e}")
         return False
 
-    # Strip markdown fences and any prose preamble before the opening {
+    # Strip markdown fences, bold markers, and any prose preamble before the opening {
     new_object = re.sub(r'^```\w*\n?|\n?```$', '', new_object.strip(), flags=re.MULTILINE).strip()
+    new_object = new_object.replace('**', '')
     brace = new_object.find('{')
     if brace > 0:
         new_object = new_object[brace:]
