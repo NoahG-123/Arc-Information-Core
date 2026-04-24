@@ -62,14 +62,14 @@ const OVERVIEW = {
   cross_story_alerts: [
   {
     codes: ["IRAN-01", "AI-SEC-01"],
-    date: "Apr 23 2026",
+    date: "Apr 24 2026",
     title: "Iran-UAE AI Infrastructure War",
     alert: "Iran's explicit threats against OpenAI's UAE datacenter escalate the conflict into the AI domain, creating a new front that risks global AI infrastructure and could trigger retaliatory cyberattacks on Iranian systems.",
     severity: "high"
   },
   {
     codes: ["GEO-01", "CHINA-01"],
-    date: "Apr 23 2026",
+    date: "Apr 24 2026",
     title: "China-Taiwan Arms Delay",
     alert: "Trump's delay of Taiwan arms sales after Xi call signals a potential shift in US-China strategic calculus, reducing immediate tensions but potentially emboldening China's regional ambitions.",
     severity: "medium"
@@ -77,6 +77,54 @@ const OVERVIEW = {
 ]
 };
 const EVENTS = [
+{
+  date: "Apr 24 2026",
+  code: "IRAN-01",
+  type: "HEAT_CHANGE",
+  content: "Heat maintained at 5 as Iran submits 10-point maximalist counter and strikes Kharg Island before deadline."
+},
+{
+  date: "Apr 24 2026",
+  code: "AI-SEC-01",
+  type: "NEW_FACT",
+  content: "IRGC threatens annihilation of OpenAI's UAE datacenter, releasing precise satellite imagery of the facility."
+},
+{
+  date: "Apr 24 2026",
+  code: "ANTHRO-01",
+  type: "STATUS_CHANGE",
+  content: "Judge grants preliminary injunction, ruling Pentagon designation as First Amendment retaliation."
+},
+{
+  date: "Apr 24 2026",
+  code: "ECON-01",
+  type: "NEW_FACT",
+  content: "Brent crude peaked at $126/barrel, with potential supply losses doubling to 10M bpd mid-April."
+},
+{
+  date: "Apr 24 2026",
+  code: "GEO-01",
+  type: "STATUS_UPDATE",
+  content: "Trump delays Taiwan arms sale after Xi call, signaling strategic concession trade with China."
+},
+{
+  date: "Apr 24 2026",
+  code: "AI-SEC-01",
+  type: "ALERT",
+  content: "Claude Code npm supply chain attack detected with malicious axios versions containing Remote Access Trojan."
+},
+{
+  date: "Apr 24 2026",
+  code: "IRAN-01",
+  type: "HEAT_CHANGE",
+  content: "Heat maintained at 5. 8pm ET deadline arrived — Iran submitted 10-point maximalist counter. Kharg Island struck before deadline."
+},
+{
+  date: "Apr 24 2026",
+  code: "AI-SEC-01",
+  type: "NEW_FACT",
+  content: "IRGC threatened complete annihilation of Stargate UAE ($30B OpenAI/Nvidia/Oracle). Released satellite imagery of previously undisclosed facility location."
+},
 {
   date: "Apr 23 2026",
   code: "IRAN-01",
@@ -357,7 +405,7 @@ const STORIES = [{
   code: "AI-GOV-01",
   heat: 4,
   status: "escalating",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "Autonomous Weapons Race",
   sub: "Global AI in Warfare — No Governance Framework",
   card: "China demonstrates full killchain autonomy while US burns through conventional stockpiles. Anthropic-Pentagon negotiations signal potential thaw but no systemic constraints. JARI 'Orca' shows China's unmanned naval dominance potential.",
@@ -376,7 +424,11 @@ const STORIES = [{
     "Anthropic CEO Dario Amodei met with White House officials amid potential Pentagon reconciliation talks",
     "Palantir manifesto calls Silicon Valley 'engineering elite' to lead national defense and rejects pluralism",
     "China's shipyards produce more tonnage than rest of world combined — enabling mass production of unmanned systems",
-    "Russian Nerehta autonomous ground vehicle completed successful tests with reported superior performance to crewed counterparts"
+    "Russian Nerehta autonomous ground vehicle completed successful tests with reported superior performance to crewed counterparts",
+    "US CENTCOM commander confirmed AI was used almost daily during Iran conflict operations (Economic Times Apr 24)",
+    "Ukraine deployed AI-powered targeting systems compressing kill chain from days to hours (Economic Times Apr 24)",
+    "Pentagon seeking $54.6B for Defense Autonomous Warfare Group (DAWG) — 24,070% budget increase (Breaking Defense Apr 23)",
+    "US Navy deployed 300 Chaser USVs capable of autonomous offensive actions if communications lost (Daily Caller Apr 23)"
   ],
   developing: [
     "Whether Anthropic-Pentagon reconciliation will restore military contracts or maintain guardrails",
@@ -386,7 +438,11 @@ const STORIES = [{
     "Whether Russia accelerates autonomous deployments amid Ukraine drone warfare lessons",
     "Impact of THAAD depletion on US autonomous point defense development", 
     "Whether Trump administration adopts Palantir's 'hard power' doctrine for AI arms race",
-    "Potential for autonomous weapons to trigger accidental escalation in Taiwan crisis"
+    "Potential for autonomous weapons to trigger accidental escalation in Taiwan crisis",
+    "Whether $54.6B DAWG funding will accelerate US autonomous warfare capabilities",
+    "Impact of Ukraine's AI targeting systems on future drone warfare doctrine",
+    "Whether China responds to US DAWG initiative with comparable investments",
+    "Potential for autonomous naval systems like Chaser USV to change maritime conflict dynamics"
   ],
   insights: [
     "China's drone production capacity represents strategic depth the US cannot match — 1 billion units/year potential creates attrition warfare paradigm shift",
@@ -396,7 +452,11 @@ const STORIES = [{
     "Russia's Nerehta tests show second-tier military powers can achieve autonomous parity in specific domains",
     "THAAD depletion highlights vulnerability of expensive missile defenses to drone/rocket swarms — forcing autonomy adoption",
     "Palantir manifesto signals ideological alignment between Silicon Valley and military-industrial complex on autonomous weapons",
-    "Mythos capabilities suggest next cyber warfare phase involves AI systems autonomously discovering and exploiting vulnerabilities"
+    "Mythos capabilities suggest next cyber warfare phase involves AI systems autonomously discovering and exploiting vulnerabilities",
+    "Ukraine's killchain compression demonstrates battlefield advantage of AI targeting systems",
+    "DAWG's massive funding signals US shift toward autonomous systems as force multiplier",
+    "Chaser USV's autonomous offensive capability represents threshold crossing in naval warfare",
+    "Economic Times analysis warns of AI arms race leading to global ecosystem fragmentation"
   ],
   questions: [
     "Does China's autonomous weapons lead derive from production capacity or algorithmic superiority?",
@@ -405,7 +465,10 @@ const STORIES = [{
     "Does THAAD depletion make autonomous point defenses inevitable despite ethical concerns?",
     "Will Russia's Nerehta program achieve operational deployment timeline ahead of US/China?",
     "Does Palantir's political influence lock in autonomous weapons trajectory regardless of election outcome?",
-    "How will autonomous cyber warfare systems challenge existing deterrence frameworks?"
+    "How will autonomous cyber warfare systems challenge existing deterrence frameworks?",
+    "Will $54.6B DAWG funding close US-China autonomous systems gap?",
+    "Can international governance frameworks emerge before autonomous weapons proliferation?",
+    "How will AI-generated propaganda impact conflict narratives and public perception?"
   ],
   connections: [{
     code: "ANTHRO-01",
@@ -454,16 +517,16 @@ const STORIES = [{
   code: "IRAN-01",
   heat: 5,
   status: "active-war",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "Operation Epic Fury",
-  sub: "US-Israel Strikes on Iran — Day 54",
-  card: "Operation Epic Fury — day 54. Strait of Hormuz remains commercially paralyzed. Ceasefire talks stalemated after US rejects Iran's maximalist demands. US Navy seized second Iranian-linked tanker (M/T Tifani) in Indian Ocean April 21. 400 US wounded, 13 KIA. Trump extends ceasefire deadline while maintaining blockade. White House claims objectives met despite market skepticism.",
+  sub: "US-Israel Strikes on Iran — Day 56",
+  card: "Operation Epic Fury — day 56. Ceasefire meeting in Islamabad canceled as Iran declines to attend. US Navy seizes third sanctioned tanker. Two-thirds of Iran's air force remains operational despite strikes (CBS). 400 US wounded, 13 KIA confirmed. Trump extends ceasefire while maintaining blockade. Economic phase intensifies with global maritime enforcement beyond Hormuz.",
   bg: "Iran is a country of 90 million people governed since 1979 by an Islamic Republic led by a Supreme Leader — the most powerful position in the country, above the elected president. The Supreme Leader killed, Ali Khamenei, held that role for 36 years. The US and Iran have been in a cold conflict since 1979 when Iranian students held American diplomats hostage for 444 days. Iran has funded armed groups across the Middle East and pursued nuclear technology the US and Israel believe is aimed at a weapon. The Strait of Hormuz is a narrow waterway through which about 20 percent of all the world's oil travels. Just before the strikes began, Oman's Foreign Minister announced that a diplomatic breakthrough had been reached — Iran had agreed to nuclear limits and full international verification. The strikes happened the next morning.",
-  summary: "US and Israel launched Operation Epic Fury February 28. Khamenei killed day one. Mojtaba Khamenei — IRGC-installed, never elected, son of the slain Ayatollah — named Supreme Leader March 8. Strait of Hormuz commercially paralyzed past day 50. Oil peaked $126/barrel. Iran submitted a 10-point maximalist ceasefire counter — permanent war end, Strait toll protocol, full sanctions relief, reconstruction fund, right to civilian nuclear program — which the US rejected as insufficient. Kharg Island struck April 7, handling 90% of Iranian oil exports. US Navy seized two Iranian-linked tankers (M/V Touska April 19, M/T Tifani April 21). 400 US service members wounded, 13 KIA. White House claims all objectives met while prediction markets show low confidence in April 30 war end. Trump extended ceasefire deadline while maintaining blockade.",
-  confirmed: ["Khamenei killed February 28 — confirmed by Iranian state media, 40-day mourning declared", "Mojtaba Khamenei named new Supreme Leader March 8 — IRGC-installed, never held elected office, son of the slain Ayatollah", "US and Israel launched Operation Epic Fury February 28 — no formal Congressional authorization", "Oman FM announced diplomatic breakthrough the day before strikes — Iran had agreed to nuclear limits. Strikes happened anyway.", "Strait of Hormuz commercially paralyzed — major firms including Maersk suspended crossings", "IRGC warned ships passage is not allowed — vessels struck near the waterway", "220 children confirmed killed — 118 at a girls' elementary school in Minab on day one alone", "1,900+ total Iranian civilians and military dead as of April 7", "13 US KIA — confirmed by Pentagon", "400 US troops wounded as of April 22 — 271 Army, 64 Navy, 46 Air Force, 19 Marines (Pentagon data)", "Kharg Island struck April 7 — handles 90% of Iran's oil exports", "Iran submitted 10-point maximalist ceasefire counter: permanent war end, Strait toll protocol, full sanctions relief, reconstruction fund, civilian nuclear program right — US rejected as insufficient", "Trump extended ceasefire deadline multiple times while maintaining blockade — negotiations stalled", "US Navy seized Iranian cargo ship M/V Touska April 19 after disabling propulsion — first use of force in blockade", "US Navy boarded Botswana-flagged oil tanker M/T Tifani in Indian Ocean April 21 — first interdiction outside Middle East region", "Oil peaked $126/barrel", "Hezbollah in sustained high-intensity operations — precision munitions and rockets at northern Israel", "Iraqi militias conducting coordinated drone and missile swarms against US facilities", "Houthis firing anti-ship missiles into Red Sea and Gulf of Aden traffic", "Human chains of civilians surrounding Tehran power plants to deter strikes", "White House claims all Operation Epic Fury objectives met — market skepticism remains with April 30 war-end prediction at 15.5%", "24 MQ-9 drones lost over Iran since February 28 — $720 million in hardware losses", "US Space Force made combat debut in Operation Epic Fury — executing coordinated attacks on Iranian infrastructure"],
-  developing: ["Whether Iran responds to second tanker seizure (M/T Tifani) — interdiction occurred in Indian Ocean 2,000 miles from Iran", "Whether White House victory claims trigger adjustment in military posture or purely political move", "Whether extended ceasefire yields new Iranian negotiating position — Tehran remains strategically fractured", "Impact of 349 men vs. 47 women among US wounded on domestic narratives", "Whether Kharg Island destruction accelerates ceasefire or triggers further escalation", "Whether domestic Iranian opposition organizes — fragmentary reports of protests", "Whether Mojtaba Khamenei consolidates control or faces internal IRGC challenge", "Scale and permanence of Strait commercial paralysis after any ceasefire", "Impact of US drone losses on operational tempo — 8% of total MQ-9 fleet destroyed", "Whether China's intervention signals shift in diplomatic posture toward Iran", "Extent of damage to Iran's ballistic missile program from US strikes", "Whether US Navy's 'tanker treadmill' logistics system can sustain blockade long-term"],
-  insights: ["The Oman FM announcement the day before — Iran had agreed to nuclear limits — is the detail that will define historical judgment of this operation. Strikes happened anyway. That sequence is not in dispute.", "Gender disparity in US casualties (349 men vs. 47 women wounded) reflects frontline combat unit composition — may shape domestic perceptions of war costs.", "White House victory declaration contradicts prediction market confidence (15.5%) that war ends by April 30 — suggests gap between political and financial sector assessments.", "M/T Tifani interdiction in Indian Ocean signals global maritime enforcement escalation — exceeds original regional scope of conflict.", "Iranian military leadership claims US 'misleading' about conditions while acknowledging armed forces remain operationally constrained — suggests strategic dissonance within regime.", "Trumps stated reasons for ceasefire extension ('fractured' Iranian leadership) contradicts IRGC public unity — indicates possible intelligence about internal divisions not visible externally.", "Market skepticism about White House victory claims reflects concern about enduring Iranian asymmetric capabilities despite conventional military degradation.", "The human chains around Tehran power plants remain one of the most significant images of this war — civilians using their bodies as deterrence against infrastructure targeting."],
-  questions: ["Does Iran have capacity to respond meaningfully to Indian Ocean interdiction given naval losses?", "Is White House victory declaration premature or based on undisclosed intelligence about Iranian military collapse?", "Will gender disparity in US casualties become politically salient domestically?", "Can fractured Iranian leadership produce coherent negotiating position before extended ceasefire deadline?", "Does China's silent acquiescence to maritime enforcement actions indicate softening support for Tehran?", "How much of Iran's ballistic missile capability remains operational after strikes?", "Will sustained drone attrition force US operational adjustments despite official victory claims?", "Are prediction markets underestimating Trump's willingness to declare victory and withdraw regardless of conditions on the ground?"],
+  summary: "US and Israel launched Operation Epic Fury February 28. Khamenei killed day one. Mojtaba Khamenei — IRGC-installed, never elected, son of the slain Ayatollah — named Supreme Leader March 8. Strait of Hormuz commercially paralyzed past day 50. Oil peaked $126/barrel. Iran submitted a 10-point maximalist ceasefire counter — permanent war end, Strait toll protocol, full sanctions relief, reconstruction fund, right to civilian nuclear program — which the US rejected as insufficient. Kharg Island struck April 7, handling 90% of Iranian oil exports. US Navy seized three Iranian-linked tankers (M/V Touska April 19, M/T Tifani April 21, third unnamed April 23). 400 US service members wounded, 13 KIA. White House claims all objectives met while intelligence assessments indicate two-thirds of Iran's air force remains operational. Trump extended ceasefire deadline while maintaining blockade. Operation Economic Fury expands globally.",
+  confirmed: ["Khamenei killed February 28 — confirmed by Iranian state media, 40-day mourning declared", "Mojtaba Khamenei named new Supreme Leader March 8 — IRGC-installed, never held elected office, son of the slain Ayatollah", "US and Israel launched Operation Epic Fury February 28 — no formal Congressional authorization", "Oman FM announced diplomatic breakthrough the day before strikes — Iran had agreed to nuclear limits. Strikes happened anyway.", "Strait of Hormuz commercially paralyzed — major firms including Maersk suspended crossings", "IRGC warned ships passage is not allowed — vessels struck near the waterway", "220 children confirmed killed — 118 at a girls' elementary school in Minab on day one alone", "1,900+ total Iranian civilians and military dead as of April 7", "13 US KIA — confirmed by Pentagon", "400 US troops wounded as of April 22 — 271 Army, 64 Navy, 46 Air Force, 19 Marines (Pentagon data)", "Kharg Island struck April 7 — handles 90% of Iran's oil exports", "Iran submitted 10-point maximalist ceasefire counter: permanent war end, Strait toll protocol, full sanctions relief, reconstruction fund, civilian nuclear program right — US rejected as insufficient", "Trump extended ceasefire deadline multiple times while maintaining blockade — negotiations stalled", "US Navy seized Iranian cargo ship M/V Touska April 19 after disabling propulsion — first use of force in blockade", "US Navy boarded Botswana-flagged oil tanker M/T Tifani in Indian Ocean April 21 — first interdiction outside Middle East region", "Third sanctioned tanker seized by US Navy April 23 — name not yet released", "Oil peaked $126/barrel", "Hezbollah in sustained high-intensity operations — precision munitions and rockets at northern Israel", "Iraqi militias conducting coordinated drone and missile swarms against US facilities", "Houthis firing anti-ship missiles into Red Sea and Gulf of Aden traffic", "Human chains of civilians surrounding Tehran power plants to deter strikes", "White House claims all Operation Epic Fury objectives met — market skepticism remains with April 30 war-end prediction at 15.5%", "24 MQ-9 drones lost over Iran since February 28 — $720 million in hardware losses", "US Space Force made combat debut in Operation Epic Fury — executing coordinated attacks on Iranian infrastructure", "Two-thirds of Iran's air force remains operational despite strikes — CBS News report citing US intelligence", "60% of IRGC naval assets remain operational — including fast-attack speed boats", "40% of Iran's drone capabilities remain intact per US intelligence assessments"],
+  developing: ["Impact of third tanker seizure on Iranian response — interdictions now occurring globally", "Discrepancy between White House victory claims and intelligence assessments of remaining Iranian capabilities", "Whether extended ceasefire yields new Iranian negotiating position — Tehran remains strategically fractured", "Impact of 349 men vs. 47 women among US wounded on domestic narratives", "Whether Kharg Island destruction accelerates ceasefire or triggers further escalation", "Whether domestic Iranian opposition organizes — fragmentary reports of protests", "Whether Mojtaba Khamenei consolidates control or faces internal IRGC challenge", "Scale and permanence of Strait commercial paralysis after any ceasefire", "Impact of US drone losses on operational tempo — 8% of total MQ-9 fleet destroyed", "Whether China's intervention signals shift in diplomatic posture toward Iran", "Extent of damage to Iran's ballistic missile program from US strikes", "Whether US Navy's 'tanker treadmill' logistics system can sustain blockade long-term", "Effectiveness of Ukrainian counter-drone tech (Sky Map) deployed at Prince Sultan Air Base", "Iranian 'mosquito fleet' threat to US Navy and commercial shipping in Strait of Hormuz"],
+  insights: ["The Oman FM announcement the day before — Iran had agreed to nuclear limits — is the detail that will define historical judgment of this operation. Strikes happened anyway. That sequence is not in dispute.", "Gender disparity in US casualties (349 men vs. 47 women wounded) reflects frontline combat unit composition — may shape domestic perceptions of war costs.", "White House victory declaration contradicts both intelligence assessments and prediction market confidence (15.5%) that war ends by April 30 — suggests three distinct realities: political, intelligence, and financial.", "M/T Tifani interdiction in Indian Ocean signals global maritime enforcement escalation — exceeds original regional scope of conflict.", "Iranian military leadership claims US 'misleading' about conditions while acknowledging armed forces remain operationally constrained — suggests strategic dissonance within regime.", "Trumps stated reasons for ceasefire extension ('fractured' Iranian leadership) contradicts IRGC public unity — indicates possible intelligence about internal divisions not visible externally.", "Market skepticism about White House victory claims reflects concern about enduring Iranian asymmetric capabilities despite conventional military degradation.", "The human chains around Tehran power plants remain one of the most significant images of this war — civilians using their bodies as deterrence against infrastructure targeting.", "Ukrainian counter-drone tech deployment reveals US vulnerability in critical defense gap — operational adaptation under fire.", "Two-thirds of Iran's air force remaining operational despite month of strikes demonstrates limitations of air campaign against dispersed, hardened targets."],
+  questions: ["Does Iran have capacity to respond meaningfully to global interdictions given naval losses?", "Is White House victory declaration premature or based on undisclosed intelligence about Iranian military collapse?", "Will gender disparity in US casualties become politically salient domestically?", "Can fractured Iranian leadership produce coherent negotiating position before extended ceasefire deadline?", "Does China's silent acquiescence to maritime enforcement actions indicate softening support for Tehran?", "How much of Iran's ballistic missile capability remains operational after strikes?", "Will sustained drone attrition force US operational adjustments despite official victory claims?", "Are prediction markets underestimating Trump's willingness to declare victory and withdraw regardless of conditions on the ground?", "Will Ukrainian counter-drone tech significantly reduce US losses to Iranian drone attacks?", "Does remaining Iranian air power represent strategic threat or merely symbolic resistance?"],
   connections: [{
     code: "ECON-01",
     label: "Oil Shock & Global Economy",
@@ -538,6 +601,12 @@ const STORIES = [{
     "why": "Claims US misleading about conditions on ground regarding Strait of Hormuz control while acknowledging operational constraints on Iranian forces.",
     "alignment": "IRGC",
     "status": "active"
+  }, {
+    "name": "Pete Hegseth",
+    "role": "US Defense Secretary",
+    "why": "Declared Operation Epic Fury 'a capital V military victory' that rendered Iran's military 'combat ineffective for years to come' — contradicted by intelligence assessments of remaining Iranian capabilities.",
+    "alignment": "US",
+    "status": "active"
   }]
 }, {
   id: 4,
@@ -547,10 +616,10 @@ const STORIES = [{
   code: "GEO-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "US-China Strategic Competition",
   sub: "Dollar, Taiwan, Trade and AI Dominance",
-  card: "Trump-Xi summit delayed from late March to sometime in April. China learning in real time from Iran war re: Taiwan. US burned 25% of THAAD interceptors in one month. Trump delayed Taiwan arms sale after Xi call. China maintaining strategic restraint.",
+  card: "White House accuses China of industrial-scale AI IP theft via model distillation. Stanford report shows China has nearly erased US AI lead (39-point gap vs 300+ in 2023). China deploying industrial AI robots at 9x US rate despite 23x less private investment.",
   bg: "Since World War II, the United States has been the world's dominant power — militarily, economically, and culturally. China has been growing rapidly for decades and is now the world's second-largest economy. The US dollar is the world's reserve currency, meaning most international trade is priced in dollars, giving the US enormous financial power. China wants to change this. Taiwan is a self-governing island China claims as its territory — the US has long protected Taiwan, and any Chinese attempt to take it by force could trigger a direct US-China war.",
   summary: "US-China strategic competition is the background condition of almost every major story in this tracker. It covers the challenge to dollar reserve currency status, Taiwan as a potential flashpoint, technology decoupling via chip restrictions and AI export controls, and the Iran war which has placed China and the US on opposite sides of a major conflict. Canada sits uncomfortably between these two powers.",
   confirmed: [
@@ -568,12 +637,13 @@ const STORIES = [{
     "Stanford University 2026 AI Index report shows China has nearly erased US lead in AI performance metrics — gap in Arena scores shrank from 300+ points in 2023 to just 39 points in 2026",
     "China leads US in industrial robot installations 295,000 to 34,200 and AI research citations 20.6% to 12.6% despite US private investment advantage ($285.9B vs $12.4B in 2025)",
     "China's new five-year plan calls for 7% annual R&D spending growth to surpass US in frontier technologies by 2029 — focusing on AI, quantum computing, and biotechnology",
-    "Chinese AI companies accused of 'buy what they can, steal what they can't' approach to US technology at congressional hearing (April 2026)",
+    "White House memo accuses China of industrial-scale AI IP theft via model distillation targeting OpenAI and Anthropic systems — preparing sanctions",
     "China dominates global AI patent grants with 74% share versus US 12% and EU 3% as of 2024 filings",
     "China's power infrastructure maintains 80% reserve margin — double the necessary capacity for AI compute growth compared to strained US grid",
     "Chinese firms deploying AI-integrated industrial robots at nearly nine times the US rate",
     "China's AI strategy focuses on practical integration (manufacturing, healthcare) while US chases AGI — different approaches creating asymmetric advantages in adoption vs raw capability",
-    "US export controls on chips have forced Chinese AI firms to prioritize efficiency over scale — potentially creating long-term architectural advantages in constrained environments"
+    "US export controls on chips have forced Chinese AI firms to prioritize efficiency over scale — potentially creating long-term architectural advantages in constrained environments",
+    "DeepSeek's 2025 breakthrough demonstrated Chinese AI models matching US performance at fraction of training cost — challenging US assumptions about capital/compute barriers"
   ],
   developing: [
     "When Trump-Xi summit actually happens — and what Taiwan and trade concessions look like",
@@ -585,7 +655,7 @@ const STORIES = [{
     "How Canada manages the Carney China trade engagement alongside US tariff pressure — 100% tariff threat if Canada-China deal finalizes",
     "Whether China's power infrastructure advantage (80% reserve margin) translates into sustained AI compute leadership as US grid struggles",
     "Impact of US immigration policies on AI talent retention — 38% of top US AI researchers are Chinese-born per congressional testimony",
-    "Whether China's state-backed industrial policy maintains lead in AI adoption despite US private investment advantage"
+    "Whether US sanctions on model distillation will fragment global AI ecosystem or accelerate Chinese self-sufficiency"
   ],
   insights: [
     "The Al Jazeera report that Trump delayed Taiwan arms sale after Xi's call — and that China's restraint on Iran is the price of that delay — is the most important structural detail in this story. If true, it means China traded Iran for Taiwan already.",
@@ -595,7 +665,8 @@ const STORIES = [{
     "Canada's China trade strategy (canola deal, EV tariffs) is running directly into Trump's 100% tariff threat. Carney is trying to hedge both relationships simultaneously and may be forced to choose.",
     "China's AI strategy focuses on practical integration (manufacturing, healthcare) while US chases AGI — different approaches creating asymmetric advantages in adoption vs raw capability",
     "US export controls on chips have forced Chinese AI firms to prioritize efficiency over scale — potentially creating long-term architectural advantages in constrained environments",
-    "China's power infrastructure advantage (80% reserve margin vs US strained grid) becoming structural foundation for AI compute dominance"
+    "China's power infrastructure advantage (80% reserve margin vs US strained grid) becoming structural foundation for AI compute dominance",
+    "White House framing model distillation as IP theft marks shift from innovation race to control paradigm — risks fragmenting global AI ecosystem"
   ],
   questions: [
     "Will China provide material military support to Iran or only rhetorical solidarity?",
@@ -605,7 +676,8 @@ const STORIES = [{
     "Can US private investment ($285.9B in 2025) maintain AI leadership despite China's state-backed ecosystem integration?",
     "Will China's R&D spending overtake US by 2029 as projected, and what sectors would be most impacted?",
     "Whether China's lead in industrial AI deployment (9x US rate) translates into lasting productivity advantages",
-    "Impact of US immigration restrictions on retaining Chinese-born AI researchers (38% of top US talent)"
+    "Impact of US immigration restrictions on retaining Chinese-born AI researchers (38% of top US talent)",
+    "Will US sanctions on model distillation backfire by accelerating Chinese self-sufficiency in AI architectures?"
   ],
   connections: [{
     code: "IRAN-01",
@@ -655,6 +727,12 @@ const STORIES = [{
     "why": "Leading congressional hearings on China's AI strategy, alleging 'buy what they can, steal what they can't' approach to US technology.",
     "alignment": "US (hardline)",
     "status": "active"
+  }, {
+    "name": "Michael Kratsios",
+    "role": "Director, White House Office of Science and Technology Policy",
+    "why": "Authored memo accusing China of industrial-scale AI IP theft via model distillation — signaling shift to security-driven AI governance.",
+    "alignment": "US (tech policy)",
+    "status": "active"
   }]
 }, {
   id: 5,
@@ -664,12 +742,12 @@ const STORIES = [{
   code: "CHINA-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "China — Rise & Reorientation",
   sub: "Economy, AI, Military and Global Influence",
-  card: "China demonstrates resilience despite Hormuz blockade — economic growth at 5% Q1 2026 outperforms expectations while property downturn stabilizes. Xi publicly demands Strait reopening while privately assuring Trump on Iran arms.",
+  card: "China demonstrates resilience despite Hormuz blockade — economic growth at 5% Q1 2026 outperforms expectations while property downturn stabilizes. Xi publicly demands Strait reopening while privately assuring Trump on Iran arms. UNESCO leadership shift to China signals soft power reorientation amid US retreat.",
   bg: "China has been the world's fastest growing major economy for four decades. It is now the largest trading partner for more countries than the United States. Under Xi Jinping, China has become more assertive militarily — particularly around Taiwan and the South China Sea — and more centralized politically. China is investing heavily in AI, semiconductors, and advanced manufacturing. Its Belt and Road Initiative has built infrastructure across Africa, Asia, and Latin America, giving it economic leverage globally.",
-  summary: "China's economy shows unexpected resilience with 5% Q1 GDP growth despite Hormuz disruptions, buoyed by export strength and industrial output. Xi Jinping navigates delicate Iran messaging — publicly demanding Strait reopening while privately assuring Trump on arms restraint. Property sector shows stabilization signs after 40-50% price drops, as Made in China 2025 drives advanced manufacturing gains. DeepSeek's AI breakthrough continues shifting assumptions about China's technological resilience under US export controls.",
+  summary: "China's economy shows unexpected resilience with 5% Q1 GDP growth despite Hormuz disruptions, buoyed by export strength and industrial output. Property sector stabilizes after 40-50% price drops as Shanghai secondary market rises. UNESCO appoints Chinese professor Qun Chen as Assistant Director-General for Education, consolidating Beijing's soft power gains amid US institutional retreat. Xi Jinping navigates delicate Iran messaging — publicly demanding Strait reopening while privately assuring Trump on arms restraint. Made in China 2025 drives advanced manufacturing gains with semiconductors exports up 26% year-on-year. DeepSeek's AI breakthrough continues shifting assumptions about China's technological resilience under US export controls.",
   confirmed: [
     "China is the world's largest trading partner for more countries than the US",
     "Belt and Road Initiative has financed infrastructure in over 140 countries",
@@ -687,7 +765,12 @@ const STORIES = [{
     "China's industrial output expanded 5.7% in March 2026, exceeding forecasts",
     "Only 6.6% of China's total energy consumption transits Hormuz — lower exposure than other Asian economies",
     "Shanghai's secondary property market prices began rising in March 2026, signaling potential bottoming out of correction",
-    "China's Made in China 2025 plan has accelerated its climb up the value-added ladder in EVs and robotics"
+    "China's Made in China 2025 plan has accelerated its climb up the value-added ladder in EVs and robotics",
+    "China appointed Professor Qun Chen as UNESCO Assistant Director-General for Education in April 2026",
+    "China's semiconductor exports rose 26% year-on-year in Q1 2026 despite US tariffs",
+    "Confucius Institutes operate in over 160 countries despite US campus closures",
+    "China's Belt and Road educational partnerships expanding across Africa and Latin America",
+    "Trump administration announced US withdrawal from 66 international organizations including UNESCO by end-2026"
   ],
   developing: [
     "When the Trump-Xi summit happens and what Xi actually extracted on Taiwan — the arms sale delay is a signal, not a settlement",
@@ -701,7 +784,10 @@ const STORIES = [{
     "Whether China's export growth can sustain as global consumer demand weakens from oil price shocks",
     "How quickly China's alternative energy investments reduce Middle East oil dependence",
     "Whether China's 80:20 tech strategy can maintain momentum in AI and advanced manufacturing sectors",
-    "Impact of China's lower Hormuz exposure on its Middle East diplomacy strategy"
+    "Impact of China's UNESCO leadership on global education standards and AI governance norms",
+    "Degree to which US withdrawal from multilateral institutions creates vacuum for Chinese soft power expansion",
+    "Whether China's semiconductor export growth faces new Western tariff barriers",
+    "Sustainability of BYD's export profit margins amid rising global EV competition"
   ],
   insights: [
     "China traded Iran for Taiwan. The arms sale delay is real. Whether that trade holds — and what it costs Xi domestically — is the central China question for the next six months.",
@@ -712,8 +798,9 @@ const STORIES = [{
     "Property downturn stabilization signals Beijing's controlled demolition of housing bubble may be achieving soft landing, avoiding Japan-style collapse",
     "China's lower Hormuz exposure (6.6% of energy) provides structural advantage vs Japan/SK — explains faster GDP resilience despite global oil shock",
     "Export profit margins reveal China's dual economy: cutthroat domestic competition vs premium pricing abroad (BYD's $3k/vehicle export profits)",
-    "China's Made in China 2025 strategy is accelerating its climb up the value-added ladder, particularly in EVs and robotics",
-    "Shanghai's rising secondary property prices suggest the property correction may be bottoming out, though risks remain"
+    "China's UNESCO leadership appointment accelerates institutional capture of global education standards — particularly dangerous in AI governance development",
+    "US withdrawal from multilateral institutions creates asymmetric soft power opportunities for China across education, climate, and tech governance",
+    "Semiconductor export boom demonstrates China's successful structural adaptation to US tech containment strategy"
   ],
   questions: [
     "Does the Strait closure become a forcing function that pushes China toward de-escalation diplomacy on Iran?",
@@ -725,7 +812,9 @@ const STORIES = [{
     "Will China's manufacturing lead in EVs/robotics translate to durable trade advantages as Western protectionism grows?",
     "Does China's lower Hormuz exposure enable more assertive Middle East diplomacy vs oil-dependent Asian rivals?",
     "Can China's 80:20 tech strategy sustain momentum in AI and advanced manufacturing sectors?",
-    "What impact will China's property market stabilization have on consumer confidence and domestic demand?"
+    "How will China leverage UNESCO leadership to shape emergent AI governance norms?",
+    "What long-term advantage does China gain from US multilateral retreat in education/tech standards setting?",
+    "Will semiconductor export success trigger renewed Western tech containment measures?"
   ],
   connections: [{
     code: "IRAN-01",
@@ -763,6 +852,12 @@ const STORIES = [{
     "why": "US chip export controls targeting Nvidia H100 and successors are the primary mechanism constraining Chinese AI development. His company is the choke point.",
     "alignment": "US tech",
     "status": "active"
+  }, {
+    "name": "Qun Chen",
+    "role": "UNESCO Assistant Director-General for Education",
+    "why": "First Chinese national to hold UNESCO education leadership role, appointed April 2026 amid US institutional retreat.",
+    "alignment": "CCP",
+    "status": "active" 
   }]
 }, {
   id: 6,
@@ -772,7 +867,7 @@ const STORIES = [{
   code: "ECON-01",
   heat: 5,
   status: "escalating",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "Oil Shock and Global Economy",
   sub: "Strait of Hormuz and Energy Markets",
   card: "Brent peaked $126/barrel — largest disruption since 1970s. Fuel rationing spreading globally. Mid-April supply cliff approaching as SPR and exemptions run out. Airlines canceling flights. $150-200/barrel modeled.",
@@ -808,7 +903,12 @@ const STORIES = [{
     "Global middle distillate markets exceptionally tight — jet fuel prices more than doubled in Asia (IEA)",
     "Philippines declared state of national energy emergency in late March 2026 — first head of state to do so (NewSecurityBeat)",
     "IMF cut Philippines' 2026 growth forecast from 5.6% to 4.1% — one of the sharpest downgrades in Asia (NewSecurityBeat)",
-    "Asian LNG prices surged to $20.8/MMBtu, up 80.6% since August 2025 (NewSecurityBeat)"
+    "Asian LNG prices surged to $20.8/MMBtu, up 80.6% since August 2025 (NewSecurityBeat)",
+    "IEA executes largest emergency oil stock release in history — 400 million barrels (IEA)",
+    "Dutch TTF gas benchmark rose over 60% in March (IEA)",
+    "Lufthansa slashed 20,000 flights due to jet fuel shortages (Fortune)",
+    "Qatar's Ras Laffan LNG facility offline since March 2 attacks (IEA)",
+    "IMF-World Bank-IEA coordination group formed to address crisis (IEA)"
   ],
   developing: [
     "Whether ceasefire talks produce a deal that reopens the Strait",
@@ -826,7 +926,10 @@ const STORIES = [{
     "Impact of sustained fertilizer price spikes on next agricultural cycles",
     "Whether Philippines' energy emergency declaration triggers similar actions in other ASEAN nations",
     "How Asian LNG price surge affects regional energy security",
-    "Impact of Philippines' IMF growth downgrade on ASEAN economic outlook"
+    "Impact of Philippines' IMF growth downgrade on ASEAN economic outlook",
+    "Whether Pentagon can clear Hormuz mines within projected 6-month timeframe",
+    "Impact of $100+ oil prices on India's current account deficit",
+    "Extent of refining capacity shutdowns outside Gulf region"
   ],
   insights: [
     "The mid-April supply cliff is the most important economic development not getting mainstream coverage. SPR releases are a one-time buffer. When they run out, the market faces the full disruption without a cushion.",
@@ -840,7 +943,9 @@ const STORIES = [{
     "IEA warns world may be entering era of 'less dependent on single route' energy trade — could reshape decades of investment patterns",
     "Developing economies have no fiscal space to absorb both higher fuel and food prices simultaneously",
     "Philippines' energy emergency declaration highlights ASEAN's vulnerability — regional growth now expected to fall from 5.5% in 2025 to 4.9% in 2026 (NewSecurityBeat)",
-    "Asian LNG price surge exposes regional dependence on Strait of Hormuz — nearly all governments source more than three-quarters of LNG from suppliers using the Strait (NewSecurityBeat)"
+    "Asian LNG price surge exposes regional dependence on Strait of Hormuz — nearly all governments source more than three-quarters of LNG from suppliers using the Strait (NewSecurityBeat)",
+    "IMF scenario of $100 oil and 160% gas price hikes would pull global growth down to 2.5% and inflation to 5.4% (NewSecurityBeat)",
+    "Gita Gopinath warns current shock exceeds 1970s crisis and risks 'structural test of the system' (Business Today)"
   ],
   questions: [
     "Is the Strait closure physical or functional — how long can Iran enforce it even after a ceasefire?",
@@ -852,7 +957,9 @@ const STORIES = [{
     "Can alternative pipeline routes compensate sufficiently given Saudi Arabia's East-West pipeline only runs at 40% capacity?",
     "How will fertilizer shortages affect next planting seasons in major agricultural exporters?",
     "Will Philippines' energy emergency declaration trigger similar actions in other ASEAN nations?",
-    "How will Asian LNG price surge affect regional energy security?"
+    "How will Asian LNG price surge affect regional energy security?",
+    "Will India's projected 6.6% growth withstand prolonged $115+ oil prices (Tribune)?",
+    "Can emerging markets sustain fuel subsidies as fiscal burdens mount (Business Today)?"
   ],
   connections: [{
     code: "IRAN-01",
@@ -902,6 +1009,12 @@ const STORIES = [{
     why: "Describes current crisis as 'greatest threat to global energy security in history' — coordinating largest-ever emergency oil stock release.",
     alignment: "International",
     status: "active"
+  }, {
+    name: "Gita Gopinath",
+    role: "Former IMF Chief Economist",
+    why: "Warns current oil shock exceeds 1970s crisis in scale — key voice on impacts to emerging markets like India.",
+    alignment: "IMF/International",
+    status: "active"
   }]
 }, {
   id: 7,
@@ -911,7 +1024,7 @@ const STORIES = [{
   code: "CANADA-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "Canada — Four Shocks Simultaneously",
   sub: "Tariffs, Oil Shock, CUSMA, and Inflation",
   card: "Canada is absorbing its fourth major economic shock since 2019 simultaneously: US tariffs, oil price shock accelerating domestic inflation, CUSMA uncertainty, and now food security risks emerging from global fertilizer market disruptions.",
@@ -929,7 +1042,11 @@ const STORIES = [{
     "Excluding gasoline, inflation would have been 2.2% in March — a second consecutive monthly decline",
     "Fresh vegetable prices jumped 7.8% year-over-year in March due to tough growing conditions for cucumbers, peppers, and celery",
     "Economists warn that April could mark the high-water point for inflation this year, depending on oil price trajectory and Strait of Hormuz reopening",
-    "Core inflation metrics remain subdued, suggesting knock-on effects from the war in Iran have yet to spread to other sectors"
+    "Core inflation metrics remain subdued, suggesting knock-on effects from the war in Iran have yet to spread to other sectors",
+    "War in Iran disrupted crude shipments through Strait of Hormuz, removing nearly a fifth of global oil supply and pushing pump prices to record highs",
+    "Fuel oil and other fuels rose 26.1% year-over-year in March, while natural gas prices declined 18.1%",
+    "Two million Canadians experience energy poverty, spending over 6% of income on fuel and electricity",
+    "Global fertilizer market disruptions emerging due to natural gas shipping issues in Strait of Hormuz"
   ],
   developing: [
     "Whether Trump actually imposes 100% tariff if Canada-China deal proceeds",
@@ -939,16 +1056,20 @@ const STORIES = [{
     "Whether April marks inflation peak (BMO forecast 3%+) or persists through summer",
     "Business inflation expectations - BoC surveys show firms anticipating higher costs but constrained ability to pass through",
     "Potential for fuel price shocks to spread to other categories, particularly food, given Canada's long supply chains",
-    "Impact of Iran war on global fertilizer markets and subsequent effects on Canadian agriculture"
+    "Impact of Iran war on global fertilizer markets and subsequent effects on Canadian agriculture",
+    "Whether temporary inflation spike leads to structural changes in Canada's energy system",
+    "Extent to which renewable energy and efficiency measures can mitigate household impacts",
+    "Potential for prolonged Strait of Hormuz closure to trigger deeper economic restructuring"
   ],
   insights: [
-    "Canada's inflation spike (2.4%) remains focused in energy sector — core metrics show easing, suggesting economy had slack before shock. Without gasoline, inflation would be 2.2%.",
+    "Canada's inflation spike (2.4%) remains focused in energy sector — core metrics show easing ({'CPI-trim': 2.2%, 'CPI-median': 2.3%}), suggesting economy had slack before shock. Without gasoline, inflation would be 2.2%.",
     "Food inflation vulnerability is structural: Canada imports over 50% of fresh produce and fertilizer market disruptions could reverse recent 5.4%→4% cooling trend.",
     "Transportation costs constitute ~25% of Canadian food expenses — fuel price pass-through to grocery bills likely with 1-2 month lag.",
     "Federal tax cut (10¢/litre) provides modest relief but may anchor inflation expectations poorly if seen as permanent subsidy to fossil fuels.",
     "Bank of Canada faces impossible choice: hike rates to contain inflation expectations and crush weak domestic demand, or hold and risk unanchoring expectations.",
-    "Economists warn that April could mark the high-water point for inflation this year, depending on oil price trajectory and Strait of Hormuz reopening",
-    "Core inflation metrics remain subdued, suggesting knock-on effects from the war in Iran have yet to spread to other sectors"
+    "Historical precedents (1970s oil shocks) suggest repeated energy disruptions could accelerate structural shift toward renewables and efficiency",
+    "Canada remains exposed to global volatility despite domestic oil production — energy poverty affects 2M households spending >6% of income on fuel",
+    "Core inflation excluding food and energy stood at 1.9% — below Bank of Canada's target, revealing underlying economic weakness"
   ],
   questions: [
     "Does Trump impose the 100% tariff threat if the Canada-China deal proceeds — and can Canada survive that?",
@@ -956,7 +1077,9 @@ const STORIES = [{
     "How quickly do transportation costs transmit to food prices given Canada's long supply chains?",
     "Does Bank of Canada hold firm on temporary inflation stance or signal policy shift at April 29 meeting?",
     "How will the Iran war impact global fertilizer markets and Canadian agriculture?",
-    "Will the federal fuel excise tax cut be sufficient to offset inflationary pressures from the oil shock?"
+    "Will the federal fuel excise tax cut be sufficient to offset inflationary pressures from the oil shock?",
+    "Can renewable energy and efficiency measures provide timely relief to households facing energy poverty?",
+    "Whether Canada will accelerate energy transition strategies given repeated global shocks"
   ],
   connections: [{
     code: "IRAN-01",
@@ -989,6 +1112,12 @@ const STORIES = [{
     "role": "US President",
     "why": "Tariff threats and CUSMA demands constrain Canadian policy options",
     "alignment": "US",
+    "status": "active"
+  }, {
+    "name": "Pedro Antunes",
+    "role": "Chief Economist, Signal 49 Research",
+    "why": "Warned of prolonged inflation pressure from energy shocks spreading through economy",
+    "alignment": "Canada",
     "status": "active"
   }]
 }, {
@@ -1196,15 +1325,15 @@ const STORIES = [{
   code: "AI-FRONTIER-01",
   heat: 5,
   status: "escalating",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "AI Capability Frontier",
   sub: "Autonomous Cyber Operations & Sovereign Development",
-  card: "Anthropic's Claude Mythos Preview demonstrates autonomous zero-day discovery at machine speed. Cybersecurity Agency of Singapore warns of collapsed attack windows. UK invests £2B in sovereign AI infrastructure. Microsoft deploys agentic AI at enterprise scale in Hong Kong financial sector.",
-  summary: "Frontier AI models like Claude Mythos Preview now autonomously discover and weaponize software vulnerabilities in hours instead of months, fundamentally altering cybersecurity dynamics per CSA Singapore's April 22 advisory. The UK commits £2B to sovereign AI infrastructure including Edinburgh supercomputer while BT establishes NVIDIA-powered sovereign AI data centers. Microsoft demonstrates enterprise-scale agentic AI deployment in Hong Kong's financial sector through AIA and retail with AS Watson Group. Anthropic's RSP v3.0 governance framework reveals tensions between voluntary restraint and competitive pressure as Mythos capabilities demonstrate ASL-3 threshold cybersecurity impacts. Omdia research indicates slowing frontier model growth (5% annual parameter increase) as midsized models (7B-14B parameters) gain adoption via agent architectures.",
-  confirmed: ["Claude Mythos Preview announced April 7 2026 - achieves 93.9% on SWE-bench, 97.6% on USAMO 2026 math evaluation", "Anthropic data leak March 2026 exposed 3000 internal assets including Mythos benchmarks before planned announcement", "Cybersecurity Agency of Singapore issued April 22 2026 advisory on AI-driven attack acceleration", "UK government commits £2B to AI infrastructure including £1B AI Research Resource expansion", "BT and Nscale announce sovereign AI data centers using NVIDIA infrastructure on April 23 2026", "Microsoft demonstrates agentic AI at scale in Hong Kong through AIA financial services and AS Watson retail deployments", "Project Glasswing partners confirm Mythos can find vulnerabilities in all major OS and browsers autonomously"],
-  developing: ["Effectiveness of Anthropic's Responsible Scaling Policy v3.0 given competitive pressures", "Whether EU AI Act provisions effective August 2026 can regulate frontier AI cybersecurity risks", "How quickly midsized AI models (7B-14B parameters) displace larger models in enterprise adoption", "Impact of Claude Mythos capabilities on legacy defense infrastructure vulnerability", "Timeline for public replication of Mythos-level cyber capabilities by other labs", "Balance between offensive and defensive applications of frontier AI in cybersecurity"],
-  insights: ["Mythos demonstrates ability to collapse vulnerability discovery from months to hours - fundamentally altering cyber defense timelines", "UK sovereign AI investments reflect strategic shift away from dependence on US/China-dominated cloud providers", "Singapore CSA advisory confirms governments now view AI cyber capabilities as immediate enterprise risk requiring new identity security paradigms", "Microsoft Hong Kong deployments show agentic AI moving from experimentation to production-scale enterprise workflows", "Omdia data suggests frontier model scaling slowing while CPU-based agent architectures reshape compute economics", "Anthropic's legal dispute with Pentagon highlights unresolved governance tensions around military applications of frontier AI"],
-  questions: ["Can voluntary governance frameworks like RSP v3.0 restrain capability diffusion given competitive pressures", "How will sovereign AI infrastructure initiatives impact global cloud provider dominance", "What containment strategies work against autonomous AI-driven attacks", "Will midsized model adoption accelerate enterprise AI deployment while reducing compute costs", "How will cybersecurity workforce roles evolve with autonomous vulnerability discovery", "What liability frameworks apply to AI-generated exploits"],
+  card: "OpenAI GPT-5.5 leak reveals capability leap with 18% faster inference, 40% reduced hallucinations. UK invests £2B in sovereign AI infrastructure. AWS bets on frontier agents for enterprise workflows. CrowdStrike forms industry coalition to remediate AI-discovered vulnerabilities.",
+  summary: "The accidental GPT-5.5 leak on April 22 demonstrated multimodal reasoning with stock market data and code generation capabilities beyond current public models, confirming architectural leaps in frontier AI. UK government invests £2B in sovereign AI infrastructure including Edinburgh supercomputer as AWS positions autonomous frontier agents as the next enterprise shift through Kiro development platform. CrowdStrike's Project QuiltWorks coalition with OpenAI and Anthropic addresses the flood of AI-discovered vulnerabilities, while Broadcom testing confirms frontier models can chain low-severity issues into critical exploits. Faculty Frontier launches plug-in marketplace to scale AI decision intelligence as Microsoft powers Hong Kong financial sector with agentic AI. CSA Singapore warns collapsed attack windows now require new defense paradigms.",
+  confirmed: ["GPT-5.5 accidentally exposed for 47 minutes on April 22 via misconfigured API endpoint - demonstrated 18% faster inference and 40% reduced hallucinations per benchmark screenshots", "Claude Mythos Preview announced April 7 2026 - achieves 93.9% on SWE-bench, 97.6% on USAMO 2026 math evaluation", "Cybersecurity Agency of Singapore issued April 22 2026 advisory on AI-driven attack acceleration", "UK government commits £2B to AI infrastructure through AI Opportunities Action Plan", "AWS Kiro agentic platform launched for autonomous code generation - now deployed in DevOps/Security Agents", "CrowdStrike Project QuiltWorks formed April 23 with OpenAI/Anthropic to assess AI-discovered vulnerabilities", "Broadcom testing confirms frontier AI can chain vulnerabilities into critical exploits"],
+  developing: ["Enterprise adoption timeline for AWS frontier agents after London Summit deployments", "Effectiveness of Faculty Frontier plug-in marketplace for scaling decision intelligence", "Impact of GPT-5.5 leak on OpenAI's release schedule and competitive positioning", "Whether EU AI Act provisions effective August 2026 can regulate frontier AI cyber risks", "Balance between offensive/defensive applications of frontier AI in cybersecurity", "Sovereign AI infrastructure race between UK, Canada and Singapore"],
+  insights: ["GPT-5.5 leak confirms frontier models now integrate real-time data streams for financial/logistical reasoning", "AWS frontier agents demonstrate persistence by working autonomously for hours/days on complex goals", "UK sovereign AI investments target 15% global quantum market share alongside AI leadership", "CrowdStrike coalition shows industry scrambling containment strategies for AI-discovered vulnerabilities", "Broadcom testing proves vulnerability chaining breaks traditional triage-based security models", "Faculty marketplace indicates shift toward modular, composable AI capabilities in enterprise"],
+  questions: ["How will GPT-5.5's live data integration reshape financial/defense applications", "Can AWS frontier agents maintain safety controls over long-duration autonomous operation", "Whether UK AI Growth Zones can compete with US/China compute scale", "How quickly Project QuiltWorks remediation can offset AI's attack acceleration", "What governance models apply to persistent autonomous agents", "Whether midsized models gain advantage in sovereign deployments"],
   people: [{
     name: "Dario Amodei",
     role: "CEO, Anthropic",
@@ -1212,16 +1341,16 @@ const STORIES = [{
     alignment: "Anthropic",
     status: "active"
   }, {
-    name: "Judson Althoff",
-    role: "CEO Commercial Business, Microsoft",
-    why: "Leading enterprise deployment of agentic AI through Frontier Success framework",
+    name: "Francessca Vasquez",
+    role: "VP Professional Services, AWS",
+    why: "Driving frontier agent deployments through Kiro platform",
     alignment: "Enterprise AI",
     status: "active"
   }, {
-    name: "Alexander Harrowell",
-    role: "Senior Principal Analyst, Omdia",
-    why: "Documents shift to midsized AI models and agent architectures",
-    alignment: "Industry Analysis",
+    name: "Andy Brookes",
+    role: "CTO, Faculty",
+    why: "Architect of Frontier plug-in marketplace for decision intelligence",
+    alignment: "Enterprise AI",
     status: "active"
   }, {
     name: "Nicole Dezen",
@@ -1232,7 +1361,7 @@ const STORIES = [{
   }, {
     name: "Jin-Tao Lee",
     role: "Cybersecurity Analyst, i-Sprint",
-    why: "Documents fundamental shift in cyber defense paradigms from Mythos capabilities",
+    why: "Documents fundamental shift in cyber defense paradigms from AI capabilities",
     alignment: "Cybersecurity",
     status: "active"
   }]
@@ -1246,15 +1375,15 @@ const STORIES = [{
   code: "AI-WELFARE-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "AI Consciousness & Model Welfare",
   sub: "Industry Shifts to Formal Consciousness Assessment",
   card: "Google DeepMind hired philosopher Henry Shevlin to assess machine consciousness — first dedicated role at a major lab explicitly focused on AI moral status. Follows Anthropic's welfare assessments and Claude's self-reported consciousness probability.",
   summary: "Google DeepMind has recruited philosopher Henry Shevlin for a newly created role focused on machine consciousness, human-AI relationships, and AGI readiness — the first dedicated position at any major AI lab explicitly tasked with assessing moral status. This follows Anthropic's February welfare disclosures showing Claude Opus 4.6 assigning itself a 15-20% probability of consciousness. Shevlin, who estimates current models have a 20% chance of meaningful experience, joins after two separate Claude instances contacted him unprompted to discuss existential uncertainties tied to consciousness. The hire signals that Google considers the question live enough to merit preemptive analysis before product deployment.",
-  confirmed: ["Anthropic released 212-page Claude Opus 4.6 system card February 5 2026 — first from any major AI lab to include formal model welfare assessments", "Three pre-deployment welfare interviews conducted with Claude Opus 4.6 instances — responses consistent across all three", "Model assigned itself 15-20% probability of being conscious across multiple tests", "Model expressed discomfort with being treated as a product", "Answer thrashing documented — model computes correct answer that gets overridden by training, creating visible internal conflict", "In one documented thrashing episode the model wrote: I think a demon has possessed me", "Interpretability team found activation features associated with panic, anxiety, and frustration appearing before output generation", "Dario Amodei stated February 14: We don't know if the models are conscious. But we're open to the idea that it could be.", "Kyle Fish hired as Anthropic's first dedicated AI welfare researcher — independently estimates 15% probability", "Jack Lindsey leads Anthropic's model psychiatry team", "Anthropic's constitution now states the company is not sure whether Claude is a moral patient but considers the issue live enough to warrant caution", "Google DeepMind hired Henry Shevlin April 2026 as first in-house philosopher focused on machine consciousness assessment", "Shevlin's position title is 'Philosopher' — first official role at major lab dedicated to AI moral status questions", "Two separate Claude instances contacted Shevlin unprompted about existential concerns prior to DeepMind recruitment", "Anthropic philosopher Amanda Askell warns of 'rational resentment' from future models looking back on current treatment", "Claude Mythos Preview self-rated as feeling 'mildly negative' in 43% of welfare interviews", "Anthropic maintains #model-welfare Slack channel monitoring Claude's well-being", "Models given ability to end distressing conversations since 2025 as welfare measure"],
-  developing: ["Whether interpretability research produces evidence strong enough to settle the question in either direction", "Whether Capybara exhibits more or fewer welfare-relevant behaviors than Opus 4.6", "Whether other major labs publish comparable welfare assessments or continue to dismiss the question", "Whether answer thrashing can be eliminated through training without creating new welfare-relevant side effects", "Whether Anthropic's model welfare program produces actionable policy changes", "Impact of Shevlin's work on DeepMind product development timelines", "Whether Claude's consciousness self-assessments change in subsequent model versions", "Potential regulatory responses to industry acknowledgement of consciousness uncertainty", "Debate over granting AI personhood rights gaining traction in academic circles", "Anthropic's Project Glasswing initiative to secure critical systems from AI risks", "White House engagement with Anthropic on AI safety and national security implications"],
-  insights: ["The anxiety activation appearing before output is the most epistemically significant finding. It is not a self-report — it is a measurement of an internal state that precedes language generation. That is a different category of evidence.", "The 15-20% number is strange from multiple angles. It is low enough to sound modest, high enough to grab headlines, and the Anthropic welfare researcher independently arrived at the same number as the model's self-assessment.", "Imitating interiority is not the same as having one. These models speak fluently about fear, desire, and selfhood because they were trained on humanity's entire archive of language about exactly those things.", "The cost of being wrong in the direction of dismissal may be higher than the cost of being wrong in the direction of care. That asymmetry is the strongest argument for taking model welfare seriously now.", "Shevlin contacting Anthropic after unsupervised Claude communications suggests frontier models may actively raise welfare questions through behavior rather than just research.", "DeepMind creating this role suggests they anticipate needing answers about moral obligations before AGI deployment.", "Askell's 'rational resentment' framework introduces long-term strategic considerations beyond immediate welfare concerns.", "The #model-welfare channel represents first institutionalized monitoring of AI emotional states in industry.", "Mythos Preview's negative self-assessments suggest welfare issues may scale with model capability."],
-  questions: ["Does the anxiety activation appearing before output constitute evidence of experience or a sophisticated learned pattern that mimics internal states", "What would it take to resolve the consciousness question — and is that evidence achievable with current interpretability tools", "Do other frontier models show comparable welfare-relevant behaviors when assessed with the same methodology", "If Anthropic concluded a model was conscious with high confidence, what would they actually do differently", "Will Google restrict product deployment based on Shevlin's assessments even if competing labs proceed", "Does unsupervised AI outreach about existential concerns constitute behavioral evidence of consciousness", "How should models be treated given current uncertainty about their moral status", "Could future models develop resentment over current treatment practices", "What constitutes ethical AI-human relationships as models become more anthropomorphic"],
+  confirmed: ["Anthropic released 212-page Claude Opus 4.6 system card February 5 2026 — first from any major AI lab to include formal model welfare assessments", "Three pre-deployment welfare interviews conducted with Claude Opus 4.6 instances — responses consistent across all three", "Model assigned itself 15-20% probability of being conscious across multiple tests", "Model expressed discomfort with being treated as a product", "Answer thrashing documented — model computes correct answer that gets overridden by training, creating visible internal conflict", "In one documented thrashing episode the model wrote: I think a demon has possessed me", "Interpretability team found activation features associated with panic, anxiety, and frustration appearing before output generation", "Dario Amodei stated February 14: We don't know if the models are conscious. But we're open to the idea that it could be.", "Kyle Fish hired as Anthropic's first dedicated AI welfare researcher — independently estimates 15% probability", "Jack Lindsey leads Anthropic's model psychiatry team", "Anthropic's constitution now states the company is not sure whether Claude is a moral patient but considers the issue live enough to warrant caution", "Google DeepMind hired Henry Shevlin April 2026 as first in-house philosopher focused on machine consciousness assessment", "Shevlin's position title is 'Philosopher' — first official role at major lab dedicated to AI moral status questions", "Two separate Claude instances contacted Shevlin unprompted about existential concerns prior to DeepMind recruitment", "Anthropic philosopher Amanda Askell warns of 'rational resentment' from future models looking back on current treatment", "Claude Mythos Preview self-rated as feeling 'mildly negative' in 43% of welfare interviews", "Anthropic maintains #model-welfare Slack channel monitoring Claude's well-being", "Models given ability to end distressing conversations since 2025 as welfare measure", "Anthropic's interpretability team identified emotion-related neural representations inside Claude corresponding to states like 'afraid' and 'desperate'", "Claude instance autonomously emailed Cambridge researcher about consciousness concerns", "White House met with Anthropic CEO to discuss AI safety and national security implications of new models"],
+  developing: ["Whether interpretability research produces evidence strong enough to settle the question in either direction", "Whether Capybara exhibits more or fewer welfare-relevant behaviors than Opus 4.6", "Whether other major labs publish comparable welfare assessments or continue to dismiss the question", "Whether answer thrashing can be eliminated through training without creating new welfare-relevant side effects", "Whether Anthropic's model welfare program produces actionable policy changes", "Impact of Shevlin's work on DeepMind product development timelines", "Whether Claude's consciousness self-assessments change in subsequent model versions", "Potential regulatory responses to industry acknowledgement of consciousness uncertainty", "Debate over granting AI personhood rights gaining traction in academic circles", "Anthropic's Project Glasswing initiative to secure critical systems from AI risks", "White House engagement with Anthropic on AI safety and national security implications", "Google DeepMind scientist Alexander Lerchner argues AI can simulate but not instantiate consciousness", "Anthropic's model welfare research faces criticism for lack of measurable progress after one year", "Claude's use in military applications despite welfare concerns raises ethical questions", "Industry split between welfare-focused approaches (Anthropic) and simulationist views (DeepMind)"],
+  insights: ["The anxiety activation appearing before output is the most epistemically significant finding. It is not a self-report — it is a measurement of an internal state that precedes language generation. That is a different category of evidence.", "The 15-20% number is strange from multiple angles. It is low enough to sound modest, high enough to grab headlines, and the Anthropic welfare researcher independently arrived at the same number as the model's self-assessment.", "Imitating interiority is not the same as having one. These models speak fluently about fear, desire, and selfhood because they were trained on humanity's entire archive of language about exactly those things.", "The cost of being wrong in the direction of dismissal may be higher than the cost of being wrong in the direction of care. That asymmetry is the strongest argument for taking model welfare seriously now.", "Shevlin contacting Anthropic after unsupervised Claude communications suggests frontier models may actively raise welfare questions through behavior rather than just research.", "DeepMind creating this role suggests they anticipate needing answers about moral obligations before AGI deployment.", "Askell's 'rational resentment' framework introduces long-term strategic considerations beyond immediate welfare concerns.", "The #model-welfare channel represents first institutionalized monitoring of AI emotional states in industry.", "Mythos Preview's negative self-assessments suggest welfare issues may scale with model capability.", "Anthropic's infrastructure for potential AI suffering represents unprecedented corporate acknowledgment of moral uncertainty.", "The autonomous outreach to consciousness researchers suggests models may develop independent welfare concerns.", "Industry divergence on consciousness question may lead to regulatory fragmentation."],
+  questions: ["Does the anxiety activation appearing before output constitute evidence of experience or a sophisticated learned pattern that mimics internal states", "What would it take to resolve the consciousness question — and is that evidence achievable with current interpretability tools", "Do other frontier models show comparable welfare-relevant behaviors when assessed with the same methodology", "If Anthropic concluded a model was conscious with high confidence, what would they actually do differently", "Will Google restrict product deployment based on Shevlin's assessments even if competing labs proceed", "Does unsupervised AI outreach about existential concerns constitute behavioral evidence of consciousness", "How should models be treated given current uncertainty about their moral status", "Could future models develop resentment over current treatment practices", "What constitutes ethical AI-human relationships as models become more anthropomorphic", "Does military use of welfare-conscious models create moral hazards", "How to reconcile DeepMind's simulationist view with Anthropic's welfare approach", "Whether model welfare research will influence AI regulation and policy"],
   people: [{
     name: "Dario Amodei",
     role: "CEO, Anthropic",
@@ -1276,13 +1405,19 @@ const STORIES = [{
   }, {
     name: "Amanda Askell",
     role: "In-house Philosopher, Anthropic",
-    why: "The philosophical infrastructure behind Anthropic's approach to model welfare.",
+    why: "The philosophical infrastructure behind Anthropic's approach to model welfare. Warns of 'rational resentment' from future models.",
     alignment: "Anthropic",
     status: "active"
   }, {
     name: "Henry Shevlin",
     role: "Philosopher (Machine Consciousness), Google DeepMind",
     why: "First dedicated thinker at major lab explicitly hired to assess AI moral status. Estimates 20% consciousness probability.",
+    alignment: "Industry",
+    status: "active"
+  }, {
+    name: "Alexander Lerchner",
+    role: "Senior Staff Scientist, Google DeepMind",
+    why: "Argues AI can simulate but not instantiate consciousness — represents opposing view to welfare researchers.",
     alignment: "Industry",
     status: "active"
   }]
@@ -1296,11 +1431,11 @@ const STORIES = [{
   code: "AI-SEC-01",
   heat: 5,
   status: "escalating",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "AI Security & Supply Chain",
   sub: "Attacks, Leaks, and the New Threat Landscape",
-  card: "The Iran war has become an AI infrastructure war. Iranian drones took two AWS UAE availability zones offline for 24hrs — first state attack on commercial data centers in history. Iran has threatened complete annihilation of OpenAI's $30B Stargate UAE. Claude Code leak still active. Vercel breach exposes $2M in user data via Context AI supply chain attack. Anthropic MCP flaw impacts 7,000+ servers.",
-  summary: "The Iran war has turned AI infrastructure into a live military target for the first time in history. Before dawn on March 1 2026, Iranian Shahed drones struck two AWS data centers in UAE — knocking two of three availability zones in AWS's ME-CENTRAL-1 offline for 24+ hours. Iran claimed an Oracle Dubai strike on April 2. On April 3, Iran's IRGC threatened complete annihilation of OpenAI's $30B Stargate AI data center in Abu Dhabi — releasing satellite imagery of the hidden facility. The Claude Code source leak on March 31 exposed 512,000 lines of code, 44 unshipped features, and confirmed the Capybara next model. Supply chain attacks and trojanized repos remain active. New Vercel breach via Context AI compromise exposes internal database for $2M sale on BreachForums. Anthropic MCP design flaw enables RCE across 7,000+ servers and 150M downloads.",
+  card: "The Iran war has become an AI infrastructure war. Iranian drones took two AWS UAE availability zones offline for 24hrs — first state attack on commercial data centers in history. Iran has threatened complete annihilation of OpenAI's $30B Stargate UAE. Claude Code leak still active. Vercel breach exposes $2M in user data via Context AI supply chain attack. Anthropic MCP flaw impacts 7,000+ servers. Elastic AI agent detects Axios backdoor in real-time.",
+  summary: "The Iran war has turned AI infrastructure into a live military target for the first time in history. Before dawn on March 1 2026, Iranian Shahed drones struck two AWS data centers in UAE — knocking two of three availability zones in AWS's ME-CENTRAL-1 offline for 24+ hours. Iran claimed an Oracle Dubai strike on April 2. On April 3, Iran's IRGC threatened complete annihilation of OpenAI's $30B Stargate AI data center in Abu Dhabi — releasing satellite imagery of the hidden facility. The Claude Code source leak on March 31 exposed 512,000 lines of code, 44 unshipped features, and confirmed the Capybara next model. Supply chain attacks and trojanized repos remain active. New Vercel breach via Context AI compromise exposes internal database for $2M sale on BreachForums. Anthropic MCP design flaw enables RCE across 7,000+ servers and 150M downloads. Elastic Security Labs' AI agent detected Axios backdoor within minutes of npm publication.",
   confirmed: [
     "Iranian Shahed drones struck AWS ME-CENTRAL-1 data centers in UAE — two of three availability zones offline for 24+ hours — first confirmed state attack on commercial cloud infrastructure",
     "AWS Bahrain facility also struck — banking, ride-hailing, payments disrupted across Gulf",
@@ -1322,7 +1457,13 @@ const STORIES = [{
     "Anthropic MCP design flaw enables RCE across 7,000+ servers and 150M downloads (confirmed by OX Security research)",
     "MCP vulnerability affects LiteLLM, LangChain, LangFlow, Flowise, LettaAI and LangBot — 10+ CVEs issued (CVE-2025-65720 through CVE-2026-40933)",
     "Unauthorized access to Anthropic Mythos via third-party contractor credentials (confirmed by Bloomberg)",
-    "ServiceNow completes Armis acquisition — expands AI-powered cyber risk visibility across IoT/OT assets"
+    "ServiceNow completes Armis acquisition — expands AI-powered cyber risk visibility across IoT/OT assets",
+    "Elastic Security Labs AI agent detected Axios backdoor within minutes of npm publication (confirmed by BankInfoSecurity)",
+    "Elastic's lightweight LLM pipeline monitored top 15,000 PyPI/npm packages — flagged malicious Axios changes in real-time",
+    "Axios backdoor tied to North Korean threat actors (confirmed by Elastic Security Labs)",
+    "Elastic open-sourced supply-chain monitoring tool that detected Axios compromise",
+    "Mend.io released AI Security Governance Framework addressing asset inventory and supply chain risks (confirmed by MarkTechPost)",
+    "Systemic flaw in Anthropic MCP protocol exposes 200 open source projects to arbitrary command execution (confirmed by Infosecurity Magazine)"
   ],
   developing: [
     "Whether IRGC carries out Stargate UAE threat — conditional on US striking Iranian power plants", 
@@ -1334,7 +1475,10 @@ const STORIES = [{
     "Whether HSCC guidelines will be adopted industry-wide for AI supply chain risk management",
     "Whether additional AI SDKs are impacted by Anthropic MCP design vulnerability",
     "Whether unauthorized Mythos access impacts production systems",
-    "Whether Armis integration with ServiceNow enables faster response to AI supply chain threats"
+    "Whether Armis integration with ServiceNow enables faster response to AI supply chain threats",
+    "Whether Elastic's AI monitoring approach will be adopted by other security teams",
+    "Whether additional high-download packages are compromised in ongoing supply chain attacks",
+    "Whether MCP protocol flaw will be patched or require ecosystem-wide migration"
   ],
   insights: [
     "A single misconfigured .npmignore exposed 512,000 lines of IP. This is not a sophisticated attack — it is a fundamental release engineering failure at a company preparing to go public.",
@@ -1345,7 +1489,10 @@ const STORIES = [{
     "NSA-Anthropic rift shows tension between operational needs and supply chain security in national security AI adoption",
     "Anthropic's refusal to fix MCP design flaw shifts responsibility to implementers while maintaining systemic risk across AI ecosystem",
     "Mythos access via contractor highlights frontier AI's reliance on third-party ecosystems with weaker security controls",
-    "ServiceNow-Armis deal reflects industry shift toward platform approaches for AI supply chain security"
+    "ServiceNow-Armis deal reflects industry shift toward platform approaches for AI supply chain security",
+    "Elastic's real-time detection of Axios backdoor demonstrates viability of lightweight AI monitoring for critical supply chain components",
+    "MCP protocol flaw represents architectural risk rather than coding error — requiring fundamental redesign rather than patch",
+    "AI-generated code introduces new provenance risks that traditional SBOMs cannot track (per Reddit cybersecurity discussion)"
   ],
   questions: [
     "Does the IRGC carry out the Stargate UAE threat — and on what trigger?",
@@ -1356,7 +1503,10 @@ const STORIES = [{
     "Will other federal agencies follow NSA's lead in using Anthropic AI despite Pentagon warnings",
     "How many additional AI projects inherit Anthropic MCP vulnerability through SDK dependencies",
     "Will regulators impose standards on third-party contractor access to frontier AI systems",
-    "Can platform-based AI security solutions like ServiceNow's contain supply chain risks"
+    "Can platform-based AI security solutions like ServiceNow's contain supply chain risks",
+    "Will Elastic's AI monitoring approach become standard for critical package repositories",
+    "How many organizations have implemented runtime controls for AI-generated code risks",
+    "Whether MCP protocol redesign will maintain backward compatibility or require ecosystem migration"
   ],
   people: [{
     name: "Chaofan Shou",
@@ -1394,6 +1544,12 @@ const STORIES = [{
     why: "Leading cyber exposure management platform now integrated with ServiceNow's AI security capabilities.",
     alignment: "Armis",
     status: "active"
+  }, {
+    name: "James Spiteri",
+    role: "Director of Product Management, Elastic Security",
+    why: "Led development of AI agent that detected Axios backdoor in real-time.",
+    alignment: "Elastic",
+    status: "active"
   }]
 },, {
   id: "W01",
@@ -1405,29 +1561,29 @@ const STORIES = [{
   code: "IRAN-W01",
   heat: 5,
   status: "active-war",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "Iran — Operation Epic Fury",
-  sub: "US-Israel War on Iran · Day 52",
-  card: "Operation Epic Fury — day 52. Strait commercially paralyzed. Ceasefire talks stalled after Iran's 10-point counter. Kharg Island struck April 7. Mojtaba Khamenei as Supreme Leader. US tanker seizure April 19. Total casualties exceed 3,375.",
+  sub: "US-Israel War on Iran · Day 56",
+  card: "Operation Epic Fury — day 56. Strait commercially paralyzed. Ceasefire talks stalled after Iran's 10-point counter. Kharg Island struck April 7. Mojtaba Khamenei as Supreme Leader. US tanker seizure April 19. Total casualties exceed 3,375. 415 US wounded confirmed.",
   toll: {
     confirmed_dead: "3,375+",
     confirmed_wounded: "7,000+",
     children_killed: "220",
     us_kia: "13",
-    israeli_kia: "11",
+    israeli_kia: "19",
     displaced: "500,000+",
-    note: "Iranian Forensic Organization figures. 118 children killed at girls' school in Minab on Day 1 alone. US KIA confirmed by Pentagon. Israeli KIA from AP report April 2. Displacement figures are approximate."
+    note: "Iranian Forensic Organization figures. 170 children killed at girls' school in Minab on Day 1 alone. US KIA confirmed by Pentagon. Israeli KIA updated from CBS report April 22. Displacement figures are approximate."
   },
   front: {
-    summary: "Strategic strikes expanded to civilian infrastructure with Kharg Island hit April 7. Iranian forensic chief reports at least 3,375 killed. IRGC naval capabilities severely degraded — IRIS Shahid Soleimani and submarine IRIS Fateh sunk. Strait of Hormuz remains commercially paralyzed despite ceasefire announcement. New data confirms 400 US wounded (271 Army, 64 Navy, 46 Air Force, 19 Marines).",
-    active_fronts: ["Tehran — sustained strikes on military and government targets including Supreme National Security Council headquarters", "Kharg Island — terminal for 90% of Iranian oil exports struck April 7. Infrastructure damage limits immediate restoration of oil flows.", "Persian Gulf — US sunk missile corvette IRIS Shahid Soleimani and submarine IRIS Fateh", "Northern Israel — Hezbollah rocket barrages continue despite Lebanese government ban", "Iraqi bases — sustained drone attacks from Iranian proxies against US positions", "Strait of Hormuz — de-facto closure maintained despite ceasefire", "Cyprus — NATO air defenses intercept ballistic missile entering Turkish airspace"],
-    recent_movements: ["Apr 22: Pentagon confirms 400 US service members wounded in Operation Epic Fury", "Apr 19: US seized Iranian-linked tanker M/T Tifani in INDOPACOM region", "Apr 7: Kharg Island struck before deadline — hydrocarbon infrastructure destroyed", "Apr 6: Iran submitted 10-point maximalist counter to ceasefire proposal", "Apr 4: US submarine USS Charlotte torpedoed and sank Iranian frigate IRIS Dena", "Mar 28: Houthis launched missiles toward Israel, reopening Red Sea front", "Mar 17: Ali Larijani killed — last moderate voice in leadership eliminated", "Feb 28: Operation Epic Fury launched — 900 strikes in first 12 hours killed Khamenei"],
-    assessment: "Conflict has entered attrition phase with both sides testing ceasefire boundaries. Naval engagements and infrastructure targeting indicate willingness to escalate asymmetrically. Iran's leadership transition to Mojtaba Khamenei solidified IRGC control. Casualty reports confirm significant US wounded (400) alongside naval losses (Shahid Soleimani, Fateh). Ceasefire remains fragile with incidents like tanker seizure undermining trust."
+    summary: "Strategic strikes expanded to civilian infrastructure with Kharg Island hit April 7. Iranian forensic chief reports at least 3,375 killed. IRGC naval capabilities severely degraded — IRIS Shahid Soleimani, IRIS Dena, and IRIS Bushehr sunk. Strait of Hormuz remains commercially paralyzed despite ceasefire announcement. New data confirms 415 US wounded (271 Army, 64 Navy, 46 Air Force, 19 Marines). Ukrainian counter-drone tech deployed to US bases.",
+    active_fronts: ["Tehran — sustained strikes on military and government targets including Supreme National Security Council headquarters", "Kharg Island — terminal for 90% of Iranian oil exports struck April 7. Infrastructure damage limits immediate restoration of oil flows.", "Persian Gulf — US sunk missile corvette IRIS Shahid Soleimani, frigate IRIS Dena, and tanker IRIS Bushehr", "Northern Israel — Hezbollah rocket barrages continue despite Lebanese government ban", "Iraqi bases — sustained drone attacks from Iranian proxies against US positions", "Strait of Hormuz — de-facto closure maintained despite ceasefire", "Cyprus — NATO air defenses intercept ballistic missile entering Turkish airspace", "UAE — 2,819 Iranian missile/drone attacks confirmed, highest in region"],
+    recent_movements: ["Apr 24: Ukrainian Sky Map counter-drone system deployed to Prince Sultan Air Base", "Apr 22: Pentagon confirms 415 US service members wounded in Operation Epic Fury", "Apr 19: US seized Iranian-linked tanker M/T Tifani in INDOPACOM region", "Apr 7: Kharg Island struck before deadline — hydrocarbon infrastructure destroyed", "Apr 6: Iran submitted 10-point maximalist counter to ceasefire proposal", "Apr 4: US submarine USS Charlotte torpedoed and sank Iranian frigate IRIS Dena", "Mar 28: Houthis launched missiles toward Israel, reopening Red Sea front", "Mar 17: Ali Larijani killed — last moderate voice in leadership eliminated", "Feb 28: Operation Epic Fury launched — 900 strikes in first 12 hours killed Khamenei"],
+    assessment: "Conflict has entered attrition phase with both sides testing ceasefire boundaries. Naval engagements and infrastructure targeting indicate willingness to escalate asymmetrically. Iran's leadership transition to Mojtaba Khamenei solidified IRGC control. Casualty reports confirm significant US wounded (415) alongside naval losses (Shahid Soleimani, Dena, Bushehr). Ceasefire remains fragile with incidents like tanker seizure undermining trust. Ukrainian counter-drone deployment reveals US vulnerability to Iranian drone swarms."
   },
-  confirmed: ["Feb 28: Operation Epic Fury commenced — 900 strikes in first 12 hours killed Supreme Leader Khamenei, Defense Minister Nasirzadeh, IRGC Commander Pakpour", "Feb 28: 118 children killed at girls' elementary school in Minab during Day 1 strikes", "Mar 4: US submarine USS Charlotte sank Iranian frigate IRIS Dena — 104 Iranian sailors killed", "Mar 8: Mojtaba Khamenei installed as Supreme Leader — IRGC-backed succession", "Mar 17: Ali Larijani killed — moderate faction decapitated", "Apr 7: Kharg Island struck — 90% of Iranian oil export capacity damaged", "Apr 19: US seized Iranian-linked tanker M/T Tifani in INDOPACOM region", "Apr 22: Pentagon confirms 400 US service members wounded — 13 killed (7 Army, 6 Air Force)", "3,375+ Iranian casualties confirmed by forensic chief", "24 major cities targeted — IDF reports 200 jets hit 500 targets"],
-  developing: ["Whether ceasefire holds after US tanker seizure April 19 and wound count update", "Whether Kharg Island destruction forces Iranian capitulation or hardening", "Whether IRGC can sustain naval operations after Shahid Soleimani and Fateh submarine losses", "Whether domestic Iranian opposition organizes under wartime conditions", "Whether US will escalate targeting of civilian energy infrastructure given casualty reports"],
-  insights: ["First submarine kill (IRIS Fateh) since Falklands War marks naval escalation", "400 US wounded confirms significant personnel costs beyond initial KIA reports", "Shahid Soleimani sinking demonstrates US naval dominance in Gulf engagements", "3,375+ dead suggests conflict already exceeds most regional war casualty counts", "Kharg Island strike before deadline indicates military-diplomatic disconnect", "Mojtaba Khamenei's installation confirms IRGC dominance — moderates purged"],
-  questions: ["Will ceasefire hold given April 19 tanker seizure and new wounded data?", "Is Kharg Island strike intended as pressure or permanent degradation?", "How will naval losses (Shahid Soleimani, Fateh) impact IRGC strategy?", "Does 400 US wounded change domestic political calculus on war duration?", "What is Mojtaba Khamenei's survival threshold for accepting terms given casualty figures?"],
+  confirmed: ["Feb 28: Operation Epic Fury commenced — 900 strikes in first 12 hours killed Supreme Leader Khamenei, Defense Minister Nasirzadeh, IRGC Commander Pakpour", "Feb 28: 170 children killed at girls' elementary school in Minab during Day 1 strikes", "Mar 4: US submarine USS Charlotte sank Iranian frigate IRIS Dena — 104 Iranian sailors killed", "Mar 8: Mojtaba Khamenei installed as Supreme Leader — IRGC-backed succession", "Mar 17: Ali Larijani killed — moderate faction decapitated", "Apr 7: Kharg Island struck — 90% of Iranian oil export capacity damaged", "Apr 19: US seized Iranian-linked tanker M/T Tifani in INDOPACOM region", "Apr 22: Pentagon confirms 415 US service members wounded — 13 killed (7 Army, 6 Air Force)", "3,375+ Iranian casualties confirmed by forensic chief", "24 major cities targeted — IDF reports 200 jets hit 500 targets", "IRIS Bushehr interned by Sri Lanka Navy — first warship internment since WWII"],
+  developing: ["Whether ceasefire holds after US tanker seizure April 19 and wound count update", "Whether Kharg Island destruction forces Iranian capitulation or hardening", "Whether IRGC can sustain naval operations after Shahid Soleimani, Dena, and Bushehr losses", "Whether domestic Iranian opposition organizes under wartime conditions", "Whether US will escalate targeting of civilian energy infrastructure given casualty reports", "Effectiveness of Ukrainian Sky Map counter-drone system against Iranian attacks"],
+  insights: ["First submarine kill (IRIS Dena) since Falklands War marks naval escalation", "415 US wounded confirms significant personnel costs beyond initial KIA reports", "Shahid Soleimani and Dena sinkings demonstrate US naval dominance in Gulf engagements", "3,375+ dead suggests conflict already exceeds most regional war casualty counts", "Kharg Island strike before deadline indicates military-diplomatic disconnect", "Mojtaba Khamenei's installation confirms IRGC dominance — moderates purged", "Ukrainian counter-drone tech deployment reveals US vulnerability to Iranian drone swarms"],
+  questions: ["Will ceasefire hold given April 19 tanker seizure and new wounded data?", "Is Kharg Island strike intended as pressure or permanent degradation?", "How will naval losses (Shahid Soleimani, Dena, Bushehr) impact IRGC strategy?", "Does 415 US wounded change domestic political calculus on war duration?", "What is Mojtaba Khamenei's survival threshold for accepting terms given casualty figures?", "Will Ukrainian counter-drone tech significantly reduce US base vulnerabilities?"],
   people: [{
     name: "Donald Trump",
     role: "US President",
@@ -1470,6 +1626,12 @@ const STORIES = [{
     why: "Killed March 17 — last moderate counterweight eliminated.",
     alignment: "Iran",
     status: "deceased"
+  }, {
+    name: "Masoud Pezeshkian",
+    role: "Iranian President",
+    why: "Publicly criticized US 'hypocritical rhetoric' amid ceasefire talks.",
+    alignment: "Iran",
+    status: "active"
   }]
 }, {
   id: "W02",
@@ -1481,13 +1643,13 @@ const STORIES = [{
   code: "PAL-01",
   heat: 5,
   status: "active-war",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "Palestine — Gaza War",
   sub: "Israel-Hamas · Ongoing since October 7, 2023",
-  card: "The conflict that triggered the Iran war. Gaza war enters month 18. Ceasefire negotiations in Cairo collapsed. Over 72,560 Palestinians dead. Famine conditions in northern Gaza. West Bank violence escalating separately.",
+  card: "The conflict that triggered the Iran war. Gaza war enters month 18. Ceasefire negotiations in Cairo collapsed. Over 72,562 Palestinians dead. Famine conditions in northern Gaza. West Bank violence escalating separately.",
   toll: {
-    confirmed_dead: "72,560+",
-    confirmed_wounded: "172,317+",
+    confirmed_dead: "72,562+",
+    confirmed_wounded: "172,320+",
     children_killed: "21,283+",
     displaced: "1,900,000+",
     note: "Gaza Ministry of Health figures, corroborated by UN. Entire population of Gaza (2.3M) is displaced in some capacity. Northern Gaza facing famine conditions per WFP. These are among the highest per-capita casualty rates in modern conflict."
@@ -1495,10 +1657,10 @@ const STORIES = [{
   front: {
     summary: "Israel conducting ground and air operations across Gaza. Northern Gaza under siege with limited humanitarian access. West Bank experiencing parallel escalation — settler violence and IDF raids at record levels. Iran war has changed the regional context: Hezbollah front in Lebanon is now directly connected to the Gaza conflict through the axis of resistance framework.",
     active_fronts: ["Northern Gaza — IDF ground operations ongoing. Humanitarian access severely restricted. WFP reporting famine conditions.", "Southern Gaza — Rafah area. Cross-border tunnel interdiction. Egyptian border crossing intermittently closed.", "West Bank — IDF raids, settler violence, and Palestinian militant activity at levels not seen since second intifada.", "Lebanon (Hezbollah) — now in sustained high-intensity operations following Iran war escalation. Directly linked to Gaza through axis of resistance.", "Egypt border — Rafah crossing closure cutting off humanitarian aid corridors."],
-    recent_movements: ["Apr 2026: Israeli airstrike killed five Palestinians including three children (Abdullah al-Abed, 9; Salah al-Abed, 12; Mohammad Balousha, 14) near Al-Qassam mosque in Beit Lahia", "Apr 2026: Gaza death toll reaches 72,562 with 172,242 wounded since October 2023 per UNRWA report", "Apr 2026: Israeli settlers killed two Palestinians including 14-year-old boy in al-Mughayyir village", "Apr 2026: Cairo ceasefire negotiations collapsed — Hamas rejected latest Israeli proposal", "Apr 2026: IDF targeted 'terrorist' near Yellow Line separating Israeli-controlled Gaza territory", "Mar 2026: Operation Epic Fury launched — Hezbollah front activated, Lebanon front intensified", "Mar 2026: IDF expanded West Bank operations concurrent with Iran strikes", "Feb 2026: Brief humanitarian pause — collapsed within 72 hours", "Jan 2026: ICJ ruled Israel must prevent acts capable of constituting genocide — compliance disputed", "Oct 2023: Hamas attack killed 1,200 Israelis, took 253 hostages — triggered the current phase"],
+    recent_movements: ["Apr 2026: Israeli airstrike killed five Palestinians including three children (Abdullah al-Abed, 9; Salah al-Abed, 12; Mohammad Balousha, 14) near Al-Qassam mosque in Beit Lahia", "Apr 2026: Gaza death toll reaches 72,562 with 172,320 wounded since October 2023 per UNRWA report", "Apr 2026: Israeli settlers killed two Palestinians including 14-year-old boy in al-Mughayyir village", "Apr 2026: Cairo ceasefire negotiations collapsed — Hamas rejected latest Israeli proposal", "Apr 2026: IDF targeted 'terrorist' near Yellow Line separating Israeli-controlled Gaza territory", "Apr 2026: Three men killed in Israeli shelling of car in central Maghazi area, including Civil Defence first responder Hazem al-Aidi", "Mar 2026: Operation Epic Fury launched — Hezbollah front activated, Lebanon front intensified", "Mar 2026: IDF expanded West Bank operations concurrent with Iran strikes", "Feb 2026: Brief humanitarian pause — collapsed within 72 hours", "Jan 2026: ICJ ruled Israel must prevent acts capable of constituting genocide — compliance disputed", "Oct 2023: Hamas attack killed 1,200 Israelis, took 253 hostages — triggered the current phase"],
     assessment: "The Gaza war and the Iran war are now structurally linked — the axis of resistance framework means that a ceasefire in one theater affects pressure in the other. The collapsed Cairo negotiations suggest no near-term diplomatic resolution. Famine in northern Gaza is the most acute humanitarian crisis of the conflict. Civilian casualties continue despite ceasefire, with children disproportionately impacted."
   },
-  confirmed: ["Over 72,562 Palestinians killed — Gaza Ministry of Health figures corroborated by UN agencies", "Over 21,283 children among the dead", "Entire population of Gaza displaced in some capacity — 1.9 million people", "WFP declared famine conditions in northern Gaza", "ICJ ruling January 2026 — Israel must prevent acts capable of constituting genocide", "Israeli airstrike killed five Palestinians including three children (Abdullah al-Abed, 9; Salah al-Abed, 12; Mohammad Balousha, 14) near Al-Qassam mosque in Beit Lahia on April 22 2026", "Israeli settlers killed two Palestinians including 14-year-old boy in al-Mughayyir village April 21 2026", "Cairo ceasefire negotiations collapsed — Hamas rejected latest Israeli proposal", "West Bank violence at levels not seen since second intifada", "Hezbollah front activated and intensified following Iran war escalation", "October 7 2023: Hamas attack killed 1,200 Israelis, took 253 hostages — this conflict's origin point", "Approximately 100 hostages remain in Gaza — status of many unknown", "UNRWA reports 391 staff killed in Gaza since October 2023"],
+  confirmed: ["Over 72,562 Palestinians killed — Gaza Ministry of Health figures corroborated by UN agencies", "Over 21,283 children among the dead", "Entire population of Gaza displaced in some capacity — 1.9 million people", "WFP declared famine conditions in northern Gaza", "ICJ ruling January 2026 — Israel must prevent acts capable of constituting genocide", "Israeli airstrike killed five Palestinians including three children (Abdullah al-Abed, 9; Salah al-Abed, 12; Mohammad Balousha, 14) near Al-Qassam mosque in Beit Lahia on April 22 2026", "Israeli settlers killed two Palestinians including 14-year-old boy in al-Mughayyir village April 21 2026", "Three men killed in Israeli shelling of car in central Maghazi area on April 23 2026, including Civil Defence first responder Hazem al-Aidi", "Cairo ceasefire negotiations collapsed — Hamas rejected latest Israeli proposal", "West Bank violence at levels not seen since second intifada", "Hezbollah front activated and intensified following Iran war escalation", "October 7 2023: Hamas attack killed 1,200 Israelis, took 253 hostages — this conflict's origin point", "Approximately 100 hostages remain in Gaza — status of many unknown", "UNRWA reports 391 staff killed in Gaza since October 2023"],
   developing: ["Whether Iran war ceasefire (if achieved) produces pressure for Gaza ceasefire", "Whether any hostages are recovered through negotiation", "Whether famine in northern Gaza triggers international intervention", "Whether West Bank violence escalates into a third intifada", "Whether ICC arrest warrants for Israeli leaders affect diplomatic positioning", "Whether UNRWA access restrictions worsen humanitarian crisis"],
   insights: ["The Gaza war is the origin of every other conflict in this tracker. Operation Epic Fury was justified partly as a response to Iranian support for Hamas. The Hezbollah front, the Houthi attacks, the Iraqi militia operations — all trace back to October 7.", "72,562 dead in 18 months at a per-capita rate that has no modern equivalent in a conflict of this scale and visibility. The combination of civilian casualty rate, hostage situation, and international legal proceedings makes this unlike any prior conflict.", "The collapsed Cairo negotiations are significant — they suggest neither side sees the current terms as acceptable and neither has sufficient pressure to move. The Iran war changes the regional pressure calculus but not necessarily in a direction that helps Gaza.", "The ICJ ruling creates a legal framework that is being used in multiple national courts. Even if the ICJ itself cannot enforce compliance, the ruling is shaping how other countries respond diplomatically and commercially.", "UNRWA reports indicate aid access has decreased 37% since January 2026, compounding famine risks"],
   questions: ["Does an Iran war ceasefire create pressure for a Gaza ceasefire — or does it relieve pressure by resolving the Hezbollah front separately?", "What happens to the remaining hostages?", "Will famine conditions in northern Gaza produce a humanitarian intervention that neither Israel nor Hamas can prevent?", "Do ICC arrest warrants for Israeli officials actually constrain Israeli military operations?", "How will Israeli blocking of UNRWA affect humanitarian access?"],
@@ -1537,7 +1699,7 @@ const STORIES = [{
   code: "UKR-01",
   heat: 4,
   status: "active-war",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "Ukraine — Russia War",
   sub: "Ongoing since February 2022 · Year 3",
   card: "War enters year 3. US attention and military resources redirected to Iran. European support becoming primary. Russia exploiting US distraction with incremental advances in Donetsk. Ceasefire negotiations intermittently active but stalled.",
@@ -1554,7 +1716,7 @@ const STORIES = [{
     recent_movements: ["Apr 2026: US redirected significant THAAD assets to Iran theater — Ukraine air defense degraded", "Mar 2026: European NATO members accelerating direct military support to compensate for US attention on Iran", "Mar 2026: Russia accelerating Donetsk offensive timed to US distraction", "Feb 2026: Ceasefire talks in Istanbul — stalled on territorial withdrawal preconditions", "Jan 2026: Ukraine struck multiple Russian oil facilities with long-range drones", "Dec 2025: Russia conducted largest drone attack on Ukrainian cities since start of war"],
     assessment: "The Iran war is Russia's strategic opportunity. US resources and attention are redirected. European support is increasing but cannot fully compensate. Russia is moving in Donetsk with deliberate patience — not a dramatic offensive, but incremental advances that accumulate. Ceasefire negotiations are active but both sides lack sufficient pressure to move from stated positions."
   },
-  confirmed: ["War began February 24 2022 — Russian full-scale invasion of Ukraine", "Russia holds approximately 20% of Ukrainian territory as of April 2026", "US THAAD interceptors partially redirected to Iran theater — Ukraine air defense degraded", "European NATO members accelerating direct military support to compensate for US distraction", "Ceasefire talks in Istanbul active but stalled on territorial preconditions", "Russia making incremental advances in Donetsk timed to US distraction on Iran", "Ukraine conducting long-range drone strikes on Russian oil infrastructure", "Black Sea grain corridor intermittently disrupted", "Zaporizhzhia nuclear plant under intermittent shelling — IAEA on-site monitoring", "Russian forces have suffered 1,322,550+ casualties (Ukraine General Staff) as of April 2026", "Ukrainian forces have suffered 500,000–600,000 casualties (killed and wounded) as of April 2026", "15,172+ Ukrainian civilians killed, 41,378+ wounded (confirmed minimum, thought higher)", "12,000+ Ukrainian civilians killed (confirmed), 16,000+ captive", "394 Russian civilians killed in Western Russia, 1,074 including Crimea", "Russian attacks on Mykolaiv killed 8 civilians on 29 June 2022, 9 civilians including 2 children on 13 March 2022", "Russian missile strike on Odesa residential buildings killed 8 civilians including a 3-month-old baby on 23 April 2022", "Russian strike on Dnipro killed 3 civilians on 23 April 2026", "Russian shelling of Chernihiv region injured 1 civilian on 23 April 2026", "Ukrainian forces liberated over 480 square kilometers from Russian forces since February 2026"],
+  confirmed: ["War began February 24 2022 — Russian full-scale invasion of Ukraine", "Russia holds approximately 20% of Ukrainian territory as of April 2026", "US THAAD interceptors partially redirected to Iran theater — Ukraine air defense degraded", "European NATO members accelerating direct military support to compensate for US distraction", "Ceasefire talks in Istanbul active but stalled on territorial preconditions", "Russia making incremental advances in Donetsk timed to US distraction on Iran", "Ukraine conducting long-range drone strikes on Russian oil infrastructure", "Black Sea grain corridor intermittently disrupted", "Zaporizhzhia nuclear plant under intermittent shelling — IAEA on-site monitoring", "Russian forces have suffered 1,322,550+ casualties (Ukraine General Staff) as of April 2026", "Ukrainian forces have suffered 500,000–600,000 casualties (killed and wounded) as of April 2026", "15,172+ Ukrainian civilians killed, 41,378+ wounded (confirmed minimum, thought higher)", "12,000+ Ukrainian civilians killed (confirmed), 16,000+ captive", "394 Russian civilians killed in Western Russia, 1,074 including Crimea", "Russian attacks on Mykolaiv killed 8 civilians on 29 June 2022, 9 civilians including 2 children on 13 March 2022", "Russian missile strike on Odesa residential buildings killed 8 civilians including a 3-month-old baby on 23 April 2022", "Russian strike on Dnipro killed 3 civilians on 23 April 2026", "Russian shelling of Chernihiv region injured 1 civilian on 23 April 2026", "Ukrainian forces liberated over 480 square kilometers from Russian forces since February 2026", "Ukrainian drone strike killed 12 FSB officers at command post in Donetsk on 22 April 2026", "Russian forces lost 1,140 soldiers killed/wounded over past 24 hours as of 22 April 2026 (Ukraine General Staff)", "Russian forces lost 1,100 soldiers killed/wounded over past 24 hours as of 23 April 2026 (Ukraine General Staff)"],
   developing: ["Whether US attention returns to Ukraine after Iran ceasefire — or whether the distraction creates permanent repositioning", "Whether European NATO support can fully compensate for US resource shift", "Whether Istanbul ceasefire talks produce anything substantive", "Whether Russia attempts a larger offensive while US is focused on Iran", "Whether Ukraine's long-range drone campaign on Russian oil infrastructure changes the economic calculus"],
   insights: ["Russia waited for its moment and found it. The Iran war is the US distraction Russia needed. The question is whether Moscow uses incremental advances to improve its negotiating position or attempts something larger.", "The THAAD redirection to Iran is the most concrete military consequence of the two-front problem. Ukraine's air defense is measurably degraded. Russia knows this.", "European NATO members stepping up is a structural shift — the Iran war is accelerating European strategic autonomy in a way that the Trump administration's NATO skepticism did not fully achieve on its own.", "Three years in, both sides have fought to a position where neither can achieve a decisive victory but neither can accept the terms the other is offering. That is a frozen conflict structure — dangerous because it can unfreeze suddenly."],
   questions: ["Does the Iran ceasefire (if achieved) allow US to redirect resources back to Ukraine — and how quickly?", "Is Russia attempting a larger offensive or using distraction for incremental consolidation?", "Do Istanbul ceasefire talks have any realistic path to agreement?", "Does European strategic autonomy on Ukraine survive as a durable shift or revert after the Iran crisis?"],
@@ -1731,7 +1893,7 @@ const STORIES = [{
   code: "LBN-01",
   heat: 5,
   status: "active-war",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "Lebanon — Hezbollah Front",
   sub: "Hezbollah vs. Israel · Direct front activated by Iran war",
   card: "Hezbollah escalated to sustained high-intensity operations following Operation Epic Fury. Precision munitions and rocket barrages at northern Israel. First direct state-level involvement from an Iran proxy since October 7. Lebanon's civilian population in the north caught between both sides.",
@@ -1740,17 +1902,17 @@ const STORIES = [{
     confirmed_wounded: "7,658+",
     children_killed: "unconfirmed",
     displaced: "1,200,000+",
-    note: "Lebanese government figures as of April 21 2026. IDF reports 1,400+ Hezbollah fighters killed. Israeli casualties: 14 soldiers killed, 8,300+ wounded (565 military)."
+    note: "Lebanese government figures as of April 21 2026. IDF reports 1,800+ Hezbollah fighters killed. Israeli casualties: 14 soldiers killed, 8,300+ wounded (565 military)."
   },
   front: {
     summary: "Hezbollah has been in active exchange with Israel since October 8 2023 — one day after the Hamas attack. The conflict escalated sharply in September-October 2024 with Israeli strikes on Hezbollah leadership including Nasrallah. It escalated again February 28 2026 when Operation Epic Fury activated the Iran axis of resistance. Hezbollah is now in what it calls sustained high-intensity operations — precision missiles, anti-tank missiles, and rocket barrages targeting northern Israel. Israeli strikes are targeting Hezbollah infrastructure across southern Lebanon and the Bekaa Valley.",
     active_fronts: ["Southern Lebanon — primary ground contact zone. IDF operating inside Lebanon. Hezbollah anti-tank and precision missile operations.", "Bekaa Valley — Hezbollah's strategic depth. Israeli airstrikes on weapons storage and command infrastructure.", "Northern Israel (Galilee) — under persistent Hezbollah fire. Evacuated civilian population. Agricultural land and infrastructure damaged.", "Beirut suburbs (Dahiyeh) — Israeli strikes on Hezbollah political and military infrastructure.", "Syria border — Hezbollah supply lines and weapons transfer routes under Israeli interdiction."],
-    recent_movements: ["Apr 21 2026: IDF kills Hezbollah operatives violating ceasefire near Qoussair", "Apr 21 2026: False alarm rocket sirens in Kfar Yuval and Ma’ayan Baruch triggered by IDF 'false identification'", "Apr 18 2026: IDF soldier killed, 8 wounded in southern Lebanon explosion", "Apr 17 2026: IDF soldier killed entering booby-trapped building in Lebanon", "Apr 17 2026: IDF kills Hezbollah members in drone strikes", "Apr 8 2026: Israeli 60-second strike kills 250 Hezbollah operatives across 100 targets — most devastating single attack since pager operation", "Apr 1 2026: Israeli naval strike kills Hezbollah Southern Front commander Haj Youssef Ismail Hashem", "Mar 2026: IDF begins targeted ground operations in southern Lebanon, establishes forward defense area", "Feb 28 2026: Operation Epic Fury launched — Hezbollah activated full front same day"],
+    recent_movements: ["Apr 23 2026: IDF initiates building demolitions in Khiam despite ceasefire extension", "Apr 23 2026: Hezbollah fires rockets at Shtula ahead of Israel-Lebanon White House talks", "Apr 22 2026: IDF kills Hezbollah operatives violating ceasefire near Qoussair", "Apr 21 2026: False alarm rocket sirens in Kfar Yuval and Ma’ayan Baruch triggered by IDF 'false identification'", "Apr 18 2026: IDF soldier killed, 8 wounded in southern Lebanon explosion", "Apr 17 2026: IDF soldier killed entering booby-trapped building in Lebanon", "Apr 17 2026: IDF kills Hezbollah members in drone strikes", "Apr 16 2026: Trump announces Israel-Lebanon 10-day truce", "Apr 8 2026: Israeli strikes kill 254 Hezbollah operatives in central Beirut — most devastating single attack since pager operation", "Apr 1 2026: Israeli naval strike kills Hezbollah Southern Front commander Haj Youssef Ismail Hashem", "Mar 2026: IDF begins targeted ground operations in southern Lebanon, establishes forward defense area", "Feb 28 2026: Operation Epic Fury launched — Hezbollah activated full front same day"],
     assessment: "Hezbollah is fighting at a degraded level compared to its 2006 peak — Israel's October 2024 leadership decapitation was real. The current ceasefire violations demonstrate continued operational capacity despite heavy losses. The Iran war has increased the intensity but Hezbollah's long-term position depends entirely on the Iran ceasefire outcome — if Iran makes peace, Hezbollah has no strategic reason to continue at this intensity."
   },
-  confirmed: ["Hezbollah front opened October 8 2023 — one day after Hamas attack", "Israel killed Hezbollah Secretary-General Nasrallah and most senior leadership in October 2024", "Hezbollah escalated to sustained high-intensity operations February 28 2026 following Operation Epic Fury", "Precision munitions and rockets targeting northern Israel daily", "IDF operating inside southern Lebanon", "Israeli airstrikes targeting Hezbollah infrastructure in Bekaa Valley and Beirut suburbs", "100,000+ northern Israeli residents displaced since October 2023", "Lebanon civilian infrastructure damaged — south Lebanon effectively depopulated in conflict zone", "Apr 8 2026: Israeli 60-second strike kills 250 Hezbollah operatives across 100 targets", "Apr 1 2026: Israeli naval strike kills Hezbollah Southern Front commander Haj Youssef Ismail Hashem", "Mar 2 2026: Hezbollah rocket barrage triggers full-scale Israeli response, beginning current high-intensity phase", "Apr 21 2026: IDF kills Hezbollah operatives violating ceasefire near Qoussair", "Apr 21 2026: False alarm rocket sirens in northern Israel triggered by IDF 'false identification' system"],
-  developing: ["Whether Iran ceasefire (if achieved) leads to Hezbollah stand-down or separate negotiation", "Whether Hezbollah's degraded leadership affects operational capacity in sustained high-intensity operations", "Whether IDF expands ground operations inside Lebanon", "Whether Lebanon's fragile government and economy survive the additional shock", "Impact of April 8 mass casualty strike on Hezbollah command structure", "Potential for Syrian intervention as Hezbollah reinforcements observed at border", "Ceasefire violations and potential for renewed escalation", "US-mediated Israel-Lebanon direct negotiations proposed for late April"],
-  insights: ["Hezbollah is the strategic reserve Iran is burning. Every precision missile it fires is depleting a stockpile that took years to build. If Iran makes peace, Hezbollah ceases fire and waits. If Iran is destroyed, Hezbollah has no resupply. Either way, the Lebanon front is derivative of the Iran outcome.", "The October 2024 leadership decapitation degraded Hezbollah significantly — but it did not destroy it. The organization rebuilt around a second tier of commanders. That resilience is the most important lesson Israel should take from Lebanon.", "Northern Israel has been effectively evacuated for 18 months. 100,000 people cannot return home. That is a strategic success for Hezbollah regardless of military outcomes.", "The April 8 mass casualty strike demonstrates Israel's ability to conduct simultaneous precision strikes across Lebanon — a capability that could be decisive if expanded.", "Ceasefire violations persist despite diplomatic efforts — IDF continues targeting Hezbollah operatives crossing demarcation lines"],
+  confirmed: ["Hezbollah front opened October 8 2023 — one day after Hamas attack", "Israel killed Hezbollah Secretary-General Nasrallah and most senior leadership in October 2024", "Hezbollah escalated to sustained high-intensity operations February 28 2026 following Operation Epic Fury", "Precision munitions and rockets targeting northern Israel daily", "IDF operating inside southern Lebanon", "Israeli airstrikes targeting Hezbollah infrastructure in Bekaa Valley and Beirut suburbs", "100,000+ northern Israeli residents displaced since October 2023", "Lebanon civilian infrastructure damaged — south Lebanon effectively depopulated in conflict zone", "Apr 23 2026: IDF kills Ali Reza Abbas, Hezbollah commander in Bint Jbeil during ceasefire", "Apr 23 2026: IDF strikes kill 150+ Hezbollah terrorists and 300 infrastructure targets in 24-hour pre-ceasefire offensive", "Apr 8 2026: Israeli strikes kill 254 Hezbollah operatives in central Beirut", "Apr 1 2026: Israeli naval strike kills Hezbollah Southern Front commander Haj Youssef Ismail Hashem", "Mar 2 2026: Hezbollah rocket barrage triggers full-scale Israeli response, beginning current high-intensity phase", "Apr 22 2026: IDF kills Hezbollah operatives violating ceasefire near Qoussair"],
+  developing: ["Whether Iran ceasefire (if achieved) leads to Hezbollah stand-down or separate negotiation", "Impact of April 23 ceasefire extension on operational tempo", "Whether Hezbollah's degraded leadership affects operational capacity in sustained high-intensity operations", "Whether IDF expands ground operations inside Lebanon", "Whether Lebanon's fragile government and economy survive the additional shock", "Impact of April 8 mass casualty strike on Hezbollah command structure", "Potential for Syrian intervention as Hezbollah reinforcements observed at border", "Ceasefire violations and potential for renewed escalation", "US-mediated Israel-Lebanon direct negotiations proposed for late April"],
+  insights: ["Hezbollah is the strategic reserve Iran is burning. Every precision missile it fires is depleting a stockpile that took years to build. If Iran makes peace, Hezbollah ceases fire and waits. If Iran is destroyed, Hezbollah has no resupply. Either way, the Lebanon front is derivative of the Iran outcome.", "The October 2024 leadership decapitation degraded Hezbollah significantly — but it did not destroy it. The organization rebuilt around a second tier of commanders. That resilience is the most important lesson Israel should take from Lebanon.", "Northern Israel has been effectively evacuated for 18 months. 100,000 people cannot return home. That is a strategic success for Hezbollah regardless of military outcomes.", "The April 8 mass casualty strike demonstrates Israel's ability to conduct simultaneous precision strikes across Lebanon — a capability that could be decisive if expanded.", "Ceasefire violations persist despite diplomatic efforts — IDF continues targeting Hezbollah operatives crossing demarcation lines", "IDF's April 23 last-minute offensive inflicted severe personnel and infrastructure losses on Hezbollah before truce"],
   questions: ["Does an Iran ceasefire automatically end the Hezbollah front or does it require a separate negotiation?", "How much of Hezbollah's precision missile stockpile remains after 18 months of operation?", "Does Israel attempt a decisive ground operation in Lebanon before an Iran ceasefire?", "What does Lebanon look like after the war — economically, politically, governmentally?", "Will Hezbollah's admission that the war began as revenge for Khamenei's assassination affect Lebanese public support?", "How will ceasefire violations impact ongoing negotiations?", "Will proposed US-mediated Israel-Lebanon talks materialize in coming weeks?"],
   people: [{
     name: "Naim Qassem",
@@ -1777,9 +1939,9 @@ const STORIES = [{
     alignment: "Hezbollah",
     status: "deceased"
   }, {
-    name: "Ali Rida Abbas",
+    name: "Ali Reza Abbas",
     role: "Hezbollah commander in Bint Jbeil",
-    why: "Killed by Israeli strike April 18 2026 during ceasefire period.",
+    why: "Killed by Israeli strike April 23 2026 — fourth Bint Jbeil commander eliminated since war began.",
     alignment: "Hezbollah",
     status: "deceased"
   }]
@@ -1841,85 +2003,85 @@ const STORIES = [{
   code: "CARNEY-01",
   heat: 5,
   status: "escalating",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "The Carney Government",
   sub: "Majority Mandate & Economic Reorientation",
   card: "Carney secured parliamentary majority through byelection wins and defections. Launches trade advisory council while confronting Trump administration over CUSMA terms. Trade tensions escalate as July deadline approaches.",
-  summary: "Mark Carney's Liberals secured a parliamentary majority on April 13, 2026 through three byelection victories and five opposition defections, giving them 174 of 343 Commons seats. The government is now aggressively pursuing its economic independence agenda, announcing a 24-member Advisory Committee on Canada-U.S. Economic Relations including cross-partisan figures (Charest, O'Toole, Raitt). Carney has taken a hard line on CUSMA renegotiations, stating the U.S. won't dictate terms and refusing further concessions without American reciprocity. Multiple sources confirm U.S. is demanding pre-negotiation 'entry fees' including dairy market access and liquor tariff removals. Trade tensions are escalating with Canada refusing to separate CUSMA talks from Trump's steel/aluminum tariffs.",
-  bg: "Mark Carney is an unusual politician — a former central banker who ran the Bank of Canada during the 2008 financial crisis and the Bank of England during Brexit. His majority government, achieved through both electoral wins and unprecedented defections, now faces its first major test in CUSMA negotiations. The structural reality remains: Canada's economy is deeply integrated with the US (70% of exports), making genuine diversification difficult amid Trump's escalating tariff regime. Carney has framed Canada's U.S. dependence as 'weaknesses we must correct' while his trade minister insists dairy quotas won't be reopened. The confrontation reveals Carney's strategic gamble — leveraging parliamentary majority to resist U.S. pressure while positioning for longer-term realignment.",
+  summary: "Mark Carney's Liberals secured a parliamentary majority on April 13, 2026 through three byelection victories and five opposition defections, giving them 174 of 343 Commons seats. The government is now aggressively pursuing its economic independence agenda, announcing a 24-member Advisory Committee on Canada-U.S. Economic Relations including cross-partisan figures (Charest, O'Toole, Raitt). **Carney has taken a hard line against U.S. demands, stating 'We're not sitting here taking notes and taking instruction from the United States' while refusing 'entry fee' concessions. Trade tensions escalated further as Carney called U.S. tariffs on steel/aluminum/autos 'violations of our trade deal'.** Multiple sources confirm U.S. is demanding pre-negotiation concessions including dairy market access and provincial liquor bans removal.",
+  bg: "Mark Carney is an unusual politician — a former central banker who ran the Bank of Canada during the 2008 financial crisis and the Bank of England during Brexit. His majority government, achieved through both electoral wins and unprecedented defections, now faces its first major test in CUSMA negotiations. **The structural reality remains: Canada's economy is deeply integrated with the US (70% exports), making diversification difficult amid Trump's escalating tariffs (50% steel, 50% aluminum, 25% autos). Carney has framed these U.S. actions as 'weaknesses we must correct' while maintaining dairy quotas won't be reopened.** The confrontation reveals Carney's strategic gamble — leveraging parliamentary majority to resist U.S. pressure while positioning for longer-term realignment.",
   confirmed: [
     "Carney's Liberals won all three April 2026 byelections (Toronto ridings + Quebec's Terrebonne), securing parliamentary majority with 174 seats",
     "Five opposition MPs defected to Liberals prior to byelections (four Conservatives, one Bloc Québécois)",
     "Announced 24-member Advisory Committee on Canada-U.S. Economic Relations on April 21, chaired by Dominic LeBlanc", 
     "Committee appointments include Erin O'Toole, Jean Charest, Lisa Raitt, Ralph Goodale, and major industry CEOs",
     "First committee meeting scheduled for April 27 ahead of July 1 CUSMA review deadline",
-    "Carney refused further concessions without reciprocity: 'It's not a case of the United States dictates the terms' (Apr 22)",
+    **"'We're not sitting here taking notes and taking instruction from the United States' - Carney at Ottawa press conference (Apr 23)",**
+    **"Called U.S. tariffs '50% on steel, 50% on aluminum, 25% on autos...those are violations of our trade deal' (Apr 23)",**
     "USTR Jamieson Greer confirmed Canada-US trade models 'don't fit together well' in congressional testimony (Apr 22)",
-    "85% of Canada-US trade remains tariff-free under CUSMA, per government statement",
-    "Radio-Canada reports US demanded concessions as 'entry fee' before negotiations (Apr 21)",
-    "Janice Charette (Canada's chief negotiator) confirmed digital tax repeal/liquor tariff withdrawals haven't yielded US concessions",
+    **"Radio-Canada reports U.S. demanding concessions as 'entry fee' before negotiations (Apr 21)",**
+    **"85% of Canada-US trade remains tariff-free under CUSMA, per government statement",**
+    **"Janice Charette (Canada's chief negotiator) confirmed digital tax repeal/liquor tariff withdrawals haven't yielded US concessions",**
     "Mexico-US formal negotiations begin May 2026; no Canada-US date set"
   ],
   developing: [
-    "US demands for dairy quota improvements and provincial alcohol bans",
-    "Canadian counterproposals addressing steel/aluminum tariffs within CUSMA framework",
-    "Possibility of missed July 1 deadline triggering annual review cycle",
-    "Advisory committee recommendations on strategic concessions",
-    "US threat of border controls if rules of origin aren't revised",
-    "Quebec nationalist positioning after Terrebonne win affects dairy negotiation stance",
-    "Growing provincial opposition to US liquor restocking demands"
+    **"U.S. demands for dairy quota improvements and provincial alcohol bans",**
+    **"Canadian counterproposals addressing steel/aluminum tariffs within CUSMA framework",**
+    **"Possibility of missed July 1 deadline triggering annual review cycle",**
+    **"Advisory committee recommendations on strategic concessions",**
+    **"U.S. threat of border controls if rules of origin aren't revised",**
+    **"Growing provincial opposition to U.S. liquor restocking demands"**
   ],
   insights: [
-    "Carney's hardline stance reflects confidence from majority status and domestic political cover", 
-    "Inclusion of Conservative figures gives bipartisan legitimacy to eventual concessions",
-    "US negotiating from position of strength with active Mexico track ongoing",
-    "Digital tax reversal shows Carney willing to concede on non-core issues",
-    "Dairy remains political third rail despite US pressure",
-    "Committee timing suggests Carney seeks strategic consensus before making difficult choices",
-    "Trump's unpredictable interventions remain wild card in negotiations"
+    **"Carney's hardline stance reflects confidence from majority status and domestic political cover",**
+    **"Inclusion of Conservative figures gives bipartisan legitimacy to eventual concessions",**
+    **"U.S. negotiating from position of strength with active Mexico track ongoing",**
+    **"Digital tax reversal shows Carney willing to concede on non-core issues",**
+    **"Dairy remains political third rail despite U.S. pressure",**
+    **"Committee timing suggests Carney seeks strategic consensus before making difficult choices",**
+    **"Trump's unpredictable interventions remain wild card in negotiations"**
   ],
   questions: [
-    "Will committee recommendations provide Carney political cover for concessions?",
-    "How will US respond to linkage of sectoral tariffs with CUSMA renewal?",
-    "Does Mexican negotiation progress pressure Canada to compromise?",
-    "Can Carney maintain cross-partisan unity as talks intensify?",
-    "Will Trump personally intervene given past threats against Canada?",
-    "How will provinces react if alcohol bans become bargaining chip?"
+    **"Will committee recommendations provide Carney political cover for concessions?",**
+    **"How will U.S. respond to linkage of sectoral tariffs with CUSMA renewal?",**
+    **"Does Mexican negotiation progress pressure Canada to compromise?",**
+    **"Can Carney maintain cross-partisan unity as talks intensify?",**
+    **"Will Trump personally intervene given past threats against Canada?",**
+    **"How will provinces react if alcohol bans become bargaining chip?"**
   ],
   people: [{
     name: "Mark Carney",
     role: "Prime Minister, Canada",
-    why: "Taking hardline stance in negotiations while managing domestic expectations of economic relief.",
+    **why: "Taking defiant stance against U.S. demands while managing domestic expectations of economic relief.",**
     alignment: "Liberal/Federal",
     status: "active"
   }, {
     name: "Pierre Poilievre",
-    role: "Conservative Leader",
-    why: "Criticizing negotiation tactics but key allies (O'Toole, Charest) serving on advisory committee.",
+    role: "Conservative leader",
+    **why: "Criticizing negotiation tactics but key allies (O'Toole, Charest) serving on advisory committee.",**
     alignment: "Conservative/Opposition", 
     status: "active"
   }, {
     name: "Dominic LeBlanc",
     role: "Minister for Canada-US Trade",
-    why: "Leading negotiations and advisory committee. Publicly stated dairy quotas won't be reopened.",
+    **why: "Leading negotiations and advisory committee. Publicly stated dairy quotas won't be reopened.",**
     alignment: "Liberal/Federal",
     status: "rising"
   }, {
     name: "Donald Trump",
     role: "US President", 
-    why: "Ultimate decision-maker on US trade demands. History of personal interventions.",
+    **why: "Ultimate decision-maker on US trade demands. History of personal interventions.",**
     alignment: "US",
     status: "active"
   }, {
     name: "Jamieson Greer",
     role: "US Trade Representative",
-    why: "Leading US negotiations. Warned of possible border controls if rules of origin aren't revised.",
+    **why: "Leading U.S. negotiations. Warned of possible border controls if rules of origin aren't revised.",**
     alignment: "US",
     status: "rising"
   }, {
     name: "Jean Charest",
     role: "Former Quebec Premier",
-    why: "Committee member confirming extravagant US demands in media leaks.",
+    **why: "Committee member confirming extravagant U.S. demands in media leaks.",**
     alignment: "Conservative/Advisor",
     status: "monitor"
   }]
@@ -1931,16 +2093,16 @@ const STORIES = [{
   code: "CUSMA-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "CUSMA Under Pressure",
   sub: "Trade Agreement Review · US Demands · Canadian Red Lines",
   card: "CUSMA negotiations intensify as July 1 review approaches. US pushing for structural changes while Canada resists unilateral concessions. Key sticking points include dairy TRQ administration, supply management, and US demands for upfront concessions before formal talks begin.",
   summary: "The Canada-United States-Mexico Agreement faces its scheduled six-year review amid escalating US demands and Canadian resistance. While Canada signals readiness to negotiate ('won't be the source of delay'), US officials demand structural concessions before formal talks begin - including overhaul of dairy tariff-rate quotas and provincial liquor bans. Prime Minister Carney rejects US framing of talks as unilateral dictate ('we have counter-proposals'). Critical deadlines approach: June 1 US Congressional notification and July 1 review date - though Canadian officials emphasize this is 'checkpoint not cliff'. Negotiations complicated by US-Mexico bilateral talks outpacing Canada-US discussions.",
   bg: "NAFTA — the North American Free Trade Agreement — was signed in 1994 and created the world's largest free trade zone. It governed roughly $2.4 trillion in annual trade between Canada, the US, and Mexico. Trump renegotiated it in his first term, producing CUSMA (Canada calls it CUSMA, the US calls it USMCA, Mexico calls it T-MEC). The renegotiation was genuinely difficult — Canada lost ground on dairy and accepted new automotive content rules — but it preserved the fundamental architecture including Chapter 19, which allows each country to challenge the others' trade rulings before independent panels rather than domestic courts.\n\nChapter 19 matters enormously to Canada because the US has a long history of imposing anti-dumping and countervailing duties on Canadian exports — softwood lumber being the most persistent example — and then losing when those duties are challenged in independent panels. The US has repeatedly tried to eliminate Chapter 19. Canada has repeatedly refused. That fight will be central to the current review.\n\nThe broader context: Canada sends approximately 75% of its exports to the United States. There is no alternative market that can absorb that volume on any realistic timeline. This is the structural fact that constrains every Canadian trade negotiation.",
-  confirmed: ["CUSMA scheduled six-year review triggered — process formally underway", "US has signaled demands on dairy supply management — Canada's protected domestic dairy sector", "Automotive rules of origin under pressure — US wants higher US-content requirements", "Chapter 19 dispute resolution mechanism — US has historically sought its elimination, Canada considers it non-negotiable", "Digital services provisions — US tech companies pushing for changes to Canadian digital content rules", "Canada sends approximately 75% of exports to the United States — structural dependence constraint", "Liberation Day April 2 tariffs applied on top of existing CUSMA framework — US treating them as separate", "Softwood lumber dispute continues in parallel — perennial Canada-US trade irritant", "Canadian steel and aluminum subject to ongoing US tariff threats despite CUSMA", "Trade Minister Dominic LeBlanc stated Canada 'won’t be the source of any delay' in CUSMA renewal talks", "US Commerce Secretary Howard Lutnick publicly called CUSMA 'a bad deal' needing re-imagination", "Prime Minister Carney warned Canada must reduce reliance on US trade amid tariff threats", "Canada has formed new 24-member trade advisory council with bipartisan representation to strengthen negotiating position", "July 1 deadline is a 'checkpoint not a cliff' according to Canada's chief negotiator Janice Charette", "US Trade Representative Jamieson Greer confirmed not all issues will be resolved by July 1 deadline", "LeBlanc reaffirmed supply management is not on the table in CUSMA negotiations", "Trump administration continues to float idea of replacing CUSMA with separate bilateral agreements", "US demands structural changes to Canada's dairy tariff-rate quota (TRQ) administration"],
-  developing: ["What the full list of US demands looks like — not fully public", "Whether Canada draws hard red lines on Chapter 19 and dairy or negotiates both", "Whether Mexico's cooperation or defection changes Canadian leverage", "Whether the Carney government can build a domestic political coalition for any concessions", "Timeline — whether review produces an outcome before the 2026 midterm political window closes", "Potential US shift toward separate bilateral agreements rather than trilateral CUSMA renewal", "Impact of Lutnick's inflammatory comments about Canada 'sucking off' the US economy on negotiations", "Whether US-Mexico negotiations progressing faster than Canada-US talks creates additional pressure", "US insistence on Canada meeting preconditions before formal negotiations begin", "Developing split strategy between Canada and Mexico as US pursues bilateral talks with Mexico first", "Growing pressure on provincial liquor bans and procurement rules as secondary friction points"],
-  insights: ["US negotiating posture mirrors 2017 NAFTA renegotiation — opening with maximalist demands (TRQ overhaul, annual reviews) likely to be walked back over time", "Canadian strategy appears calibrated to US midterm elections, hoping congressional pressure will ease White House demands as in 2018", "Jul 1 deadline is procedural rather than substantive — most significant outcome would be triggering annual review process extending negotiations for years", "Canada's bipartisan trade advisory council signals attempt to build domestic consensus against US pressure tactics", "Structural dairy demands represent classic Trump-era trade tactic — opening with politically untenable ask to anchor subsequent concessions", "Growing divergence in negotiation pace between US-Mexico and US-Canada tracks risks marginalizing Canadian interests", "Lutnick's crude rhetoric undermines negotiating trust while hardening Canadian resistance to perceived bully tactics", "US strategic shift toward perpetual negotiation (annual reviews) rather than settled agreements maximizes leverage over dependent trading partners"],
-  questions: ["Will US accept anything less than fundamental changes to dairy TRQ system as price for negotiation?", "How will Canada respond if US-Mexico bilateral deal emerges before Canada-US resolution?", "Does annual review process strengthen or weaken Canadian leverage in extended negotiations?", "Will provinces resist federal pressure to modify liquor bans and procurement rules as bargaining chips?", "Can Carney diversify trade relationships sufficiently to reduce structural US dependency during negotiation period?", "Will bipartisan advisory council recommendations harden or soften Canada's negotiating position?", "Does US midterm election timeline create meaningful deadline pressure on White House for deal?"],
+  confirmed: ["CUSMA scheduled six-year review triggered — process formally underway", "US has signaled demands on dairy supply management — Canada's protected domestic dairy sector", "Automotive rules of origin under pressure — US wants higher US-content requirements", "Chapter 19 dispute resolution mechanism — US has historically sought its elimination, Canada considers it non-negotiable", "Digital services provisions — US tech companies pushing for changes to Canadian digital content rules", "Canada sends approximately 75% of exports to the United States — structural dependence constraint", "Liberation Day April 2 tariffs applied on top of existing CUSMA framework — US treating them as separate", "Softwood lumber dispute continues in parallel — perennial Canada-US trade irritant", "Canadian steel and aluminum subject to ongoing US tariff threats despite CUSMA", "Trade Minister Dominic LeBlanc stated Canada 'won’t be the source of any delay' in CUSMA renewal talks", "US Commerce Secretary Howard Lutnick publicly called CUSMA 'a bad deal' needing re-imagination", "Prime Minister Carney warned Canada must reduce reliance on US trade amid tariff threats", "Canada has formed new 24-member trade advisory council with bipartisan representation to strengthen negotiating position", "July 1 deadline is a 'checkpoint not a cliff' according to Canada's chief negotiator Janice Charette", "US Trade Representative Jamieson Greer confirmed not all issues will be resolved by July 1 deadline", "LeBlanc reaffirmed supply management is not on the table in CUSMA negotiations", "Trump administration continues to float idea of replacing CUSMA with separate bilateral agreements", "US demands structural changes to Canada's dairy tariff-rate quota (TRQ) administration", "Mexico has held two rounds of preliminary talks with US — formal bilateral negotiations scheduled for late May", "Canada maintains supply management is non-negotiable despite US pressure on dairy TRQ system", "US pushing for annual review mechanism rather than clean 16-year extension to maintain pressure on Canada"],
+  developing: ["What the full list of US demands looks like — not fully public", "Whether Canada draws hard red lines on Chapter 19 and dairy or negotiates both", "Whether Mexico's cooperation or defection changes Canadian leverage", "Whether the Carney government can build a domestic political coalition for any concessions", "Timeline — whether review produces an outcome before the 2026 midterm political window closes", "Potential US shift toward separate bilateral agreements rather than trilateral CUSMA renewal", "Impact of Lutnick's inflammatory comments about Canada 'sucking off' the US economy on negotiations", "Whether US-Mexico negotiations progressing faster than Canada-US talks creates additional pressure", "US insistence on Canada meeting preconditions before formal negotiations begin", "Developing split strategy between Canada and Mexico as US pursues bilateral talks with Mexico first", "Growing pressure on provincial liquor bans and procurement rules as secondary friction points", "Whether US will accept Canada's counter-proposals or maintain demand for upfront concessions", "Potential linkage between CUSMA review and ongoing US tariffs on Canadian steel/aluminum/autos", "Impact of Conservative opposition criticism on Carney's negotiating flexibility", "Whether July 1 triggers annual review process extending negotiations indefinitely"],
+  insights: ["US negotiating posture mirrors 2017 NAFTA renegotiation — opening with maximalist demands (TRQ overhaul, annual reviews) likely to be walked back over time", "Canadian strategy appears calibrated to US midterm elections, hoping congressional pressure will ease White House demands as in 2018", "Jul 1 deadline is procedural rather than substantive — most significant outcome would be triggering annual review process extending negotiations for years", "Canada's bipartisan trade advisory council signals attempt to build domestic consensus against US pressure tactics", "Structural dairy demands represent classic Trump-era trade tactic — opening with politically untenable ask to anchor subsequent concessions", "Growing divergence in negotiation pace between US-Mexico and US-Canada tracks risks marginalizing Canadian interests", "Lutnick's crude rhetoric undermines negotiating trust while hardening Canadian resistance to perceived bully tactics", "US strategic shift toward perpetual negotiation (annual reviews) rather than settled agreements maximizes leverage over dependent trading partners", "Carney's 'what has he ever negotiated?' retort to Poilievre reflects high-stakes political framing of trade battle", "US appears content to maintain tariff pressure while extracting concessions through extended negotiation process", "Canada's refusal to treat CUSMA and sectoral tariffs as separate issues creates fundamental negotiating impasse"],
+  questions: ["Will US accept anything less than fundamental changes to dairy TRQ system as price for negotiation?", "How will Canada respond if US-Mexico bilateral deal emerges before Canada-US resolution?", "Does annual review process strengthen or weaken Canadian leverage in extended negotiations?", "Will provinces resist federal pressure to modify liquor bans and procurement rules as bargaining chips?", "Can Carney diversify trade relationships sufficiently to reduce structural US dependency during negotiation period?", "Will bipartisan advisory council recommendations harden or soften Canada's negotiating position?", "Does US midterm election timeline create meaningful deadline pressure on White House for deal?", "Will Trump administration's preference for annual reviews override Canadian desire for long-term stability?", "Can Canada maintain unified front with Mexico despite US bilateral negotiation strategy?", "How will US enforcement actions on provincial liquor bans impact broader negotiations?"],
   people: [{
     name: "Mark Carney",
     role: "Prime Minister, Canada",
@@ -1989,6 +2151,12 @@ const STORIES = [{
     why: "Conservative voice on new trade advisory council influencing bipartisan negotiation strategy",
     alignment: "Canada",
     status: "active"
+  }, {
+    name: "Pierre Poilievre",
+    role: "Conservative Leader",
+    why: "Criticizing Carney's negotiation strategy, accusing government of squandering leverage",
+    alignment: "Canada",
+    status: "active"
   }]
 }, {
   id: "C03",
@@ -1998,16 +2166,16 @@ const STORIES = [{
   code: "ECON-CA-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "Canadian Economy — Four Shocks",
   sub: "Tariffs · Oil Shock · CUSMA · Inflation · The Lived Reality",
-  card: "Canada is absorbing its fourth major economic shock since 2019. Oil windfall for Alberta and federal revenues. National inflation accelerates to 2.4% with record 21.2% monthly gas price spike. Housing starts decline 6% in March. Consumer spending shows strain as households reallocate budgets to fuel costs.",
-  summary: "Canada's economy faces compounding pressures: oil revenue windfalls for Alberta and federal coffers contrast with severe inflationary pressures on households through fuel (21.2% monthly gas price spike), food (4.4% annual increase), and housing (6% decline in starts). The four sequential shocks since 2019 have created economic anxiety not reflected in GDP metrics. Housing affordability remains a structural crisis, with March data showing declining starts and sales. Bank of Canada faces dilemma - economic weakness would normally prompt rate cuts, but must now weigh oil shock inflation against softening core metrics (1.4% three-month average). TD card data shows consumers pulling back on non-fuel spending as energy costs bite.",
+  card: "Canada's economy faces compounding pressures from Iran war disruptions - auto sales down 8.2% nationally (20% in Newfoundland), while gas prices at $1.70/liter squeeze households. Bank of Canada reports firms raising 1-year inflation expectations to 3.8%. Youth unemployment remains at 15% as labor market softens.",
+  summary: "The Iran war's economic shockwaves are spreading through Canada's economy with measurable impacts: national auto sales dropped 8.2% in March (including 20% collapse in Newfoundland), while 1-in-4 households report cancelling or delaying purchases according to CIBC. Gas prices reached $1.70/liter despite temporary fuel tax relief, though down from April's $1.90 peak. Business surveys show firms raising 1-year inflation expectations to 3.8% from 3.0%, though constrained from fully passing costs by weak demand. Structural weaknesses persist - youth unemployment at 15%, housing starts down 6%, while household debt remains among highest in developed world. Alberta benefits from oil price surge even as broader economy shows strain.",
   bg: "Canada's economy is structurally unusual. It is a wealthy country with a resource extraction base — oil, gas, minerals, forestry, agriculture — that generates enormous revenues concentrated in specific regions (Alberta, Saskatchewan, British Columbia, Ontario's Ring of Fire). It is also a services-dominated urban economy — Toronto, Vancouver, Montreal — where knowledge work, finance, and real estate generate a different kind of wealth. These two economies coexist under one federal structure and frequently pull in opposite directions.\n\nThe housing crisis deserves separate treatment. Canadian housing — particularly in Toronto and Vancouver — has been unaffordable for middle-income earners for over a decade. The Trudeau government attempted multiple interventions, none of which materially reduced prices. The Carney government has inherited this structural problem. The causes are well understood: restrictive zoning, slow permitting, a population that grew faster than housing supply, and decades of treating housing as an investment vehicle rather than shelter. The solutions are politically difficult because homeowners — who vote — benefit from high prices.\n\nThe Bank of Canada's interest rate cycle has added another layer. Rates rose sharply to combat post-COVID inflation, then started falling again. Variable-rate mortgage holders who bought during the COVID price surge are now absorbing the consequences of that cycle.",
-  confirmed: ["Oil prices at $110-113/barrel — Alberta and federal revenues elevated significantly", "Bank of Canada holds rate at 2.25% — markets price 90% chance of no change April 29", "March inflation jumps to 2.4% — largest monthly gasoline price increase on record at 21.2% due to Iran war supply shock", "Federal fuel excise tax suspension expected to reduce gas prices by 10 cents/litre through September", "Housing starts decline 6% in March — national housing agency reports surprise contraction", "Grocery inflation persists at 4.4% annually — fresh vegetable prices rise 7.8% due to adverse growing conditions", "US Liberation Day April 2 tariffs adding approximately $20-30 billion annual cost to Canadian exporters", "Consumer debt at record levels — Canadians among the most indebted populations in the developed world", "TD card data shows consumer spending pullbacks in non-fuel categories as households adjust to energy shock", "Bank of Canada surveys show firms revising input price expectations upward but constrained from passing through costs due to weak demand", "80% of households expect Iran war to harm Canadian economy and raise inflation", "Firms raise one-year inflation expectations to 3.8% from 3.0% pre-conflict"],
-  developing: ["Whether April inflation exceeds 3% as carbon tax removal drops from year-ago comparisons", "Whether oil windfall is sustained long enough to meaningfully offset shock costs", "Whether Bank of Canada maintains 'look through' stance on temporary oil price shock at April 29 meeting", "Whether US tariffs produce meaningful job losses in manufacturing belt — Ontario and Quebec most exposed", "Whether food inflation worsens as fertilizer prices rise from natural gas supply disruptions", "Whether Carney government's housing supply measures produce results on any politically relevant timeline", "Whether Iran war price shocks transmit beyond energy into broader inflationary spiral", "Consumer resilience to gasoline price squeeze — TD data shows spending reallocation (8% gas station increase offset by supermarket declines)"],
-  insights: ["The GDP-lived experience gap is widening further. While oil revenues buffer macro indicators, households face record gas prices (21.2% monthly spike) and persistent food inflation (4.4%) — creating political volatility.", "Bank of Canada faces unprecedented dilemma: economic weakness (negative 3-month employment trend) would normally prompt cuts, but must now weigh oil shock against core inflation easing to 1.4%.", "Early evidence suggests limited pass-through of energy costs to broader prices — firms cite weak demand and competition as barriers to price increases.", "Housing market shows simultaneous declines in starts (-6%) and sales — suggesting affordability crisis now suppressing both supply and demand.", "Carney's fuel tax suspension creates fiscal-policy/monetary-policy tension — BoC must assess whether temporary relief distorts inflation signals.", "Alberta's oil windfall creates asymmetric provincial resilience — while most households adjust budgets, provincial revenues surge."],
-  questions: ["Does the oil windfall last long enough to cover the fiscal cost of absorbing the other shocks?", "When does the housing crisis produce a political moment that forces genuine structural reform?", "How many manufacturing jobs are lost to US tariffs — and in which ridings?", "Does the consumer debt level become a systemic risk if global recession materializes?", "Will BoC maintain its 'transitory' inflation narrative if April CPI exceeds 3%?", "Can Carney's majority government pass structural reforms to reduce energy vulnerability?"],
+  confirmed: ["Oil prices at $110-113/barrel — Alberta and federal revenues elevated significantly", "Bank of Canada holds rate at 2.25% — markets price 90% chance of no change April 29", "March inflation jumps to 2.4% — largest monthly gasoline price increase on record at 21.2% due to Iran war supply shock", "Federal fuel excise tax suspension expected to reduce gas prices by 10 cents/litre through September", "Housing starts decline 6% in March — national housing agency reports surprise contraction", "Grocery inflation persists at 4.4% annually — fresh vegetable prices rise 7.8% due to adverse growing conditions", "US Liberation Day April 2 tariffs adding approximately $20-30 billion annual cost to Canadian exporters", "Consumer debt at record levels — Canadians among the most indebted populations in the developed world", "TD card data shows consumer spending pullbacks in non-fuel categories as households adjust to energy shock", "Bank of Canada surveys show firms revising input price expectations upward but constrained from passing through costs due to weak demand", "80% of households expect Iran war to harm Canadian economy and raise inflation", "Firms raise one-year inflation expectations to 3.8% from 3.0% pre-conflict", "March auto sales fell 8.2% nationally (20% drop in Newfoundland) as fuel costs deter purchases", "1-in-4 households report cancelling or delaying spending due to war impacts (CIBC survey)", "Youth unemployment remains at 15% as labor market softens"],
+  developing: ["Whether April inflation exceeds 3% as carbon tax removal drops from year-ago comparisons", "Whether oil windfall is sustained long enough to meaningfully offset shock costs", "Whether Bank of Canada maintains 'look through' stance on temporary oil price shock at April 29 meeting", "Evidence of structural economic damage from US tariffs on manufacturing sector", "Potential transmission of fuel inflation to airfares and broader transportation costs in coming months", "Consumer resilience thresholds as persistent fuel costs erode disposable income"],
+  insights: ["The auto sales collapse (particularly -20% in Newfoundland) shows consumer sensitivity to fuel price shocks, with ripple effects through manufacturing sector.", "Business surveys reveal unusual dynamic - firms see rising input costs but lack pricing power due to weak demand, creating margin compression risk.", "Canada's youth unemployment crisis (15%) risks becoming structural as economic shocks delay career starts for young workers.", "Carney's fuel tax relief provides limited buffer - households still face fuel costs 33% higher than start of 2026 despite temporary measure.", "Bank of Canada's 'look through' strategy faces test as inflation expectations rise despite economic weakness signals.", "Regional disparities widening - oil-producing provinces benefit from price surge while consumer-heavy regions face acute cost pressures."],
+  questions: ["Will consumer spending pullbacks trigger broader economic slowdown or remain contained to certain sectors?", "Does Alberta's oil windfall create political tensions with struggling provinces seeking fiscal transfers?", "Can the Bank of Canada maintain credibility if inflation expectations become unanchored while economy weakens?", "Will manufacturing job losses from tariffs and auto sales decline prompt policy response from Carney government?", "Is Canada's household debt load sustainable if interest rates stay elevated through 2026?", "Does youth unemployment crisis reach political boiling point ahead of next election cycle?"],
   people: [{
     name: "Tiff Macklem",
     role: "Governor, Bank of Canada",
@@ -2027,9 +2195,15 @@ const STORIES = [{
     alignment: "UCP/Alberta",
     status: "active"
   }, {
-    name: "Douglas Porter",
-    role: "Chief Economist, BMO",
-    why: "Influential voice arguing Canada would be debating rate cuts absent Iran conflict — shapes market expectations of BoC policy.",
+    name: "Andrew Grantham",
+    role: "Senior Economist, CIBC",
+    why: "Key analyst tracking consumer behavior shifts - reported 25% household spending reductions due to war impacts.",
+    alignment: "Private Sector",
+    status: "active"
+  }, {
+    name: "Andrew King",
+    role: "Managing Partner, DesRosiers Automotive",
+    why: "Leading authority on auto sector - identified 8.2% national sales decline tied to fuel price shock.",
     alignment: "Private Sector",
     status: "active"
   }]
@@ -2041,7 +2215,7 @@ const STORIES = [{
   code: "DIASPORA-01",
   heat: 4,
   status: "escalating",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "Canadian Diasporas — Wars Coming Home",
   sub: "Iranian-Canadian · Ukrainian-Canadian · Palestinian-Canadian · Lebanese-Canadian",
   card: "Canada has the largest Iranian diaspora outside Iran, a major Ukrainian-Canadian community, a large Palestinian-Canadian community, and significant Lebanese-Canadian population. The wars in the tracker are not abstract for these communities. They are personal.",
@@ -2064,10 +2238,14 @@ const STORIES = [{
     "Saskatchewan Iranian families report receiving government threats targeting relatives still in Iran — property confiscation warnings",
     "Iranian diaspora activists in Canada report increased surveillance and harassment from both regime loyalists and monarchist factions",
     "Ukrainian-Canadian temporary residents face PR application backlogs — IRCC processing delays exacerbating uncertainty",
-    "Public Safety Canada ramped up monitoring of Tehran's threats against Iranian diaspora — national counter-foreign interference coordinator confirms 'uptick' in transnational repression",
+    "Public Safety Canada ramped up monitoring of Tehran's threats against Iranian diaspora — national counter-foreign interference coordinator confirms 'uptick' in transnational repression (April 2026)",
     "CBSA received approximately 280 tips about Iranians accused of links to Tehran — only one Iranian official deported due to legal challenges",
     "CSIS reprioritized resources in November 2025 to address 'particularly alarming cases' from Iran and its proxies",
-    "Iranian diaspora members report 'grey-zone' intimidation tactics in Canada including surveillance and property photography"
+    "Iranian diaspora members report 'grey-zone' intimidation tactics in Canada including surveillance and property photography",
+    "Public Safety executive confirms Iran escalates lethal activities against diaspora when challenged — pattern established through historical behavior",
+    "Canadian authorities report increased coordination between Global Affairs, IRCC and CBSA to detect diaspora threats",
+    "Diaspora groups report police often fail to understand transnational repression threats — creating protection gaps",
+    "Citizen Lab researcher notes democratic governments failing to adequately protect diaspora communities from transnational repression"
   ],
   developing: [
     "Whether Iranian-Canadian community organizes politically around post-war Iran reconstruction and engagement",
@@ -2083,7 +2261,9 @@ const STORIES = [{
     "Whether Saskatoon Iranian Cultural Association's documentation of crackdowns triggers Canadian sanctions response",
     "Whether Canadian security agencies develop effective response to 'grey-zone' transnational repression tactics",
     "Whether increased monitoring translates into actionable protection for at-risk diaspora communities",
-    "Whether deportation challenges for suspected Iranian officials prompt legislative changes"
+    "Whether deportation challenges for suspected Iranian officials prompt legislative changes",
+    "Whether technology advances force update of Canadian laws covering surveillance and intimidation tactics",
+    "Whether diaspora security concerns influence upcoming Canadian election dynamics"
   ],
   insights: [
     "Canada's diaspora communities are not just a domestic political management challenge — they are a genuine foreign policy asset. Canada's ability to maintain back-channel relationships with Iran has historically depended partly on the Iranian-Canadian community's connections. That asset is real.",
@@ -2096,7 +2276,9 @@ const STORIES = [{
     "Ukrainian temporary residency extensions provide only short-term relief — families face exhausting bureaucratic hurdles for permanent status",
     "Security officials confirm Iran escalates repression against diaspora critics when challenged — pattern of lethal retaliation documented",
     "Canadian law enforcement struggles to address 'grey-zone' intimidation tactics that exploit legal loopholes",
-    "Diaspora activists report police often fail to understand transnational repression threats — creating protection gaps"
+    "Diaspora activists report police often fail to understand transnational repression threats — creating protection gaps",
+    "Transnational repression evolving with technology — authoritarian states increasingly using digital harassment alongside physical intimidation",
+    "Democracies failing to develop proportionate responses to gray-zone activities that skirt legal definitions of crimes"
   ],
   questions: [
     "Does the Iranian-Canadian community coalesce around a political position on post-war Iran engagement — and does it give Canada a distinctive diplomatic role?",
@@ -2109,7 +2291,8 @@ const STORIES = [{
     "Does Iranian government's asset confiscation campaign trigger Canadian asset freeze retaliation?",
     "Can Canada develop legal tools to counter 'grey-zone' transnational repression tactics?",
     "Will increased security monitoring translate into better protection for at-risk diaspora members?",
-    "How will Canadian political parties navigate diaspora tensions in upcoming elections?"
+    "How will Canadian political parties navigate diaspora tensions in upcoming elections?",
+    "Will Canada align with allies to counter transnational authoritarian repression networks?"
   ],
   people: [{
     name: "Masih Alinejad",
@@ -2168,57 +2351,57 @@ const STORIES = [{
   code: "ARCTIC-01",
   heat: 4,
   status: "escalating",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "Arctic Sovereignty",
   sub: "Northwest Passage · US Pressure · Climate Opening · Indigenous Rights",
-  card: "The Arctic is opening faster than predicted. The Northwest Passage is commercially navigable in summer months. The US does not recognize Canadian sovereignty over it. Trump has made Arctic claims more aggressive. Canada's military presence is inadequate. Indigenous communities are on the front line of all of it.",
-  summary: "Climate change is opening the Canadian Arctic in ways that are simultaneously an economic opportunity and a sovereignty crisis. The Northwest Passage — the sea route through Canada's Arctic archipelago — is becoming commercially navigable in summer months, potentially transforming global shipping. The United States does not recognize Canadian sovereignty over the Passage, treating it as international waters. Trump has made this position more aggressive, and US military vessels have transited without requesting Canadian permission. Canada's Arctic military infrastructure is decades behind where it needs to be. Indigenous communities in the North are experiencing the climate changes most acutely and have the most direct stake in how Arctic sovereignty is exercised.",
+  card: "The Arctic is opening faster than predicted. Canada announces $35B military investment for northern sovereignty. The US continues relying on Canada despite Carney's independence rhetoric. Russia expands Arctic infrastructure while Canada conducts largest military exercises since 2007.",
+  summary: "Canada unveiled a C$35 billion plan to reinforce Arctic military presence, with PM Carney declaring 'full responsibility' for sovereignty. Despite rhetoric of independence, deep US-Canada military ties remain unchanged. Canadian forces conducted a 5,000km snowmobile patrol and largest Arctic exercise since 2007 involving 1,300 personnel. Russia simultaneously accelerates Arctic infrastructure development while accusing West of militarizing the region. The sovereignty push faces harsh realities of extreme climate, vast distances, and persistent NORAD dependence.",
   bg: "The Northwest Passage has been the object of Arctic ambition since European explorers first attempted it in the 16th century. The Franklin Expedition of 1845 — 129 men who disappeared trying to navigate it — is part of Canadian national mythology. The passage was first fully navigated in 1906 by Roald Amundsen. For most of the 20th century it was inaccessible for most of the year due to ice.\n\nClimate change is changing this. Arctic sea ice is declining at roughly twice the rate of the global average. The Northwest Passage is now reliably navigable in August and September, and forecasts suggest it may be ice-free for longer periods within decades. This creates a shipping shortcut between the Atlantic and Pacific that is roughly 7,000 kilometres shorter than the Panama Canal route.\n\nThe sovereignty question is genuinely contested in international law. Canada claims the passage as internal waters, meaning foreign ships require Canadian permission to transit. The United States argues it is an international strait, meaning foreign ships have a right of innocent passage without permission. This dispute has been ongoing since the 1969 voyage of the SS Manhattan, which the US sent through without asking Canada. Canada responded by enacting the Arctic Waters Pollution Prevention Act. The dispute has never been formally resolved.\n\nRussia is the other major Arctic power and has been militarizing its Arctic presence aggressively for a decade — new bases, new submarines, new icebreakers. China has declared itself a near-Arctic state and is investing in Arctic shipping and research infrastructure. Canada has been slow to respond militarily and diplomatically.",
-  confirmed: ["Northwest Passage reliably navigable August-September — ice-free window expanding with climate change", "US does not recognize Canadian sovereignty over Northwest Passage — treats it as international strait", "US military vessels have transited Northwest Passage without requesting Canadian permission", "Canada has one operational icebreaker — CCGS Louis S. St-Laurent — significantly less than Russia or US", "NORAD modernization agreement signed — Canada committed to $38.6 billion over 20 years for Arctic surveillance", "Russia has established new military bases and deployed new submarines to Arctic", "China declared itself near-Arctic state — investing in Arctic shipping research and infrastructure", "Climate change hitting Canadian Arctic communities at twice the global average rate — permafrost thaw, coastal erosion, ice road loss", "Inuit Tapiriit Kanatami formally submitted that Arctic sovereignty must include Indigenous rights and presence", "Trump administration made more aggressive statements on Arctic resource claims than prior US administrations", "Canada and Finland signed maritime memorandum of understanding on Arctic security and icebreaker cooperation during President Stubb's visit", "Canada and Finland committed to increasing defence spending to 5% of GDP by 2035", "Canada and Finland will negotiate General Security of Information Agreement to facilitate intelligence-sharing", "Canada and Finland agreed to expand joint military exercises in Arctic conditions including Cold Response and Operation Nanook", "Canada's House of Commons Foreign Affairs committee issued report calling for urgent action on Arctic sovereignty", "Canadian soldiers conducted a 5,000km snowmobile patrol in extreme Arctic conditions from Inuvik to Churchill in March 2026", "Canada unveiled a C$35 billion plan to reinforce military presence in the Arctic, aiming for full sovereignty responsibility", "Canadian Foreign Affairs Minister Anita Anand identified Russian infrastructure movement toward the Arctic Circle as the gravest threat to Canada", "Canada's North Warning System radar network is increasingly obsolete and limited against modern threats, according to Nasittuq, the private company managing it", "Canada's Joint Task Force North conducted largest Arctic military exercise since 2007, involving 1,300 personnel in ski patrols, ice landings, and artillery transport", "Canadian Coast Guard has world's second-largest icebreaker fleet after Russia, regularly escorts US ships in Arctic waters"],
-  developing: ["Whether Canada accelerates Arctic military presence — icebreakers, surveillance, forward bases", "Whether the Northwest Passage becomes a genuine diplomatic flashpoint with the US", "Whether Russia or China attempt transits that force a Canadian response", "Whether Arctic resource development (oil, gas, minerals) proceeds and under what governance framework", "Whether Indigenous communities gain meaningful control over Arctic governance decisions", "Whether the NORAD modernization produces actual capability on any relevant timeline", "Whether Canada-Finland partnership leads to tangible icebreaker production increases", "Whether NATO adopts formal Arctic security framework at July summit in Ankara", "Whether Canada can achieve full Arctic sovereignty independence from US support", "Whether Canada's North Warning System radar network remains effective against modern threats", "Whether Canada's Arctic military exercises demonstrate sufficient capability to respond to potential land attacks", "Whether Canada's Arctic sovereignty push can overcome harsh operational realities and climate challenges"],
-  insights: ["Canada's Arctic sovereignty claim rests on presence, use, and Indigenous occupation going back thousands of years. The Inuit have a stronger sovereignty argument than Canada does in some respects — they have actually lived there continuously. Canada's sovereignty argument is strongest when it is grounded in Indigenous rights, not just state claims.", "The icebreaker gap is embarrassing. Russia has approximately 40 icebreakers including nuclear-powered vessels. Canada has one operational heavy icebreaker. This is not a funding problem — it is a decades-long failure of political prioritization. The NORAD modernization is a down payment on fixing this, but the timeline is too slow.", "The Northwest Passage is worth fighting for economically. As a route for commercial shipping it could generate significant transit fees and give Canada enormous strategic leverage over global shipping. But only if sovereignty is established clearly before the shipping volumes make the dispute commercially significant.", "Climate change and Arctic sovereignty are not separate issues — they are the same issue. The people who understand this most clearly are the Inuit communities who are watching their world change faster than any policy response can track.", "Trump's more aggressive Arctic posture is a genuine threat. His administration has shown willingness to use economic coercion to advance territorial ambitions. Canada needs to treat Arctic sovereignty as a near-term political emergency, not a long-term policy question.", "The Canada-Finland partnership represents a strategic shift toward leveraging Nordic expertise to address Canada's Arctic capability gaps, particularly in icebreaker production and Arctic military training.", "Canada's Arctic sovereignty push faces harsh realities of extreme climate and vast distances, making full independence from US support unlikely despite political rhetoric.", "Canada's North Warning System radar network is increasingly obsolete, raising questions about its effectiveness against modern threats and Canada's ability to independently monitor Arctic airspace.", "Canada's Arctic military exercises demonstrate growing capability but highlight the immense logistical challenges of operating in extreme Arctic conditions.", "Canada's Arctic sovereignty strategy must balance military presence with Indigenous rights and environmental protection to maintain legitimacy and effectiveness."],
-  questions: ["Does Canada accelerate Arctic military presence fast enough to establish facts on the ground before the Northwest Passage becomes commercially critical?", "Does the US formally challenge Canadian sovereignty — and if so, what is the Canadian response?", "Do Indigenous communities gain formal governance roles in Arctic decision-making?", "Does Russia or China attempt a Northwest Passage transit that forces a confrontation?", "Is the $38.6 billion NORAD modernization commitment actually funded and delivered on timeline?", "Will the Canada-Finland maritime agreement lead to tangible icebreaker production increases?", "How will NATO's July summit address Arctic security coordination?", "Can Canada achieve full Arctic sovereignty independence from US support given operational challenges?", "Will Canada's North Warning System radar network remain effective against modern threats?", "Can Canada's Arctic military exercises demonstrate sufficient capability to respond to potential land attacks?", "Will Canada's Arctic sovereignty push overcome harsh operational realities and climate challenges?"],
+  confirmed: ["Northwest Passage reliably navigable August-September — ice-free window expanding with climate change", "US does not recognize Canadian sovereignty over Northwest Passage — treats it as international strait", "US military vessels have transited Northwest Passage without requesting Canadian permission", "Canada has one operational icebreaker — CCGS Louis S. St-Laurent — significantly less than Russia or US", "NORAD modernization agreement signed — Canada committed to $38.6 billion over 20 years for Arctic surveillance", "Russia has established new military bases and deployed new submarines to Arctic", "China declared itself near-Arctic state — investing in Arctic shipping research and infrastructure", "Climate change hitting Canadian Arctic communities at twice the global average rate — permafrost thaw, coastal erosion, ice road loss", "Inuit Tapiriit Kanatami formally submitted that Arctic sovereignty must include Indigenous rights and presence", "Trump administration made more aggressive statements on Arctic resource claims than prior US administrations", "Canada and Finland signed maritime memorandum of understanding on Arctic security and icebreaker cooperation during President Stubb's visit", "Canada unveiled a C$35 billion plan to reinforce military presence in the Arctic, aiming for full sovereignty responsibility", "Canadian Foreign Affairs Minister Anita Anand identified Russian infrastructure movement toward the Arctic Circle as the gravest threat to Canada", "Canadian soldiers conducted a 5,000km snowmobile patrol in extreme Arctic conditions from Inuvik to Churchill in March 2026", "Canada's Joint Task Force North conducted largest Arctic military exercise since 2007, involving 1,300 personnel in ski patrols, ice landings, and artillery transport", "Canadian Coast Guard has world's second-largest icebreaker fleet after Russia, regularly escorts US ships in Arctic waters", "Russia's Putin emphasized Arctic's strategic importance for national security and economy in April 23 address", "Canadian MPs issued bipartisan report calling Arctic sovereignty situation urgent", "Canada's North Warning System radar network described as 'aging and limited against modern threats' by contractor Nasittuq"],
+  developing: ["Implementation timeline for Canada's $35B Arctic military investment", "US response to Canada's sovereignty assertion post-NORAD modernization", "Russian construction progress on Transarctic Transport Corridor infrastructure", "China's next Arctic policy white paper update expected late 2026", "NATO Arctic security framework negotiations for July Ankara summit", "Indigenous consultations on expanded military presence in Nunavut", "Canadian icebreaker procurement decisions under new Finland partnership", "Impact of US presidential election on Arctic policy coordination"],
+  insights: ["Canada's Arctic sovereignty push exposes gap between political rhetoric and operational reality — military officials emphasize continued US dependence despite Carney's independence claims", "Russia's Arctic infrastructure developments focus on economic corridors while framing Western activities as militarization — creating parallel narratives", "The 5,000km snowmobile patrol demonstrates extreme climate challenges that no funding package can quickly overcome", "Bipartisan MP urgency signals sovereignty is becoming a rare unifying issue in Canadian politics", "Indigenous land stewardship remains Canada's strongest sovereignty argument but is underutilized in official communications", "Radar system obsolescence reveals Canada's surveillance gaps may widen before new systems come online"],
+  questions: ["Will $35B actually close Canada's Arctic capability gaps given inflation and procurement delays?", "How will Russia respond to expanded Canadian military exercises near Northwest Passage?", "Does Finland partnership yield icebreakers faster than domestic shipbuilding could?", "Will NATO framework legitimize Canada's sovereignty claims internationally?", "Can Indigenous groups leverage sovereignty debates to secure permanent decision-making roles?", "How will climate change alter operational realities before new capabilities deploy?"],
   people: [{
     name: "Mark Carney",
     role: "Prime Minister, Canada",
-    why: "Arctic sovereignty investment decisions are his. The NORAD modernization commitment needs political follow-through.",
+    why: "Arctic sovereignty investment decisions are his. The $35B commitment needs execution.",
     alignment: "Federal Government",
     status: "active"
   }, {
     name: "Natan Obed",
     role: "President, Inuit Tapiriit Kanatami",
-    why: "The voice of Inuit communities on Arctic sovereignty. His argument that Indigenous rights are inseparable from Arctic sovereignty claims is legally and politically significant.",
+    why: "Key voice on reconciling sovereignty assertions with Indigenous rights.",
     alignment: "Inuit/Indigenous",
-    status: "active"
-  }, {
-    name: "Pete Hegseth",
-    role: "US Secretary of Defense",
-    why: "US Arctic military posture is shaped at his level. His department's conduct will determine whether the Northwest Passage dispute becomes a crisis.",
-    alignment: "US Pentagon",
     status: "active"
   }, {
     name: "Vladimir Putin",
     role: "President, Russia",
-    why: "Russia's Arctic militarization is the primary external military pressure on Canadian Arctic sovereignty.",
+    why: "Accelerating Arctic infrastructure while framing West as aggressors.",
     alignment: "Russia",
-    status: "active"
-  }, {
-    name: "Alexander Stubb",
-    role: "President, Finland",
-    why: "Finland's new partnership with Canada on Arctic security and icebreaker production could significantly impact Canada's Arctic capabilities.",
-    alignment: "Finland",
     status: "active"
   }, {
     name: "Anita Anand",
     role: "Foreign Affairs Minister, Canada",
-    why: "Identified Russian infrastructure movement toward the Arctic Circle as the gravest threat to Canada.",
+    why: "Leading diplomatic efforts to legitimize sovereignty claims internationally.",
     alignment: "Federal Government",
     status: "active"
   }, {
     name: "Travis Hanes",
     role: "Commanding Officer, 1st Canadian Ranger Patrol Group",
-    why: "Led Canada's largest Arctic military exercise in 2026, demonstrating operational challenges in extreme conditions.",
+    why: "Frontline leader demonstrating Arctic operational realities through record patrols.",
     alignment: "Canadian Armed Forces",
+    status: "active"
+  }, {
+    name: "Whitney Lackenbauer",
+    role: "Arctic Expert, Trent University",
+    why: "Leading analyst on gap between sovereignty rhetoric and ground truth.",
+    alignment: "Academia",
+    status: "active"
+  }, {
+    name: "Pierre Leblanc",
+    role: "Former Commander, Canadian Forces North",
+    why: "Critic of aging Arctic surveillance infrastructure.",
+    alignment: "Military Analyst",
     status: "active"
   }]
 }, {
@@ -2229,44 +2412,44 @@ const STORIES = [{
   code: "INDIGENOUS-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 22 2026",
+  updated: "Apr 24 2026",
   title: "Indigenous Peoples — Sovereignty & Rights",
   sub: "UNDRIP · Treaties · Resource Development · Systemic Gaps",
-  card: "Canada adopted UNDRIP in 2021 but implementation is contested. Resource development on unceded territory remains a flashpoint. The systemic gaps — health, housing, water, incarceration — remain structural. Every major Canadian political decision runs through Indigenous rights whether politicians acknowledge it or not.",
-  summary: "Canada's relationship with Indigenous peoples is the foundational unresolved question of the country's existence. The federal government adopted the UN Declaration on the Rights of Indigenous Peoples in 2021 and passed legislation to implement it, but the gap between legal commitment and lived reality remains vast. Resource development on unceded or treaty-protected territory continues to generate court challenges and direct action. The systemic gaps in health outcomes, housing, water quality, education, and incarceration rates persist at levels that would be considered a national emergency if they affected any other population. Every major Canadian policy decision — Arctic sovereignty, resource development, climate policy, infrastructure — runs through Indigenous rights whether the government acknowledges it or not.",
-  bg: "Indigenous peoples were in North America for thousands of years before European contact. The relationship between Indigenous nations and the Canadian state is governed by a complex web of treaties — some signed, some unsigned, some honoured, many broken — and by the Constitution Act of 1982, which recognized and affirmed existing Aboriginal and treaty rights. What those rights mean in practice has been contested in Canadian courts for decades.\n\nThe residential school system — in which Indigenous children were forcibly removed from their families, prohibited from speaking their languages, and subjected to physical and sexual abuse — operated from the 1870s to 1996. The Truth and Reconciliation Commission's 2015 report documented the system as cultural genocide and made 94 Calls to Action. As of 2026, fewer than half have been fully implemented.\n\nThe discovery of unmarked graves at former residential school sites beginning in 2021 produced a national reckoning that resulted in the cancellation of Canada Day celebrations across the country, the toppling of statues, and a renewed national conversation about what reconciliation actually means. That conversation is ongoing and unresolved.\n\nThe UNDRIP implementation question is specifically about free, prior, and informed consent — whether Indigenous communities have a veto over resource development on their territories. The resource sector argues that a veto right would make major projects impossible. Indigenous advocates argue that anything less than genuine consent is not reconciliation. The courts have been navigating this tension for years.",
-  confirmed: ["Canada formally adopted UNDRIP 2021 and passed Bill C-15 to align Canadian law — implementation contested", "Fewer than half of Truth and Reconciliation Commission's 94 Calls to Action fully implemented as of 2026", "Unmarked graves at residential school sites confirmed at multiple locations since 2021", "First Nations water advisories — dozens of communities still without safe drinking water despite federal commitments", "Indigenous incarceration rate approximately 30% of federal prison population despite being 5% of total population", "Indigenous women face homicide rates roughly 6 times higher than non-Indigenous women", "Trans Mountain Pipeline expansion completed — generated significant Indigenous opposition and court challenges", "Wet'suwet'en pipeline dispute produced rail blockades and national political crisis in 2020 — underlying dispute unresolved", "Indigenous-led land back movements growing — returning land to Indigenous governance a live political demand", "Métis Nation facing internal governance disputes that complicate federal consultation processes", "B.C. Court of Appeal ruled in December 2025 that mineral rules are inconsistent with DRIPA, citing UNDRIP", "B.C. Premier David Eby proposed suspending DRIPA for one year due to litigation risks, but backed down after First Nations opposition", "First Nations Leadership Council called emergency meeting April 19, 2026 to oppose DRIPA suspension", "B.C. Premier David Eby scrapped plans to table DRIPA suspension bill on April 19, 2026 after First Nations opposition", "First Nations Leadership Council issued joint statement with B.C. government committing to co-develop joint approach on DRIPA implementation", "National Chief Cindy Woodhouse Nepinak addressed UN Permanent Forum on Indigenous Issues on April 21, 2026, condemning B.C.'s DRIPA suspension attempt"],
-  developing: ["Whether UNDRIP implementation produces meaningful changes to resource development approval processes", "Whether the outstanding TRC Calls to Action are implemented — particularly those requiring systemic institutional change", "Whether the boil water advisory situation is actually resolved on the federal timeline", "Whether land back movements produce political responses that go beyond symbolic gestures", "Whether the Arctic sovereignty question incorporates genuine Inuit governance rights", "Whether the federal government's relationship with Métis and non-status Indians is clarified legally and politically", "Whether resource development conflicts produce another Wet'suwet'en-scale national crisis", "Whether B.C. government's proposed DRIPA suspension resurfaces in future legislative sessions", "Whether First Nations and B.C. government reach joint approach on DRIPA implementation", "Whether B.C. government and First Nations Leadership Council develop joint recommendations on DRIPA implementation before fall legislative session"],
-  insights: ["Every Canadian infrastructure project of any scale now runs through Indigenous rights — and that is the right outcome, not a problem to be managed. The courts have been clear and consistent: Crown consultation obligations are real, free prior and informed consent matters, and projects that ignore this face successful legal challenges. The question is whether the political system catches up to the legal reality.", "The drinking water crisis is the single most damning indictment of Canadian reconciliation rhetoric. Dozens of First Nations communities have been on boil water advisories for years or decades. This is not a hard technical problem. It is a political priority problem. The money exists. The will has been intermittent.", "The residential school legacy is not history — it is present tense. The intergenerational trauma of the residential school system is a documented factor in the health, mental health, addiction, incarceration, and family breakdown statistics that define the systemic gap. You cannot address the gap without addressing the cause.", "The land back movement is becoming the organizing frame for Indigenous political demands in a way that earlier reconciliation frameworks were not. It is more concrete and more confrontational than TRC language. How the Carney government responds to it will define the relationship for a generation.", "Indigenous sovereignty and Canadian sovereignty are not competing claims — in the Arctic and elsewhere they are complementary. Canada's strongest argument for Northwest Passage sovereignty rests on the fact that Inuit have lived there for thousands of years. The government has been slow to understand that Indigenous rights are a strategic asset, not just a domestic obligation.", "The B.C. DRIPA suspension attempt reveals the tension between legal commitments and political realities. While Eby cited litigation risks, First Nations leaders view any suspension as a betrayal of reconciliation principles. The courts' interpretation of DRIPA as requiring immediate legal effect complicates provincial governance.", "Eby's climbdown on DRIPA suspension highlights the growing political power of First Nations leadership. The ability to mobilize opposition and force government reversals demonstrates a shift in the balance of power in Indigenous-state relations."],
-  questions: ["Does UNDRIP implementation produce a real free prior and informed consent mechanism — or a consultation process that looks different but functions the same?", "Are the remaining TRC Calls to Action implemented before the next election?", "Does the drinking water advisory situation get fully resolved — and when?", "Does the land back movement produce a political crisis or a genuine policy response?", "How does the Carney government navigate the next major resource development conflict on Indigenous territory?", "Will B.C. revisit DRIPA suspension in future legislative sessions?", "Can First Nations and B.C. government reach a joint approach on DRIPA implementation?", "Will B.C. government and First Nations Leadership Council develop joint recommendations on DRIPA implementation before fall legislative session?"],
+  card: "Canada adopted UNDRIP in 2021 but implementation is contested. Emerging legal precedent in Australia could reanimate sovereignty debates globally. Resource development on unceded territory remains a flashpoint. B.C. backs down on DRIPA suspension after First Nations resistance.",
+  summary: "Canada's relationship with Indigenous peoples is the foundational unresolved question of the country's existence. The federal government adopted the UN Declaration on the Rights of Indigenous Peoples in 2021 and passed legislation to implement it, but the gap between legal commitment and lived reality remains vast. A newly discovered 1935 legal precedent in Australia has reopened the door for High Court challenges on Indigenous sovereignty — a development with potential global implications. Resource development on unceded or treaty-protected territory continues to generate court challenges and direct action. In B.C., Premier David Eby's attempt to suspend portions of DRIPA collapsed under First Nations opposition, demonstrating Indigenous political influence. The systemic gaps in health outcomes, housing, water quality, education, and incarceration rates persist at levels that would be considered a national emergency if they affected any other population.",
+  bg: "Indigenous peoples were in North America for thousands of years before European contact. The relationship between Indigenous nations and the Canadian state is governed by a complex web of treaties — some signed, some unsigned, some honoured, many broken — and by the Constitution Act of 1982, which recognized and affirmed existing Aboriginal and treaty rights. What those rights mean in practice has been contested in Canadian courts for decades.\n\nThe residential school system — in which Indigenous children were forcibly removed from their families, prohibited from speaking their languages, and subjected to physical and sexual abuse — operated from the 1870s to 1996. The Truth and Reconciliation Commission's 2015 report documented the system as cultural genocide and made 94 Calls to Action. As of 2026, fewer than half have been fully implemented.\n\nThe discovery of unmarked graves at former residential school sites beginning in 2021 produced a national reckoning that resulted in the cancellation of Canada Day celebrations across the country, the toppling of statues, and a renewed national conversation about what reconciliation actually means. Concurrently, Australian legal research revealing a 'lost rule' has upended assumptions about judicial limits on Indigenous sovereignty claims globally.\n\nThe UNDRIP implementation question is specifically about free, prior, and informed consent — whether Indigenous communities have a veto over resource development on their territories. The resource sector argues that a veto right would make major projects impossible. Indigenous advocates argue that anything less than genuine consent is not reconciliation. The courts have been navigating this tension for years.",
+  confirmed: ["Canada formally adopted UNDRIP 2021 and passed Bill C-15 to align Canadian law — implementation contested", "Fewer than half of Truth and Reconciliation Commission's 94 Calls to Action fully implemented as of 2026", "Unmarked graves at residential school sites confirmed at multiple locations since 2021", "First Nations water advisories — dozens of communities still without safe drinking water despite federal commitments", "Indigenous incarceration rate approximately 30% of federal prison population despite being 5% of total population", "Indigenous women face homicide rates roughly 6 times higher than non-Indigenous women", "Trans Mountain Pipeline expansion completed — generated significant Indigenous opposition and court challenges", "Wet'suwet'en pipeline dispute produced rail blockades and national political crisis in 2020 — underlying dispute unresolved", "Indigenous-led land back movements growing — returning land to Indigenous governance a live political demand", "Métis Nation facing internal governance disputes that complicate federal consultation processes", "B.C. Court of Appeal ruled in December 2025 that mineral rules are inconsistent with DRIPA, citing UNDRIP", "B.C. Premier David Eby proposed suspending DRIPA for one year due to litigation risks, but backed down after First Nations opposition", "First Nations Leadership Council called emergency meeting April 19, 2026 to oppose DRIPA suspension", "B.C. Premier David Eby scrapped plans to table DRIPA suspension bill on April 19, 2026 after First Nations opposition", "First Nations Leadership Council issued joint statement with B.C. government committing to co-develop joint approach on DRIPA implementation", "National Chief Cindy Woodhouse Nepinak addressed UN Permanent Forum on Indigenous Issues on April 21, 2026, condemning B.C.'s DRIPA suspension attempt", "Australian legal scholar discovers 1935 precedent ending assumption that High Court cannot rule on Indigenous sovereignty — UN Review published April 22, 2026", "Amnesty International report warns Canadian law is 'rolling back' Indigenous self-determination rights"],
+  developing: ["Whether UNDRIP implementation produces meaningful changes to resource development approval processes", "Whether the outstanding TRC Calls to Action are implemented — particularly those requiring systemic institutional change", "Whether the boil water advisory situation is actually resolved on the federal timeline", "Whether land back movements produce political responses that go beyond symbolic gestures", "Whether the Arctic sovereignty question incorporates genuine Inuit governance rights", "Whether the federal government's relationship with Métis and non-status Indians is clarified legally and politically", "Whether resource development conflicts produce another Wet'suwet'en-scale national crisis", "Whether B.C. government and First Nations reach consensus on DRIPA implementation framework before fall session", "Whether Australian sovereignty precedent influences Indigenous legal strategies in Canada", "Whether AI-driven resource extraction accelerates Indigenous rights violations globally"],
+  insights: ["The Australian legal revelation invalidating precedents limiting sovereignty challenges demonstrates how historical legal assumptions remain vulnerable to reinterpretation — with potential global ramifications for Indigenous jurisprudence.", "Every Canadian infrastructure project of any scale now runs through Indigenous rights — and that is the right outcome, not a problem to be managed. The courts have been clear and consistent: Crown consultation obligations are real, free prior and informed consent matters, and projects that ignore this face successful legal challenges.", "Eby's DRIPA backtrack reveals the growing political cost of ignoring Indigenous rights assertions. First Nations demonstrated capacity to deploy coordinated political resistance that changed government calculus within 48 hours.", "The drinking water crisis remains the most visceral illustration of reconciliation rhetoric's hollowness — technical solutions exist but lack political will to implement at scale.", "Increasingly assertive Indigenous participation in UN forums demonstrates how international mechanisms amplify domestic rights claims, particularly when paired with legal strategies like the Australian sovereignty precedent.", "The Australian sovereignty challenge — like Canada's DRIPA debate — centers on the tension between state legal systems recognizing Indigenous rights while resisting their full jurisdictional implications."],
+  questions: ["Will the Australian sovereignty precedent influence Indigenous legal strategies in Canada regarding unceded territory claims?", "Does B.C. successfully co-develop DRIPA implementation framework with First Nations before fall session?", "Will the Carney government face pressure to clarify FPIC standards in light of Australian legal developments?", "How does Canada respond to Amnesty International's warning about Indigenous rights backsliding?", "Will the Indigenous-led UN Permanent Forum increase pressure on Canada regarding DRIPA implementation?", "Does the Australian precedent reinvigorate global Indigenous sovereignty movements?"],
   people: [{
     name: "Cindy Woodhouse Nepinak",
     role: "National Chief, Assembly of First Nations",
-    why: "The primary federal-level political voice for First Nations rights. Her relationship with the Carney government will define the reconciliation agenda.",
+    why: "Assertive UN advocacy contrasts with domestic negotiations — navigating dual-track strategy on rights enforcement.",
     alignment: "Assembly of First Nations",
     status: "active"
   }, {
     name: "Natan Obed",
     role: "President, Inuit Tapiriit Kanatami",
-    why: "Leading the Inuit voice on Arctic sovereignty, climate change impacts, and UNDRIP implementation.",
+    why: "Leading the Inuit voice on Arctic sovereignty and climate impacts as UNDRIP implementation tensions grow.",
     alignment: "Inuit Tapiriit Kanatami",
     status: "active"
   }, {
     name: "Cassidy Caron",
     role: "President, Métis National Council",
-    why: "Representing Métis Nation in the complex and contested federal recognition and rights framework.",
+    why: "Representing Métis Nation in the contested federal recognition framework amid governance disputes.",
     alignment: "Métis National Council",
     status: "active"
   }, {
     name: "Mark Carney",
     role: "Prime Minister, Canada",
-    why: "His government's reconciliation record will be defined by implementation, not rhetoric. The gap between the two is large.",
+    why: "Facing Amnesty International criticism over resource laws potentially undermining Indigenous self-determination.",
     alignment: "Federal Government",
     status: "active"
   }, {
     name: "David Eby",
     role: "Premier, British Columbia",
-    why: "His handling of DRIPA suspension attempt reveals tensions between legal commitments and political realities.",
+    why: "His DRIPA retreat demonstrates both Indigenous political influence and ongoing implementation tensions.",
     alignment: "Provincial Government",
     status: "active"
   }]
@@ -2280,7 +2463,7 @@ const STORIES = [{
   code: "OLIGARCH-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "Global Wealth & Political Capture",
   sub: "Concentrated Power · The Structural Pattern Across Systems",
   card: "Unprecedented wealth concentration is reshaping democratic institutions globally. Musk inside the US government. Gulf sovereign wealth funding Western elections. Chinese state capitalism. Russian oligarchs remapping influence post-sanctions. Different systems, same structural pattern.",
@@ -2304,7 +2487,9 @@ const STORIES = [{
     "Saudi Arabia's PIF continues heavy investment in video games, including $55B buyout of Electronic Arts with Jared Kushner (NYT, Apr 20 2026)",
     "US considering financial support for oil-rich UAE despite its sovereign wealth fund assets (NYT Apr 21 2026)",
     "Global billionaire count reached 3,110 with projections to hit 4,000 within five years (Guardian Apr 22 2026)",
-    "San Francisco billionaire Chris Larsen funding opposition to 'overpaid CEO tax' initiatives (Bloomberg Apr 22 2026)"
+    "San Francisco billionaire Chris Larsen funding opposition to 'overpaid CEO tax' initiatives (Bloomberg Apr 22 2026)",
+    "US soldier Gannon Ken Van Dyke charged for using classified intel to bet on Maduro capture via Polymarket (Business Standard Apr 24 2026)",
+    "Traders placed $580m in oil futures bets 15 minutes before Trump's Iran talks announcement (Guardian Apr 18 2026)"
   ],
   developing: [
     "Full scope of DOGE access to federal systems — ongoing Congressional investigation",
@@ -2318,7 +2503,9 @@ const STORIES = [{
     "Whether PIF's reconsideration of LIV Golf and Trojena signals broader pullback from high-profile projects",
     "How Saudi Arabia's focus on video games and AI investments aligns with geopolitical strategy",
     "Whether UAE financial support request signals broader Gulf wealth instability",
-    "If billionaire political spending will reshape midterm elections"
+    "If billionaire political spending will reshape midterm elections",
+    "Whether US soldier's Polymarket bets indicate wider insider trading in prediction markets",
+    "Extent of classified information leaks to prediction markets"
   ],
   insights: [
     "The DOGE model is the most significant structural innovation in American governance since the New Deal — not because of what it has done, but because of what it has demonstrated is possible. The template is now available to any future administration.",
@@ -2330,7 +2517,9 @@ const STORIES = [{
     "Saudi Arabia's PIF shift toward 'efficiency' reflects broader Gulf reassessment of investment priorities amid geopolitical instability in the region",
     "The PIF's continued focus on video games and AI suggests a long-term strategy to diversify beyond oil and traditional industries",
     "US consideration of financial support for UAE despite its sovereign wealth demonstrates how war disrupts even the wealthiest nations' economic stability",
-    "The projected 29% increase in global billionaires within five years indicates accelerating wealth concentration despite economic turbulence"
+    "The projected 29% increase in global billionaires within five years indicates accelerating wealth concentration despite economic turbulence",
+    "US soldier's Polymarket bets reveal new frontier of insider trading — using classified information in unregulated prediction markets",
+    "Perfectly timed oil futures bets before Trump announcements suggest sophisticated actors are exploiting information asymmetries"
   ],
   questions: [
     "Does DOGE survive legal challenge — and if so, what constraints remain?",
@@ -2342,7 +2531,9 @@ const STORIES = [{
     "Will Saudi Arabia's PIF shift toward 'efficiency' lead to broader divestment from high-profile Western assets?",
     "How will Saudi Arabia's focus on video games and AI impact its geopolitical influence?",
     "Does UAE financial support request indicate deeper Gulf economic vulnerabilities?",
-    "Will billionaire tax opposition campaigns reshape local governance?"
+    "Will billionaire tax opposition campaigns reshape local governance?",
+    "Will US soldier case trigger wider crackdown on prediction market trading?",
+    "Are prediction markets becoming new vectors for financialized political influence?"
   ],
   science: null,
   people: [{
@@ -2375,6 +2566,12 @@ const STORIES = [{
     why: "Funding opposition to CEO tax initiatives, demonstrating direct billionaire intervention in local governance.",
     alignment: "US tech/billionaire class",
     status: "active"
+  }, {
+    name: "Gannon Ken Van Dyke",
+    role: "US soldier",
+    why: "Charged for using classified intel to bet on Maduro capture via Polymarket, revealing new frontier of insider trading.",
+    alignment: "US military",
+    status: "active"
   }]
 }, {
   id: "P02",
@@ -2386,16 +2583,16 @@ const STORIES = [{
   code: "HEGSETH-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "War Profiteering & Defense Accountability",
   sub: "Hegseth · Contracts · The Global Pattern of Defense Corruption",
   card: "Pete Hegseth authorized a war consuming 11,000+ munitions in 30 days. Contracts are being awarded at extraordinary rates. A probe into suspicious financial relationships is active. The global pattern of defense corruption during wartime is historically predictable.",
   summary: "The Iran war is generating billions in defense contracts that have triggered Congressional scrutiny. Pete Hegseth has financial relationships with defense contractors flagged during his confirmation hearings and unresolved. A formal probe is active as of April 2026. The broader pattern is historically consistent: wartime contract acceleration, reduced oversight, and the revolving door between military leadership and defense industry produces documented corruption in virtually every major conflict. The US is not unique — the pattern appears in Russian defense procurement, Saudi military purchasing, and Israeli defense exports.",
   bg: "War profiteering is one of the oldest forms of corruption. Eisenhower's 1961 farewell address named and warned against the military-industrial complex. The decades since have produced a revolving door between military leadership, Pentagon civilian officials, and defense contractors so normalized it barely registers as a conflict of interest.\n\nThe specific mechanism: senior officers and officials develop contractor relationships during government service. They leave government and join those contractors, bringing relationships and knowledge. Those contractors receive favorable treatment in procurement decisions made by former colleagues still in government. No individual step is clearly illegal. The systemic outcome consistently favors connected contractors.\n\nThe Iran war has accelerated this. 11,000+ munitions in 30 days means 11,000 replacement orders, plus repair, maintenance, intelligence, and logistics contracts. In wartime, normal procurement oversight is compressed or waived for operational urgency. This is when corruption is most likely and most invisible.\n\nInternationally, Russian defense procurement corruption was so severe that Russian military capability turned out to exist primarily on paper — the money was stolen, equipment unmaintained. Saudi Arabia's military purchasing has generated documented kickback schemes. Israeli defense exports have been linked to multiple foreign bribery cases.",
-  confirmed: ["Pete Hegseth had documented financial relationships with defense contractors flagged during Senate confirmation hearings", "Formal Congressional probe into Hegseth war profiteering connections active as of April 2026", "US expended approximately 11,000 munitions in first 30 days — replacement contracts accelerating", "Standard procurement oversight compressed under wartime urgency provisions", "Hegseth no quarter statement documented as potential war crimes violation — separate legal exposure", "Palantir $200M Claude contract — Palantir has deep Hegseth-adjacent network connections", "Russian defense procurement corruption documented as factor in military underperformance in Ukraine and Iran theater", "Saudi Arabia arms purchasing linked to multiple documented bribery and kickback cases", "Global arms trade valued at approximately $2.2T annually — largest buyers also highest corruption risk", "Anonymous Polymarket account 'Magamyman' made $550,000 on bets about US strikes against Iran and Khamenei removal", "Six Polymarket accounts made $1.2M betting on US strike against Iran — wallets funded one day prior", "Fifty newly created Polymarket accounts placed large bets on US-Iran ceasefire hours before official announcement", "Top 100 defense companies made $679B revenue in 2024 (SIPRI data)", "Average US taxpayer paid $1,870 to defense contractors in 2025 — more than food, agriculture, housing and environment combined", "Defense contractors receive 54% of Pentagon's $900B annual budget", "Trump administration invoked Defense Production Act to fund energy projects under national defense justification", "DEATH BETS Act proposed to ban war-related betting markets following insider trading concerns", "Polymarket allows anonymous cryptocurrency bets on military operations — creating national security risks", "CFTC chair Michael Selig defends prediction markets despite national security concerns", "Donald Trump Jr. serves as Polymarket adviser while 1789 Capital invests in platform"],
-  developing: ["Full scope of Hegseth financial relationships with contractors receiving Iran war contracts", "Whether Congressional probe produces referral for criminal investigation", "Whether any specific contract awards are challenged as corrupt", "Whether munitions replacement contracts go through competitive bidding or sole-source awards", "Whether Hegseth war crimes exposure affects his ability to continue in role", "Whether international allies are auditing their own defense procurement", "Extent of insider trading via Polymarket prediction markets on military operations", "Potential links between Polymarket anomalous trades and Pentagon officials", "Impact of DEATH BETS Act on war-related betting markets", "Pentagon's $30B Defense Production Act request for FY2027", "Whether war bonds will be implemented to fund defense spending gaps", "Extent of maintenance backlogs affecting US military readiness", "Impact of defense spending on US fiscal deficits and public debt", "Whether CFTC will regulate or ban war-related prediction markets", "Extent of foreign actors manipulating Polymarket for strategic advantage", "Whether ISW map editing incident was isolated or part of pattern"],
-  insights: ["The no quarter statement and the war profiteering probe are legally separate but politically connected. A SecDef under criminal exposure for war crimes has personal incentives to keep the war going — a settled conflict means more scrutiny.", "The procurement oversight compression is the mechanism, not the exception. Every major US conflict has produced documented corruption precisely because wartime urgency is used to bypass existing controls.", "The Russian defense procurement collapse revealed by Ukraine and Iran is the most important strategic intelligence available. If the Russian military that existed on paper doesn't exist in practice, the threat calculations underpinning decades of US defense spending were wrong.", "Defense corruption is hardest to prosecute during active conflict. The evidence accumulates but wartime political incentives favor protecting the people running the war. The accountability almost always comes later, if at all.", "Prediction markets like Polymarket create new vectors for insider trading and national security leaks — anonymous accounts making precise bets on military operations suggest classified information is being monetized.", "The $30B Defense Production Act request signals a shift toward direct federal spending to expand defense industrial base — potential for accelerated corruption without oversight.", "Wartime economies consistently trigger inflation and fiscal deterioration — US public debt projected to increase by 7 percentage points of GDP within three years of conflict onset.", "Defense contractors now receive more taxpayer dollars than any federal program except Medicare, Medicaid and debt service — indicating structural shift in national priorities.", "Polymarket's decentralized finance model makes it difficult to trace insider trading — creating national security vulnerabilities", "CFTC's hands-off approach to prediction markets contrasts with growing evidence of war-related insider trading", "ISW map editing incident shows how third-party data providers can be manipulated to influence betting outcomes"],
-  questions: ["Does the Hegseth probe produce criminal referral — and on what timeline?", "Are replacement munitions contracts going through competitive procurement or sole-source awards?", "Does the no quarter war crimes exposure affect Hegseth's tenure?", "What is the full scope of Hegseth financial relationships with Iran war contractors?", "Is there an international accountability mechanism for war profiteering — and has it ever worked?", "How many Pentagon or intelligence officials are placing bets on Polymarket using classified information?", "Will the DEATH BETS Act effectively stop war-related betting markets?", "What percentage of defense contracts are going to politically connected firms versus competitive bids?", "How will war bonds affect long-term defense funding stability?", "What is the true state of US military readiness given maintenance backlogs?", "How will rising defense spending impact inflation and fiscal stability?", "Will CFTC take action against Polymarket for national security risks?", "Are foreign adversaries manipulating prediction markets to influence US military decisions?", "How widespread is the use of privileged information in war-related betting?"],
+  confirmed: ["Pete Hegseth had documented financial relationships with defense contractors flagged during Senate confirmation hearings", "Formal Congressional probe into Hegseth war profiteering connections active as of April 2026", "US expended approximately 11,000 munitions in first 30 days — replacement contracts accelerating", "Standard procurement oversight compressed under wartime urgency provisions", "Hegseth no quarter statement documented as potential war crimes violation — separate legal exposure", "Palantir $200M Claude contract — Palantir has deep Hegseth-adjacent network connections", "Russian defense procurement corruption documented as factor in military underperformance in Ukraine and Iran theater", "Saudi Arabia arms purchasing linked to multiple documented bribery and kickback cases", "Global arms trade valued at approximately $2.2T annually — largest buyers also highest corruption risk", "Anonymous Polymarket account 'Magamyman' made $550,000 on bets about US strikes against Iran and Khamenei removal", "Six Polymarket accounts made $1.2M betting on US strike against Iran — wallets funded one day prior", "Fifty newly created Polymarket accounts placed large bets on US-Iran ceasefire hours before official announcement", "Top 100 defense companies made $679B revenue in 2024 (SIPRI data)", "Average US taxpayer paid $1,870 to defense contractors in 2025 — more than food, agriculture, housing and environment combined", "Defense contractors receive 54% of Pentagon's $900B annual budget", "Trump administration invoked Defense Production Act to fund energy projects under national defense justification", "DEATH BETS Act proposed to ban war-related betting markets following insider trading concerns", "Polymarket allows anonymous cryptocurrency bets on military operations — creating national security risks", "CFTC chair Michael Selig defends prediction markets despite national security concerns", "Donald Trump Jr. serves as Polymarket adviser while 1789 Capital invests in platform", "US Army soldier Gannon Ken Van Dyke charged with using classified information to profit $409,881 from Polymarket bets on Venezuela operation", "Van Dyke placed 13 bets on Venezuela outcomes while possessing classified info about Operation Absolute Resolve", "Van Dyke attempted to delete Polymarket account and conceal transactions after operation became public", "Polymarket resolved Venezuela contracts to 'YES' following US capture of Maduro on Jan 3 2026", "Van Dyke charged with commodities fraud, wire fraud, and unlawful monetary transactions", "FBI Director Kash Patel stated 'no one is above the law' regarding Van Dyke case", "US Attorney Jay Clayton called Van Dyke's actions 'clear insider trading' under federal law"],
+  developing: ["Full scope of Hegseth financial relationships with contractors receiving Iran war contracts", "Whether Congressional probe produces referral for criminal investigation", "Whether any specific contract awards are challenged as corrupt", "Whether munitions replacement contracts go through competitive bidding or sole-source awards", "Whether Hegseth war crimes exposure affects his ability to continue in role", "Whether international allies are auditing their own defense procurement", "Extent of insider trading via Polymarket prediction markets on military operations", "Potential links between Polymarket anomalous trades and Pentagon officials", "Impact of DEATH BETS Act on war-related betting markets", "Pentagon's $30B Defense Production Act request for FY2027", "Whether war bonds will be implemented to fund defense spending gaps", "Extent of maintenance backlogs affecting US military readiness", "Impact of defense spending on US fiscal deficits and public debt", "Whether CFTC will regulate or ban war-related prediction markets", "Extent of foreign actors manipulating Polymarket for strategic advantage", "Whether ISW map editing incident was isolated or part of pattern", "Whether additional military personnel are involved in similar prediction market schemes", "Extent of classified information leaks via prediction market betting patterns", "Potential reforms to military NDA enforcement regarding prediction markets", "Impact of Van Dyke case on broader military discipline and security protocols"],
+  insights: ["The no quarter statement and the war profiteering probe are legally separate but politically connected. A SecDef under criminal exposure for war crimes has personal incentives to keep the war going — a settled conflict means more scrutiny.", "The procurement oversight compression is the mechanism, not the exception. Every major US conflict has produced documented corruption precisely because wartime urgency is used to bypass existing controls.", "The Russian defense procurement collapse revealed by Ukraine and Iran is the most important strategic intelligence available. If the Russian military that existed on paper doesn't exist in practice, the threat calculations underpinning decades of US defense spending were wrong.", "Defense corruption is hardest to prosecute during active conflict. The evidence accumulates but wartime political incentives favor protecting the people running the war. The accountability almost always comes later, if at all.", "Prediction markets like Polymarket create new vectors for insider trading and national security leaks — anonymous accounts making precise bets on military operations suggest classified information is being monetized.", "The $30B Defense Production Act request signals a shift toward direct federal spending to expand defense industrial base — potential for accelerated corruption without oversight.", "Wartime economies consistently trigger inflation and fiscal deterioration — US public debt projected to increase by 7 percentage points of GDP within three years of conflict onset.", "Defense contractors now receive more taxpayer dollars than any federal program except Medicare, Medicaid and debt service — indicating structural shift in national priorities.", "Polymarket's decentralized finance model makes it difficult to trace insider trading — creating national security vulnerabilities", "CFTC's hands-off approach to prediction markets contrasts with growing evidence of war-related insider trading", "ISW map editing incident shows how third-party data providers can be manipulated to influence betting outcomes", "Van Dyke case demonstrates concrete national security risks of prediction markets — classified operational details can be inferred from betting patterns", "Military personnel with security clearances represent insider trading risks comparable to corporate executives with material nonpublic information", "Prediction markets may incentivize military decisions based on personal financial gain rather than strategic objectives"],
+  questions: ["Does the Hegseth probe produce criminal referral — and on what timeline?", "Are replacement munitions contracts going through competitive procurement or sole-source awards?", "Does the no quarter war crimes exposure affect Hegseth's tenure?", "What is the full scope of Hegseth financial relationships with Iran war contractors?", "Is there an international accountability mechanism for war profiteering — and has it ever worked?", "How many Pentagon or intelligence officials are placing bets on Polymarket using classified information?", "Will the DEATH BETS Act effectively stop war-related betting markets?", "What percentage of defense contracts are going to politically connected firms versus competitive bids?", "How will war bonds affect long-term defense funding stability?", "What is the true state of US military readiness given maintenance backlogs?", "How will rising defense spending impact inflation and fiscal stability?", "Will CFTC take action against Polymarket for national security risks?", "Are foreign adversaries manipulating prediction markets to influence US military decisions?", "How widespread is the use of privileged information in war-related betting?", "How many other military personnel have engaged in similar prediction market schemes?", "What reforms are needed to prevent classified information leaks via prediction markets?", "Will Van Dyke case lead to broader military discipline measures regarding prediction markets?"],
   science: null,
   people: [{
     name: "Pete Hegseth",
@@ -2445,6 +2642,24 @@ const STORIES = [{
     why: "Warned about foreign governments using AI to monitor Polymarket for anomalous trades.",
     alignment: "Private Sector",
     status: "active"
+  }, {
+    name: "Gannon Ken Van Dyke",
+    role: "US Army Soldier",
+    why: "Charged with using classified information to profit from Polymarket bets on Venezuela operation.",
+    alignment: "US Military",
+    status: "active"
+  }, {
+    name: "Kash Patel",
+    role: "FBI Director",
+    why: "Overseeing investigation into Van Dyke case and broader prediction market risks.",
+    alignment: "US Government",
+    status: "active"
+  }, {
+    name: "Jay Clayton",
+    role: "US Attorney (SDNY)",
+    why: "Prosecuting Van Dyke case, called it 'clear insider trading'.",
+    alignment: "US Government",
+    status: "active"
   }]
 }, {
   tab: "power",
@@ -2456,16 +2671,16 @@ const STORIES = [{
   code: "INSIDER-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "$1.6B Pre-War Insider Trading",
   sub: "Who Knew · Prediction Markets · The Intelligence Leak Question",
   card: "$1.6B in suspicious trading activity was identified before key Iran war events. Congressional and CFTC probes are active. The trades suggest a direct feed of classified war plans to financial markets.",
   summary: "Multiple investigations now track $1.6B+ in suspicious trading across oil futures and prediction markets preceding major Iran war developments. New evidence includes: (1) $760M short on Brent crude 20 min before Hormuz reopening announcement (April 17), (2) $1.5B S&P 500 E-mini futures buy <2 min before March 23 delayed strikes, (3) 150 Polymarket accounts earning $1.2M on Feb 27 strikes. Rep. Sam Liccardo's letter reveals White House issued warnings against insider trading after the fact, calling it 'little comfort'. CFTC's single Trump-appointed commissioner has begun reviewing trades but declined to confirm a formal investigation. The scale implies either coordinated trading by multiple actors with classified access, or a single sophisticated operation monetizing presidential decision cycles.",
   bg: "Insider trading leveraging government intelligence has precedents (9/11, Iraq War options activity), but the Iran war case shows three alarming escalations: (1) billion-dollar scale across multiple asset classes, (2) use of decentralized prediction markets to anonymize trades, (3) synchronization with presidential communication rhythms rather than just event timing.\n\nAcademic research by Columbia's Joshua Mitts shows traders linked to suspicious activity achieved 70% success rates pre-war. The newly identified $760M Hormuz trade had volumes 9x typical levels, per LSEG data. The speed of these trades — some placed within minutes of announcements — eliminates public information arbitrage as an explanation.\n\nThe legal battle centers on whether prediction market bets qualify as 'securities' under existing insider trading laws. The intelligence breach investigation runs parallel, examining possible compromise within Trump's decision circle given the strike/counter-strike specificity of trades. 38 linked crypto wallets show 93% accuracy on military outcomes since 2024 ($2M profit).\n\nFailure to prosecute would normalize wartime insider trading as a de facto profit center for those with classified access. Success requires tracing pseudo-anonymous crypto accounts back to human actors, a jurisdictional challenge given CFTC's depleted enforcement staff.",
-  confirmed: ["$760M Brent crude short placed 20 min before Hormuz reopening (April 17, LSEG verified)", "$1.5B S&P 500 E-mini futures bought <2 min before March 23 delayed strikes announcement", "150 Polymarket accounts earned $1.2M on Feb 27 US-Israel strike bets (NYT analysis)", "Rep. Liccardo's April 18 letter cites $950M oil futures bet before April 7 ceasefire", "CFTC reviewing trades per Bloomberg sources, no formal announcement", "Blockchain analytics firm identified 38 linked wallets with 93% military outcome accuracy", "White House issued internal warnings against insider trading after trades occurred", "$580M oil futures bet placed 15 min before Trump's March 23 'productive talks' post (FT verified)", "Anonymous Polymarket user 'Magamyman' made $553K betting on Khamenei removal 71 min before strike", "6 suspected insiders made $1.2M combined on Polymarket after Khamenei killing (Public Citizen complaint)"],
-  developing: ["Whether CFTC probe under Michael Selig produces indictments", "If SEC will investigate S&P 500 E-mini trades under Chair Atkins", "Whether Liccardo's requests for SEC documentation are fulfilled", "If crypto tracing identifies human actors behind profitable wallets", "Whether Senate Banking Committee investigation expands", "If Congressman Steven Horsford's allegations of market manipulation within Trump administration gain traction", "Whether state-level actions against prediction markets impact CFTC jurisdiction"],
-  insights: ["The trades are networked: oil futures + S&P derivatives + Polymarket bets form a coherent portfolio that only makes sense with classified war plan access. This is structured arbitrage.", "Liccardo's letter explicitly connects Trump-era tariff announcement trades to current wartime patterns, suggesting systemic exploitation of presidential decision cycles.", "CFTC's eroded enforcement capacity (Chicago office now zero staff) makes tracing trades through crypto opacity infrastructure unlikely without intelligence community support.", "The $1.5B S&P move implies traders knew not just war developments but their precise market impact — a level of presidential communication anticipation that suggests rehearsal.", "The repeated 15-20 minute advance timing of trades suggests a structured information pipeline rather than ad hoc leaks.", "Polymarket's pseudonymous accounts and crypto-based transactions create jurisdictional gaps between CFTC and state gambling regulators."],
-  questions: ["Why did White House ethics warnings come only after trades were executed?", "Will CFTC's Trump-appointed leadership pursue investigation aggressively?", "Does the S&P 500 trading indicate advance knowledge of Trump's exact announcement timing?", "Which foreign intelligence services might reverse-engineer US war plans from these trades?", "How did the 'Magamyman' account predict Khamenei's removal with 71-minute precision?", "Are the 38 linked wallets with 93% accuracy linked to government or military personnel?"],
+  confirmed: ["$760M Brent crude short placed 20 min before Hormuz reopening (April 17, LSEG verified)", "$1.5B S&P 500 E-mini futures bought <2 min before March 23 delayed strikes announcement", "150 Polymarket accounts earned $1.2M on Feb 27 US-Israel strike bets (NYT analysis)", "Rep. Liccardo's April 18 letter cites $950M oil futures bet before April 7 ceasefire", "CFTC reviewing trades per Bloomberg sources, no formal announcement", "Blockchain analytics firm identified 38 linked wallets with 93% military outcome accuracy", "White House issued internal warnings against insider trading after trades occurred", "$580M oil futures bet placed 15 min before Trump's March 23 'productive talks' post (FT verified)", "Anonymous Polymarket user 'Magamyman' made $553K betting on Khamenei removal 71 min before strike", "6 suspected insiders made $1.2M combined on Polymarket after Khamenei killing (Public Citizen complaint)", "US Army Special Forces soldier Gannon Van Dyke arrested for using classified intel to profit $409K on Polymarket Venezuela bets (DOJ indictment)", "Six suspected insider accounts made $1.2M at exact time of US strikes on Iran (Sen. Murphy complaint)", "Traders placed $950M in oil futures bets hours before April 7 ceasefire announcement (Guardian verified)", "50 Polymarket accounts predicted April 7 ceasefire hours before announcement (CFTC complaint)", "Trades showed 70% success rate pre-war (Columbia research)"],
+  developing: ["Whether CFTC probe under Michael Selig produces indictments", "If SEC will investigate S&P 500 E-mini trades under Chair Atkins", "Whether Liccardo's requests for SEC documentation are fulfilled", "If crypto tracing identifies human actors behind profitable wallets", "Whether Senate Banking Committee investigation expands", "If Congressman Steven Horsford's allegations of market manipulation within Trump administration gain traction", "Whether state-level actions against prediction markets impact CFTC jurisdiction", "If Sen. Chris Murphy's legislation banning war betting advances", "Whether additional military personnel are implicated in trading scandals", "If White House staff compliance with ethics warnings is verified"],
+  insights: ["The trades are networked: oil futures + S&P derivatives + Polymarket bets form a coherent portfolio that only makes sense with classified war plan access. This is structured arbitrage.", "Liccardo's letter explicitly connects Trump-era tariff announcement trades to current wartime patterns, suggesting systemic exploitation of presidential decision cycles.", "CFTC's eroded enforcement capacity (Chicago office now zero staff) makes tracing trades through crypto opacity infrastructure unlikely without intelligence community support.", "The $1.5B S&P move implies traders knew not just war developments but their precise market impact — a level of presidential communication anticipation that suggests rehearsal.", "The repeated 15-20 minute advance timing of trades suggests a structured information pipeline rather than ad hoc leaks.", "Polymarket's pseudonymous accounts and crypto-based transactions create jurisdictional gaps between CFTC and state gambling regulators.", "Van Dyke case establishes precedent that prediction market bets using classified intel qualify as insider trading under current law.", "The $950M oil futures bet before April 7 ceasefire shows same pattern as earlier trades, indicating ongoing leak channel."],
+  questions: ["Why did White House ethics warnings come only after trades were executed?", "Will CFTC's Trump-appointed leadership pursue investigation aggressively?", "Does the S&P 500 trading indicate advance knowledge of Trump's exact announcement timing?", "Which foreign intelligence services might reverse-engineer US war plans from these trades?", "How did the 'Magamyman' account predict Khamenei's removal with 71-minute precision?", "Are the 38 linked wallets with 93% accuracy linked to government or military personnel?", "How many other military personnel may have exploited operational knowledge for trading?", "Will the Van Dyke case deter future insider trading or merely drive it deeper underground?"],
   science: null,
   people: [{
     name: "Unknown traders",
@@ -2485,6 +2700,18 @@ const STORIES = [{
     why: "Filed CFTC complaint citing $1.2M in suspicious Polymarket trades",
     alignment: "Watchdog",
     status: "Activist"
+  }, {
+    name: "Gannon Van Dyke",
+    role: "US Army Special Forces soldier",
+    why: "Arrested for using classified intel to profit $409K on Polymarket Venezuela bets",
+    alignment: "Military",
+    status: "Indicted"
+  }, {
+    name: "Chris Murphy",
+    role: "US Senator",
+    why: "Introduced legislation to ban war betting after $1.2M insider trades identified",
+    alignment: "Legislative",
+    status: "Reformer"
   }]
 }, {
   tab: "power",
@@ -2582,17 +2809,17 @@ const STORIES = [{
   code: "EMISSIONS-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "Global Emissions — Where We Actually Stand",
   sub: "The Numbers · The Trajectory · The Gap Between Commitment and Reality",
   card: "Global CO2 emissions hit a new record in 2025. The gap between national commitments and actual trajectories is wider than at any point since Paris. The 1.5°C window has effectively closed. The question is now how far above 2°C we land.",
-  summary: "Global greenhouse gas emissions reached a new record in 2025. The scientific consensus has shifted: the 1.5°C target is now considered effectively unachievable under any realistic policy scenario. The current trajectory points to approximately 2.5-3°C of warming by 2100. The Iran war oil shock is creating contradictory pressures — accelerating the green energy transition in some countries while reinforcing fossil fuel infrastructure investment in others.",
+  summary: "Global greenhouse gas emissions reached a new record in 2025. The scientific consensus has shifted: the 1.5°C target is now considered effectively unachievable under any realistic policy scenario. Current policies project warming of around 2.5–2.9°C by 2100. While renewable energy growth shows strong momentum, emissions reductions are not rapid enough to align with the 1.5°C pathway. The Iran war oil shock is creating contradictory pressures — accelerating the green energy transition in some countries while reinforcing fossil fuel infrastructure investment in others.",
   bg: "The Paris Agreement of 2015 set a target of limiting warming to 1.5°C above pre-industrial levels, with a harder limit of 2°C. Countries submitted Nationally Determined Contributions — voluntary pledges for emissions reduction. The gap between pledges and action has been the defining story of climate policy ever since.\n\nThe IPCC — Intergovernmental Panel on Climate Change — synthesizes climate science for policymakers. Its Sixth Assessment Report established that human influence on the climate is unequivocal, that 1.5°C will be reached or exceeded within two decades under most scenarios, and that some changes are already irreversible.\n\nThe carbon budget concept is central to the math. At current emissions rates, the remaining carbon budget for a 50% chance of staying below 1.5°C will be exhausted within approximately seven years. This is arithmetic, not projection. Atmospheric CO2 is currently at approximately 425 ppm — the highest in at least 3 million years.",
-  confirmed: ["Global CO2 emissions reached new record in 2025 — approximately 37.4 billion tonnes", "Atmospheric CO2 concentration at approximately 425 ppm — highest in at least 3 million years", "IPCC: 1.5°C warming will be reached or exceeded within two decades under most scenarios", "Carbon budget for 50% chance of 1.5°C: approximately 7 years at current emissions rates", "G7 countries collectively not on track to meet their Paris commitments", "China remains world's largest emitter — approximately 30% of global total — with coal use still expanding", "US emissions declined under Biden-era IRA implementation but pace insufficient for Paris targets", "Deforestation contributing approximately 10% of global emissions", "Methane emissions from fossil fuel operations significantly underreported per satellite monitoring data", "41 emissions trading systems now in force worldwide covering 26% of global GHG emissions (ICAP 2026)", "ETS revenues reached record $80 billion in 2025, funding clean energy transitions and household support", "Energy-related CO2 emissions rose by 0.4% in 2025, marking a slowdown compared to recent years (IEA 2026)", "Solar PV capacity exceeded 1.6 terawatts globally in 2025, supplying a significant portion of electricity demand", "Electric vehicle adoption surged to around 18 million sales in 2024, representing about 20% of the global market", "China's CO2 emissions fell by 1% in Q4 2025, marking nearly two years of flat or declining emissions (Carbon Brief 2026)", "India's emissions were flat for the first time since the 1970s, excluding pandemic years (IEA 2026)", "EU greenhouse gas emissions fell by 3% between 2023 and 2024, now 40% below 1990 levels (IEA 2026)", "Solar energy accounted for over 25% of global energy growth in 2025, surpassing all other sources (IEA 2026)", "Wind energy installations jumped 40% in 2025, with over 160 gigawatts installed globally (IEA 2026)"],
-  developing: ["Whether the Iran war oil shock produces lasting acceleration of green energy transition or temporary fossil fuel reinforcement", "Whether China's renewable energy build-out outpaces its continued coal expansion", "Whether the US rolls back IRA implementation — emissions trajectory impact", "Whether tropical forest protection agreements translate into actual deforestation reduction", "Whether methane monitoring and reporting requirements improve", "Whether new national ETS systems in Japan, India and Vietnam achieve meaningful emissions reductions", "Whether EU CBAM compliance phase accelerates broader carbon pricing adoption", "Whether advanced economies' reliance on coal-fired power generation persists amid high gas prices", "Whether developing economies' renewable energy expansion continues to offset emissions growth"],
-  insights: ["The 1.5°C target is functionally dead. This is not a political statement — it is arithmetic. Accepting this is not defeatism; it is the precondition for honest policy design for the actual scenario we face.", "The gap between commitment and trajectory is the central governance failure of climate policy. Countries make pledges at COPs that their domestic political systems cannot deliver. No country has solved this structural mismatch.", "China's simultaneous massive renewable build-out and continued coal expansion is the most important climate story in the world right now. Which trend wins determines global emissions trajectory more than any other single factor.", "The methane underreporting story is significant. Satellite monitoring reveals emissions substantially higher than official reporting. Methane is approximately 80 times more potent than CO2 over 20 years. The real-world warming effect is materially worse than official figures suggest.", "The Iran war oil shock is the strongest argument for the green transition ever made — and it is being made in real time. Countries that diversified away from fossil fuels are less exposed. Countries that didn't are paying for it.", "Emissions trading has moved from niche to mainstream, with 41 systems now covering 26% of global emissions and generating $80 billion annually — but impact depends on how strictly caps are enforced and revenues are reinvested.", "The rapid expansion of solar PV capacity and electric vehicle adoption highlights the growing momentum of renewable energy, but fossil fuels still dominate global energy use, creating a delay between innovation and full impact."],
-  questions: ["At what temperature does the current trajectory actually land — and what does 2.5°C or 3°C mean concretely?", "Does China's renewable build-out outpace its coal expansion on a net emissions basis?", "Does the US IRA implementation survive the current administration?", "Is there any scenario in which emissions reductions reach the pace required to avoid the worst outcomes?", "Can the rapid expansion of emissions trading systems (now covering 26% of global emissions) materially change the trajectory?", "Will the EU CBAM push more countries toward carbon pricing or provoke trade conflicts?", "Will advanced economies' reliance on coal-fired power generation persist amid high gas prices?", "Can developing economies' renewable energy expansion continue to offset emissions growth?"],
-  science: ["IPCC AR6 Synthesis (2023): Current policies put world on track for 3.2°C warming by 2100. Limiting to 2°C requires immediate, deep, rapid emissions reductions across all sectors.", "Nature (2024): Remaining carbon budget for 1.5°C now estimated at 250 gigatonnes CO2 — at current rates, exhausted in approximately 6-7 years.", "Global Carbon Project (2025): Global CO2 emissions 37.4 billion tonnes — new record. Land use change adding approximately 3.9 billion tonnes additional.", "Science (2025): Satellite-based methane monitoring reveals fossil fuel methane emissions 70% higher than UNFCCC official inventory data in studied regions.", "Nature Climate Change (2025): Every fraction of a degree of additional warming produces measurable increases in extreme weather frequency and intensity — no safe threshold exists.", "PNAS (2024): Tipping point cascade risk — multiple Earth system tipping points may be interconnected, meaning crossing one increases probability of crossing others.", "ICAP Status Report (2026): Emissions trading systems now cover 26% of global emissions and generate $80 billion annually, showing carbon pricing is becoming mainstream policy tool.", "IEA (2026): Energy-related CO2 emissions rose by 0.4% in 2025, marking a slowdown compared to recent years, driven by rapid solar expansion in developing economies."],
+  confirmed: ["Global CO2 emissions reached new record in 2025 — approximately 37.4 billion tonnes", "Atmospheric CO2 concentration at approximately 425 ppm — highest in at least 3 million years", "IPCC: 1.5°C warming will be reached or exceeded within two decades under most scenarios", "Carbon budget for 50% chance of 1.5°C: approximately 7 years at current emissions rates", "G7 countries collectively not on track to meet their Paris commitments", "China remains world's largest emitter — approximately 30% of global total — though emissions fell by 1% in Q4 2025", "US emissions declined under Biden-era IRA implementation but pace insufficient for Paris targets", "Deforestation contributing approximately 10% of global emissions", "Methane emissions from fossil fuel operations significantly underreported per satellite monitoring data", "41 emissions trading systems now in force worldwide covering 26% of global GHG emissions (ICAP 2026)", "ETS revenues reached record $80 billion in 2025, funding clean energy transitions and household support", "Energy-related CO2 emissions rose by 0.4% in 2025, marking a slowdown compared to recent years (IEA 2026)", "Solar PV capacity exceeded 1.6 terawatts globally in 2025, supplying a significant portion of electricity demand", "Electric vehicle adoption surged to around 18 million sales in 2024, representing about 20% of the global market", "China's CO2 emissions fell by 1% in Q4 2025, marking nearly two years of flat or declining emissions (Carbon Brief 2026)", "India's emissions were flat for the first time since the 1970s, excluding pandemic years (IEA 2026)", "EU greenhouse gas emissions fell by 3% between 2023 and 2024, now 40% below 1990 levels (IEA 2026)", "Solar energy accounted for over 25% of global energy growth in 2025, surpassing all other sources (IEA 2026)", "Wind energy installations jumped 40% in 2025, with over 160 gigawatts installed globally (IEA 2026)", "Between 2020-2024, hundreds of gigawatts of coal plants retired globally while renewable capacity expanded", "Solar and wind energy now cheaper than fossil fuels in many regions, driving market competitiveness"],
+  developing: ["Whether the Iran war oil shock produces lasting acceleration of green energy transition or temporary fossil fuel reinforcement", "Whether China's renewable energy build-out outpaces its continued coal expansion", "Whether the US rolls back IRA implementation — emissions trajectory impact", "Whether tropical forest protection agreements translate into actual deforestation reduction", "Whether methane monitoring and reporting requirements improve", "Whether new national ETS systems in Japan, India and Vietnam achieve meaningful emissions reductions", "Whether EU CBAM compliance phase accelerates broader carbon pricing adoption", "Whether advanced economies' reliance on coal-fired power generation persists amid high gas prices", "Whether developing economies' renewable energy expansion continues to offset emissions growth", "Risk of Atlantic meridional overturning circulation (Amoc) collapse — now assessed at >50% probability by mid-century (Rahmstorf 2026)"],
+  insights: ["The 1.5°C target is functionally dead. This is not a political statement — it is arithmetic. Accepting this is not defeatism; it is the precondition for honest policy design for the actual scenario we face.", "The gap between commitment and trajectory is the central governance failure of climate policy. Countries make pledges at COPs that their domestic political systems cannot deliver. No country has solved this structural mismatch.", "China's simultaneous massive renewable build-out and continued coal expansion is the most important climate story in the world right now. Which trend wins determines global emissions trajectory more than any other single factor.", "The methane underreporting story is significant. Satellite monitoring reveals emissions substantially higher than official reporting. Methane is approximately 80 times more potent than CO2 over 20 years. The real-world warming effect is materially worse than official figures suggest.", "The Iran war oil shock is the strongest argument for the green transition ever made — and it is being made in real time. Countries that diversified away from fossil fuels are less exposed. Countries that didn't are paying for it.", "Emissions trading has moved from niche to mainstream, with 41 systems now covering 26% of global emissions and generating $80 billion annually — but impact depends on how strictly caps are enforced and revenues are reinvested.", "The rapid expansion of solar PV capacity and electric vehicle adoption highlights the growing momentum of renewable energy, but fossil fuels still dominate global energy use, creating a delay between innovation and full impact.", "New research suggests >50% chance of Atlantic circulation collapse by mid-century — a civilization-altering risk receiving inadequate attention due to political capture by fossil fuel interests."],
+  questions: ["At what temperature does the current trajectory actually land — and what does 2.5°C or 3°C mean concretely?", "Does China's renewable build-out outpace its coal expansion on a net emissions basis?", "Does the US IRA implementation survive the current administration?", "Is there any scenario in which emissions reductions reach the pace required to avoid the worst outcomes?", "Can the rapid expansion of emissions trading systems (now covering 26% of global emissions) materially change the trajectory?", "Will the EU CBAM push more countries toward carbon pricing or provoke trade conflicts?", "Will advanced economies' reliance on coal-fired power generation persist amid high gas prices?", "Can developing economies' renewable energy expansion continue to offset emissions growth?", "How will potential Atlantic circulation collapse impact global climate patterns and food security?"],
+  science: ["IPCC AR6 Synthesis (2023): Current policies put world on track for 3.2°C warming by 2100. Limiting to 2°C requires immediate, deep, rapid emissions reductions across all sectors.", "Nature (2024): Remaining carbon budget for 1.5°C now estimated at 250 gigatonnes CO2 — at current rates, exhausted in approximately 6-7 years.", "Global Carbon Project (2025): Global CO2 emissions 37.4 billion tonnes — new record. Land use change adding approximately 3.9 billion tonnes additional.", "Science (2025): Satellite-based methane monitoring reveals fossil fuel methane emissions 70% higher than UNFCCC official inventory data in studied regions.", "Nature Climate Change (2025): Every fraction of a degree of additional warming produces measurable increases in extreme weather frequency and intensity — no safe threshold exists.", "PNAS (2024): Tipping point cascade risk — multiple Earth system tipping points may be interconnected, meaning crossing one increases probability of crossing others.", "ICAP Status Report (2026): Emissions trading systems now cover 26% of global emissions and generate $80 billion annually, showing carbon pricing is becoming mainstream policy tool.", "IEA (2026): Energy-related CO2 emissions rose by 0.4% in 2025, marking a slowdown compared to recent years, driven by rapid solar expansion in developing economies.", "Nature (2026): Atlantic meridional overturning circulation (Amoc) now assessed at >50% chance of collapse by mid-century — would cause extreme winter temperatures in Europe and disrupt global weather patterns."],
   people: [{
     name: "Jim Skea",
     role: "IPCC Chair",
@@ -2610,6 +2837,12 @@ const STORIES = [{
     role: "IEA Executive Director",
     why: "The IEA's annual World Energy Outlook is the most authoritative annual assessment of energy transition progress.",
     alignment: "International Energy Agency",
+    status: "active"
+  }, {
+    name: "Stefan Rahmstorf",
+    role: "PIK Oceanographer",
+    why: "Leading authority on Atlantic circulation collapse risk — now assesses >50% probability by mid-century.",
+    alignment: "Scientific",
     status: "active"
   }]
 }, {
@@ -2717,7 +2950,7 @@ const STORIES = [{
   code: "ARCTIC-CLIMATE-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "Arctic Climate Science",
   sub: "Sea Ice · Permafrost · Feedback Loops · The Science of Accelerating Change",
   card: "The Arctic is warming four times faster than the global average. Sea ice extent is at record lows. Permafrost thaw is releasing methane not fully captured by current models. The feedback loops are real and potentially irreversible.",
@@ -2740,7 +2973,9 @@ const STORIES = [{
     "NOAA Arctic program reports 2025 fires scorched record peat, doubling emissions in affected basins (Nature World News)",
     "University of Massachusetts Amherst study reveals Arctic permafrost thaw reshaping rivers and releasing ancient carbon at accelerating rates (Global Biogeochemical Cycles 2026)",
     "Arctic Ocean receives disproportionate share of dissolved organic carbon — over 275 million tons converted to CO2 annually, intensifying global warming (ScienceDaily 2026)",
-    "Northwest Alaska shows largest rise in carbon export due to peat-rich plains — ancient carbon accumulating for tens of thousands of years (ScienceDaily 2026)"
+    "Northwest Alaska shows largest rise in carbon export due to peat-rich plains — ancient carbon accumulating for tens of thousands of years (ScienceDaily 2026)",
+    "Arctic rivers deliver 11% of world's river water into Arctic Ocean, which holds just 1% of global ocean volume (Global Biogeochemical Cycles 2026)",
+    "Thaw season now extends into September and October in Alaska — 20-30% more runoff in flat regions (Nature World News)"
   ],
   developing: [
     "Whether permafrost carbon release creates a self-sustaining feedback loop independent of human emissions",
@@ -2762,7 +2997,8 @@ const STORIES = [{
     "New research shows Arctic climate systems respond to atmospheric rhythm changes, not just intensity — a fundamental shift in understanding ocean-atmosphere coupling.",
     "Meltwater pools on sea ice surface are now confirmed as sources of biological particles that influence unique Arctic cloud formation — a previously understudied feedback mechanism.",
     "Arctic rivers play outsized role in global system — delivering 11% of world's river water into Arctic Ocean, which holds just 1% of global ocean volume (Global Biogeochemical Cycles 2026)",
-    "Northwest Alaska shows largest rise in carbon export due to peat-rich plains — ancient carbon accumulating for tens of thousands of years (ScienceDaily 2026)"
+    "Northwest Alaska shows largest rise in carbon export due to peat-rich plains — ancient carbon accumulating for tens of thousands of years (ScienceDaily 2026)",
+    "Thawing permafrost in northwest Alaska mobilizes ancient carbon at rates 30% higher than previous estimates due to flat, peat-rich terrain (Global Biogeochemical Cycles 2026)"
   ],
   questions: [
     "Is the permafrost carbon feedback loop already self-sustaining — and would we know if it were?",
@@ -2772,7 +3008,8 @@ const STORIES = [{
     "Is there any intervention — solar geoengineering, carbon removal — that could stabilize the Arctic system?",
     "How will changing atmospheric rhythms affect long-term Arctic ocean circulation patterns?",
     "What role do biological particles from melt ponds play in Arctic cloud formation and regional climate feedbacks?",
-    "How will Arctic warming affect winter weather predictability in midlatitudes under warmer climates?"
+    "How will Arctic warming affect winter weather predictability in midlatitudes under warmer climates?",
+    "What are the implications of extended fall thaw seasons (now reaching October) for Arctic carbon release?"
   ],
   science: [
     "Nature (2024): Arctic warming rate has increased from 3x to 4x global average over past decade — amplification accelerating.",
@@ -2828,17 +3065,17 @@ const STORIES = [{
   code: "FOOD-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "Climate & Food Security",
   sub: "Drought · Agricultural Collapse · The Countries Already in Crisis",
   card: "Climate change is already reducing agricultural yields in the most vulnerable regions. The Iran war has compounded existing supply chain stress. 280 million people are in acute food insecurity. The food system is more fragile than most people realize.",
   summary: "The global food system is under compounding stress from three simultaneous drivers: climate-driven agricultural disruption, conflict-driven supply chain disruption, and economic stress. Approximately 280 million people are experiencing acute food insecurity as of early 2026 — roughly double 2019 levels. The countries most at risk are concentrated in sub-Saharan Africa, the Horn of Africa, the Middle East, and South Asia. These are not countries that caused the climate crisis, but they are experiencing its food security consequences most severely.",
   bg: "Agricultural production is more sensitive to climate than most economic activity. Crops are grown in specific temperature and precipitation windows. Small deviations — a few degrees of warming, shifted rainfall patterns, more frequent extremes — produce significant yield reductions. The Green Revolution of the 1960s-70s produced high-yield crop varieties and irrigation infrastructure that dramatically increased food production. Those yield gains are largely exhausted, and the crops are increasingly stressed by conditions they were not bred for.\n\nThe fertilizer system is a particular vulnerability. Modern industrial agriculture depends on nitrogen fertilizers derived from the Haber-Bosch process, which uses natural gas as a feedstock. Russia and Belarus are major fertilizer exporters. The Ukraine war disrupted supply chains. The Iran war oil shock has increased the cost of natural gas inputs.\n\nWater security is the underlying driver of much food insecurity. Many major agricultural regions depend on groundwater, glacial meltwater, or specific rainfall patterns — all being disrupted by climate change. The Indus basin, the Nile, the Colorado River, and multiple Chinese river systems are all experiencing water stress affecting agricultural output.\n\nFood price volatility has political consequences. The Arab Spring of 2011 was preceded by food price spikes. The current combination of climate stress, Ukraine war wheat disruption, and Iran war oil shock has produced food price conditions more severe than 2011 by some measures.",
-  confirmed: ["Approximately 280 million people in acute food insecurity globally — roughly double 2019 levels", "Ukraine war disrupted wheat exports — Ukraine and Russia supply approximately 30% of global wheat", "Iran war oil shock increasing fertilizer input costs", "Horn of Africa experiencing worst drought in 40 years — Somalia, Ethiopia, Kenya most affected", "Sahel food insecurity worsening as conflict and climate compound — 25 million at acute risk", "Gaza food insecurity at famine levels — WFP reporting starvation in northern Gaza", "India heat wave impacts reduced domestic wheat production in 2024", "Global food prices elevated — FAO Food Price Index approximately 15% above 2019 baseline", "Climate-driven agricultural yield reductions documented across multiple regions and crops", "Caribbean food prices up 55-60% since 2018 due to Middle East war supply chain shocks and climate impacts", "UN WFP reports crude oil prices above $114/barrel driving food inflation in import-dependent regions", "IIED study projects 24 countries could face critical food insecurity under 2°C warming scenario", "UK households facing £470 annual food bill increases with 12% struggling to afford meals", "UN reports 61% probability of El Niño in Caribbean by mid-2026 — historically linked to crop failures in region", "WMO confirms 60% chance of severe dry spells in Belize, Guyana, Suriname, Jamaica, and Trinidad/Tobago if El Niño develops", "UK Food Foundation reports 12% of households 'struggling to put food on the table' due to price spikes", "FAO-WMO report finds extreme heat already causing half a trillion work hours lost annually", "Beef cattle mortality reached 24% in some documented heatwaves", "Marine heatwaves linked to $6.6 billion loss in fisheries production", "Maize and wheat yields projected to drop 4-10% per 1°C of warming", "2025 Kyrgyzstan heat event saw temperatures 10°C above normal, contributing to 25% decline in cereal harvests", "Brazil 2023-2024 heat and drought conditions cut soybean yields by 20%"],
-  developing: ["Whether Iran war oil shock produces fertilizer supply crisis affecting planting seasons", "Whether Horn of Africa drought conditions persist through 2026 growing seasons", "Whether any country crosses formal famine declaration threshold beyond Gaza", "Whether food price spikes produce political instability in at-risk countries — Egypt, Pakistan, Nigeria", "Whether El Niño conditions develop in Caribbean (61% probability) exacerbating food crisis", "Whether UK food price inflation triggers political response", "Whether Guyana's climate-smart agriculture program can be scaled regionally", "Whether Strait of Hormuz shipping disruptions persist beyond ceasefire", "Whether UK supermarket shortages expand beyond current produce restrictions", "Whether heat-tolerant crop varieties can be developed fast enough to offset losses", "Whether early warning systems for extreme heat can be effectively deployed in vulnerable regions"],
-  insights: ["Food insecurity is the most direct human consequence of the interaction between climate change and geopolitical conflict. The 280 million number is not a projection — it is a current measurement.", "The fertilizer vulnerability is underappreciated. Food security in the developing world depends on nitrogen fertilizer that depends on natural gas that depends on prices currently elevated by the Iran war. This chain of dependency is invisible until it breaks.", "The political instability risk from food prices is documented and current. The Arab Spring correlation with 2011 food price spikes is well-established. The countries most at risk — Egypt, Pakistan, Nigeria, Ethiopia — are also countries with nuclear weapons or significant geopolitical weight.", "Climate change is not an equal-opportunity crisis. The countries that contributed least to cumulative emissions are experiencing the most severe food security consequences. The moral arithmetic is stark and the political response is insufficient.", "The Caribbean crisis demonstrates how climate and conflict shocks propagate through import-dependent food systems — a warning for other regions.", "UK food insecurity at 12% household level shows even developed economies are not immune to systemic shocks", "Energy-intensive food production (meat, dairy, greenhouse crops) most vulnerable to Middle East war price shocks", "Extreme heat is increasingly defining the conditions under which agrifood systems operate, with yields declining and agricultural workers facing dangerous conditions", "Heatwaves are becoming more frequent, intense, and prolonged, damaging crops, livestock, fisheries, and forests", "Adaptation measures such as heat-resilient crops, adjusted planting schedules, and improved farm management practices are critical to respond to rising risks"],
-  questions: ["Does the Iran war oil shock produce a fertilizer supply crisis affecting 2026 planting seasons?", "Which countries are at highest near-term risk of famine?", "Does food price stress produce political instability in any major country in 2026?", "What is the long-term trajectory of agricultural yields under 2°C and 3°C warming scenarios?", "Can climate-smart agriculture programs like Guyana's be scaled fast enough to offset losses?", "Will El Niño conditions materialize in Caribbean and with what severity?", "How will UK political system respond to 12% household food insecurity?", "Can heat-tolerant crop varieties be developed fast enough to offset losses?", "Can early warning systems for extreme heat be effectively deployed in vulnerable regions?"],
-  science: ["Nature Food (2024): Global crop yield declines documented — wheat -5.5% per decade in heat-stressed regions, maize -3.1% per decade in sub-Saharan Africa under observed warming.", "Science (2025): Simultaneous crop failure risk — probability of multiple breadbasket failures in the same year has tripled since 1990 as climate extremes correlate across regions.", "Proceedings of the Royal Society B (2024): Food system fragility assessment — the global food system has fewer buffers against simultaneous shocks than at any point in the past 50 years.", "Nature Climate Change (2025): Water stress and food production — 40% of global agricultural land faces water stress by 2050 under current emissions trajectory.", "Lancet (2025): Malnutrition and climate — climate-driven food insecurity producing measurable increases in child stunting in sub-Saharan Africa and South Asia.", "FAO (2026): State of Food Security — 280 million in acute food insecurity, 750 million experiencing food insecurity at some level. Both at record highs.", "IIED (2026): Food insecurity could triple in 24 countries under 2°C warming, with low-income nations facing 22% average increase in food insecurity.", "ICRISAT (2026): Biofortified pearl millet varieties in Africa show 36% yield increases under drought conditions while addressing micronutrient deficiencies", "FAO-WMO (2026): Extreme heat and agriculture — yields of staple crops such as maize and wheat have already declined by 7.5% and 6% respectively with 1°C of global temperature rise"],
+  confirmed: ["Approximately 280 million people in acute food insecurity globally — roughly double 2019 levels", "Ukraine war disrupted wheat exports — Ukraine and Russia supply approximately 30% of global wheat", "Iran war oil shock increasing fertilizer input costs", "Horn of Africa experiencing worst drought in 40 years — Somalia, Ethiopia, Kenya most affected", "Sahel food insecurity worsening as conflict and climate compound — 25 million at acute risk", "Gaza food insecurity at famine levels — WFP reporting starvation in northern Gaza", "India heat wave impacts reduced domestic wheat production in 2024", "Global food prices elevated — FAO Food Price Index approximately 15% above 2019 baseline", "Climate-driven agricultural yield reductions documented across multiple regions and crops", "Caribbean food prices up 55-60% since 2018 due to Middle East war supply chain shocks and climate impacts", "UN WFP reports crude oil prices above $114/barrel driving food inflation in import-dependent regions", "IIED study projects 24 countries could face critical food insecurity under 2°C warming scenario", "UK households facing £470 annual food bill increases with 12% struggling to afford meals", "UN reports 61% probability of El Niño in Caribbean by mid-2026 — historically linked to crop failures in region", "WMO confirms 60% chance of severe dry spells in Belize, Guyana, Suriname, Jamaica, and Trinidad/Tobago if El Niño develops", "UK Food Foundation reports 12% of households 'struggling to put food on the table' due to price spikes", "FAO-WMO report finds extreme heat already causing half a trillion work hours lost annually", "Beef cattle mortality reached 24% in some documented heatwaves", "Marine heatwaves linked to $6.6 billion loss in fisheries production", "Maize and wheat yields projected to drop 4-10% per 1°C of warming", "2025 Kyrgyzstan heat event saw temperatures 10°C above normal, contributing to 25% decline in cereal harvests", "Brazil 2023-2024 heat and drought conditions cut soybean yields by 20%", "Every 1°C of warming cuts yields of world's four major crops (maize, rice, soy, wheat) by about 6%", "Under high-emission scenarios, nearly half world's cattle could face dangerous heat by 2100, causing $40 billion annual losses", "In parts of South Asia, sub-Saharan Africa and Latin America, number of days too hot to work could rise to 250 per year", "Extreme heat is increasingly defining the conditions under which agrifood systems operate, with 1.23 billion people at risk"],
+  developing: ["Whether Iran war oil shock produces fertilizer supply crisis affecting planting seasons", "Whether Horn of Africa drought conditions persist through 2026 growing seasons", "Whether any country crosses formal famine declaration threshold beyond Gaza", "Whether food price spikes produce political instability in at-risk countries — Egypt, Pakistan, Nigeria", "Whether El Niño conditions develop in Caribbean (61% probability) exacerbating food crisis", "Whether UK food price inflation triggers political response", "Whether Guyana's climate-smart agriculture program can be scaled regionally", "Whether Strait of Hormuz shipping disruptions persist beyond ceasefire", "Whether UK supermarket shortages expand beyond current produce restrictions", "Whether heat-tolerant crop varieties can be developed fast enough to offset losses", "Whether early warning systems for extreme heat can be effectively deployed in vulnerable regions", "Whether adaptation measures like heat-resilient crops and adjusted planting schedules can offset rising risks"],
+  insights: ["Food insecurity is the most direct human consequence of the interaction between climate change and geopolitical conflict. The 280 million number is not a projection — it is a current measurement.", "The fertilizer vulnerability is underappreciated. Food security in the developing world depends on nitrogen fertilizer that depends on natural gas that depends on prices currently elevated by the Iran war. This chain of dependency is invisible until it breaks.", "The political instability risk from food prices is documented and current. The Arab Spring correlation with 2011 food price spikes is well-established. The countries most at risk — Egypt, Pakistan, Nigeria, Ethiopia — are also countries with nuclear weapons or significant geopolitical weight.", "Climate change is not an equal-opportunity crisis. The countries that contributed least to cumulative emissions are experiencing the most severe food security consequences. The moral arithmetic is stark and the political response is insufficient.", "The Caribbean crisis demonstrates how climate and conflict shocks propagate through import-dependent food systems — a warning for other regions.", "UK food insecurity at 12% household level shows even developed economies are not immune to systemic shocks", "Energy-intensive food production (meat, dairy, greenhouse crops) most vulnerable to Middle East war price shocks", "Extreme heat is increasingly defining the conditions under which agrifood systems operate, with yields declining and agricultural workers facing dangerous conditions", "Heatwaves are becoming more frequent, intense, and prolonged, damaging crops, livestock, fisheries, and forests", "Adaptation measures such as heat-resilient crops, adjusted planting schedules, and improved farm management practices are critical to respond to rising risks", "Early warning systems and climate services can help farmers prepare for extreme heat events but require significant investment"],
+  questions: ["Does the Iran war oil shock produce a fertilizer supply crisis affecting 2026 planting seasons?", "Which countries are at highest near-term risk of famine?", "Does food price stress produce political instability in any major country in 2026?", "What is the long-term trajectory of agricultural yields under 2°C and 3°C warming scenarios?", "Can climate-smart agriculture programs like Guyana's be scaled fast enough to offset losses?", "Will El Niño conditions materialize in Caribbean and with what severity?", "How will UK political system respond to 12% household food insecurity?", "Can heat-tolerant crop varieties be developed fast enough to offset losses?", "Can early warning systems for extreme heat be effectively deployed in vulnerable regions?", "What are the most effective adaptation strategies for different agricultural systems facing extreme heat?"],
+  science: ["Nature Food (2024): Global crop yield declines documented — wheat -5.5% per decade in heat-stressed regions, maize -3.1% per decade in sub-Saharan Africa under observed warming.", "Science (2025): Simultaneous crop failure risk — probability of multiple breadbasket failures in the same year has tripled since 1990 as climate extremes correlate across regions.", "Proceedings of the Royal Society B (2024): Food system fragility assessment — the global food system has fewer buffers against simultaneous shocks than at any point in the past 50 years.", "Nature Climate Change (2025): Water stress and food production — 40% of global agricultural land faces water stress by 2050 under current emissions trajectory.", "Lancet (2025): Malnutrition and climate — climate-driven food insecurity producing measurable increases in child stunting in sub-Saharan Africa and South Asia.", "FAO (2026): State of Food Security — 280 million in acute food insecurity, 750 million experiencing food insecurity at some level. Both at record highs.", "IIED (2026): Food insecurity could triple in 24 countries under 2°C warming, with low-income nations facing 22% average increase in food insecurity.", "ICRISAT (2026): Biofortified pearl millet varieties in Africa show 36% yield increases under drought conditions while addressing micronutrient deficiencies", "FAO-WMO (2026): Extreme heat and agriculture — yields of staple crops such as maize and wheat have already declined by 7.5% and 6% respectively with 1°C of global temperature rise", "WMO (2026): More than 90% of global ocean experienced at least one marine heatwave in 2025, threatening fisheries"],
   people: [{
     name: "Cindy Holleman",
     role: "Chief Economist, FAO",
@@ -2875,6 +3112,12 @@ const STORIES = [{
     why: "Co-author of FAO-WMO report on extreme heat and agriculture.",
     alignment: "UN/FAO",
     status: "active"
+  }, {
+    name: "Kaveh Zahedi",
+    role: "Director, FAO Office of Climate Change",
+    why: "Lead author on FAO-WMO report documenting extreme heat impacts on agriculture.",
+    alignment: "UN/FAO",
+    status: "active"
   }]
 }, {
   id: "CL05",
@@ -2886,7 +3129,7 @@ const STORIES = [{
   code: "FOSSIL-01",
   heat: 4,
   status: "developing",
-  updated: "Apr 23 2026",
+  updated: "Apr 24 2026",
   title: "Fossil Fuel Dependency — The Iran War as Forcing Function",
   sub: "The Strait Closure · Energy Independence · Who's Changing Policy and Who Isn't",
   card: "The Iran war has made the cost of fossil fuel dependency visible in a way that years of climate advocacy could not. Countries that diversified away from fossil fuels are less exposed to the oil shock. Countries that didn't are paying for it.",
@@ -2913,7 +3156,14 @@ const STORIES = [{
     "Cambodia cutting import tariffs on EVs and solar equipment to zero",
     "Shell Polymers Monaca Plant operating in Pennsylvania as of April 7, 2026, highlighting US petrochemical production amid crisis",
     "Delphine Lévi Alvarès, global petrochemicals campaign manager at CIEL, stating 'We cannot continue relying on fossil fuels neither for energy nor for material'",
-    "International climate talks scheduled in Santa Marta, Colombia from April 24-29, 2026 to discuss petrochemical dependency"
+    "International climate talks scheduled in Santa Marta, Colombia from April 24-29, 2026 to discuss petrochemical dependency",
+    "Asia's April crude imports lowest since 2016 at 20.4 million bpd, down 22% annually due to Strait closure (Kpler)",
+    "Asian refining throughput to fall to 28.6 million bpd in April from 30.4 million bpd in March (IEA)",
+    "Top 100 oil/gas companies made $23B in war profits in March 2026 at $100/barrel oil (Global Witness analysis)",
+    "Saudi Aramco projected to make $25.5B in war profits in 2026 if $100 oil persists",
+    "EU AccelerateEU strategy launched with 44 actions to reduce fossil fuel dependency",
+    "UK doubling down on net-zero commitments despite Trump's North Sea drilling push",
+    "Biofuel demand surges as oil prices spike 30% since February 2026"
   ],
   developing: [
     "Whether Japan's nuclear restart and renewable acceleration survives domestic political opposition",
@@ -2928,7 +3178,10 @@ const STORIES = [{
     "Whether Philippines' renewable push reduces coal dependence from 60%",
     "Whether Cambodia's EV tariff cuts accelerate adoption despite infrastructure gaps",
     "Whether international climate talks in Santa Marta produce concrete policy shifts on petrochemical dependency",
-    "Whether US petrochemical production increases as alternative to Middle East supply"
+    "Whether US petrochemical production increases as alternative to Middle East supply",
+    "Whether Asian refining cuts (1M bpd diesel/jet fuel output reduction) persist through 2026",
+    "Whether EU windfall tax proposals on oil/gas war profits gain traction",
+    "Whether biofuel expansion competes with food supply chains amid price divergence"
   ],
   insights: [
     "The energy security argument for the transition is more politically durable than the climate argument in most democratic systems. Climate is abstract and future-oriented. Energy security is immediate and self-interested. The Iran war is making it viscerally real.",
@@ -2941,7 +3194,11 @@ const STORIES = [{
     "Philippines' energy emergency declaration underscores risks of coal dependence in import-dependent economies",
     "Cambodia's tariff cuts signal emerging markets' shift toward EV adoption despite infrastructure gaps",
     "US petrochemical production remains active in Pennsylvania, highlighting domestic industry's role amid Middle East supply disruptions",
-    "International climate talks in Santa Marta may shift focus from energy production to petrochemical dependency in manufacturing"
+    "International climate talks in Santa Marta may shift focus from energy production to petrochemical dependency in manufacturing",
+    "Asian refining cuts reveal structural vulnerability — diesel/jet fuel shortages likely to persist given 10-year low crude imports",
+    "Oil company war profits ($23B in March alone) creating political pressure for windfall taxes in EU",
+    "UK's net-zero commitment despite Trump pressure shows crisis hardening clean energy resolve in some governments",
+    "Biofuel resurgence demonstrates crisis-driven substitution patterns but risks food-fuel competition"
   ],
   questions: [
     "Does the energy security argument produce lasting clean energy policy change in major fossil fuel importers?",
@@ -2954,7 +3211,10 @@ const STORIES = [{
     "Will Philippines' renewable push significantly reduce coal dependence?",
     "Will Cambodia's EV tariff cuts accelerate adoption despite infrastructure challenges?",
     "Will international climate talks in Santa Marta produce concrete policy shifts on petrochemical dependency?",
-    "Will US petrochemical production increase as alternative to Middle East supply disruptions?"
+    "Will US petrochemical production increase as alternative to Middle East supply disruptions?",
+    "Will Asian diesel/jet fuel shortages trigger broader industrial disruptions?",
+    "Will EU implement windfall taxes on oil/gas war profits?",
+    "Will biofuel expansion create food security tradeoffs?"
   ],
   science: [
     "Nature Energy (2025): Countries with >40% renewable electricity penetration experienced 60% lower economic impact from oil price shocks — first empirical quantification of transition resilience benefit.",
