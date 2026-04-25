@@ -330,6 +330,8 @@ def tier2_write(code, search_results):
     brace = new_object.find('{')
     if brace > 0:
         new_object = new_object[brace:]
+    # Strip trailing comma — the existing separator in tracker_text already provides it
+    new_object = new_object.rstrip().rstrip(',')
 
     # Only advance the updated date when content actually changed
     _updated_re = re.compile(r'\bupdated:\s*["\'][^"\']*["\'],?\s*\n?')

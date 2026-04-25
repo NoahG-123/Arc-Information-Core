@@ -1315,7 +1315,7 @@ const STORIES = [{
     "alignment": "Meta",
     "status": "active"
   }]
-},, {
+}, {
   id: "F01",
   tab: "ai",
   connections: [],
@@ -1551,7 +1551,7 @@ const STORIES = [{
     alignment: "Elastic",
     status: "active"
   }]
-},, {
+}, {
   id: "W01",
   tab: "war",
   connections: [],
@@ -1995,7 +1995,7 @@ const STORIES = [{
     alignment: "Pakistan military",
     status: "active"
   }]
-},, {
+}, {
   id: "C01",
   tab: "canada",
   implications: [],
@@ -2453,7 +2453,7 @@ const STORIES = [{
     alignment: "Provincial Government",
     status: "active"
   }]
-},, {
+}, {
   id: "P01",
   tab: "power",
   connections: [],
@@ -2799,7 +2799,7 @@ const STORIES = [{
     alignment: "Academic governance reform",
     status: "active"
   }]
-},, {
+}, {
   id: "CL01",
   tab: "climate",
   connections: [],
