@@ -1,9 +1,12 @@
-# ARC Pending Stories — Apr 24 2026
+# ARC Pending Stories — Apr 25 2026
 
 ## Proposed New Stories
 
-### [AI-INFRA-01] AI Infrastructure Security
-Emerging threats to global AI infrastructure from state actors require dedicated tracking.
+### [AI-INFRA-01] AI Infrastructure Vulnerabilities
+Emerging threats to AI datacenters highlight a new front in geopolitical conflicts.
 
-### [CANADA-ECON-01] Canada Economic Resilience
-Canada's economic shocks and policy responses warrant deeper analysis given compounding factors.
+### [OIL-01] Global Oil Market Stability
+Recent fluctuations in oil prices and supply chain disruptions warrant closer monitoring.
+
+### [US-CHINA-01] US-China Strategic Concessions
+Delayed arms sales and summit postponements indicate shifting dynamics in US-China relations.
