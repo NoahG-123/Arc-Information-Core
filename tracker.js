@@ -5388,6 +5388,7 @@ function CanadaWatchPanel({
 // ============================================================
 
 const POWER_COLOR = "#9b6fb0";
+const CLIMATE_COLOR = "#4a9b6f";
 
 // ============================================================
 // SHARED GENERIC WATCH PANEL
