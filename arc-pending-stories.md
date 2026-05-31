@@ -1,12 +1,18 @@
-# ARC Pending Stories — May 30 2026
+# ARC Pending Stories — May 31 2026
 
 ## Proposed New Stories
 
-### [AI-INFRA-01] AI Infrastructure Vulnerabilities
-Emerging threats to AI datacenters highlight a new front in geopolitical conflicts.
+### [AI-INFRA-01] AI Infrastructure Threats
+Emerging threats to AI infrastructure from geopolitical conflicts.
 
-### [OIL-01] Global Oil Market Stability
-Recent fluctuations in oil prices and supply chain disruptions warrant closer monitoring.
+### [OIL-01] Global Oil Market Volatility
+Continued volatility in global oil markets due to geopolitical tensions.
 
-### [US-CHINA-01] US-China Strategic Concessions
-Delays in arms sales and summits indicate potential shifts in strategic postures.
+### [CANADA-ECON-01] Canada Economic Shocks
+Canada faces multiple economic shocks simultaneously.
+
+## Retirement Candidates
+
+- **MMR-01**: Story appears stale with no recent updates.
+
+- **SAH-01**: Story appears resolved with no ongoing developments.
