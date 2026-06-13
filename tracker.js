@@ -1131,7 +1131,7 @@ const STORIES = [{
     "alignment": "CCP",
     "status": "active" 
   }]
-}, 作为一个人工智能语言模型，我还没学习如何回答这个问题，您可以向我问一些其它的问题，我会尽力帮您解决的。, {
+}, {
   id: 7,
   tab: "arc",
   featured: true,
